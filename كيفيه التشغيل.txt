@@ -1,0 +1,23 @@
+ÊÍÊÇÌ ÇזבÇ בÓםÑÝÑ דÍבל Çז ÎÏדו
+MySQL 
+Úבל ÌוÇÒ‗
+בÊËÈםÊ ÓםÑÝÑ דÍבל םÝÖב ÇÓÊÎÏÇד ÈÑהÇדÌ 
+Xampp (https://www.apachefriends.org/download.html)
+םד‗ה‗ ÇםÖÇ ÇÓÊÎÏÇד ÈÑÇדÌ ÇÎÑל ‗
+AppServ or WAMP
+Ýל ÍÇבו Çב
+AppServ (http://www.appservnetwork.com/)
+םÌÈ Çה ÊÊÇ‗Ï דה ÊÝÚםב Çב
+InnoDB (http://i.imgur.com/J2nKz8X.jpg)
+
+Þד ÈÝÊÍ ÇבÈÑהÇדÌ בÊÙוÑ ב‗ הÇÝÐו ÇבÇÚÏÇÏÇÊ
+Þד ÈÇÏÎÇב ÇבÈםÇהÇÊ ÇבדØבזÈו ז ÇבÊל ÞדÊ ÈÇÏÎÇבוÇ ÓÇÈÞÇ ÇËהÇÁ ÊהÕםÈ ÇבÓםÑÝÑ
+בדה בםÓ בÏםו ÎÈÑÉ דÚ ÇבÓל ÔÇÑÈ םד‗ה‗ ÝÊÍ ÇבÈÑהÇדÌ דה ÇבדÓÇÑ ÇבÊÇבל
+ProPharmacyManager\bin\Debug\ProPharmacyManager.exe
+דה Ëד ÓםÙוÑ ב‗ ÔÇÔו ÊÓÌםב ÍÓÇÈ ÌÏםÏ ÝÞד ÈÇהÔÇÁ ÍÓÇÈ ÈÕבÇÍםÇÊ ÇבדÏםÑ 
+ז ÈÚÏ ÇÛבÇÞוÇ ÓÊהÊÞב בבÔÇÔו ÇבÑÆםÓםו ז ול ÔÇÔו ÊÓÌםב ÇבÏÎזב
+ÈÚÏ ÊÓÌםב ÇבÏÎזב ז ÇבזÕזב בבזÍו ÇבÇÏÇÑÉ
+םד‗ה‗ ÇהÔÇÁ דÇ ÊÑםÏ דה ÇבÍÓÇÈÇÊ ÊÚÏםב ÇבדזÌזÏ Çז ÍÊל ÍÐÝוד ÚהÏ ÊÓÌםב ÏÎזב‗ ‗דÏםÑ דה ÎבÇב
+ÍÓÇÈÇÊ ---> ÇהÔÇÁ ÍÓÇÈ ÌÏםÏ
+בÊÛםםÑ ‗בדו ÇבדÑזÑ Çז ÇבÍÐÝ
+ÍÓÇÈÇÊ ---> ÊÛםםÑ ‗בדו ÇבדÑזÑ

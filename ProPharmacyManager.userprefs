@@ -1,0 +1,33 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="ProPharmacyManager/Login.cs">
+    <Files>
+      <File FileName="ProPharmacyManager/Program.cs" Line="1" Column="1" />
+      <File FileName="ProPharmacyManager/Database/DataHolder.cs" Line="1" Column="1" />
+      <File FileName="ProPharmacyManager/Database/MySql/MySqlCommand.cs" Line="1" Column="1" />
+      <File FileName="ProPharmacyManager/ChangePass.cs" Line="1" Column="1" />
+      <File FileName="ProPharmacyManager/Login.cs" Line="1" Column="1" />
+      <File FileName="ProPharmacyManager/ChangePass.resx" Line="1" Column="1" />
+      <File FileName="ProPharmacyManager/ChangePass.Designer.cs" Line="1" Column="1" />
+      <File FileName="ProPharmacyManager/Login.Designer.cs" Line="1" Column="1" />
+      <File FileName="ProPharmacyManager/Properties/Resources.Designer.cs" Line="1" Column="1" />
+      <File FileName="ProPharmacyManager/Properties/app.manifest" Line="1" Column="1" />
+      <File FileName="ProPharmacyManager/Properties/AssemblyInfo.cs" Line="1" Column="1" />
+      <File FileName="ProPharmacyManager/Properties/Resources.resx" Line="1" Column="1" />
+      <File FileName="ProPharmacyManager/Properties/Settings.settings" Line="5" Column="16" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State expanded="True">
+          <Node name="ProPharmacyManager" expanded="True">
+            <Node name="Login.cs" selected="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

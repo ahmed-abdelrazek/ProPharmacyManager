@@ -1,0 +1,381 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A773EA3B-5A2C-4EF6-B80D-744375613911}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ProPharmacyManager</RootNamespace>
+    <AssemblyName>ProPharmacyManager</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <SupportUrl>http://shababco.blogspot.com</SupportUrl>
+    <ErrorReportUrl>http://shababco.blogspot.com</ErrorReportUrl>
+    <TargetCulture>ar-EG</TargetCulture>
+    <ProductName>ProPharmacyManager</ProductName>
+    <PublisherName>ShababCo</PublisherName>
+    <SuiteName>Ahmed Mohamed Abd El-Razeq</SuiteName>
+    <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
+    <AutorunEnabled>true</AutorunEnabled>
+    <TrustUrlParameters>true</TrustUrlParameters>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>5.1.0.0</ApplicationVersion>
+    <UseApplicationTrust>true</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <ExcludeDeploymentUrl>true</ExcludeDeploymentUrl>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>false</BootstrapperEnabled>
+    <ProductVersion>12.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <CodeAnalysisRuleSet>GlobalizationRules.ruleset</CodeAnalysisRuleSet>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>PPHM Ico.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>425798E5935B893EC055B5E1DA5B7C2C0E45A853</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>PharmacyProManager_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="MySqlBackup">
+      <HintPath>bin\Debug\MySqlBackup.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="MySql.Data">
+      <HintPath>bin\Debug\MySql.Data.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="About.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="About.Designer.cs">
+      <DependentUpon>About.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddMed.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddMed.Designer.cs">
+      <DependentUpon>AddMed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChangePass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangePass.Designer.cs">
+      <DependentUpon>ChangePass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CPanal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CPanal.Designer.cs">
+      <DependentUpon>CPanal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Database\AccountsTable.cs" />
+    <Compile Include="Database\BackUp.cs" />
+    <Compile Include="Database\BillsTable.cs" />
+    <Compile Include="Database\CreateDB.cs" />
+    <Compile Include="Database\States.cs" />
+    <Compile Include="Database\DataHolder.cs" />
+    <Compile Include="Database\MySql\MySqlCommand.cs" />
+    <Compile Include="Database\MySql\MySqlReader.cs" />
+    <Compile Include="Help.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Help.Designer.cs">
+      <DependentUpon>Help.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImageButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ImageButton.Designer.cs">
+      <DependentUpon>ImageButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kernel\BAR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kernel\BAR.Designer.cs">
+      <DependentUpon>BAR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kernel\Setup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kernel\Setup.Designer.cs">
+      <DependentUpon>Setup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logs\BillsLogs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logs\BillsLogs.Designer.cs">
+      <DependentUpon>BillsLogs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logs\countLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logs\countLog.Designer.cs">
+      <DependentUpon>countLog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logs\EXPEnd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logs\EXPEnd.Designer.cs">
+      <DependentUpon>EXPEnd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kernel\Constants.cs" />
+    <Compile Include="Kernel\IniFile.cs" />
+    <Compile Include="Logs\InvLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logs\InvLog.Designer.cs">
+      <DependentUpon>InvLog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logs\log.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logs\log.Designer.cs">
+      <DependentUpon>log.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logs\SoldLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logs\SoldLog.Designer.cs">
+      <DependentUpon>SoldLog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manager.Designer.cs">
+      <DependentUpon>Manager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Register.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Register.designer.cs">
+      <DependentUpon>Register.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="About.resx">
+      <DependentUpon>About.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddMed.resx">
+      <DependentUpon>AddMed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChangePass.resx">
+      <DependentUpon>ChangePass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CPanal.resx">
+      <DependentUpon>CPanal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Help.resx">
+      <DependentUpon>Help.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImageButton.resx">
+      <DependentUpon>ImageButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kernel\BAR.resx">
+      <DependentUpon>BAR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kernel\Setup.resx">
+      <DependentUpon>Setup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logs\BillsLogs.resx">
+      <DependentUpon>BillsLogs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logs\countLog.resx">
+      <DependentUpon>countLog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logs\EXPEnd.resx">
+      <DependentUpon>EXPEnd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logs\InvLog.resx">
+      <DependentUpon>InvLog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logs\log.resx">
+      <DependentUpon>log.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logs\SoldLog.resx">
+      <DependentUpon>SoldLog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manager.resx">
+      <DependentUpon>Manager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Register.resx">
+      <DependentUpon>Register.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Properties\app.manifest">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Power - Log Off.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Power - Restart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Power - Shut Down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Update.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Windows Marketplace.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\panal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PH PM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Facebook alt 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Twitter alt 4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Yahoo! alt 2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Google Blogger.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PPHM Ico.ico" />
+    <None Include="Resources\LL_02.png" />
+    <None Include="Resources\LL_01.png" />
+    <None Include="Resources\PHBack.bmp" />
+    <None Include="Resources\MinI.png" />
+    <None Include="Resources\CloseI.png" />
+    <None Include="Resources\Restore.png" />
+    <None Include="Resources\DBackup.png" />
+    <None Include="Resources\Backup.png" />
+    <None Include="Resources\cpwapp.bmp" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
