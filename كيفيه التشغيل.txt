@@ -5,7 +5,7 @@ MySQL
 Xampp (https://www.apachefriends.org/download.html)
 يمكنك ايضا استخدام برامج اخرى ك
 AppServ or WAMP
-فى حاله ال
+فى حاله الاصدارات القديمة من
 AppServ (http://www.appservnetwork.com/)
 يجب ان تتاكد من تفعيل ال
 InnoDB (http://i.imgur.com/J2nKz8X.jpg)
