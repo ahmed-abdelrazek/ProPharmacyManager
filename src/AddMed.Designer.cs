@@ -60,7 +60,7 @@ namespace ProPharmacyManager
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.UPdateB = new System.Windows.Forms.Button();
+            this.UPdateB = new ProPharmacyManager.ImageButton();
             this.label16 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.groupBox2.SuspendLayout();
@@ -244,13 +244,15 @@ namespace ProPharmacyManager
             // 
             // UPdateB
             // 
+            this.UPdateB.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.UPdateB.ButtonImage = global::ProPharmacyManager.Properties.Resources.Save;
+            this.UPdateB.ButtonImageOffset = new System.Drawing.Point(0, 0);
             this.UPdateB.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
             this.UPdateB.FlatAppearance.BorderSize = 0;
             this.UPdateB.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
             this.UPdateB.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
             this.UPdateB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.UPdateB.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.UPdateB.Image = global::ProPharmacyManager.Properties.Resources.Save;
             this.UPdateB.Location = new System.Drawing.Point(301, 357);
             this.UPdateB.Name = "UPdateB";
             this.UPdateB.Size = new System.Drawing.Size(150, 60);
@@ -314,7 +316,7 @@ namespace ProPharmacyManager
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker PEX;
-        private System.Windows.Forms.Button UPdateB;
+        private ImageButton UPdateB;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.ToolTip toolTip1;

@@ -33,7 +33,7 @@
     <AutorunEnabled>true</AutorunEnabled>
     <TrustUrlParameters>true</TrustUrlParameters>
     <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>4.1.0.0</ApplicationVersion>
+    <ApplicationVersion>4.2.0.0</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <ExcludeDeploymentUrl>true</ExcludeDeploymentUrl>
@@ -93,31 +93,31 @@
     <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="MySql.Data">
+    <Reference Include="MySql.Data, Version=6.7.4.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>.\MySql.Data.dll</HintPath>
     </Reference>
-    <Reference Include="MySqlBackup">
+    <Reference Include="MySqlBackup, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>.\MySqlBackup.dll</HintPath>
     </Reference>
     <Reference Include="System">
-      <Private>True</Private>
+      <Private>False</Private>
     </Reference>
-    <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Core">
-      <Private>True</Private>
+      <Private>False</Private>
     </Reference>
     <Reference Include="System.Data">
-      <Private>True</Private>
+      <Private>False</Private>
     </Reference>
     <Reference Include="System.Drawing">
-      <Private>True</Private>
+      <Private>False</Private>
     </Reference>
-    <Reference Include="System.Management" />
     <Reference Include="System.Windows.Forms">
-      <Private>True</Private>
+      <Private>False</Private>
     </Reference>
     <Reference Include="System.XML">
-      <Private>True</Private>
+      <Private>False</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -158,6 +158,12 @@
     </Compile>
     <Compile Include="Help.Designer.cs">
       <DependentUpon>Help.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImageButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ImageButton.Designer.cs">
+      <DependentUpon>ImageButton.cs</DependentUpon>
     </Compile>
     <Compile Include="Kernel\BAR.cs">
       <SubType>Form</SubType>
@@ -243,6 +249,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Help.resx">
       <DependentUpon>Help.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImageButton.resx">
+      <DependentUpon>ImageButton.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Kernel\BAR.resx">
       <DependentUpon>BAR.cs</DependentUpon>
@@ -368,6 +377,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="PPHM Ico.ico" />
+    <None Include="Resources\PHBack.bmp" />
+    <None Include="Resources\MinI.png" />
+    <None Include="Resources\CloseI.png" />
     <None Include="Resources\Restore.png" />
     <None Include="Resources\DBackup.png" />
     <None Include="Resources\Backup.png" />

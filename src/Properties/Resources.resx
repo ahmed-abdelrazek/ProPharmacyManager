@@ -199,4 +199,13 @@
   <data name="Restore" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Restore.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="CloseI" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CloseI.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MinI" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MinI.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PHBack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PHBack.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

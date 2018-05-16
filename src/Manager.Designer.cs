@@ -92,20 +92,22 @@ namespace ProPharmacyManager
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.DelMed = new System.Windows.Forms.Button();
-            this.UPdateB = new System.Windows.Forms.Button();
-            this.LogOutB = new System.Windows.Forms.Button();
-            this.SellB = new System.Windows.Forms.Button();
+            this.DelMed = new ProPharmacyManager.ImageButton();
+            this.UPdateB = new ProPharmacyManager.ImageButton();
+            this.LogOutB = new ProPharmacyManager.ImageButton();
+            this.SellB = new ProPharmacyManager.ImageButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.SearchT = new System.Windows.Forms.ComboBox();
             this.FP = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.SearchB = new System.Windows.Forms.Button();
+            this.SearchB = new ProPharmacyManager.ImageButton();
             this.bu = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.label11 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.Minim = new ProPharmacyManager.ImageButton();
+            this.Close = new ProPharmacyManager.ImageButton();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -116,7 +118,8 @@ namespace ProPharmacyManager
             // 
             // menuStrip1
             // 
-            this.menuStrip1.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(108)))), ((int)(((byte)(194)))));
+            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
             this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem1,
@@ -124,16 +127,17 @@ namespace ProPharmacyManager
             this.المخزنToolStripMenuItem,
             this.الاعداداتToolStripMenuItem,
             this.مساعدهToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Location = new System.Drawing.Point(2, 8);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(681, 27);
+            this.menuStrip1.Size = new System.Drawing.Size(299, 27);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // toolStripMenuItem1
             // 
+            this.toolStripMenuItem1.Image = global::ProPharmacyManager.Properties.Resources.PH_PM;
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(12, 23);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(28, 23);
             // 
             // حساباتToolStripMenuItem
             // 
@@ -143,20 +147,20 @@ namespace ProPharmacyManager
             this.فواتيرToolStripMenuItem,
             this.سجلالدخولToolStripMenuItem});
             this.حساباتToolStripMenuItem.Name = "حساباتToolStripMenuItem";
-            this.حساباتToolStripMenuItem.Size = new System.Drawing.Size(67, 23);
+            this.حساباتToolStripMenuItem.Size = new System.Drawing.Size(64, 23);
             this.حساباتToolStripMenuItem.Text = "حسابات";
             // 
             // اضافهموظفجديدToolStripMenuItem
             // 
             this.اضافهموظفجديدToolStripMenuItem.Name = "اضافهموظفجديدToolStripMenuItem";
-            this.اضافهموظفجديدToolStripMenuItem.Size = new System.Drawing.Size(190, 24);
+            this.اضافهموظفجديدToolStripMenuItem.Size = new System.Drawing.Size(181, 24);
             this.اضافهموظفجديدToolStripMenuItem.Text = "اضافه موظف جديد";
             this.اضافهموظفجديدToolStripMenuItem.Click += new System.EventHandler(this.اضافهموظفجديدToolStripMenuItem_Click);
             // 
             // تغييركلمهالمرورToolStripMenuItem
             // 
             this.تغييركلمهالمرورToolStripMenuItem.Name = "تغييركلمهالمرورToolStripMenuItem";
-            this.تغييركلمهالمرورToolStripMenuItem.Size = new System.Drawing.Size(190, 24);
+            this.تغييركلمهالمرورToolStripMenuItem.Size = new System.Drawing.Size(181, 24);
             this.تغييركلمهالمرورToolStripMenuItem.Text = "تغيير كلمه المرور";
             this.تغييركلمهالمرورToolStripMenuItem.Click += new System.EventHandler(this.تغييركلمهالمرورToolStripMenuItem_Click);
             // 
@@ -166,20 +170,20 @@ namespace ProPharmacyManager
             this.فتحToolStripMenuItem2,
             this.حذفToolStripMenuItem2});
             this.فواتيرToolStripMenuItem.Name = "فواتيرToolStripMenuItem";
-            this.فواتيرToolStripMenuItem.Size = new System.Drawing.Size(190, 24);
+            this.فواتيرToolStripMenuItem.Size = new System.Drawing.Size(181, 24);
             this.فواتيرToolStripMenuItem.Text = "فواتير";
             // 
             // فتحToolStripMenuItem2
             // 
             this.فتحToolStripMenuItem2.Name = "فتحToolStripMenuItem2";
-            this.فتحToolStripMenuItem2.Size = new System.Drawing.Size(107, 24);
+            this.فتحToolStripMenuItem2.Size = new System.Drawing.Size(106, 24);
             this.فتحToolStripMenuItem2.Text = "فتح";
             this.فتحToolStripMenuItem2.Click += new System.EventHandler(this.فتحToolStripMenuItem2_Click);
             // 
             // حذفToolStripMenuItem2
             // 
             this.حذفToolStripMenuItem2.Name = "حذفToolStripMenuItem2";
-            this.حذفToolStripMenuItem2.Size = new System.Drawing.Size(107, 24);
+            this.حذفToolStripMenuItem2.Size = new System.Drawing.Size(106, 24);
             this.حذفToolStripMenuItem2.Text = "حذف";
             this.حذفToolStripMenuItem2.Click += new System.EventHandler(this.حذفToolStripMenuItem2_Click);
             // 
@@ -189,20 +193,20 @@ namespace ProPharmacyManager
             this.فتحToolStripMenuItem,
             this.حذفToolStripMenuItem});
             this.سجلالدخولToolStripMenuItem.Name = "سجلالدخولToolStripMenuItem";
-            this.سجلالدخولToolStripMenuItem.Size = new System.Drawing.Size(190, 24);
+            this.سجلالدخولToolStripMenuItem.Size = new System.Drawing.Size(181, 24);
             this.سجلالدخولToolStripMenuItem.Text = "سجل الدخول";
             // 
             // فتحToolStripMenuItem
             // 
             this.فتحToolStripMenuItem.Name = "فتحToolStripMenuItem";
-            this.فتحToolStripMenuItem.Size = new System.Drawing.Size(107, 24);
+            this.فتحToolStripMenuItem.Size = new System.Drawing.Size(106, 24);
             this.فتحToolStripMenuItem.Text = "فتح";
             this.فتحToolStripMenuItem.Click += new System.EventHandler(this.فتحToolStripMenuItem_Click);
             // 
             // حذفToolStripMenuItem
             // 
             this.حذفToolStripMenuItem.Name = "حذفToolStripMenuItem";
-            this.حذفToolStripMenuItem.Size = new System.Drawing.Size(107, 24);
+            this.حذفToolStripMenuItem.Size = new System.Drawing.Size(106, 24);
             this.حذفToolStripMenuItem.Text = "حذف";
             this.حذفToolStripMenuItem.Click += new System.EventHandler(this.حذفToolStripMenuItem_Click);
             // 
@@ -215,20 +219,20 @@ namespace ProPharmacyManager
             this.منتهىالصلاحيهToolStripMenuItem,
             this.الدواءالمتوفرToolStripMenuItem});
             this.المخزنToolStripMenuItem.Name = "المخزنToolStripMenuItem";
-            this.المخزنToolStripMenuItem.Size = new System.Drawing.Size(61, 23);
+            this.المخزنToolStripMenuItem.Size = new System.Drawing.Size(62, 23);
             this.المخزنToolStripMenuItem.Text = "المخزن";
             // 
             // اضافهدواءجديدToolStripMenuItem
             // 
             this.اضافهدواءجديدToolStripMenuItem.Name = "اضافهدواءجديدToolStripMenuItem";
-            this.اضافهدواءجديدToolStripMenuItem.Size = new System.Drawing.Size(173, 24);
+            this.اضافهدواءجديدToolStripMenuItem.Size = new System.Drawing.Size(168, 24);
             this.اضافهدواءجديدToolStripMenuItem.Text = "اضافه دواء جديد";
             this.اضافهدواءجديدToolStripMenuItem.Click += new System.EventHandler(this.اضافهدواءجديدToolStripMenuItem_Click);
             // 
             // غيرمتوفرToolStripMenuItem
             // 
             this.غيرمتوفرToolStripMenuItem.Name = "غيرمتوفرToolStripMenuItem";
-            this.غيرمتوفرToolStripMenuItem.Size = new System.Drawing.Size(173, 24);
+            this.غيرمتوفرToolStripMenuItem.Size = new System.Drawing.Size(168, 24);
             this.غيرمتوفرToolStripMenuItem.Text = "غير متوفر";
             this.غيرمتوفرToolStripMenuItem.Click += new System.EventHandler(this.غيرمتوفرToolStripMenuItem_Click);
             // 
@@ -238,34 +242,34 @@ namespace ProPharmacyManager
             this.فتحToolStripMenuItem1,
             this.حذفToolStripMenuItem1});
             this.سجلالمبيعاتToolStripMenuItem.Name = "سجلالمبيعاتToolStripMenuItem";
-            this.سجلالمبيعاتToolStripMenuItem.Size = new System.Drawing.Size(173, 24);
+            this.سجلالمبيعاتToolStripMenuItem.Size = new System.Drawing.Size(168, 24);
             this.سجلالمبيعاتToolStripMenuItem.Text = "سجل المبيعات";
             // 
             // فتحToolStripMenuItem1
             // 
             this.فتحToolStripMenuItem1.Name = "فتحToolStripMenuItem1";
-            this.فتحToolStripMenuItem1.Size = new System.Drawing.Size(107, 24);
+            this.فتحToolStripMenuItem1.Size = new System.Drawing.Size(106, 24);
             this.فتحToolStripMenuItem1.Text = "فتح";
             this.فتحToolStripMenuItem1.Click += new System.EventHandler(this.فتحToolStripMenuItem1_Click);
             // 
             // حذفToolStripMenuItem1
             // 
             this.حذفToolStripMenuItem1.Name = "حذفToolStripMenuItem1";
-            this.حذفToolStripMenuItem1.Size = new System.Drawing.Size(107, 24);
+            this.حذفToolStripMenuItem1.Size = new System.Drawing.Size(106, 24);
             this.حذفToolStripMenuItem1.Text = "حذف";
             this.حذفToolStripMenuItem1.Click += new System.EventHandler(this.حذفToolStripMenuItem1_Click);
             // 
             // منتهىالصلاحيهToolStripMenuItem
             // 
             this.منتهىالصلاحيهToolStripMenuItem.Name = "منتهىالصلاحيهToolStripMenuItem";
-            this.منتهىالصلاحيهToolStripMenuItem.Size = new System.Drawing.Size(173, 24);
+            this.منتهىالصلاحيهToolStripMenuItem.Size = new System.Drawing.Size(168, 24);
             this.منتهىالصلاحيهToolStripMenuItem.Text = "منتهى الصلاحيه";
             this.منتهىالصلاحيهToolStripMenuItem.Click += new System.EventHandler(this.منتهىالصلاحيهToolStripMenuItem_Click);
             // 
             // الدواءالمتوفرToolStripMenuItem
             // 
             this.الدواءالمتوفرToolStripMenuItem.Name = "الدواءالمتوفرToolStripMenuItem";
-            this.الدواءالمتوفرToolStripMenuItem.Size = new System.Drawing.Size(173, 24);
+            this.الدواءالمتوفرToolStripMenuItem.Size = new System.Drawing.Size(168, 24);
             this.الدواءالمتوفرToolStripMenuItem.Text = "الدواء المتوفر";
             this.الدواءالمتوفرToolStripMenuItem.Click += new System.EventHandler(this.الدواءالمتوفرToolStripMenuItem_Click);
             // 
@@ -275,20 +279,20 @@ namespace ProPharmacyManager
             this.قاعدهالبياناتToolStripMenuItem,
             this.نسخاحتياطىToolStripMenuItem});
             this.الاعداداتToolStripMenuItem.Name = "الاعداداتToolStripMenuItem";
-            this.الاعداداتToolStripMenuItem.Size = new System.Drawing.Size(77, 23);
+            this.الاعداداتToolStripMenuItem.Size = new System.Drawing.Size(75, 23);
             this.الاعداداتToolStripMenuItem.Text = "الاعدادات";
             // 
             // قاعدهالبياناتToolStripMenuItem
             // 
             this.قاعدهالبياناتToolStripMenuItem.Name = "قاعدهالبياناتToolStripMenuItem";
-            this.قاعدهالبياناتToolStripMenuItem.Size = new System.Drawing.Size(160, 24);
+            this.قاعدهالبياناتToolStripMenuItem.Size = new System.Drawing.Size(151, 24);
             this.قاعدهالبياناتToolStripMenuItem.Text = "قاعده البيانات";
             this.قاعدهالبياناتToolStripMenuItem.Click += new System.EventHandler(this.قاعدهالبياناتToolStripMenuItem_Click);
             // 
             // نسخاحتياطىToolStripMenuItem
             // 
             this.نسخاحتياطىToolStripMenuItem.Name = "نسخاحتياطىToolStripMenuItem";
-            this.نسخاحتياطىToolStripMenuItem.Size = new System.Drawing.Size(160, 24);
+            this.نسخاحتياطىToolStripMenuItem.Size = new System.Drawing.Size(151, 24);
             this.نسخاحتياطىToolStripMenuItem.Text = "نسخ احتياطى";
             this.نسخاحتياطىToolStripMenuItem.Click += new System.EventHandler(this.نسخاحتياطىToolStripMenuItem_Click);
             // 
@@ -298,30 +302,30 @@ namespace ProPharmacyManager
             this.عنالبرنامجToolStripMenuItem,
             this.المساعدهToolStripMenuItem});
             this.مساعدهToolStripMenuItem.Name = "مساعدهToolStripMenuItem";
-            this.مساعدهToolStripMenuItem.Size = new System.Drawing.Size(67, 23);
+            this.مساعدهToolStripMenuItem.Size = new System.Drawing.Size(62, 23);
             this.مساعدهToolStripMenuItem.Text = "مساعده";
             // 
             // عنالبرنامجToolStripMenuItem
             // 
             this.عنالبرنامجToolStripMenuItem.Name = "عنالبرنامجToolStripMenuItem";
-            this.عنالبرنامجToolStripMenuItem.Size = new System.Drawing.Size(143, 24);
+            this.عنالبرنامجToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
             this.عنالبرنامجToolStripMenuItem.Text = "عن البرنامج";
             this.عنالبرنامجToolStripMenuItem.Click += new System.EventHandler(this.عنالبرنامجToolStripMenuItem_Click);
             // 
             // المساعدهToolStripMenuItem
             // 
             this.المساعدهToolStripMenuItem.Name = "المساعدهToolStripMenuItem";
-            this.المساعدهToolStripMenuItem.Size = new System.Drawing.Size(143, 24);
+            this.المساعدهToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
             this.المساعدهToolStripMenuItem.Text = "المساعده";
             this.المساعدهToolStripMenuItem.Click += new System.EventHandler(this.المساعدهToolStripMenuItem_Click);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 27);
+            this.pictureBox1.Image = global::ProPharmacyManager.Properties.Resources.PHBack;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(681, 555);
+            this.pictureBox1.Size = new System.Drawing.Size(800, 600);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
@@ -350,9 +354,9 @@ namespace ProPharmacyManager
             this.groupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox2.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
             this.groupBox2.ForeColor = System.Drawing.Color.Snow;
-            this.groupBox2.Location = new System.Drawing.Point(253, 30);
+            this.groupBox2.Location = new System.Drawing.Point(327, 48);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(416, 466);
+            this.groupBox2.Size = new System.Drawing.Size(461, 466);
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "النتيجه";
@@ -369,7 +373,7 @@ namespace ProPharmacyManager
             "اخرى"});
             this.comboBox1.Location = new System.Drawing.Point(6, 96);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(272, 32);
+            this.comboBox1.Size = new System.Drawing.Size(310, 32);
             this.comboBox1.TabIndex = 5;
             this.comboBox1.Text = "شرب";
             this.toolTip1.SetToolTip(this.comboBox1, "طريقة تعاطى الدواء");
@@ -379,7 +383,7 @@ namespace ProPharmacyManager
             this.PSubS.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Bold);
             this.PSubS.Location = new System.Drawing.Point(6, 210);
             this.PSubS.Name = "PSubS";
-            this.PSubS.Size = new System.Drawing.Size(272, 32);
+            this.PSubS.Size = new System.Drawing.Size(310, 32);
             this.PSubS.TabIndex = 8;
             this.toolTip1.SetToolTip(this.PSubS, "المادة الفعاله فى الدواء ليس من الضرورى كتابتها");
             // 
@@ -388,7 +392,7 @@ namespace ProPharmacyManager
             this.PName.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Bold);
             this.PName.Location = new System.Drawing.Point(6, 20);
             this.PName.Name = "PName";
-            this.PName.Size = new System.Drawing.Size(272, 32);
+            this.PName.Size = new System.Drawing.Size(310, 32);
             this.PName.TabIndex = 3;
             this.toolTip1.SetToolTip(this.PName, "اسم الدواء بالانجليزيه و العربيه");
             // 
@@ -397,7 +401,7 @@ namespace ProPharmacyManager
             this.Client.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Bold);
             this.Client.Location = new System.Drawing.Point(6, 411);
             this.Client.Name = "Client";
-            this.Client.Size = new System.Drawing.Size(272, 32);
+            this.Client.Size = new System.Drawing.Size(310, 32);
             this.Client.TabIndex = 28;
             this.Client.TabStop = false;
             this.toolTip1.SetToolTip(this.Client, "اسم العميل و الذى سوف يظهر فى الفاتورة");
@@ -408,7 +412,7 @@ namespace ProPharmacyManager
             this.BillNO.Location = new System.Drawing.Point(6, 374);
             this.BillNO.Name = "BillNO";
             this.BillNO.ReadOnly = true;
-            this.BillNO.Size = new System.Drawing.Size(272, 32);
+            this.BillNO.Size = new System.Drawing.Size(310, 32);
             this.BillNO.TabIndex = 26;
             this.BillNO.TabStop = false;
             this.toolTip1.SetToolTip(this.BillNO, "رقم الفاتورة الحاليه");
@@ -419,7 +423,7 @@ namespace ProPharmacyManager
             this.PEXP.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Bold);
             this.PEXP.Location = new System.Drawing.Point(6, 58);
             this.PEXP.Name = "PEXP";
-            this.PEXP.Size = new System.Drawing.Size(272, 32);
+            this.PEXP.Size = new System.Drawing.Size(310, 32);
             this.PEXP.TabIndex = 4;
             this.toolTip1.SetToolTip(this.PEXP, "عدل تاريخ انتهاء الصلاحيه بنفس الشكل المطبوع اذا كان حاجة لذلك يوم/شهر/سنه");
             // 
@@ -427,7 +431,7 @@ namespace ProPharmacyManager
             // 
             this.label10.AutoSize = true;
             this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(292, 421);
+            this.label10.Location = new System.Drawing.Point(333, 421);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(106, 17);
             this.label10.TabIndex = 27;
@@ -442,7 +446,7 @@ namespace ProPharmacyManager
             this.Pnote.Multiline = true;
             this.Pnote.Name = "Pnote";
             this.Pnote.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.Pnote.Size = new System.Drawing.Size(272, 85);
+            this.Pnote.Size = new System.Drawing.Size(310, 85);
             this.Pnote.TabIndex = 9;
             this.toolTip1.SetToolTip(this.Pnote, "اكتب اى ملاحظات تخص الدواء كمكانه بما لا يزيد عن 500 حرف");
             // 
@@ -451,7 +455,7 @@ namespace ProPharmacyManager
             this.PTottal.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Bold);
             this.PTottal.Location = new System.Drawing.Point(6, 134);
             this.PTottal.Name = "PTottal";
-            this.PTottal.Size = new System.Drawing.Size(272, 32);
+            this.PTottal.Size = new System.Drawing.Size(310, 32);
             this.PTottal.TabIndex = 6;
             this.toolTip1.SetToolTip(this.PTottal, "ارقام فقط");
             this.PTottal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PTottal_KeyPress);
@@ -459,7 +463,7 @@ namespace ProPharmacyManager
             // NewBill
             // 
             this.NewBill.AutoSize = true;
-            this.NewBill.Location = new System.Drawing.Point(167, 347);
+            this.NewBill.Location = new System.Drawing.Point(205, 347);
             this.NewBill.Name = "NewBill";
             this.NewBill.Size = new System.Drawing.Size(111, 21);
             this.NewBill.TabIndex = 22;
@@ -471,7 +475,7 @@ namespace ProPharmacyManager
             // 
             this.label9.AutoSize = true;
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(308, 384);
+            this.label9.Location = new System.Drawing.Point(349, 384);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(90, 17);
             this.label9.TabIndex = 25;
@@ -482,7 +486,7 @@ namespace ProPharmacyManager
             this.PCost.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Bold);
             this.PCost.Location = new System.Drawing.Point(6, 172);
             this.PCost.Name = "PCost";
-            this.PCost.Size = new System.Drawing.Size(272, 32);
+            this.PCost.Size = new System.Drawing.Size(310, 32);
             this.PCost.TabIndex = 7;
             this.toolTip1.SetToolTip(this.PCost, "ارقم و علامه عشريه فقط");
             this.PCost.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PCost_KeyPress);
@@ -491,7 +495,7 @@ namespace ProPharmacyManager
             // 
             this.label8.AutoSize = true;
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(298, 220);
+            this.label8.Location = new System.Drawing.Point(339, 220);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(100, 17);
             this.label8.TabIndex = 9;
@@ -501,7 +505,7 @@ namespace ProPharmacyManager
             // 
             this.label7.AutoSize = true;
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(326, 258);
+            this.label7.Location = new System.Drawing.Point(367, 258);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(72, 17);
             this.label7.TabIndex = 8;
@@ -511,7 +515,7 @@ namespace ProPharmacyManager
             // 
             this.label6.AutoSize = true;
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(345, 182);
+            this.label6.Location = new System.Drawing.Point(386, 182);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(53, 17);
             this.label6.TabIndex = 7;
@@ -521,7 +525,7 @@ namespace ProPharmacyManager
             // 
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(353, 106);
+            this.label5.Location = new System.Drawing.Point(394, 106);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(45, 17);
             this.label5.TabIndex = 6;
@@ -531,7 +535,7 @@ namespace ProPharmacyManager
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(290, 68);
+            this.label4.Location = new System.Drawing.Point(331, 68);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(108, 17);
             this.label4.TabIndex = 5;
@@ -541,7 +545,7 @@ namespace ProPharmacyManager
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(345, 144);
+            this.label3.Location = new System.Drawing.Point(386, 144);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 17);
             this.label3.TabIndex = 4;
@@ -551,7 +555,7 @@ namespace ProPharmacyManager
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(318, 30);
+            this.label2.Location = new System.Drawing.Point(359, 30);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(80, 17);
             this.label2.TabIndex = 3;
@@ -567,21 +571,23 @@ namespace ProPharmacyManager
             this.panel1.Controls.Add(this.SellB);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel1.Location = new System.Drawing.Point(0, 502);
+            this.panel1.Location = new System.Drawing.Point(0, 520);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(681, 80);
+            this.panel1.Size = new System.Drawing.Size(800, 80);
             this.panel1.TabIndex = 5;
             // 
             // DelMed
             // 
+            this.DelMed.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.DelMed.ButtonImage = global::ProPharmacyManager.Properties.Resources.Delete;
+            this.DelMed.ButtonImageOffset = new System.Drawing.Point(0, 0);
             this.DelMed.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
             this.DelMed.FlatAppearance.BorderSize = 0;
             this.DelMed.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
             this.DelMed.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
             this.DelMed.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DelMed.ForeColor = System.Drawing.Color.LightSeaGreen;
-            this.DelMed.Image = global::ProPharmacyManager.Properties.Resources.Delete;
-            this.DelMed.Location = new System.Drawing.Point(347, 7);
+            this.DelMed.Location = new System.Drawing.Point(423, 7);
             this.DelMed.Name = "DelMed";
             this.DelMed.Size = new System.Drawing.Size(150, 60);
             this.DelMed.TabIndex = 12;
@@ -591,14 +597,16 @@ namespace ProPharmacyManager
             // 
             // UPdateB
             // 
+            this.UPdateB.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.UPdateB.ButtonImage = global::ProPharmacyManager.Properties.Resources.Update;
+            this.UPdateB.ButtonImageOffset = new System.Drawing.Point(0, 0);
             this.UPdateB.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
             this.UPdateB.FlatAppearance.BorderSize = 0;
             this.UPdateB.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
             this.UPdateB.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
             this.UPdateB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.UPdateB.ForeColor = System.Drawing.Color.LightSeaGreen;
-            this.UPdateB.Image = global::ProPharmacyManager.Properties.Resources.Update;
-            this.UPdateB.Location = new System.Drawing.Point(177, 7);
+            this.UPdateB.Location = new System.Drawing.Point(216, 7);
             this.UPdateB.Name = "UPdateB";
             this.UPdateB.Size = new System.Drawing.Size(150, 60);
             this.UPdateB.TabIndex = 11;
@@ -608,28 +616,32 @@ namespace ProPharmacyManager
             // 
             // LogOutB
             // 
+            this.LogOutB.BackColor = System.Drawing.SystemColors.Window;
+            this.LogOutB.ButtonImage = global::ProPharmacyManager.Properties.Resources.Power___Log_Off;
+            this.LogOutB.ButtonImageOffset = new System.Drawing.Point(0, 0);
             this.LogOutB.FlatAppearance.BorderColor = System.Drawing.Color.DarkCyan;
             this.LogOutB.FlatAppearance.BorderSize = 0;
             this.LogOutB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.LogOutB.ForeColor = System.Drawing.Color.LightSeaGreen;
-            this.LogOutB.Image = global::ProPharmacyManager.Properties.Resources.Power___Log_Off;
-            this.LogOutB.Location = new System.Drawing.Point(518, 7);
+            this.LogOutB.Location = new System.Drawing.Point(637, 7);
             this.LogOutB.Name = "LogOutB";
             this.LogOutB.Size = new System.Drawing.Size(150, 60);
             this.LogOutB.TabIndex = 13;
             this.toolTip1.SetToolTip(this.LogOutB, "لتسجيل خروجك من الحساب الحالى");
-            this.LogOutB.UseVisualStyleBackColor = true;
+            this.LogOutB.UseVisualStyleBackColor = false;
             this.LogOutB.Click += new System.EventHandler(this.LogOutB_Click);
             // 
             // SellB
             // 
+            this.SellB.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.SellB.ButtonImage = global::ProPharmacyManager.Properties.Resources.Windows_Marketplace;
+            this.SellB.ButtonImageOffset = new System.Drawing.Point(0, 0);
             this.SellB.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
             this.SellB.FlatAppearance.BorderSize = 0;
             this.SellB.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
             this.SellB.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
             this.SellB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SellB.ForeColor = System.Drawing.Color.LightSeaGreen;
-            this.SellB.Image = global::ProPharmacyManager.Properties.Resources.Windows_Marketplace;
             this.SellB.Location = new System.Drawing.Point(11, 7);
             this.SellB.Name = "SellB";
             this.SellB.Size = new System.Drawing.Size(150, 60);
@@ -650,7 +662,7 @@ namespace ProPharmacyManager
             this.groupBox1.ForeColor = System.Drawing.Color.OrangeRed;
             this.groupBox1.Location = new System.Drawing.Point(12, 193);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(235, 196);
+            this.groupBox1.Size = new System.Drawing.Size(289, 196);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "البحث";
@@ -667,7 +679,7 @@ namespace ProPharmacyManager
             this.SearchT.Location = new System.Drawing.Point(6, 49);
             this.SearchT.MaxDropDownItems = 5;
             this.SearchT.Name = "SearchT";
-            this.SearchT.Size = new System.Drawing.Size(218, 32);
+            this.SearchT.Size = new System.Drawing.Size(272, 32);
             this.SearchT.TabIndex = 1;
             this.toolTip1.SetToolTip(this.SearchT, "ادخل اسم الدواء المراد البحث عنه ثم اضغط انتر او زر البحث");
             this.SearchT.TextChanged += new System.EventHandler(this.comboBox2_TextChanged);
@@ -676,7 +688,7 @@ namespace ProPharmacyManager
             // 
             this.FP.AutoSize = true;
             this.FP.ForeColor = System.Drawing.Color.Green;
-            this.FP.Location = new System.Drawing.Point(83, 105);
+            this.FP.Location = new System.Drawing.Point(111, 104);
             this.FP.Name = "FP";
             this.FP.Size = new System.Drawing.Size(72, 17);
             this.FP.TabIndex = 3;
@@ -687,7 +699,7 @@ namespace ProPharmacyManager
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(148, 29);
+            this.label1.Location = new System.Drawing.Point(201, 29);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(80, 17);
             this.label1.TabIndex = 2;
@@ -695,10 +707,12 @@ namespace ProPharmacyManager
             // 
             // SearchB
             // 
+            this.SearchB.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.SearchB.ButtonImage = global::ProPharmacyManager.Properties.Resources.Search;
+            this.SearchB.ButtonImageOffset = new System.Drawing.Point(0, 0);
             this.SearchB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SearchB.ForeColor = System.Drawing.Color.DarkTurquoise;
-            this.SearchB.Image = global::ProPharmacyManager.Properties.Resources.Search;
-            this.SearchB.Location = new System.Drawing.Point(47, 131);
+            this.SearchB.Location = new System.Drawing.Point(75, 130);
             this.SearchB.Name = "SearchB";
             this.SearchB.Size = new System.Drawing.Size(150, 60);
             this.SearchB.TabIndex = 2;
@@ -737,7 +751,7 @@ namespace ProPharmacyManager
             this.flowLayoutPanel1.ForeColor = System.Drawing.Color.Transparent;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(16, 111);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(232, 43);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(285, 43);
             this.flowLayoutPanel1.TabIndex = 21;
             // 
             // label11
@@ -746,11 +760,36 @@ namespace ProPharmacyManager
             this.label11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label11.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
-            this.label11.Location = new System.Drawing.Point(121, 0);
+            this.label11.Location = new System.Drawing.Point(174, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(108, 17);
             this.label11.TabIndex = 0;
             this.label11.Text = "اسم المستخدم";
+            // 
+            // Minim
+            // 
+            this.Minim.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.Minim.ButtonImage = global::ProPharmacyManager.Properties.Resources.MinI;
+            this.Minim.ButtonImageOffset = new System.Drawing.Point(0, 0);
+            this.Minim.Location = new System.Drawing.Point(701, 0);
+            this.Minim.Name = "Minim";
+            this.Minim.Size = new System.Drawing.Size(48, 40);
+            this.Minim.TabIndex = 26;
+            this.Minim.UseVisualStyleBackColor = false;
+            this.Minim.Click += new System.EventHandler(this.Minim_Click);
+            // 
+            // Close
+            // 
+            this.Close.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.Close.ButtonImage = global::ProPharmacyManager.Properties.Resources.CloseI;
+            this.Close.ButtonImageOffset = new System.Drawing.Point(0, 0);
+            this.Close.Location = new System.Drawing.Point(748, 0);
+            this.Close.Name = "Close";
+            this.Close.Size = new System.Drawing.Size(52, 40);
+            this.Close.TabIndex = 25;
+            this.Close.Text = "imageButton1";
+            this.Close.UseVisualStyleBackColor = false;
+            this.Close.Click += new System.EventHandler(this.Close_Click);
             // 
             // Manager
             // 
@@ -758,16 +797,18 @@ namespace ProPharmacyManager
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.ClientSize = new System.Drawing.Size(681, 582);
+            this.ClientSize = new System.Drawing.Size(800, 600);
+            this.Controls.Add(this.Minim);
+            this.Controls.Add(this.Close);
             this.Controls.Add(this.bu);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.menuStrip1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Controls.Add(this.pictureBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
@@ -820,19 +861,19 @@ namespace ProPharmacyManager
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button UPdateB;
-        private System.Windows.Forms.Button LogOutB;
-        private System.Windows.Forms.Button SellB;
+        private ImageButton UPdateB;
+        private ImageButton LogOutB;
+        private ImageButton SellB;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label FP;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button SearchB;
+        private ImageButton SearchB;
         private System.Windows.Forms.ToolStripMenuItem سجلالدخولToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem غيرمتوفرToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem سجلالمبيعاتToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem اضافهدواءجديدToolStripMenuItem;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button DelMed;
+        private ImageButton DelMed;
         private System.Windows.Forms.ToolStripMenuItem فتحToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem حذفToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem فتحToolStripMenuItem1;
@@ -883,5 +924,8 @@ namespace ProPharmacyManager
                     break;
             }
         }
+
+        private ImageButton Close;
+        private ImageButton Minim;
     }
 }

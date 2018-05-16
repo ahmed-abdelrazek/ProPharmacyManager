@@ -45,12 +45,12 @@ namespace ProPharmacyManager.Logs
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InvLog));
             this.DGV = new System.Windows.Forms.DataGridView();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.totalprice = new System.Windows.Forms.ToolStripStatusLabel();
             this.medicn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.count = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.exp = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.totalprice = new System.Windows.Forms.ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)(this.DGV)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -58,7 +58,7 @@ namespace ProPharmacyManager.Logs
             // DGV
             // 
             this.DGV.AllowUserToDeleteRows = false;
-            this.DGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGV.BackgroundColor = System.Drawing.SystemColors.Control;
             this.DGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.medicn,
             this.price,
@@ -70,31 +70,6 @@ namespace ProPharmacyManager.Logs
             this.DGV.ReadOnly = true;
             this.DGV.Size = new System.Drawing.Size(581, 374);
             this.DGV.TabIndex = 1;
-            // 
-            // medicn
-            // 
-            this.medicn.HeaderText = "الاسم";
-            this.medicn.Name = "medicn";
-            this.medicn.ReadOnly = true;
-            // 
-            // price
-            // 
-            this.price.HeaderText = "السعر";
-            this.price.Name = "price";
-            this.price.ReadOnly = true;
-            // 
-            // count
-            // 
-            this.count.HeaderText = "الكميه";
-            this.count.Name = "count";
-            this.count.ReadOnly = true;
-            // 
-            // exp
-            // 
-            this.exp.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.exp.HeaderText = "مده انتهاء الصلاحيه";
-            this.exp.Name = "exp";
-            this.exp.ReadOnly = true;
             // 
             // statusStrip1
             // 
@@ -114,6 +89,34 @@ namespace ProPharmacyManager.Logs
             this.totalprice.Size = new System.Drawing.Size(566, 21);
             this.totalprice.Spring = true;
             this.totalprice.Text = "toolStripStatusLabel1";
+            // 
+            // medicn
+            // 
+            this.medicn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.medicn.HeaderText = "الاسم";
+            this.medicn.Name = "medicn";
+            this.medicn.ReadOnly = true;
+            // 
+            // price
+            // 
+            this.price.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.price.HeaderText = "السعر";
+            this.price.Name = "price";
+            this.price.ReadOnly = true;
+            // 
+            // count
+            // 
+            this.count.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.count.HeaderText = "الكميه";
+            this.count.Name = "count";
+            this.count.ReadOnly = true;
+            // 
+            // exp
+            // 
+            this.exp.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.exp.HeaderText = "مده انتهاء الصلاحيه";
+            this.exp.Name = "exp";
+            this.exp.ReadOnly = true;
             // 
             // InvLog
             // 

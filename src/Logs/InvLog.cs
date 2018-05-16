@@ -22,16 +22,13 @@ namespace ProPharmacyManager.Logs
 {
     public partial class InvLog : Form
     {
-        private decimal ff;
-        private decimal ff1;
-        private decimal tt;
-        private decimal tt1;
 
         public InvLog()
         {
             InitializeComponent();
         }
 
+        private decimal pp = 0;
         private void IL()
         {
             try
@@ -41,14 +38,13 @@ namespace ProPharmacyManager.Logs
                 MySqlReader r = new MySqlReader(cmd);
                 while (r.Read())
                 {
+                    decimal tt, ff = 0;
                     ff = Convert.ToDecimal(r.ReadString("Price"));
-                    tt = Convert.ToDecimal(r.ReadString("Count"));
-                    ff1 += ff;
-                    tt1 += tt;
-                    totalprice.Text = "اجمالى سعر الموجود :" + Convert.ToDecimal(ff1)*Convert.ToDecimal(tt1) + "جنيه";
-                    DGV.Rows.Add(r.ReadString("Name"), r.ReadString("Price"), r.ReadString("Count"),
-                        r.ReadString("Expiry"));
+                    tt = Convert.ToDecimal(r.ReadString("Count"));                  
+                    DGV.Rows.Add(r.ReadString("Name"), r.ReadString("Price"), r.ReadString("Count"), r.ReadString("Expiry"));
+                    pp += ff * tt;
                 }
+                totalprice.Text = "اجمالى سعر الموجود :" + Convert.ToDecimal(pp) + "جنيه";
                 r.Close();
             }
             catch (Exception ee)

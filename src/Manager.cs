@@ -412,10 +412,9 @@ namespace ProPharmacyManager
 
         private void comboBox2_TextChanged(object sender, EventArgs e)
         {
-            if (SearchT.DroppedDown == false && SearchT.Text != "")
+            if (SearchT.DroppedDown == false)
             {
                 SearchT.DroppedDown = true;
-
                 try
                 {
                     MySqlCommand cmd = new MySqlCommand(MySqlCommandType.SELECT)
@@ -433,10 +432,21 @@ namespace ProPharmacyManager
                     Program.SaveException(ef);
                 }
             }
-            else
+            else if (SearchT.Text == "" && SearchT.DroppedDown == true)
             {
-                SearchT.DroppedDown = false;
+                this.Focus();
             }
         }
+
+        private void Close_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Minim_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+        
     }
 }

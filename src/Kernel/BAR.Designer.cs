@@ -46,10 +46,6 @@ namespace ProPharmacyManager.Kernel
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BAR));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.Exit = new System.Windows.Forms.Button();
-            this.DeleteBackUpB = new System.Windows.Forms.Button();
-            this.RestoreB = new System.Windows.Forms.Button();
-            this.BackUpB = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.EncryptionKey = new System.Windows.Forms.TextBox();
@@ -58,6 +54,10 @@ namespace ProPharmacyManager.Kernel
             this.BPath = new System.Windows.Forms.TextBox();
             this.BackUpList = new System.Windows.Forms.ListBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.Exit = new ProPharmacyManager.ImageButton();
+            this.DeleteBackUpB = new ProPharmacyManager.ImageButton();
+            this.RestoreB = new ProPharmacyManager.ImageButton();
+            this.BackUpB = new ProPharmacyManager.ImageButton();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -74,58 +74,6 @@ namespace ProPharmacyManager.Kernel
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(774, 78);
             this.panel1.TabIndex = 0;
-            // 
-            // Exit
-            // 
-            this.Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Exit.ForeColor = System.Drawing.Color.LightSeaGreen;
-            this.Exit.Image = global::ProPharmacyManager.Properties.Resources.Power___Log_Off;
-            this.Exit.Location = new System.Drawing.Point(601, 9);
-            this.Exit.Name = "Exit";
-            this.Exit.Size = new System.Drawing.Size(150, 60);
-            this.Exit.TabIndex = 3;
-            this.toolTip1.SetToolTip(this.Exit, "للعودة للوحه الادارة");
-            this.Exit.UseVisualStyleBackColor = true;
-            this.Exit.Click += new System.EventHandler(this.Exit_Click);
-            // 
-            // DeleteBackUpB
-            // 
-            this.DeleteBackUpB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.DeleteBackUpB.ForeColor = System.Drawing.Color.LightSeaGreen;
-            this.DeleteBackUpB.Image = global::ProPharmacyManager.Properties.Resources.DBackup;
-            this.DeleteBackUpB.Location = new System.Drawing.Point(404, 9);
-            this.DeleteBackUpB.Name = "DeleteBackUpB";
-            this.DeleteBackUpB.Size = new System.Drawing.Size(150, 60);
-            this.DeleteBackUpB.TabIndex = 2;
-            this.toolTip1.SetToolTip(this.DeleteBackUpB, "لحذف احد النسخ الاحتياطيه من الاعلى");
-            this.DeleteBackUpB.UseVisualStyleBackColor = true;
-            this.DeleteBackUpB.Click += new System.EventHandler(this.DeleteBackUpB_Click);
-            // 
-            // RestoreB
-            // 
-            this.RestoreB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.RestoreB.ForeColor = System.Drawing.Color.LightSeaGreen;
-            this.RestoreB.Image = global::ProPharmacyManager.Properties.Resources.Restore;
-            this.RestoreB.Location = new System.Drawing.Point(208, 9);
-            this.RestoreB.Name = "RestoreB";
-            this.RestoreB.Size = new System.Drawing.Size(150, 60);
-            this.RestoreB.TabIndex = 1;
-            this.toolTip1.SetToolTip(this.RestoreB, "لاسترجاع واحدة من النسخ الاحتياطيه فى الاعلى");
-            this.RestoreB.UseVisualStyleBackColor = true;
-            this.RestoreB.Click += new System.EventHandler(this.RestoreB_Click);
-            // 
-            // BackUpB
-            // 
-            this.BackUpB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BackUpB.ForeColor = System.Drawing.Color.LightSeaGreen;
-            this.BackUpB.Image = global::ProPharmacyManager.Properties.Resources.Backup;
-            this.BackUpB.Location = new System.Drawing.Point(12, 6);
-            this.BackUpB.Name = "BackUpB";
-            this.BackUpB.Size = new System.Drawing.Size(150, 60);
-            this.BackUpB.TabIndex = 0;
-            this.toolTip1.SetToolTip(this.BackUpB, "لاخذ نسخة احتياطيه من قاعدة البيانات");
-            this.BackUpB.UseVisualStyleBackColor = true;
-            this.BackUpB.Click += new System.EventHandler(this.BackUpB_Click);
             // 
             // panel2
             // 
@@ -152,6 +100,7 @@ namespace ProPharmacyManager.Kernel
             this.label2.TabIndex = 4;
             this.label2.Text = "مفتاح التشفير*";
             this.toolTip1.SetToolTip(this.label2, "كلمه سر لتشفير النسخ الاحتياطيه لعدم تمكين الغير من العبث بها");
+            this.label2.Visible = false;
             // 
             // EncryptionKey
             // 
@@ -163,6 +112,7 @@ namespace ProPharmacyManager.Kernel
             this.EncryptionKey.TabIndex = 3;
             this.EncryptionKey.Tag = "";
             this.toolTip1.SetToolTip(this.EncryptionKey, "احرف انكليزيه فقط");
+            this.EncryptionKey.Visible = false;
             // 
             // label1
             // 
@@ -211,6 +161,66 @@ namespace ProPharmacyManager.Kernel
             this.BackUpList.Size = new System.Drawing.Size(774, 267);
             this.BackUpList.TabIndex = 2;
             // 
+            // Exit
+            // 
+            this.Exit.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.Exit.ButtonImage = global::ProPharmacyManager.Properties.Resources.Power___Log_Off;
+            this.Exit.ButtonImageOffset = new System.Drawing.Point(0, 0);
+            this.Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Exit.ForeColor = System.Drawing.Color.LightSeaGreen;
+            this.Exit.Location = new System.Drawing.Point(601, 9);
+            this.Exit.Name = "Exit";
+            this.Exit.Size = new System.Drawing.Size(150, 60);
+            this.Exit.TabIndex = 3;
+            this.toolTip1.SetToolTip(this.Exit, "للعودة للوحه الادارة");
+            this.Exit.UseVisualStyleBackColor = true;
+            this.Exit.Click += new System.EventHandler(this.Exit_Click);
+            // 
+            // DeleteBackUpB
+            // 
+            this.DeleteBackUpB.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.DeleteBackUpB.ButtonImage = global::ProPharmacyManager.Properties.Resources.DBackup;
+            this.DeleteBackUpB.ButtonImageOffset = new System.Drawing.Point(0, 0);
+            this.DeleteBackUpB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DeleteBackUpB.ForeColor = System.Drawing.Color.LightSeaGreen;
+            this.DeleteBackUpB.Location = new System.Drawing.Point(404, 9);
+            this.DeleteBackUpB.Name = "DeleteBackUpB";
+            this.DeleteBackUpB.Size = new System.Drawing.Size(150, 60);
+            this.DeleteBackUpB.TabIndex = 2;
+            this.toolTip1.SetToolTip(this.DeleteBackUpB, "لحذف احد النسخ الاحتياطيه من الاعلى");
+            this.DeleteBackUpB.UseVisualStyleBackColor = true;
+            this.DeleteBackUpB.Click += new System.EventHandler(this.DeleteBackUpB_Click);
+            // 
+            // RestoreB
+            // 
+            this.RestoreB.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.RestoreB.ButtonImage = global::ProPharmacyManager.Properties.Resources.Restore;
+            this.RestoreB.ButtonImageOffset = new System.Drawing.Point(0, 0);
+            this.RestoreB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RestoreB.ForeColor = System.Drawing.Color.LightSeaGreen;
+            this.RestoreB.Location = new System.Drawing.Point(208, 9);
+            this.RestoreB.Name = "RestoreB";
+            this.RestoreB.Size = new System.Drawing.Size(150, 60);
+            this.RestoreB.TabIndex = 1;
+            this.toolTip1.SetToolTip(this.RestoreB, "لاسترجاع واحدة من النسخ الاحتياطيه فى الاعلى");
+            this.RestoreB.UseVisualStyleBackColor = true;
+            this.RestoreB.Click += new System.EventHandler(this.RestoreB_Click);
+            // 
+            // BackUpB
+            // 
+            this.BackUpB.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.BackUpB.ButtonImage = global::ProPharmacyManager.Properties.Resources.Backup;
+            this.BackUpB.ButtonImageOffset = new System.Drawing.Point(0, 0);
+            this.BackUpB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BackUpB.ForeColor = System.Drawing.Color.LightSeaGreen;
+            this.BackUpB.Location = new System.Drawing.Point(12, 6);
+            this.BackUpB.Name = "BackUpB";
+            this.BackUpB.Size = new System.Drawing.Size(150, 60);
+            this.BackUpB.TabIndex = 0;
+            this.toolTip1.SetToolTip(this.BackUpB, "لاخذ نسخة احتياطيه من قاعدة البيانات");
+            this.BackUpB.UseVisualStyleBackColor = true;
+            this.BackUpB.Click += new System.EventHandler(this.BackUpB_Click);
+            // 
             // BAR
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -220,10 +230,13 @@ namespace ProPharmacyManager.Kernel
             this.Controls.Add(this.BackUpList);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "BAR";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "النسخ الاحتياطيه";
             this.Load += new System.EventHandler(this.BAR_Load);
@@ -237,14 +250,14 @@ namespace ProPharmacyManager.Kernel
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button DeleteBackUpB;
-        private System.Windows.Forms.Button RestoreB;
-        private System.Windows.Forms.Button BackUpB;
+        private ImageButton DeleteBackUpB;
+        private ImageButton RestoreB;
+        private ImageButton BackUpB;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button BBrowser;
         private System.Windows.Forms.TextBox BPath;
         private System.Windows.Forms.ListBox BackUpList;
-        private System.Windows.Forms.Button Exit;
+        private ImageButton Exit;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Label label2;

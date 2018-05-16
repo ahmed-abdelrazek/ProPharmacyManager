@@ -44,66 +44,78 @@ namespace ProPharmacyManager
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Help));
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.Face = new ProPharmacyManager.ImageButton();
+            this.Twitter = new ProPharmacyManager.ImageButton();
+            this.Yahoo = new ProPharmacyManager.ImageButton();
+            this.Blogger = new ProPharmacyManager.ImageButton();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // Face
             // 
-            this.pictureBox1.Image = global::ProPharmacyManager.Properties.Resources.Facebook_alt_1;
-            this.pictureBox1.Location = new System.Drawing.Point(331, 60);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(50, 50);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.Face.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.Face.ButtonImage = global::ProPharmacyManager.Properties.Resources.Facebook_alt_1;
+            this.Face.ButtonImageOffset = new System.Drawing.Point(0, 0);
+            this.Face.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Face.Location = new System.Drawing.Point(332, 58);
+            this.Face.Name = "Face";
+            this.Face.Size = new System.Drawing.Size(50, 50);
+            this.Face.TabIndex = 0;
+            this.Face.Text = "imageButton1";
+            this.Face.UseVisualStyleBackColor = false;
+            this.Face.Click += new System.EventHandler(this.Face_Click);
             // 
-            // pictureBox2
+            // Twitter
             // 
-            this.pictureBox2.Image = global::ProPharmacyManager.Properties.Resources.Twitter_alt_4;
-            this.pictureBox2.Location = new System.Drawing.Point(235, 60);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(50, 50);
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            this.Twitter.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.Twitter.ButtonImage = global::ProPharmacyManager.Properties.Resources.Twitter_alt_4;
+            this.Twitter.ButtonImageOffset = new System.Drawing.Point(0, 0);
+            this.Twitter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Twitter.Location = new System.Drawing.Point(237, 58);
+            this.Twitter.Name = "Twitter";
+            this.Twitter.Size = new System.Drawing.Size(50, 50);
+            this.Twitter.TabIndex = 1;
+            this.Twitter.Text = "imageButton2";
+            this.Twitter.UseVisualStyleBackColor = false;
+            this.Twitter.Click += new System.EventHandler(this.Twitter_Click);
             // 
-            // pictureBox3
+            // Yahoo
             // 
-            this.pictureBox3.Image = global::ProPharmacyManager.Properties.Resources.Yahoo__alt_2;
-            this.pictureBox3.Location = new System.Drawing.Point(42, 60);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(50, 50);
-            this.pictureBox3.TabIndex = 2;
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
+            this.Yahoo.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.Yahoo.ButtonImage = global::ProPharmacyManager.Properties.Resources.Yahoo__alt_2;
+            this.Yahoo.ButtonImageOffset = new System.Drawing.Point(0, 0);
+            this.Yahoo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Yahoo.Location = new System.Drawing.Point(142, 58);
+            this.Yahoo.Name = "Yahoo";
+            this.Yahoo.Size = new System.Drawing.Size(50, 50);
+            this.Yahoo.TabIndex = 2;
+            this.Yahoo.Text = "imageButton3";
+            this.Yahoo.UseVisualStyleBackColor = false;
+            this.Yahoo.Click += new System.EventHandler(this.Yahoo_Click);
             // 
-            // pictureBox4
+            // Blogger
             // 
-            this.pictureBox4.Image = global::ProPharmacyManager.Properties.Resources.Google_Blogger;
-            this.pictureBox4.Location = new System.Drawing.Point(140, 60);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(50, 50);
-            this.pictureBox4.TabIndex = 3;
-            this.pictureBox4.TabStop = false;
-            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
+            this.Blogger.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.Blogger.ButtonImage = global::ProPharmacyManager.Properties.Resources.Google_Blogger;
+            this.Blogger.ButtonImageOffset = new System.Drawing.Point(0, 0);
+            this.Blogger.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Blogger.Location = new System.Drawing.Point(45, 58);
+            this.Blogger.Name = "Blogger";
+            this.Blogger.Size = new System.Drawing.Size(50, 50);
+            this.Blogger.TabIndex = 3;
+            this.Blogger.Text = "imageButton4";
+            this.Blogger.UseVisualStyleBackColor = false;
+            this.Blogger.Click += new System.EventHandler(this.Blogger_Click);
             // 
             // Help
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
-            this.ClientSize = new System.Drawing.Size(426, 182);
-            this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox1);
+            this.ClientSize = new System.Drawing.Size(426, 157);
+            this.Controls.Add(this.Blogger);
+            this.Controls.Add(this.Yahoo);
+            this.Controls.Add(this.Twitter);
+            this.Controls.Add(this.Face);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Help";
@@ -112,20 +124,17 @@ namespace ProPharmacyManager
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "روابط المساعده";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox4;
+        private ImageButton Face;
+        private ImageButton Twitter;
+        private ImageButton Yahoo;
+        private ImageButton Blogger;
+
 
     }
 }

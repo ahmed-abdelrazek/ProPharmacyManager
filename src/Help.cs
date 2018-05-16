@@ -26,24 +26,24 @@ namespace ProPharmacyManager
             InitializeComponent();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void Face_Click(object sender, EventArgs e)
         {
             Process.Start("http://www.facebook.com/ShababConquer");
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
+        private void Twitter_Click(object sender, EventArgs e)
         {
             Process.Start("http://www.twitter.com/ahmed_master23");
         }
 
-        private void pictureBox4_Click(object sender, EventArgs e)
-        {
-            Process.Start("http://www.shababco.blogspot.com/");
-        }
-
-        private void pictureBox3_Click(object sender, EventArgs e)
+        private void Yahoo_Click(object sender, EventArgs e)
         {
             MessageBox.Show("ahmed_master23@yahoo.com");
+        }
+
+        private void Blogger_Click(object sender, EventArgs e)
+        {
+            Process.Start("http://www.shababco.blogspot.com/");
         }
     }
 }
