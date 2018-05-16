@@ -78,6 +78,15 @@ namespace ProPharmacyManager
             {
                 PCost.BackColor = Color.White;
             }
+            if (PCost.Text == "")
+            {
+                PCost.BackColor = System.Drawing.Color.Red;
+                return;
+            }
+            else if (PCost.Text != "")
+            {
+                PCost.BackColor = System.Drawing.Color.White;
+            }
             try
             {
                 MySqlCommand cmd = new MySqlCommand(MySqlCommandType.INSERT);

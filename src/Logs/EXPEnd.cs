@@ -1,11 +1,5 @@
 ﻿using PharmacyProManager.Database;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -22,15 +16,13 @@ namespace PharmacyProManager
             try
             {
                 MySqlCommand cmd = new MySqlCommand(MySqlCommandType.SELECT);
-                cmd.Select("medics").Where("Expiry", Convert.ToUInt16(DateTime.Now.Day), false);//.And("Expiry", Convert.ToUInt16(DateTime.Now.Month),true);
+                cmd.Select("medics").Where("Expiry", Convert.ToUInt16(DateTime.Now.Month), false);
                 MySqlReader r = new MySqlReader(cmd);
                 while (r.Read())
                 {
-                    EXPLog.Text += "الاسم : " + r.ReadString("Name") + "\r\n";
-                    EXPLog.Text += "الكميه الموجودة : " + r.ReadString("Count") + "\r\n";
-                    EXPLog.Text += "تاريخ انتهاء الصلاحيه : " + r.ReadString("Expiry") + "\r\n";
-                    EXPLog.Text += "--------------------------------------------------------\r\n";
+                    dataGridView1.Rows.Add(r.ReadString("Name"), r.ReadString("Expiry"), r.ReadString("Count"));
                 }
+                r.Close();
             }
             catch (Exception eee)
             {
