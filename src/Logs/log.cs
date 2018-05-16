@@ -1,14 +1,8 @@
-﻿using PharmacyPRO.Database;
+﻿using PharmacyProManager.Database;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
-namespace PharmacyPRO
+namespace PharmacyProManager
 {
     public partial class log : Form
     {
@@ -28,7 +22,7 @@ namespace PharmacyPRO
                 {
                     logss.Text += "اسم المستخدم " + r.ReadString("Account") + "\r\n";
                     logss.Text += "وقت الدخول " + DateTime.FromBinary(r.ReadInt64("LoginDate"));
-                    logss.Text += "\r\n----------------------------------------\r\n";
+                    logss.Text += "\r\n----------------------------------------------\r\n";
                 }
             }
             catch (Exception eee)

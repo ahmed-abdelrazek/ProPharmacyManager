@@ -28,7 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddMed));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.PEX = new System.Windows.Forms.DateTimePicker();
             this.PSubS = new System.Windows.Forms.TextBox();
             this.PName = new System.Windows.Forms.TextBox();
             this.Pnote = new System.Windows.Forms.TextBox();
@@ -41,9 +44,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.PEX = new System.Windows.Forms.DateTimePicker();
             this.UPdateB = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label16 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -74,6 +75,32 @@
             this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "المعلومات المطلوبه";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Bold);
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "شرب",
+            "اقراص",
+            "حقن",
+            "كريم/مرهم",
+            "اخرى"});
+            this.comboBox1.Location = new System.Drawing.Point(6, 96);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(272, 32);
+            this.comboBox1.TabIndex = 3;
+            this.comboBox1.Text = "شرب";
+            // 
+            // PEX
+            // 
+            this.PEX.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Bold);
+            this.PEX.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.PEX.Location = new System.Drawing.Point(6, 58);
+            this.PEX.Name = "PEX";
+            this.PEX.RightToLeftLayout = true;
+            this.PEX.Size = new System.Drawing.Size(272, 32);
+            this.PEX.TabIndex = 2;
             // 
             // PSubS
             // 
@@ -107,6 +134,7 @@
             this.PTottal.Name = "PTottal";
             this.PTottal.Size = new System.Drawing.Size(272, 32);
             this.PTottal.TabIndex = 4;
+            this.PTottal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PTottal_KeyPress);
             // 
             // PCost
             // 
@@ -115,6 +143,7 @@
             this.PCost.Name = "PCost";
             this.PCost.Size = new System.Drawing.Size(272, 32);
             this.PCost.TabIndex = 5;
+            this.PCost.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PCost_KeyPress);
             // 
             // label8
             // 
@@ -186,16 +215,6 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "اسم الدواء:";
             // 
-            // PEX
-            // 
-            this.PEX.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Bold);
-            this.PEX.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.PEX.Location = new System.Drawing.Point(6, 58);
-            this.PEX.Name = "PEX";
-            this.PEX.RightToLeftLayout = true;
-            this.PEX.Size = new System.Drawing.Size(272, 32);
-            this.PEX.TabIndex = 2;
-            // 
             // UPdateB
             // 
             this.UPdateB.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
@@ -211,22 +230,6 @@
             this.UPdateB.TabIndex = 8;
             this.UPdateB.UseVisualStyleBackColor = true;
             this.UPdateB.Click += new System.EventHandler(this.UPdateB_Click);
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Bold);
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "شرب",
-            "اقراص",
-            "حقن",
-            "كريم/مرهم",
-            "اخرى"});
-            this.comboBox1.Location = new System.Drawing.Point(6, 96);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(272, 32);
-            this.comboBox1.TabIndex = 3;
-            this.comboBox1.Text = "شرب";
             // 
             // label16
             // 
@@ -252,6 +255,7 @@
             this.Controls.Add(this.UPdateB);
             this.Controls.Add(this.groupBox2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddMed";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;

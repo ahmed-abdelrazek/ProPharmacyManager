@@ -1,4 +1,4 @@
-﻿namespace PharmacyPRO
+﻿namespace PharmacyProManager
 {
     partial class Register
     {
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Register));
             this.button5 = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
@@ -48,7 +49,7 @@
             this.button5.Name = "button5";
             this.button5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.button5.Size = new System.Drawing.Size(80, 23);
-            this.button5.TabIndex = 89;
+            this.button5.TabIndex = 5;
             this.button5.Text = "تسجيل";
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
@@ -73,7 +74,7 @@
             this.label15.BackColor = System.Drawing.Color.Transparent;
             this.label15.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
             this.label15.ForeColor = System.Drawing.Color.Red;
-            this.label15.Location = new System.Drawing.Point(195, 95);
+            this.label15.Location = new System.Drawing.Point(-1, 95);
             this.label15.Name = "label15";
             this.label15.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label15.Size = new System.Drawing.Size(63, 13);
@@ -88,17 +89,17 @@
             "مدير",
             "موظف",
             "مجهول"});
-            this.comboBox1.Location = new System.Drawing.Point(12, 92);
+            this.comboBox1.Location = new System.Drawing.Point(102, 92);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(143, 21);
-            this.comboBox1.TabIndex = 86;
+            this.comboBox1.TabIndex = 4;
             // 
             // textBox9
             // 
-            this.textBox9.Location = new System.Drawing.Point(12, 37);
+            this.textBox9.Location = new System.Drawing.Point(102, 37);
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(143, 20);
-            this.textBox9.TabIndex = 85;
+            this.textBox9.TabIndex = 2;
             // 
             // label14
             // 
@@ -106,7 +107,7 @@
             this.label14.BackColor = System.Drawing.Color.Transparent;
             this.label14.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
             this.label14.ForeColor = System.Drawing.Color.Red;
-            this.label14.Location = new System.Drawing.Point(183, 40);
+            this.label14.Location = new System.Drawing.Point(-1, 40);
             this.label14.Name = "label14";
             this.label14.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label14.Size = new System.Drawing.Size(76, 13);
@@ -116,10 +117,10 @@
             // textBox10
             // 
             this.textBox10.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBox10.Location = new System.Drawing.Point(12, 7);
+            this.textBox10.Location = new System.Drawing.Point(102, 7);
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(143, 20);
-            this.textBox10.TabIndex = 83;
+            this.textBox10.TabIndex = 1;
             // 
             // label17
             // 
@@ -127,7 +128,7 @@
             this.label17.BackColor = System.Drawing.Color.Transparent;
             this.label17.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
             this.label17.ForeColor = System.Drawing.Color.Red;
-            this.label17.Location = new System.Drawing.Point(161, 10);
+            this.label17.Location = new System.Drawing.Point(-1, 10);
             this.label17.Name = "label17";
             this.label17.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label17.Size = new System.Drawing.Size(97, 13);
@@ -136,10 +137,10 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 64);
+            this.textBox1.Location = new System.Drawing.Point(102, 64);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(143, 20);
-            this.textBox1.TabIndex = 91;
+            this.textBox1.TabIndex = 3;
             // 
             // label1
             // 
@@ -147,7 +148,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(207, 67);
+            this.label1.Location = new System.Drawing.Point(-1, 67);
             this.label1.Name = "label1";
             this.label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label1.Size = new System.Drawing.Size(44, 13);
@@ -167,9 +168,9 @@
             // 
             // Register
             // 
+            this.AcceptButton = this.button5;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(258, 216);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox1);
@@ -182,13 +183,12 @@
             this.Controls.Add(this.label14);
             this.Controls.Add(this.textBox10);
             this.Controls.Add(this.label17);
-            this.DoubleBuffered = true;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Register";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.ShowIcon = false;
+            this.RightToLeftLayout = true;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "اضافه مستخدم جديد";
             this.ResumeLayout(false);
             this.PerformLayout();

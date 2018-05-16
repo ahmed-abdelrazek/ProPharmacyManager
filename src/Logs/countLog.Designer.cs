@@ -1,6 +1,6 @@
 ﻿namespace PharmacyProManager
 {
-    partial class DateLog
+    partial class countLog
     {
         /// <summary>
         /// Required designer variable.
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(countLog));
             this.MedLog = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
@@ -39,22 +40,24 @@
             this.MedLog.Location = new System.Drawing.Point(0, 0);
             this.MedLog.Multiline = true;
             this.MedLog.Name = "MedLog";
+            this.MedLog.ReadOnly = true;
             this.MedLog.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.MedLog.Size = new System.Drawing.Size(581, 374);
             this.MedLog.TabIndex = 0;
             // 
-            // DateLog
+            // countLog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(581, 374);
             this.Controls.Add(this.MedLog);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "DateLog";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "countLog";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "غير متوفر";
+            this.Text = "الادويه التى نفذت";
             this.Load += new System.EventHandler(this.DateLog_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

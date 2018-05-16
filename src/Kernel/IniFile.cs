@@ -2,7 +2,7 @@
 using System.Runtime.InteropServices;
 using System.Text;
 
-namespace PharmacyPRO.Kernel
+namespace PharmacyProManager.Kernel
 {
     public class IniFile
     {

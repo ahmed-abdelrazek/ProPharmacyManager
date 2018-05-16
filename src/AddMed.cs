@@ -1,4 +1,4 @@
-﻿using PharmacyPRO.Database;
+﻿using PharmacyProManager.Database;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -79,12 +79,37 @@ namespace PharmacyProManager
                 label16.Text = "تم اضافه الدواء بنجاح.";
                 label16.Visible = true;
             }
-            catch (Exception am)
+            catch
             {
                 label16.ForeColor = Color.Red;
                 label16.Text = "الدواء موجود بالفعل.";
                 label16.Visible = true;
-                Program.SaveException(am);
+            }
+        }
+
+        private void PTottal_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+            // only allow one decimal point
+            if (e.KeyChar == '.' && (sender as TextBox).Text.IndexOf('.') > -1)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void PCost_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+            // only allow one decimal point
+            if (e.KeyChar == '.' && (sender as TextBox).Text.IndexOf('.') > -1)
+            {
+                e.Handled = true;
             }
         }
     }

@@ -1,5 +1,4 @@
-﻿using PharmacyPRO;
-using PharmacyPRO.Database;
+﻿using PharmacyProManager.Database;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -13,7 +12,6 @@ namespace PharmacyProManager
             InitializeComponent();
         }
         byte Ptype = 0;
-        decimal TTprice = 0; 
         private void clear()
         {
             PName.Clear();
@@ -50,46 +48,24 @@ namespace PharmacyProManager
                 comboBox1.Text = "غير معروف";
             }
         }
-        private void tp()
-        {
-            decimal Tprice = 0;
-            Tprice = Convert.ToDecimal(PCost.Text);
-            MySqlCommand cmd = new MySqlCommand(MySqlCommandType.SELECT);
-            cmd.Select("medlog").Where("Username", PName.Text);
-                MySqlReader r = new MySqlReader(cmd);
-                if (r.Read())
-                {
-                    Tprice = r.ReadUInt16("TPrice");
-                }
-                TTprice += Tprice;
-        }
-        private void Sell()
+
+        private void SaveSold()
         {
             try
             {
-                MySqlCommand CMD = new MySqlCommand(MySqlCommandType.INSERT);
-                CMD.Insert("medlog")
-                    .Insert("Name", PName.Text)
-                    .Insert("Count", PTottal.Text)
-                    .Insert("SellDate", DateTime.Now.Ticks.ToString())
-                    .Insert("TPrice", PCost.Text);
+                MySqlCommand cmd = new MySqlCommand(MySqlCommandType.INSERT);
+                cmd.Insert("medlog")
+                    .Insert("Name", PName.Text)/*.Insert("Total", "1")*/.Insert("Cost", PCost.Text).Insert("SellDate", DateTime.Now.ToString()).Execute();
             }
-            catch (Exception am)
+            catch (Exception e)
             {
-                MySqlCommand cmd = new MySqlCommand(MySqlCommandType.UPDATE);
-                cmd.Update("medics")
-                    .Set("Name", PName.Text)
-                .Set("Count", Convert.ToInt64(TTprice))
-                .Set("TPrice", PCost.Text)
-                    .Set("Note", Pnote.Text);
-                cmd.Where("Name", PName.Text).Execute();
-                Program.SaveException(am);
+                Program.SaveException(e);
             }
         }
         private void اضافهموظفجديدToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Register reg = new Register();
-            reg.Show();
+            reg.ShowDialog();
         }
 
         private void Manager_FormClosing(object sender, FormClosingEventArgs e)
@@ -110,7 +86,7 @@ namespace PharmacyProManager
         private void عنالبرنامجToolStripMenuItem_Click(object sender, EventArgs e)
         {
             About ab = new About();
-            ab.Show();
+            ab.ShowDialog();
         }
 
         private void LogOutB_Click(object sender, EventArgs e)
@@ -229,6 +205,7 @@ namespace PharmacyProManager
                         .Set("Count", tottal);
                     CMD.Where("Name", PName.Text).Execute();
                     MessageBox.Show("تم بيع واحد");
+                    SaveSold();
                 }
                 else
                 {
@@ -287,7 +264,7 @@ namespace PharmacyProManager
 
         private void غيرمتوفرToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DateLog dl = new DateLog();
+            countLog dl = new countLog();
             dl.Show();
         }
 
@@ -295,6 +272,44 @@ namespace PharmacyProManager
         {
             EXPEnd ee = new EXPEnd();
             ee.Show();
+        }
+
+        private void PTottal_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+            // only allow one decimal point
+            if (e.KeyChar == '.' && (sender as TextBox).Text.IndexOf('.') > -1)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void PCost_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+            // only allow one decimal point
+            if (e.KeyChar == '.' && (sender as TextBox).Text.IndexOf('.') > -1)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void فتحToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Logs.SoldLog sl = new Logs.SoldLog();
+            sl.Show();
+        }
+
+        private void حذفToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            new MySqlCommand(MySqlCommandType.CLEAR).Clear("medlog").Execute();
+            MessageBox.Show("تم حذف سجل المبيعات");
         }
     }
 }

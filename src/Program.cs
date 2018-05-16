@@ -1,5 +1,5 @@
-﻿using PharmacyPRO.Database;
-using PharmacyPRO.Kernel;
+﻿using PharmacyProManager.Database;
+using PharmacyProManager.Kernel;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChangePass));
             this.UN = new System.Windows.Forms.TextBox();
             this.NUP = new System.Windows.Forms.TextBox();
             this.Change = new System.Windows.Forms.Button();
@@ -44,7 +45,7 @@
             this.UN.Location = new System.Drawing.Point(124, 27);
             this.UN.Name = "UN";
             this.UN.Size = new System.Drawing.Size(202, 24);
-            this.UN.TabIndex = 0;
+            this.UN.TabIndex = 1;
             // 
             // NUP
             // 
@@ -52,14 +53,14 @@
             this.NUP.Location = new System.Drawing.Point(124, 64);
             this.NUP.Name = "NUP";
             this.NUP.Size = new System.Drawing.Size(202, 24);
-            this.NUP.TabIndex = 1;
+            this.NUP.TabIndex = 2;
             // 
             // Change
             // 
             this.Change.Location = new System.Drawing.Point(251, 126);
             this.Change.Name = "Change";
             this.Change.Size = new System.Drawing.Size(75, 23);
-            this.Change.TabIndex = 2;
+            this.Change.TabIndex = 3;
             this.Change.Text = "تغيير";
             this.Change.UseVisualStyleBackColor = true;
             this.Change.Click += new System.EventHandler(this.Change_Click);
@@ -97,7 +98,7 @@
             this.Delete.Location = new System.Drawing.Point(124, 126);
             this.Delete.Name = "Delete";
             this.Delete.Size = new System.Drawing.Size(75, 23);
-            this.Delete.TabIndex = 6;
+            this.Delete.TabIndex = 4;
             this.Delete.Text = "حذف";
             this.Delete.UseVisualStyleBackColor = true;
             this.Delete.Click += new System.EventHandler(this.Delete_Click);
@@ -126,6 +127,7 @@
             this.Controls.Add(this.NUP);
             this.Controls.Add(this.UN);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ChangePass";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;

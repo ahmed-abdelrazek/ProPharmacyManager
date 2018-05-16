@@ -224,6 +224,7 @@
             this.PSubS.ReadOnly = true;
             this.PSubS.Size = new System.Drawing.Size(272, 32);
             this.PSubS.TabIndex = 16;
+            this.PSubS.TabStop = false;
             // 
             // PName
             // 
@@ -232,7 +233,8 @@
             this.PName.Name = "PName";
             this.PName.ReadOnly = true;
             this.PName.Size = new System.Drawing.Size(272, 32);
-            this.PName.TabIndex = 15;
+            this.PName.TabIndex = 7;
+            this.PName.TabStop = false;
             // 
             // PEXP
             // 
@@ -242,6 +244,7 @@
             this.PEXP.ReadOnly = true;
             this.PEXP.Size = new System.Drawing.Size(272, 32);
             this.PEXP.TabIndex = 14;
+            this.PEXP.TabStop = false;
             // 
             // PType
             // 
@@ -251,6 +254,7 @@
             this.PType.ReadOnly = true;
             this.PType.Size = new System.Drawing.Size(272, 32);
             this.PType.TabIndex = 13;
+            this.PType.TabStop = false;
             // 
             // Pnote
             // 
@@ -269,6 +273,7 @@
             this.PTottal.ReadOnly = true;
             this.PTottal.Size = new System.Drawing.Size(272, 32);
             this.PTottal.TabIndex = 11;
+            this.PTottal.TabStop = false;
             // 
             // PCost
             // 
@@ -278,6 +283,7 @@
             this.PCost.ReadOnly = true;
             this.PCost.Size = new System.Drawing.Size(272, 32);
             this.PCost.TabIndex = 10;
+            this.PCost.TabStop = false;
             // 
             // label8
             // 
@@ -368,6 +374,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "مدير الصيدليه";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CPanal_FormClosing);
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.CPanal_HelpRequested);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

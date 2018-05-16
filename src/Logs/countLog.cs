@@ -1,12 +1,12 @@
-﻿using PharmacyPRO.Database;
+﻿using PharmacyProManager.Database;
 using System;
 using System.Windows.Forms;
 
 namespace PharmacyProManager
 {
-    public partial class DateLog : Form
+    public partial class countLog : Form
     {
-        public DateLog()
+        public countLog()
         {
             InitializeComponent();
         }

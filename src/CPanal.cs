@@ -1,4 +1,4 @@
-﻿using PharmacyPRO.Database;
+﻿using PharmacyProManager.Database;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -174,6 +174,12 @@ namespace PharmacyProManager
             {
                 MessageBox.Show(ep.ToString());
             }
+        }
+
+        private void CPanal_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            About ab = new About();
+            ab.ShowDialog();
         }
     }
 }

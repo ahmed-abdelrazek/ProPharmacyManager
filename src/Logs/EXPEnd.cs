@@ -1,4 +1,4 @@
-﻿using PharmacyPRO.Database;
+﻿using PharmacyProManager.Database;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -25,8 +25,10 @@ namespace PharmacyProManager
                 MySqlReader r = new MySqlReader(cmd);
                 while (r.Read())
                 {
-                    EXPLog.Text += r.ReadString("Name") + "\r\n";
-                    EXPLog.Text += "----------------------------------------\r\n";
+                    EXPLog.Text += "الاسم : " + r.ReadString("Name") + "\r\n";
+                    EXPLog.Text += "الكميه الموجودة : " + r.ReadString("Count") + "\r\n";
+                    EXPLog.Text += "تاريخ انتهاء الصلاحيه : " + r.ReadString("Expiry") + "\r\n";
+                    EXPLog.Text += "--------------------------------------------------------\r\n";
                 }
             }
             catch (Exception eee)

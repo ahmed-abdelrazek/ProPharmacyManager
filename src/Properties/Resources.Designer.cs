@@ -103,6 +103,16 @@ namespace PharmacyProManager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap PH_PM {
+            get {
+                object obj = ResourceManager.GetObject("PH_PM", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Power___Log_Off {
             get {
                 object obj = ResourceManager.GetObject("Power___Log_Off", resourceCulture);

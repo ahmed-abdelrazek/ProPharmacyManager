@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Text;
 
-namespace PharmacyPRO.Database
+namespace PharmacyProManager.Database
 {
     public class MySqlCommand
     {
@@ -258,6 +258,8 @@ namespace PharmacyPRO.Database
         }
         #endregion
 
+        
+        
         #region And
         public MySqlCommand And(string column, long value)
         {
@@ -320,6 +322,7 @@ namespace PharmacyPRO.Database
         }
         #endregion
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2202:Do not dispose objects multiple times"), System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2100:Review SQL queries for security vulnerabilities")]
         public int Execute()
         {
             if (Type == MySqlCommandType.INSERT)
@@ -374,12 +377,13 @@ namespace PharmacyPRO.Database
             using (var conn = Database.DataHolder.MySqlConnection)
             {
                 conn.Open();
-                MySql.Data.MySqlClient.MySqlCommand cmd = new MySql.Data.MySqlClient.MySqlCommand(Command, conn);
+                MySql.Data.MySqlClient.MySqlCommand cmd = new MySql.Data.MySqlClient.MySqlCommand(this.Command, conn);
                 res = cmd.ExecuteNonQuery();
                 conn.Close();
             }
             return res;
         }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2100:Review SQL queries for security vulnerabilities")]
         public int Execute(MySql.Data.MySqlClient.MySqlConnection conn)
         {
             if (Type == MySqlCommandType.INSERT)

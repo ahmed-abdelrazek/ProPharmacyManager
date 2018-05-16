@@ -4,12 +4,11 @@ using MySql.Data.MySqlClient;
 using PharmacyProManager;
 using System.Windows.Forms;
 
-namespace PharmacyPRO.Database
+namespace PharmacyProManager.Database
 {
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1001:TypesThatOwnDisposableFieldsShouldBeDisposable")]
     public class MySqlReader
     {
-         //private MySqlDataReader Reader = null;
-        //  const string Table = "table";
         private MySql.Data.MySqlClient.MySqlConnection _conn = DataHolder.MySqlConnection;
         private DataRow _datarow;
         private DataSet _dataset;
@@ -39,6 +38,7 @@ namespace PharmacyPRO.Database
                 _lasterror = value;
             }
         }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2202:Do not dispose objects multiple times")]
         private void TryFill(MySqlCommand command)
         {
             MySql.Data.MySqlClient.MySqlConnection connection = SelectConnection();

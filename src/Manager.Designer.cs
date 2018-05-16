@@ -43,6 +43,7 @@
             this.سجلالمبيعاتToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.فتحToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.حذفToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.منتهىالصلاحيهToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.مساعدهToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.عنالبرنامجToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -71,7 +72,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.SearchB = new System.Windows.Forms.Button();
             this.SearchT = new System.Windows.Forms.TextBox();
-            this.منتهىالصلاحيهToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -185,12 +185,21 @@
             this.فتحToolStripMenuItem1.Name = "فتحToolStripMenuItem1";
             this.فتحToolStripMenuItem1.Size = new System.Drawing.Size(152, 24);
             this.فتحToolStripMenuItem1.Text = "فتح";
+            this.فتحToolStripMenuItem1.Click += new System.EventHandler(this.فتحToolStripMenuItem1_Click);
             // 
             // حذفToolStripMenuItem1
             // 
             this.حذفToolStripMenuItem1.Name = "حذفToolStripMenuItem1";
             this.حذفToolStripMenuItem1.Size = new System.Drawing.Size(152, 24);
             this.حذفToolStripMenuItem1.Text = "حذف";
+            this.حذفToolStripMenuItem1.Click += new System.EventHandler(this.حذفToolStripMenuItem1_Click);
+            // 
+            // منتهىالصلاحيهToolStripMenuItem
+            // 
+            this.منتهىالصلاحيهToolStripMenuItem.Name = "منتهىالصلاحيهToolStripMenuItem";
+            this.منتهىالصلاحيهToolStripMenuItem.Size = new System.Drawing.Size(168, 24);
+            this.منتهىالصلاحيهToolStripMenuItem.Text = "منتهى الصلاحيه";
+            this.منتهىالصلاحيهToolStripMenuItem.Click += new System.EventHandler(this.منتهىالصلاحيهToolStripMenuItem_Click);
             // 
             // مساعدهToolStripMenuItem
             // 
@@ -300,6 +309,7 @@
             this.PTottal.Name = "PTottal";
             this.PTottal.Size = new System.Drawing.Size(272, 32);
             this.PTottal.TabIndex = 6;
+            this.PTottal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PTottal_KeyPress);
             // 
             // PCost
             // 
@@ -308,6 +318,7 @@
             this.PCost.Name = "PCost";
             this.PCost.Size = new System.Drawing.Size(272, 32);
             this.PCost.TabIndex = 7;
+            this.PCost.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PCost_KeyPress);
             // 
             // label8
             // 
@@ -513,13 +524,6 @@
             this.SearchT.Name = "SearchT";
             this.SearchT.Size = new System.Drawing.Size(219, 32);
             this.SearchT.TabIndex = 1;
-            // 
-            // منتهىالصلاحيهToolStripMenuItem
-            // 
-            this.منتهىالصلاحيهToolStripMenuItem.Name = "منتهىالصلاحيهToolStripMenuItem";
-            this.منتهىالصلاحيهToolStripMenuItem.Size = new System.Drawing.Size(168, 24);
-            this.منتهىالصلاحيهToolStripMenuItem.Text = "منتهى الصلاحيه";
-            this.منتهىالصلاحيهToolStripMenuItem.Click += new System.EventHandler(this.منتهىالصلاحيهToolStripMenuItem_Click);
             // 
             // Manager
             // 

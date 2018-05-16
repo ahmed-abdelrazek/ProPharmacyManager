@@ -1,9 +1,9 @@
-﻿using PharmacyPRO.Database;
+﻿using PharmacyProManager.Database;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace PharmacyPRO
+namespace PharmacyProManager
 {
     public partial class Register : Form
     {

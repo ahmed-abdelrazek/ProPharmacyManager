@@ -137,6 +137,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "تسجيل الدخول";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Login_FormClosing);
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.Login_HelpRequested);
             this.ResumeLayout(false);
             this.PerformLayout();
 
