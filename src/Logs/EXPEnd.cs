@@ -1,24 +1,14 @@
-﻿// <copyright>
-//     Copyright (C) 2013 ShababConquer Blog.
-//     This program is free software; you can redistribute it and/or modify 
-//     it under the terms of the GNU General Public License version 2 as 
-//     published by the Free Software Foundation.
-// 
-//     This program is distributed in the hope that it will be useful, but 
-//     WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY 
-//     or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License 
-//     for more details.
-// 
-//     You should have received a copy of the GNU General Public License along 
-//     with this program; if not, write to the Free Software Foundation, Inc., 
-//     51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
-// </copyright>
+﻿using PharmacyProManager.Database;
 using System;
-using System.Threading;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
 using System.Windows.Forms;
-using ProPharmacyManager.Database;
 
-namespace ProPharmacyManager
+namespace PharmacyProManager
 {
     public partial class EXPEnd : Form
     {
@@ -26,19 +16,20 @@ namespace ProPharmacyManager
         {
             InitializeComponent();
         }
-
         private void endexp()
         {
             try
             {
                 MySqlCommand cmd = new MySqlCommand(MySqlCommandType.SELECT);
-                cmd.Select("medics").Where("Expiry", Convert.ToUInt16(DateTime.Now.Month), false);
+                cmd.Select("medics").Where("Expiry", Convert.ToUInt16(DateTime.Now.Day), false);//.And("Expiry", Convert.ToUInt16(DateTime.Now.Month),true);
                 MySqlReader r = new MySqlReader(cmd);
                 while (r.Read())
                 {
-                    dataGridView1.Rows.Add(r.ReadString("Name"), r.ReadString("Expiry"), r.ReadString("Count"));
+                    EXPLog.Text += "الاسم : " + r.ReadString("Name") + "\r\n";
+                    EXPLog.Text += "الكميه الموجودة : " + r.ReadString("Count") + "\r\n";
+                    EXPLog.Text += "تاريخ انتهاء الصلاحيه : " + r.ReadString("Expiry") + "\r\n";
+                    EXPLog.Text += "--------------------------------------------------------\r\n";
                 }
-                r.Close();
             }
             catch (Exception eee)
             {
@@ -48,9 +39,7 @@ namespace ProPharmacyManager
 
         private void EXPEnd_Load(object sender, EventArgs e)
         {
-            CheckForIllegalCrossThreadCalls = false;
-            Thread th = new Thread(endexp);
-            th.Start();
+            endexp();
         }
     }
 }

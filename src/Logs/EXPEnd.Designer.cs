@@ -1,19 +1,4 @@
-﻿// <copyright>
-//     Copyright (C) 2013 ShababConquer Blog.
-//     This program is free software; you can redistribute it and/or modify 
-//     it under the terms of the GNU General Public License version 2 as 
-//     published by the Free Software Foundation.
-// 
-//     This program is distributed in the hope that it will be useful, but 
-//     WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY 
-//     or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License 
-//     for more details.
-// 
-//     You should have received a copy of the GNU General Public License along 
-//     with this program; if not, write to the Free Software Foundation, Inc., 
-//     51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
-// </copyright>
-namespace ProPharmacyManager
+﻿namespace PharmacyProManager
 {
     partial class EXPEnd
     {
@@ -44,55 +29,28 @@ namespace ProPharmacyManager
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EXPEnd));
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.pname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pexp = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pcount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.EXPLog = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // EXPLog
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.pname,
-            this.pexp,
-            this.pcount});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(581, 374);
-            this.dataGridView1.TabIndex = 1;
-            // 
-            // pname
-            // 
-            this.pname.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.pname.FillWeight = 250F;
-            this.pname.HeaderText = "اسم الدواء";
-            this.pname.MinimumWidth = 10;
-            this.pname.Name = "pname";
-            this.pname.ReadOnly = true;
-            // 
-            // pexp
-            // 
-            this.pexp.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.pexp.HeaderText = "تاريخ انتهاء الصلاحيه";
-            this.pexp.Name = "pexp";
-            this.pexp.ReadOnly = true;
-            // 
-            // pcount
-            // 
-            this.pcount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.pcount.HeaderText = "الكميه الموجودة";
-            this.pcount.Name = "pcount";
-            this.pcount.ReadOnly = true;
+            this.EXPLog.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.EXPLog.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.EXPLog.ForeColor = System.Drawing.Color.Coral;
+            this.EXPLog.Location = new System.Drawing.Point(0, 0);
+            this.EXPLog.Multiline = true;
+            this.EXPLog.Name = "EXPLog";
+            this.EXPLog.ReadOnly = true;
+            this.EXPLog.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.EXPLog.Size = new System.Drawing.Size(581, 374);
+            this.EXPLog.TabIndex = 0;
             // 
             // EXPEnd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(581, 374);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.EXPLog);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EXPEnd";
@@ -101,16 +59,13 @@ namespace ProPharmacyManager
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "الادويه منتهيه الصلاحيه";
             this.Load += new System.EventHandler(this.EXPEnd_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pname;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pexp;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pcount;
+        private System.Windows.Forms.TextBox EXPLog;
     }
 }

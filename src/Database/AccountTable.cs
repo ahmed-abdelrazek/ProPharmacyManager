@@ -2,7 +2,7 @@
 using System;
 using System.Windows.Forms;
 
-namespace PharmacyPRO.Database
+namespace PharmacyProManager.Database
 {
     public class AccountTable
     {
