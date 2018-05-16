@@ -9,11 +9,9 @@ please see http://mysqlbackupnet.codeplex.com
 
 This project uses the Impulse MySQL commands system.
 
-This project used the Resharper plugin for Visual Studio 2013.
-
 NOTE:1- You must setup a localhost (XAMPP Recommended)
 		with/or MySQl service (InnoDB enabled). 
      2- The full database will create automatically when the user run
-		the App for the first time from version 4.1 and above.
+		the program for the first time from version 4.1 and above.
 	 3- You must run the App as administrator from 
 	    ProPharmacyManager\bin\Debug\ProPharmacyManager.exe
