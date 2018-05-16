@@ -1,5 +1,9 @@
 بسم الله الرحمن الرحيم
 
+الاصدار 5.1.1
+يمكن الان الترقية من الاصدار 4 للاصدار الحالى بدون فقد فى قاعده البيانات 
+----------------------------------------------------------------------------------------------------------
+ 
 الاصدار 5.1
 اضافه وسوم تعليقات اكس ام ال لتسهيل فهم البرنامج للمطورين
 تحسين وجهه شاشه تسجيل الدخول
@@ -59,7 +63,6 @@ PharmacyProManager (PH.P.M)
 تمت عمليه البرمجة بلغه السى شارب باستخدام النت فرام ورك 3.5 و قواعد بيانات ماى سكل
 شكرا ل Thanks for
 Impluse open source Conquer Server for his MySQL commands system.(http://www.elitepvpers.com/forum/co2-pserver-guides-releases/556950-release-my-source.html)
-Resharper plugin for Visual Studio 2013.(http://www.jetbrains.com/resharper/)
 MySqlBackup.NET open source project for the backup,
 encryption and create DataBases system. (https://github.com/MySqlBackupNET/MySqlBackup.Net)
 CodeProject.com members for their helpful articles.

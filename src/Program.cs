@@ -38,12 +38,12 @@ namespace ProPharmacyManager
         private static void Main()
         {
 //uncomment to debug the app without any checks         
-//#if DEBUG
-//            Application.SetCompatibleTextRenderingDefault(false);
-//            EngineThread_Execute();
-//            Application.EnableVisualStyles();
-//            Application.Run(new Login());
-//#endif
+#if DEBUG
+            //Application.SetCompatibleTextRenderingDefault(false);
+            //EngineThread_Execute();
+            //Application.EnableVisualStyles();
+            //Application.Run(new Login());
+#endif
             WindowsIdentity identity = WindowsIdentity.GetCurrent();
             WindowsPrincipal principal = identity != null ? new WindowsPrincipal(identity) : null;
             if (principal == null || !principal.IsInRole(WindowsBuiltInRole.Administrator))

@@ -65,7 +65,7 @@ namespace ProPharmacyManager.Database
             }
         }
         /// <summary> 
-        /// create tables if their don't exist at first run
+        /// create tables if they don't exist at first run
         /// </summary> 
         public static void CreateTables()
         {
@@ -91,21 +91,21 @@ namespace ProPharmacyManager.Database
             }
         }
         /// <summary> 
-        /// upgrade tables after makes changes at them
+        /// upgrade tables after make changes to them
         /// </summary> 
         public static void UpgradeTables()
         {
-            //const string accountst = "ALTER TABLE accounts ALTER COLUMN Password text;";
-            //using (var conn = DataHolder.MySqlConnection)
-            //{
-            //    using (MySql.Data.MySqlClient.MySqlCommand cmd = new MySql.Data.MySqlClient.MySqlCommand())
-            //    {
-            //        cmd.Connection = conn;
-            //        conn.Open();
-            //        QueryExpress.ExecuteScalarStr(cmd, accountst);
-            //        conn.Close();
-            //    }
-            //}
+            const string accountst = "ALTER TABLE `accounts` CHANGE `Password` `Password` TEXT CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL; ";
+            using (var conn = DataHolder.MySqlConnection)
+            {
+                using (MySql.Data.MySqlClient.MySqlCommand cmd = new MySql.Data.MySqlClient.MySqlCommand())
+                {
+                    cmd.Connection = conn;
+                    conn.Open();
+                    QueryExpress.ExecuteScalarStr(cmd, accountst);
+                    conn.Close();
+                }
+            }
         }
     }
 }

@@ -15,7 +15,6 @@
 // </copyright>
 using System;
 using System.Diagnostics;
-using System.IO;
 using System.Windows.Forms;
 
 namespace ProPharmacyManager
@@ -29,12 +28,12 @@ namespace ProPharmacyManager
 
         private void Face_Click(object sender, EventArgs e)
         {
-            Process.Start("http://www.facebook.com/ShababConquer");
+            Process.Start("https://www.facebook.com/ShababConquerBlog/");
         }
 
         private void Twitter_Click(object sender, EventArgs e)
         {
-            Process.Start("http://www.twitter.com/ahmed_master23");
+            Process.Start("https://www.twitter.com/ahmed_master23");
         }
 
         private void Yahoo_Click(object sender, EventArgs e)
@@ -44,7 +43,7 @@ namespace ProPharmacyManager
 
         private void Blogger_Click(object sender, EventArgs e)
         {
-            Process.Start("http://www.shababco.blogspot.com/");
+            Process.Start("https://www.shababco.blogspot.com/");
         }
 
     }

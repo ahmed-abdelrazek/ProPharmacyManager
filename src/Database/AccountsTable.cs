@@ -40,6 +40,7 @@ namespace ProPharmacyManager.Database
                 MessageBox.Show(e.ToString());
             }
         }
+
         /// <summary> 
         /// login check code
         /// </summary> 

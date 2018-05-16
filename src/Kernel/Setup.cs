@@ -117,8 +117,33 @@ namespace ProPharmacyManager.Kernel
 
         private void Upgrade_Click(object sender, EventArgs e)
         {
-            CreateDB.UpgradeTables();
-            this.Close();
+            IniFile file = new IniFile(Constants.SetupConfigPath);
+            if (this.Text == "تنصيب البرنامج")
+            {
+                if (!File.Exists(Constants.SetupConfigPath))
+                {
+                    file.Write("MySql", "Host", DBHost.Text);
+                    file.Write("MySql", "Username", DBUser.Text);
+                    file.Write("MySql", "Password", DBPass.Text);
+                    file.Write("MySql", "Database", DBName.Text);
+                    file.Write("Upgrade", "Version", System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString().Replace(".", ""));
+                    if (!Directory.Exists(Application.StartupPath + @"BackUp\"))
+                    {
+                        Directory.CreateDirectory(Application.StartupPath + @"\BackUp\");
+                    }
+                    DataHolder.CreateConnection(Program.INIDecrypt(file.ReadString("MySql", "Username")), Program.INIDecrypt(file.ReadString("MySql", "Password")), Program.INIDecrypt(file.ReadString("MySql", "Host")));
+                    DataHolder.CreateConnection(Program.INIDecrypt(file.ReadString("MySql", "Username")), Program.INIDecrypt(file.ReadString("MySql", "Password")), Program.INIDecrypt(file.ReadString("MySql", "Database")), Program.INIDecrypt(file.ReadString("MySql", "Host")));
+                    CreateDB.UpgradeTables();
+                    MessageBox.Show("تم الترقية بنجاح\nمن فضلك انشاء حساب جديد لتتمكن من الدخول");
+                    Register reg = new Register();
+                    reg.ShowDialog();
+                    this.Close();
+                }
+            }
+            else if (this.Text == "اعدادات البرنامج")
+            {
+                Upgrade.Enabled = false;
+            }
         }
 
     }
