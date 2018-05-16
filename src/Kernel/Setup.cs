@@ -17,6 +17,14 @@ namespace PharmacyProManager.Kernel
             {
                 Install.Text = "اعداد";
             }
+            else
+            {
+                serial.Visible = false;
+                label8.Visible = false;
+                Exit.Location = new System.Drawing.Point(41, 318);
+                Install.Location = new System.Drawing.Point(277, 318);
+                this.Size = new System.Drawing.Size(495, 429);
+            }
             try
             {
                 IniFile file = new IniFile(str);
@@ -50,12 +58,23 @@ namespace PharmacyProManager.Kernel
             try
             {
                 IniFile file = new IniFile(str);
-                if (!File.Exists(str))
+                if (serial.Text == "")
                 {
-                    string[] lines = { "[MySql]", "Host=" + DBHost.Text, "Username=" + DBUser.Text, "Password=" + DBPass.Text, "Database=" + DBName.Text };
-                    File.WriteAllLines(str, lines);
-                    MessageBox.Show("تم تنصيب الاعدادات");
-                    this.Close();
+                    MessageBox.Show("انت لم تقوم بادخال الحروف المتسلسله");
+                }
+                else if (serial.Text == "9499-8790-0047-1128")
+                {
+                    if (!File.Exists(str))
+                    {
+                        string[] lines = { "[MySql]", "Host=" + DBHost.Text, "Username=" + DBUser.Text, "Password=" + DBPass.Text, "Database=" + DBName.Text };
+                        File.WriteAllLines(str, lines);
+                        MessageBox.Show("تم تنصيب الاعدادات");
+                        this.Close();
+                    }
+                }
+                else if (serial.Text != "9499-8790-0047-1128")
+                {
+                    MessageBox.Show("السريل خاطئ");
                 }
                 else if (File.Exists(str))
                 {

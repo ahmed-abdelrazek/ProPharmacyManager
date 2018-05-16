@@ -317,5 +317,11 @@ namespace PharmacyProManager
             Kernel.Setup set = new Kernel.Setup();
             set.ShowDialog();
         }
+
+        private void الدواءالمتوفرToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Logs.InvLog il = new Logs.InvLog();
+            il.Show();
+        }
     }
 }

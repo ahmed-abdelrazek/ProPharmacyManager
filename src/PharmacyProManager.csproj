@@ -30,8 +30,8 @@
     <SuiteName>Ahmed Mohamed Abd El-Razeq</SuiteName>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
     <AutorunEnabled>true</AutorunEnabled>
-    <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>2.1.0.0</ApplicationVersion>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>2.2.2.1</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -149,6 +149,12 @@
     </Compile>
     <Compile Include="Kernel\Constants.cs" />
     <Compile Include="Kernel\IniFile.cs" />
+    <Compile Include="Logs\InvLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logs\InvLog.Designer.cs">
+      <DependentUpon>InvLog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Logs\log.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -201,6 +207,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Logs\EXPEnd.resx">
       <DependentUpon>EXPEnd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logs\InvLog.resx">
+      <DependentUpon>InvLog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Logs\log.resx">
       <DependentUpon>log.cs</DependentUpon>

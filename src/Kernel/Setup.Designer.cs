@@ -42,6 +42,8 @@
             this.Exit = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.serial = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // DBUser
@@ -149,7 +151,7 @@
             this.Install.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Install.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
             this.Install.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Install.Location = new System.Drawing.Point(277, 315);
+            this.Install.Location = new System.Drawing.Point(277, 384);
             this.Install.Name = "Install";
             this.Install.Size = new System.Drawing.Size(150, 60);
             this.Install.TabIndex = 5;
@@ -163,7 +165,7 @@
             this.Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Exit.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
             this.Exit.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Exit.Location = new System.Drawing.Point(41, 315);
+            this.Exit.Location = new System.Drawing.Point(41, 384);
             this.Exit.Name = "Exit";
             this.Exit.Size = new System.Drawing.Size(150, 60);
             this.Exit.TabIndex = 6;
@@ -193,13 +195,36 @@
             this.label7.TabIndex = 12;
             this.label7.Text = "سوف تتسبب فى توقف البرنامج";
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
+            this.label8.ForeColor = System.Drawing.Color.Red;
+            this.label8.Location = new System.Drawing.Point(37, 321);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(62, 19);
+            this.label8.TabIndex = 14;
+            this.label8.Text = "السريل";
+            // 
+            // serial
+            // 
+            this.serial.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
+            this.serial.Location = new System.Drawing.Point(105, 318);
+            this.serial.Multiline = true;
+            this.serial.Name = "serial";
+            this.serial.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.serial.Size = new System.Drawing.Size(362, 44);
+            this.serial.TabIndex = 13;
+            // 
             // Setup
             // 
             this.AcceptButton = this.Install;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DodgerBlue;
-            this.ClientSize = new System.Drawing.Size(479, 398);
+            this.ClientSize = new System.Drawing.Size(479, 456);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.serial);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.Exit);
@@ -241,5 +266,7 @@
         private System.Windows.Forms.Button Exit;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox serial;
     }
 }

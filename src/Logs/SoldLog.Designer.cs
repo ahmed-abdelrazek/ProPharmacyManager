@@ -31,11 +31,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SoldLog));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tottal1 = new System.Windows.Forms.TextBox();
             this.Sold1 = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.Sold2 = new System.Windows.Forms.TextBox();
-            this.tottal1 = new System.Windows.Forms.TextBox();
             this.tottal2 = new System.Windows.Forms.TextBox();
+            this.Sold2 = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -65,9 +65,20 @@
             this.tabPage1.Text = "اليوم";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // tottal1
+            // 
+            this.tottal1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.tottal1.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.tottal1.Location = new System.Drawing.Point(3, 321);
+            this.tottal1.Name = "tottal1";
+            this.tottal1.ReadOnly = true;
+            this.tottal1.Size = new System.Drawing.Size(567, 24);
+            this.tottal1.TabIndex = 1;
+            // 
             // Sold1
             // 
             this.Sold1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Sold1.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
             this.Sold1.Location = new System.Drawing.Point(3, 3);
             this.Sold1.Multiline = true;
             this.Sold1.Name = "Sold1";
@@ -87,31 +98,26 @@
             this.tabPage2.Text = "سابقا";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // tottal2
+            // 
+            this.tottal2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.tottal2.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.tottal2.Location = new System.Drawing.Point(3, 321);
+            this.tottal2.Name = "tottal2";
+            this.tottal2.ReadOnly = true;
+            this.tottal2.Size = new System.Drawing.Size(567, 24);
+            this.tottal2.TabIndex = 1;
+            // 
             // Sold2
             // 
             this.Sold2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Sold2.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
             this.Sold2.Location = new System.Drawing.Point(3, 3);
             this.Sold2.Multiline = true;
             this.Sold2.Name = "Sold2";
             this.Sold2.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.Sold2.Size = new System.Drawing.Size(567, 342);
             this.Sold2.TabIndex = 0;
-            // 
-            // tottal1
-            // 
-            this.tottal1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tottal1.Location = new System.Drawing.Point(3, 325);
-            this.tottal1.Name = "tottal1";
-            this.tottal1.Size = new System.Drawing.Size(567, 20);
-            this.tottal1.TabIndex = 1;
-            // 
-            // tottal2
-            // 
-            this.tottal2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tottal2.Location = new System.Drawing.Point(3, 325);
-            this.tottal2.Name = "tottal2";
-            this.tottal2.Size = new System.Drawing.Size(567, 20);
-            this.tottal2.TabIndex = 1;
             // 
             // SoldLog
             // 

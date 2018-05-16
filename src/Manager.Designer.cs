@@ -74,6 +74,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.SearchB = new System.Windows.Forms.Button();
             this.SearchT = new System.Windows.Forms.TextBox();
+            this.الدواءالمتوفرToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -155,7 +156,8 @@
             this.اضافهدواءجديدToolStripMenuItem,
             this.غيرمتوفرToolStripMenuItem,
             this.سجلالمبيعاتToolStripMenuItem,
-            this.منتهىالصلاحيهToolStripMenuItem});
+            this.منتهىالصلاحيهToolStripMenuItem,
+            this.الدواءالمتوفرToolStripMenuItem});
             this.المخزنToolStripMenuItem.Name = "المخزنToolStripMenuItem";
             this.المخزنToolStripMenuItem.Size = new System.Drawing.Size(62, 23);
             this.المخزنToolStripMenuItem.Text = "المخزن";
@@ -543,8 +545,16 @@
             this.SearchT.Size = new System.Drawing.Size(219, 32);
             this.SearchT.TabIndex = 1;
             // 
+            // الدواءالمتوفرToolStripMenuItem
+            // 
+            this.الدواءالمتوفرToolStripMenuItem.Name = "الدواءالمتوفرToolStripMenuItem";
+            this.الدواءالمتوفرToolStripMenuItem.Size = new System.Drawing.Size(168, 24);
+            this.الدواءالمتوفرToolStripMenuItem.Text = "الدواء المتوفر";
+            this.الدواءالمتوفرToolStripMenuItem.Click += new System.EventHandler(this.الدواءالمتوفرToolStripMenuItem_Click);
+            // 
             // Manager
             // 
+            this.AcceptButton = this.SearchB;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
@@ -557,6 +567,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
             this.Name = "Manager";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
@@ -623,5 +634,6 @@
         private System.Windows.Forms.ToolStripMenuItem منتهىالصلاحيهToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem الاعداداتToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem قاعدهالبياناتToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem الدواءالمتوفرToolStripMenuItem;
     }
 }

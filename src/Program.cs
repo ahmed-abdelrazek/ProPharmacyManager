@@ -50,7 +50,7 @@ namespace PharmacyProManager
                 IniFile file = new IniFile(str);
                 if (!File.Exists(str))
                 {
-                    Setup set = new Setup();
+                    Kernel.Setup set = new Kernel.Setup();
                     set.Text = "تنصيب البرنامج";
                     set.ShowDialog();
                 }
