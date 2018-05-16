@@ -31,7 +31,7 @@
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
     <AutorunEnabled>true</AutorunEnabled>
     <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>1.0.0.0</ApplicationVersion>
+    <ApplicationVersion>2.0.0.0</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -129,6 +129,12 @@
     <Compile Include="Database\DataHolder.cs" />
     <Compile Include="Database\MySql\MySqlCommand.cs" />
     <Compile Include="Database\MySql\MySqlReader.cs" />
+    <Compile Include="Kernel\Setup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kernel\Setup.Designer.cs">
+      <DependentUpon>Setup.cs</DependentUpon>
+    </Compile>
     <Compile Include="Logs\countLog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -186,6 +192,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CPanal.resx">
       <DependentUpon>CPanal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kernel\Setup.resx">
+      <DependentUpon>Setup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Logs\countLog.resx">
       <DependentUpon>countLog.cs</DependentUpon>
