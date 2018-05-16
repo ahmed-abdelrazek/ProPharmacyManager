@@ -21,14 +21,14 @@ namespace PharmacyProManager
             try
             {
                 MySqlCommand cmd = new MySqlCommand(MySqlCommandType.UPDATE);
-                cmd.Update("accounts").Set("Password", NUP.Text).Where("Username", UN.Text).Execute();               
+                cmd.Update("accounts").Set("Password", NUP.Text).Where("Username", UN.Text).Execute();
                 label3.Text = "تم تغيير كلمه المرور بنجاح.";
                 label3.ForeColor = Color.Green;
                 label3.Visible = true;
-
             }
             catch (Exception ll)
             {
+
                 label3.Text = "ليس هناك حساب بهذا الاسم.";
                 label3.ForeColor = Color.Red;
                 label3.Visible = true;
@@ -37,7 +37,30 @@ namespace PharmacyProManager
         }
         public void DeleteAcc()
         {
-            new MySqlCommand(MySqlCommandType.DELETE).Delete("accounts", "Username", UN.Text).Execute();
+            try
+            {
+                new MySqlCommand(MySqlCommandType.DELETE).Delete("accounts", "Username", UN.Text).Execute();
+                label3.Text = "تم حذف الحساب بنجاح.";
+                label3.ForeColor = Color.Blue;
+                label3.Visible = true;
+            }
+            catch (Exception ad)
+            {
+                label3.Text = "ليس هناك حساب بهذا الاسم.";
+                label3.ForeColor = Color.Red;
+                label3.Visible = true;
+                MessageBox.Show(ad.ToString());
+            }
+        }
+
+        private void Change_Click(object sender, EventArgs e)
+        {
+            Changepass();
+        }
+
+        private void Delete_Click(object sender, EventArgs e)
+        {
+            DeleteAcc();
         }
     }
 }

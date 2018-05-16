@@ -16,6 +16,8 @@ namespace PharmacyProManager
         {
             InitializeComponent();
         }
+
+        byte Ptype = 0;
         private void clear()
         {
             PName.Clear();
@@ -25,6 +27,38 @@ namespace PharmacyProManager
             PCost.Clear();
             PSubS.Clear();
             Pnote.Clear();
+        }
+        private void ptype()
+        {
+            if (Ptype == 1)
+            {
+
+                PType.Text = "شرب";
+            }
+            else if (Ptype == 3)
+            {
+                
+                PType.Text = "حقن";
+            }
+            else if (Ptype == 2)
+            {
+                
+                PType.Text = "اقراص";
+            }
+            else if (Ptype == 4)
+            {
+                
+                PType.Text = "كريم/مرهم";
+            }
+            else if (Ptype == 0)
+            {
+
+                PType.Text = "اخرى";
+            }
+            else
+            {
+                PType.Text = "غير معروف";
+            }
         }
         private void CPanal_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -68,11 +102,12 @@ namespace PharmacyProManager
                 {
                     PName.Text = r.ReadString("Name");
                     PSubS.Text = r.ReadString("Substance");
-                    PType.Text = r.ReadUInt32("Type").ToString();
+                    Ptype = r.ReadByte("Type");
                     PTottal.Text = r.ReadUInt32("Count").ToString();
                     PCost.Text = r.ReadUInt32("Price").ToString();
                     PEXP.Text = r.ReadString("Expiry").ToString();
                     Pnote.Text = r.ReadString("Note");
+                    ptype();
                     FP.ForeColor = Color.Green;
                     FP.Text = "وجد الدواء";
                     FP.Visible = true;

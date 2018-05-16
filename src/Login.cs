@@ -46,14 +46,14 @@ namespace PharmacyProManager
                         Manager ma = new Manager();
                         ma.Show();
                         this.Hide();
-                        //SaveLogin();
+                        SaveLogin();
                     }
                     else if (State == AccountTable.AccountState.Employee)
                     {
                         CPanal gui = new CPanal();
                         gui.Show();
                         this.Hide();
-                        //SaveLogin();
+                        SaveLogin();
                     }
                     else
                     {

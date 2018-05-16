@@ -12,15 +12,79 @@ namespace PharmacyProManager
         {
             InitializeComponent();
         }
+        byte Ptype = 0;
+        decimal TTprice = 0; 
         private void clear()
         {
             PName.Clear();
             PEXP.Clear();
-            PType.Clear();
             PTottal.Clear();
             PCost.Clear();
             PSubS.Clear();
             Pnote.Clear();
+        }
+        private void ptype()
+        {
+            if (Ptype == 1)
+            {
+                comboBox1.Text = "شرب";
+            }
+            else if (Ptype == 3)
+            {
+                comboBox1.Text = "حقن";
+            }
+            else if (Ptype == 2)
+            {
+                comboBox1.Text = "اقراص";
+            }
+            else if (Ptype == 4)
+            {
+                comboBox1.Text = "كريم/مرهم";
+            }
+            else if (Ptype == 0)
+            {
+                comboBox1.Text = "اخرى";
+            }
+            else
+            {
+                comboBox1.Text = "غير معروف";
+            }
+        }
+        private void tp()
+        {
+            decimal Tprice = 0;
+            Tprice = Convert.ToDecimal(PCost.Text);
+            MySqlCommand cmd = new MySqlCommand(MySqlCommandType.SELECT);
+            cmd.Select("medlog").Where("Username", PName.Text);
+                MySqlReader r = new MySqlReader(cmd);
+                if (r.Read())
+                {
+                    Tprice = r.ReadUInt16("TPrice");
+                }
+                TTprice += Tprice;
+        }
+        private void Sell()
+        {
+            try
+            {
+                MySqlCommand CMD = new MySqlCommand(MySqlCommandType.INSERT);
+                CMD.Insert("medlog")
+                    .Insert("Name", PName.Text)
+                    .Insert("Count", PTottal.Text)
+                    .Insert("SellDate", DateTime.Now.Ticks.ToString())
+                    .Insert("TPrice", PCost.Text);
+            }
+            catch (Exception am)
+            {
+                MySqlCommand cmd = new MySqlCommand(MySqlCommandType.UPDATE);
+                cmd.Update("medics")
+                    .Set("Name", PName.Text)
+                .Set("Count", Convert.ToInt64(TTprice))
+                .Set("TPrice", PCost.Text)
+                    .Set("Note", Pnote.Text);
+                cmd.Where("Name", PName.Text).Execute();
+                Program.SaveException(am);
+            }
         }
         private void اضافهموظفجديدToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -76,11 +140,12 @@ namespace PharmacyProManager
                 {
                     PName.Text = r.ReadString("Name");
                     PSubS.Text = r.ReadString("Substance");
-                    PType.Text = r.ReadUInt32("Type").ToString();
+                    Ptype = r.ReadByte("Type");
                     PTottal.Text = r.ReadUInt32("Count").ToString();
                     PCost.Text = r.ReadUInt32("Price").ToString();
                     PEXP.Text = r.ReadString("Expiry").ToString();
                     Pnote.Text = r.ReadString("Note");
+                    ptype();
                     FP.ForeColor = Color.Green;
                     FP.Text = "وجد الدواء";
                     FP.Visible = true;
@@ -103,16 +168,37 @@ namespace PharmacyProManager
         {
             try
             {
+                if (comboBox1.Text == "شرب")
+                {
+                    Ptype = 1;
+                }
+                else if (comboBox1.Text == "اقراص")
+                {
+                    Ptype = 2;
+                }
+                else if (comboBox1.Text == "حقن")
+                {
+                    Ptype = 3;
+                }
+                else if (comboBox1.Text == "كريم/مرهم")
+                {
+                    Ptype = 4;
+                }
+                else if (comboBox1.Text == "اخرى")
+                {
+                    Ptype = 0;
+                }
                 MySqlCommand cmd = new MySqlCommand(MySqlCommandType.UPDATE);
                 cmd.Update("medics")
                     .Set("Name", PName.Text)
                 .Set("Substance", PSubS.Text)
-                //.Set("Expiry", PEXP.Text)
-                .Set("Type", PType.Text)
+                .Set("Expiry", PEXP.Text)
+                .Set("Type", Ptype)
                 .Set("Count", PTottal.Text)
                 .Set("Price", PCost.Text)
                     .Set("Note", Pnote.Text);
                 cmd.Where("Name", PName.Text).Execute();
+                MessageBox.Show("تم التحديث");
             }
             catch (Exception el)
             {
@@ -154,17 +240,61 @@ namespace PharmacyProManager
                 MessageBox.Show(ep.ToString());
             }
         }
+        
+        private void اضافهدواءجديدToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddMed amd = new AddMed();
+            amd.Show();
+        }
 
-        private void سجلالدخولToolStripMenuItem_Click(object sender, EventArgs e)
+        private void تغييركلمهالمرورToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ChangePass cp = new ChangePass();
+            cp.Show();
+        }
+
+        private void DelMed_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                new MySqlCommand(MySqlCommandType.DELETE).Delete("medics", "Name", PName.Text).Execute();
+                MessageBox.Show("تم حذف الدواء");
+            }
+            catch (Exception ad)
+            {
+                MessageBox.Show(ad.ToString());
+            }
+        }
+
+        private void فتحToolStripMenuItem_Click(object sender, EventArgs e)
         {
             log log = new log();
             log.Show();
         }
 
-        private void اضافهدواءجديدToolStripMenuItem_Click(object sender, EventArgs e)
+        private void حذفToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AddMed amd = new AddMed();
-            amd.Show();
+            try
+            {
+                new MySqlCommand(MySqlCommandType.CLEAR).Clear("logs").Execute();
+                MessageBox.Show("تم حذف سجل الدخول");
+            }
+            catch (Exception dl)
+            {
+                Program.SaveException(dl);
+            }
+        }
+
+        private void غيرمتوفرToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DateLog dl = new DateLog();
+            dl.Show();
+        }
+
+        private void منتهىالصلاحيهToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EXPEnd ee = new EXPEnd();
+            ee.Show();
         }
     }
 }

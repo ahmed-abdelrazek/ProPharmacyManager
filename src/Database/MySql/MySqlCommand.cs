@@ -65,6 +65,11 @@ namespace PharmacyPRO.Database
                         _command = new StringBuilder("SELECT count(<V>) FROM <R>");
                         break;
                     }
+                case MySqlCommandType.CLEAR:
+                    {
+                        _command = new StringBuilder("DELETE FROM <R>");
+                        break;
+                    }
             }
         }
         #region Select
@@ -73,13 +78,14 @@ namespace PharmacyPRO.Database
             _command = _command.Replace("<R>", "`" + table + "`");
             return this;
         }
+        #endregion
+        #region Clear
         public MySqlCommand Clear(string table)
         {
-            _command = new StringBuilder("DELETE FROM <R>");
+            _command = _command.Replace("<R>", "`" + table + "`");
             return this;
         }
         #endregion
-
         #region Count
         public MySqlCommand Count(string table)
         {
@@ -87,7 +93,6 @@ namespace PharmacyPRO.Database
             return this;
         }
         #endregion
-
         #region Delete
         public MySqlCommand Delete(string table, string column, string value)
         {
@@ -117,13 +122,6 @@ namespace PharmacyPRO.Database
             _command = _command.Replace("<V>", (value ? "1" : "0"));
             return this;
         }
-        public MySqlCommand Delete(string table, string column)
-        {
-            _command = _command.Replace("<R>", "`" + table + "`");
-            _command = _command.Replace("<C>", "`" + column + "`");
-            return this;
-        }
-
         #endregion
 
         private bool Comma()
@@ -264,6 +262,14 @@ namespace PharmacyPRO.Database
         public MySqlCommand And(string column, long value)
         {
             _command = _command.Append(" AND `" + column + "` = " + value);
+            return this;
+        }
+        public MySqlCommand And(string column, long value, bool greater)
+        {
+            if (greater)
+                _command = _command.Append("AND `" + column + "` > " + value);
+            else
+                _command = _command.Append("AND `" + column + "` < " + value);
             return this;
         }
         public MySqlCommand And(string column, ulong value)

@@ -35,17 +35,22 @@
             this.اضافهموظفجديدToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.تغييركلمهالمرورToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.سجلالدخولToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.فتحToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.حذفToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.المخزنToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.اضافهدواءجديدToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.غيرمتوفرToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.سجلالمبيعاتToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.فتحToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.حذفToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.مساعدهToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.عنالبرنامجToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.PSubS = new System.Windows.Forms.TextBox();
             this.PName = new System.Windows.Forms.TextBox();
             this.PEXP = new System.Windows.Forms.TextBox();
-            this.PType = new System.Windows.Forms.TextBox();
             this.Pnote = new System.Windows.Forms.TextBox();
             this.PTottal = new System.Windows.Forms.TextBox();
             this.PCost = new System.Windows.Forms.TextBox();
@@ -57,6 +62,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.DelMed = new System.Windows.Forms.Button();
             this.UPdateB = new System.Windows.Forms.Button();
             this.LogOutB = new System.Windows.Forms.Button();
             this.SellB = new System.Windows.Forms.Button();
@@ -65,7 +71,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.SearchB = new System.Windows.Forms.Button();
             this.SearchT = new System.Windows.Forms.TextBox();
-            this.اضافهدواءجديدToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.منتهىالصلاحيهToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -115,35 +121,76 @@
             this.تغييركلمهالمرورToolStripMenuItem.Name = "تغييركلمهالمرورToolStripMenuItem";
             this.تغييركلمهالمرورToolStripMenuItem.Size = new System.Drawing.Size(181, 24);
             this.تغييركلمهالمرورToolStripMenuItem.Text = "تغيير كلمه المرور";
+            this.تغييركلمهالمرورToolStripMenuItem.Click += new System.EventHandler(this.تغييركلمهالمرورToolStripMenuItem_Click);
             // 
             // سجلالدخولToolStripMenuItem
             // 
+            this.سجلالدخولToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.فتحToolStripMenuItem,
+            this.حذفToolStripMenuItem});
             this.سجلالدخولToolStripMenuItem.Name = "سجلالدخولToolStripMenuItem";
             this.سجلالدخولToolStripMenuItem.Size = new System.Drawing.Size(181, 24);
             this.سجلالدخولToolStripMenuItem.Text = "سجل الدخول";
-            this.سجلالدخولToolStripMenuItem.Click += new System.EventHandler(this.سجلالدخولToolStripMenuItem_Click);
+            // 
+            // فتحToolStripMenuItem
+            // 
+            this.فتحToolStripMenuItem.Name = "فتحToolStripMenuItem";
+            this.فتحToolStripMenuItem.Size = new System.Drawing.Size(106, 24);
+            this.فتحToolStripMenuItem.Text = "فتح";
+            this.فتحToolStripMenuItem.Click += new System.EventHandler(this.فتحToolStripMenuItem_Click);
+            // 
+            // حذفToolStripMenuItem
+            // 
+            this.حذفToolStripMenuItem.Name = "حذفToolStripMenuItem";
+            this.حذفToolStripMenuItem.Size = new System.Drawing.Size(106, 24);
+            this.حذفToolStripMenuItem.Text = "حذف";
+            this.حذفToolStripMenuItem.Click += new System.EventHandler(this.حذفToolStripMenuItem_Click);
             // 
             // المخزنToolStripMenuItem
             // 
             this.المخزنToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.اضافهدواءجديدToolStripMenuItem,
             this.غيرمتوفرToolStripMenuItem,
-            this.سجلالمبيعاتToolStripMenuItem});
+            this.سجلالمبيعاتToolStripMenuItem,
+            this.منتهىالصلاحيهToolStripMenuItem});
             this.المخزنToolStripMenuItem.Name = "المخزنToolStripMenuItem";
             this.المخزنToolStripMenuItem.Size = new System.Drawing.Size(62, 23);
             this.المخزنToolStripMenuItem.Text = "المخزن";
+            // 
+            // اضافهدواءجديدToolStripMenuItem
+            // 
+            this.اضافهدواءجديدToolStripMenuItem.Name = "اضافهدواءجديدToolStripMenuItem";
+            this.اضافهدواءجديدToolStripMenuItem.Size = new System.Drawing.Size(168, 24);
+            this.اضافهدواءجديدToolStripMenuItem.Text = "اضافه دواء جديد";
+            this.اضافهدواءجديدToolStripMenuItem.Click += new System.EventHandler(this.اضافهدواءجديدToolStripMenuItem_Click);
             // 
             // غيرمتوفرToolStripMenuItem
             // 
             this.غيرمتوفرToolStripMenuItem.Name = "غيرمتوفرToolStripMenuItem";
             this.غيرمتوفرToolStripMenuItem.Size = new System.Drawing.Size(168, 24);
             this.غيرمتوفرToolStripMenuItem.Text = "غير متوفر";
+            this.غيرمتوفرToolStripMenuItem.Click += new System.EventHandler(this.غيرمتوفرToolStripMenuItem_Click);
             // 
             // سجلالمبيعاتToolStripMenuItem
             // 
+            this.سجلالمبيعاتToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.فتحToolStripMenuItem1,
+            this.حذفToolStripMenuItem1});
             this.سجلالمبيعاتToolStripMenuItem.Name = "سجلالمبيعاتToolStripMenuItem";
             this.سجلالمبيعاتToolStripMenuItem.Size = new System.Drawing.Size(168, 24);
             this.سجلالمبيعاتToolStripMenuItem.Text = "سجل المبيعات";
+            // 
+            // فتحToolStripMenuItem1
+            // 
+            this.فتحToolStripMenuItem1.Name = "فتحToolStripMenuItem1";
+            this.فتحToolStripMenuItem1.Size = new System.Drawing.Size(152, 24);
+            this.فتحToolStripMenuItem1.Text = "فتح";
+            // 
+            // حذفToolStripMenuItem1
+            // 
+            this.حذفToolStripMenuItem1.Name = "حذفToolStripMenuItem1";
+            this.حذفToolStripMenuItem1.Size = new System.Drawing.Size(152, 24);
+            this.حذفToolStripMenuItem1.Text = "حذف";
             // 
             // مساعدهToolStripMenuItem
             // 
@@ -173,10 +220,10 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.DodgerBlue;
+            this.groupBox2.Controls.Add(this.comboBox1);
             this.groupBox2.Controls.Add(this.PSubS);
             this.groupBox2.Controls.Add(this.PName);
             this.groupBox2.Controls.Add(this.PEXP);
-            this.groupBox2.Controls.Add(this.PType);
             this.groupBox2.Controls.Add(this.Pnote);
             this.groupBox2.Controls.Add(this.PTottal);
             this.groupBox2.Controls.Add(this.PCost);
@@ -196,6 +243,22 @@
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "النتيجه";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Bold);
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "شرب",
+            "اقراص",
+            "حقن",
+            "كريم/مرهم",
+            "اخرى"});
+            this.comboBox1.Location = new System.Drawing.Point(6, 96);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(272, 32);
+            this.comboBox1.TabIndex = 10;
+            this.comboBox1.Text = "شرب";
             // 
             // PSubS
             // 
@@ -220,14 +283,6 @@
             this.PEXP.Name = "PEXP";
             this.PEXP.Size = new System.Drawing.Size(272, 32);
             this.PEXP.TabIndex = 4;
-            // 
-            // PType
-            // 
-            this.PType.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Bold);
-            this.PType.Location = new System.Drawing.Point(6, 96);
-            this.PType.Name = "PType";
-            this.PType.Size = new System.Drawing.Size(272, 32);
-            this.PType.TabIndex = 5;
             // 
             // Pnote
             // 
@@ -328,6 +383,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.LightSeaGreen;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.DelMed);
             this.panel1.Controls.Add(this.UPdateB);
             this.panel1.Controls.Add(this.LogOutB);
             this.panel1.Controls.Add(this.SellB);
@@ -338,6 +394,22 @@
             this.panel1.Size = new System.Drawing.Size(681, 80);
             this.panel1.TabIndex = 5;
             // 
+            // DelMed
+            // 
+            this.DelMed.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
+            this.DelMed.FlatAppearance.BorderSize = 0;
+            this.DelMed.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
+            this.DelMed.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
+            this.DelMed.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DelMed.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.DelMed.Image = global::PharmacyProManager.Properties.Resources.Delete;
+            this.DelMed.Location = new System.Drawing.Point(347, 7);
+            this.DelMed.Name = "DelMed";
+            this.DelMed.Size = new System.Drawing.Size(150, 60);
+            this.DelMed.TabIndex = 14;
+            this.DelMed.UseVisualStyleBackColor = true;
+            this.DelMed.Click += new System.EventHandler(this.DelMed_Click);
+            // 
             // UPdateB
             // 
             this.UPdateB.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
@@ -347,7 +419,7 @@
             this.UPdateB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.UPdateB.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.UPdateB.Image = global::PharmacyProManager.Properties.Resources.Update;
-            this.UPdateB.Location = new System.Drawing.Point(198, 7);
+            this.UPdateB.Location = new System.Drawing.Point(177, 7);
             this.UPdateB.Name = "UPdateB";
             this.UPdateB.Size = new System.Drawing.Size(150, 60);
             this.UPdateB.TabIndex = 11;
@@ -442,12 +514,12 @@
             this.SearchT.Size = new System.Drawing.Size(219, 32);
             this.SearchT.TabIndex = 1;
             // 
-            // اضافهدواءجديدToolStripMenuItem
+            // منتهىالصلاحيهToolStripMenuItem
             // 
-            this.اضافهدواءجديدToolStripMenuItem.Name = "اضافهدواءجديدToolStripMenuItem";
-            this.اضافهدواءجديدToolStripMenuItem.Size = new System.Drawing.Size(168, 24);
-            this.اضافهدواءجديدToolStripMenuItem.Text = "اضافه دواء جديد";
-            this.اضافهدواءجديدToolStripMenuItem.Click += new System.EventHandler(this.اضافهدواءجديدToolStripMenuItem_Click);
+            this.منتهىالصلاحيهToolStripMenuItem.Name = "منتهىالصلاحيهToolStripMenuItem";
+            this.منتهىالصلاحيهToolStripMenuItem.Size = new System.Drawing.Size(168, 24);
+            this.منتهىالصلاحيهToolStripMenuItem.Text = "منتهى الصلاحيه";
+            this.منتهىالصلاحيهToolStripMenuItem.Click += new System.EventHandler(this.منتهىالصلاحيهToolStripMenuItem_Click);
             // 
             // Manager
             // 
@@ -497,7 +569,6 @@
         private System.Windows.Forms.TextBox PSubS;
         private System.Windows.Forms.TextBox PName;
         private System.Windows.Forms.TextBox PEXP;
-        private System.Windows.Forms.TextBox PType;
         private System.Windows.Forms.TextBox Pnote;
         private System.Windows.Forms.TextBox PTottal;
         private System.Windows.Forms.TextBox PCost;
@@ -521,5 +592,12 @@
         private System.Windows.Forms.ToolStripMenuItem غيرمتوفرToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem سجلالمبيعاتToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem اضافهدواءجديدToolStripMenuItem;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button DelMed;
+        private System.Windows.Forms.ToolStripMenuItem فتحToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem حذفToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem فتحToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem حذفToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem منتهىالصلاحيهToolStripMenuItem;
     }
 }

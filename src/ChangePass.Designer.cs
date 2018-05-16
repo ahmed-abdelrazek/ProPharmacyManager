@@ -62,6 +62,7 @@
             this.Change.TabIndex = 2;
             this.Change.Text = "تغيير";
             this.Change.UseVisualStyleBackColor = true;
+            this.Change.Click += new System.EventHandler(this.Change_Click);
             // 
             // label1
             // 
@@ -99,6 +100,7 @@
             this.Delete.TabIndex = 6;
             this.Delete.Text = "حذف";
             this.Delete.UseVisualStyleBackColor = true;
+            this.Delete.Click += new System.EventHandler(this.Delete_Click);
             // 
             // label4
             // 

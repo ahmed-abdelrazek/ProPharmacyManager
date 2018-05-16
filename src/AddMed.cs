@@ -36,7 +36,7 @@ namespace PharmacyProManager
             else if (comboBox1.Text == "كريم/مرهم")
             {
                 PType = 4;
-            }           
+            }
             else if (comboBox1.Text == "اخرى")
             {
                 PType = 0;
@@ -79,14 +79,13 @@ namespace PharmacyProManager
                 label16.Text = "تم اضافه الدواء بنجاح.";
                 label16.Visible = true;
             }
-            catch(Exception am)
+            catch (Exception am)
             {
                 label16.ForeColor = Color.Red;
                 label16.Text = "الدواء موجود بالفعل.";
                 label16.Visible = true;
                 Program.SaveException(am);
             }
-
         }
     }
 }
