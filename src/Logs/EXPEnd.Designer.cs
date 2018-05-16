@@ -54,7 +54,6 @@ namespace ProPharmacyManager
             // dataGridView1
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.pname,
             this.pexp,
@@ -67,13 +66,12 @@ namespace ProPharmacyManager
             // 
             // pname
             // 
-            this.pname.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.pname.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.pname.FillWeight = 250F;
             this.pname.HeaderText = "اسم الدواء";
             this.pname.MinimumWidth = 10;
             this.pname.Name = "pname";
             this.pname.ReadOnly = true;
-            this.pname.Width = 200;
             // 
             // pexp
             // 
@@ -84,11 +82,10 @@ namespace ProPharmacyManager
             // 
             // pcount
             // 
-            this.pcount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.pcount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.pcount.HeaderText = "الكميه الموجودة";
             this.pcount.Name = "pcount";
             this.pcount.ReadOnly = true;
-            this.pcount.Width = 96;
             // 
             // EXPEnd
             // 
