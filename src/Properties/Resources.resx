@@ -146,7 +146,7 @@
     <value>..\Resources\Update.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="PH" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\PH.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\PPHM Ico.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Search" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Search.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -171,5 +171,23 @@
   </data>
   <data name="Yahoo__alt_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Yahoo! alt 2.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="خروج" xml:space="preserve">
+    <value>Exit</value>
+  </data>
+  <data name="أسم" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="المرور" xml:space="preserve">
+    <value>pass</value>
+  </data>
+  <data name="المستخدم" xml:space="preserve">
+    <value>User</value>
+  </data>
+  <data name="كلمه" xml:space="preserve">
+    <value>word</value>
+  </data>
+  <data name="مساعده" xml:space="preserve">
+    <value>Help</value>
   </data>
 </root>

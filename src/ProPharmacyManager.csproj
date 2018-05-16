@@ -7,8 +7,8 @@
     <ProjectGuid>{A773EA3B-5A2C-4EF6-B80D-744375613911}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PharmacyProManager</RootNamespace>
-    <AssemblyName>PharmacyProManager</AssemblyName>
+    <RootNamespace>ProPharmacyManager</RootNamespace>
+    <AssemblyName>ProPharmacyManager</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <IsWebBootstrapper>false</IsWebBootstrapper>
@@ -32,7 +32,7 @@
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
     <AutorunEnabled>true</AutorunEnabled>
     <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>3.0.0.0</ApplicationVersion>
+    <ApplicationVersion>4.0.0.0</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -60,7 +60,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>PHPM%281%29.ico</ApplicationIcon>
+    <ApplicationIcon>PPHM Ico.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject>
@@ -85,6 +85,8 @@
   <PropertyGroup>
     <SignAssembly>false</SignAssembly>
   </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup />
   <ItemGroup>
     <Reference Include="MySql.Data, Version=6.3.6.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -124,6 +126,8 @@
     <Compile Include="CPanal.Designer.cs">
       <DependentUpon>CPanal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Database\AccountsTable.cs" />
+    <Compile Include="Database\BillsTable.cs" />
     <Compile Include="Database\States.cs" />
     <Compile Include="Database\DataHolder.cs" />
     <Compile Include="Database\MySql\MySqlCommand.cs" />
@@ -241,7 +245,7 @@
       <DependentUpon>Manager.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -270,9 +274,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\login.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\PH.ico" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Power - Log Off.png" />
@@ -335,6 +336,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Google Blogger.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PPHM Ico.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

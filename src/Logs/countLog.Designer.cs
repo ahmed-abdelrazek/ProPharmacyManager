@@ -1,4 +1,4 @@
-﻿namespace PharmacyProManager
+﻿namespace ProPharmacyManager
 {
     partial class countLog
     {

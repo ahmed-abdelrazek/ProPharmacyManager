@@ -1,9 +1,9 @@
-﻿using PharmacyProManager.Database;
+﻿using ProPharmacyManager.Database;
 using System;
 using System.Threading;
 using System.Windows.Forms;
 
-namespace PharmacyProManager.Logs
+namespace ProPharmacyManager.Logs
 {
     public partial class BillsLogs : Form
     {
@@ -11,43 +11,11 @@ namespace PharmacyProManager.Logs
         {
             InitializeComponent();
         }
-        private void lb()
-        {
-            try
-            {
-                MySqlCommand cmd = new MySqlCommand(MySqlCommandType.SELECT).Select("bills");
-                MySqlReader r = new MySqlReader(cmd);
-                string AllSkills = "";
-                while (r.Read())
-                {
-                    AllSkills = r.ReadString("Medic");
-                    textBox1.Text += "رقم الفاتورة : " + r.ReadString("ID") + "\r\n";
-                    textBox1.Text += "الموظف : " + r.ReadString("User") + "\r\n";
-                    textBox1.Text += "المشترى : " + r.ReadString("Name") + "\r\n";
-                    textBox1.Text += "وقت البيع : " + r.ReadString("BillDate") + "\r\n";
-                    string[] skills = AllSkills.Split('#');
-                    foreach (string skill in skills)
-                    {
-                        if (skill.Length < 2)
-                            break;
-                        string[] skillInfo = skill.Split('~');
-                        textBox1.Text += "الاسم : " + Convert.ToString(skillInfo[0]) + " ";
-                        textBox1.Text += "السعر : " + Convert.ToDecimal(skillInfo[1]) + "\r\n";
-                    }
-                    textBox1.Text += "-----------------------------------------\r\n";
-                }
-                r.Close();
-            }
-            catch (Exception ee)
-            {
-                Program.SaveException(ee);
-            }
-        }
         private void nb()
         {
             try
             {
-                MySqlCommand cmd = new MySqlCommand(MySqlCommandType.SELECT).Select("bills");
+                MySqlCommand cmd = new MySqlCommand(MySqlCommandType.SELECT).Select("bills").Order("ID", true);
                 MySqlReader r = new MySqlReader(cmd);
                 while (r.Read())
                 {
@@ -65,7 +33,6 @@ namespace PharmacyProManager.Logs
             CheckForIllegalCrossThreadCalls = false;
             Thread th = new Thread(() =>
             {
-                //lb();
                 nb();
             });
             th.Start();

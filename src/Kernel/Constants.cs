@@ -1,5 +1,5 @@
 ﻿
-namespace PharmacyProManager.Kernel
+namespace ProPharmacyManager.Kernel
 {
     public class Constants
     {

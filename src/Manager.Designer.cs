@@ -1,4 +1,4 @@
-﻿namespace PharmacyProManager
+﻿namespace ProPharmacyManager
 {
     partial class Manager
     {
@@ -127,20 +127,20 @@
             this.فواتيرToolStripMenuItem,
             this.سجلالدخولToolStripMenuItem});
             this.حساباتToolStripMenuItem.Name = "حساباتToolStripMenuItem";
-            this.حساباتToolStripMenuItem.Size = new System.Drawing.Size(64, 23);
+            this.حساباتToolStripMenuItem.Size = new System.Drawing.Size(67, 23);
             this.حساباتToolStripMenuItem.Text = "حسابات";
             // 
             // اضافهموظفجديدToolStripMenuItem
             // 
             this.اضافهموظفجديدToolStripMenuItem.Name = "اضافهموظفجديدToolStripMenuItem";
-            this.اضافهموظفجديدToolStripMenuItem.Size = new System.Drawing.Size(181, 24);
+            this.اضافهموظفجديدToolStripMenuItem.Size = new System.Drawing.Size(190, 24);
             this.اضافهموظفجديدToolStripMenuItem.Text = "اضافه موظف جديد";
             this.اضافهموظفجديدToolStripMenuItem.Click += new System.EventHandler(this.اضافهموظفجديدToolStripMenuItem_Click);
             // 
             // تغييركلمهالمرورToolStripMenuItem
             // 
             this.تغييركلمهالمرورToolStripMenuItem.Name = "تغييركلمهالمرورToolStripMenuItem";
-            this.تغييركلمهالمرورToolStripMenuItem.Size = new System.Drawing.Size(181, 24);
+            this.تغييركلمهالمرورToolStripMenuItem.Size = new System.Drawing.Size(190, 24);
             this.تغييركلمهالمرورToolStripMenuItem.Text = "تغيير كلمه المرور";
             this.تغييركلمهالمرورToolStripMenuItem.Click += new System.EventHandler(this.تغييركلمهالمرورToolStripMenuItem_Click);
             // 
@@ -150,20 +150,20 @@
             this.فتحToolStripMenuItem2,
             this.حذفToolStripMenuItem2});
             this.فواتيرToolStripMenuItem.Name = "فواتيرToolStripMenuItem";
-            this.فواتيرToolStripMenuItem.Size = new System.Drawing.Size(181, 24);
+            this.فواتيرToolStripMenuItem.Size = new System.Drawing.Size(190, 24);
             this.فواتيرToolStripMenuItem.Text = "فواتير";
             // 
             // فتحToolStripMenuItem2
             // 
             this.فتحToolStripMenuItem2.Name = "فتحToolStripMenuItem2";
-            this.فتحToolStripMenuItem2.Size = new System.Drawing.Size(106, 24);
+            this.فتحToolStripMenuItem2.Size = new System.Drawing.Size(107, 24);
             this.فتحToolStripMenuItem2.Text = "فتح";
             this.فتحToolStripMenuItem2.Click += new System.EventHandler(this.فتحToolStripMenuItem2_Click);
             // 
             // حذفToolStripMenuItem2
             // 
             this.حذفToolStripMenuItem2.Name = "حذفToolStripMenuItem2";
-            this.حذفToolStripMenuItem2.Size = new System.Drawing.Size(106, 24);
+            this.حذفToolStripMenuItem2.Size = new System.Drawing.Size(107, 24);
             this.حذفToolStripMenuItem2.Text = "حذف";
             this.حذفToolStripMenuItem2.Click += new System.EventHandler(this.حذفToolStripMenuItem2_Click);
             // 
@@ -173,20 +173,20 @@
             this.فتحToolStripMenuItem,
             this.حذفToolStripMenuItem});
             this.سجلالدخولToolStripMenuItem.Name = "سجلالدخولToolStripMenuItem";
-            this.سجلالدخولToolStripMenuItem.Size = new System.Drawing.Size(181, 24);
+            this.سجلالدخولToolStripMenuItem.Size = new System.Drawing.Size(190, 24);
             this.سجلالدخولToolStripMenuItem.Text = "سجل الدخول";
             // 
             // فتحToolStripMenuItem
             // 
             this.فتحToolStripMenuItem.Name = "فتحToolStripMenuItem";
-            this.فتحToolStripMenuItem.Size = new System.Drawing.Size(106, 24);
+            this.فتحToolStripMenuItem.Size = new System.Drawing.Size(107, 24);
             this.فتحToolStripMenuItem.Text = "فتح";
             this.فتحToolStripMenuItem.Click += new System.EventHandler(this.فتحToolStripMenuItem_Click);
             // 
             // حذفToolStripMenuItem
             // 
             this.حذفToolStripMenuItem.Name = "حذفToolStripMenuItem";
-            this.حذفToolStripMenuItem.Size = new System.Drawing.Size(106, 24);
+            this.حذفToolStripMenuItem.Size = new System.Drawing.Size(107, 24);
             this.حذفToolStripMenuItem.Text = "حذف";
             this.حذفToolStripMenuItem.Click += new System.EventHandler(this.حذفToolStripMenuItem_Click);
             // 
@@ -199,20 +199,20 @@
             this.منتهىالصلاحيهToolStripMenuItem,
             this.الدواءالمتوفرToolStripMenuItem});
             this.المخزنToolStripMenuItem.Name = "المخزنToolStripMenuItem";
-            this.المخزنToolStripMenuItem.Size = new System.Drawing.Size(62, 23);
+            this.المخزنToolStripMenuItem.Size = new System.Drawing.Size(61, 23);
             this.المخزنToolStripMenuItem.Text = "المخزن";
             // 
             // اضافهدواءجديدToolStripMenuItem
             // 
             this.اضافهدواءجديدToolStripMenuItem.Name = "اضافهدواءجديدToolStripMenuItem";
-            this.اضافهدواءجديدToolStripMenuItem.Size = new System.Drawing.Size(168, 24);
+            this.اضافهدواءجديدToolStripMenuItem.Size = new System.Drawing.Size(173, 24);
             this.اضافهدواءجديدToolStripMenuItem.Text = "اضافه دواء جديد";
             this.اضافهدواءجديدToolStripMenuItem.Click += new System.EventHandler(this.اضافهدواءجديدToolStripMenuItem_Click);
             // 
             // غيرمتوفرToolStripMenuItem
             // 
             this.غيرمتوفرToolStripMenuItem.Name = "غيرمتوفرToolStripMenuItem";
-            this.غيرمتوفرToolStripMenuItem.Size = new System.Drawing.Size(168, 24);
+            this.غيرمتوفرToolStripMenuItem.Size = new System.Drawing.Size(173, 24);
             this.غيرمتوفرToolStripMenuItem.Text = "غير متوفر";
             this.غيرمتوفرToolStripMenuItem.Click += new System.EventHandler(this.غيرمتوفرToolStripMenuItem_Click);
             // 
@@ -222,34 +222,34 @@
             this.فتحToolStripMenuItem1,
             this.حذفToolStripMenuItem1});
             this.سجلالمبيعاتToolStripMenuItem.Name = "سجلالمبيعاتToolStripMenuItem";
-            this.سجلالمبيعاتToolStripMenuItem.Size = new System.Drawing.Size(168, 24);
+            this.سجلالمبيعاتToolStripMenuItem.Size = new System.Drawing.Size(173, 24);
             this.سجلالمبيعاتToolStripMenuItem.Text = "سجل المبيعات";
             // 
             // فتحToolStripMenuItem1
             // 
             this.فتحToolStripMenuItem1.Name = "فتحToolStripMenuItem1";
-            this.فتحToolStripMenuItem1.Size = new System.Drawing.Size(106, 24);
+            this.فتحToolStripMenuItem1.Size = new System.Drawing.Size(107, 24);
             this.فتحToolStripMenuItem1.Text = "فتح";
             this.فتحToolStripMenuItem1.Click += new System.EventHandler(this.فتحToolStripMenuItem1_Click);
             // 
             // حذفToolStripMenuItem1
             // 
             this.حذفToolStripMenuItem1.Name = "حذفToolStripMenuItem1";
-            this.حذفToolStripMenuItem1.Size = new System.Drawing.Size(106, 24);
+            this.حذفToolStripMenuItem1.Size = new System.Drawing.Size(107, 24);
             this.حذفToolStripMenuItem1.Text = "حذف";
             this.حذفToolStripMenuItem1.Click += new System.EventHandler(this.حذفToolStripMenuItem1_Click);
             // 
             // منتهىالصلاحيهToolStripMenuItem
             // 
             this.منتهىالصلاحيهToolStripMenuItem.Name = "منتهىالصلاحيهToolStripMenuItem";
-            this.منتهىالصلاحيهToolStripMenuItem.Size = new System.Drawing.Size(168, 24);
+            this.منتهىالصلاحيهToolStripMenuItem.Size = new System.Drawing.Size(173, 24);
             this.منتهىالصلاحيهToolStripMenuItem.Text = "منتهى الصلاحيه";
             this.منتهىالصلاحيهToolStripMenuItem.Click += new System.EventHandler(this.منتهىالصلاحيهToolStripMenuItem_Click);
             // 
             // الدواءالمتوفرToolStripMenuItem
             // 
             this.الدواءالمتوفرToolStripMenuItem.Name = "الدواءالمتوفرToolStripMenuItem";
-            this.الدواءالمتوفرToolStripMenuItem.Size = new System.Drawing.Size(168, 24);
+            this.الدواءالمتوفرToolStripMenuItem.Size = new System.Drawing.Size(173, 24);
             this.الدواءالمتوفرToolStripMenuItem.Text = "الدواء المتوفر";
             this.الدواءالمتوفرToolStripMenuItem.Click += new System.EventHandler(this.الدواءالمتوفرToolStripMenuItem_Click);
             // 
@@ -258,13 +258,13 @@
             this.الاعداداتToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.قاعدهالبياناتToolStripMenuItem});
             this.الاعداداتToolStripMenuItem.Name = "الاعداداتToolStripMenuItem";
-            this.الاعداداتToolStripMenuItem.Size = new System.Drawing.Size(75, 23);
+            this.الاعداداتToolStripMenuItem.Size = new System.Drawing.Size(77, 23);
             this.الاعداداتToolStripMenuItem.Text = "الاعدادات";
             // 
             // قاعدهالبياناتToolStripMenuItem
             // 
             this.قاعدهالبياناتToolStripMenuItem.Name = "قاعدهالبياناتToolStripMenuItem";
-            this.قاعدهالبياناتToolStripMenuItem.Size = new System.Drawing.Size(151, 24);
+            this.قاعدهالبياناتToolStripMenuItem.Size = new System.Drawing.Size(160, 24);
             this.قاعدهالبياناتToolStripMenuItem.Text = "قاعده البيانات";
             this.قاعدهالبياناتToolStripMenuItem.Click += new System.EventHandler(this.قاعدهالبياناتToolStripMenuItem_Click);
             // 
@@ -274,27 +274,27 @@
             this.عنالبرنامجToolStripMenuItem,
             this.المساعدهToolStripMenuItem});
             this.مساعدهToolStripMenuItem.Name = "مساعدهToolStripMenuItem";
-            this.مساعدهToolStripMenuItem.Size = new System.Drawing.Size(62, 23);
+            this.مساعدهToolStripMenuItem.Size = new System.Drawing.Size(67, 23);
             this.مساعدهToolStripMenuItem.Text = "مساعده";
             // 
             // عنالبرنامجToolStripMenuItem
             // 
             this.عنالبرنامجToolStripMenuItem.Name = "عنالبرنامجToolStripMenuItem";
-            this.عنالبرنامجToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
+            this.عنالبرنامجToolStripMenuItem.Size = new System.Drawing.Size(143, 24);
             this.عنالبرنامجToolStripMenuItem.Text = "عن البرنامج";
             this.عنالبرنامجToolStripMenuItem.Click += new System.EventHandler(this.عنالبرنامجToolStripMenuItem_Click);
             // 
             // المساعدهToolStripMenuItem
             // 
             this.المساعدهToolStripMenuItem.Name = "المساعدهToolStripMenuItem";
-            this.المساعدهToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
+            this.المساعدهToolStripMenuItem.Size = new System.Drawing.Size(143, 24);
             this.المساعدهToolStripMenuItem.Text = "المساعده";
             this.المساعدهToolStripMenuItem.Click += new System.EventHandler(this.المساعدهToolStripMenuItem_Click);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = global::PharmacyProManager.Properties.Resources.cpwapp;
+            this.pictureBox1.Image = global::ProPharmacyManager.Properties.Resources.cpwapp;
             this.pictureBox1.Location = new System.Drawing.Point(0, 27);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(681, 555);
@@ -556,7 +556,7 @@
             this.DelMed.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
             this.DelMed.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DelMed.ForeColor = System.Drawing.Color.LightSeaGreen;
-            this.DelMed.Image = global::PharmacyProManager.Properties.Resources.Delete;
+            this.DelMed.Image = global::ProPharmacyManager.Properties.Resources.Delete;
             this.DelMed.Location = new System.Drawing.Point(347, 7);
             this.DelMed.Name = "DelMed";
             this.DelMed.Size = new System.Drawing.Size(150, 60);
@@ -573,7 +573,7 @@
             this.UPdateB.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
             this.UPdateB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.UPdateB.ForeColor = System.Drawing.Color.LightSeaGreen;
-            this.UPdateB.Image = global::PharmacyProManager.Properties.Resources.Update;
+            this.UPdateB.Image = global::ProPharmacyManager.Properties.Resources.Update;
             this.UPdateB.Location = new System.Drawing.Point(177, 7);
             this.UPdateB.Name = "UPdateB";
             this.UPdateB.Size = new System.Drawing.Size(150, 60);
@@ -588,7 +588,7 @@
             this.LogOutB.FlatAppearance.BorderSize = 0;
             this.LogOutB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.LogOutB.ForeColor = System.Drawing.Color.LightSeaGreen;
-            this.LogOutB.Image = global::PharmacyProManager.Properties.Resources.Power___Log_Off;
+            this.LogOutB.Image = global::ProPharmacyManager.Properties.Resources.Power___Log_Off;
             this.LogOutB.Location = new System.Drawing.Point(518, 7);
             this.LogOutB.Name = "LogOutB";
             this.LogOutB.Size = new System.Drawing.Size(150, 60);
@@ -605,7 +605,7 @@
             this.SellB.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
             this.SellB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SellB.ForeColor = System.Drawing.Color.LightSeaGreen;
-            this.SellB.Image = global::PharmacyProManager.Properties.Resources.Windows_Marketplace;
+            this.SellB.Image = global::ProPharmacyManager.Properties.Resources.Windows_Marketplace;
             this.SellB.Location = new System.Drawing.Point(11, 7);
             this.SellB.Name = "SellB";
             this.SellB.Size = new System.Drawing.Size(150, 60);
@@ -656,7 +656,7 @@
             // 
             this.SearchB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SearchB.ForeColor = System.Drawing.Color.DarkTurquoise;
-            this.SearchB.Image = global::PharmacyProManager.Properties.Resources.Search;
+            this.SearchB.Image = global::ProPharmacyManager.Properties.Resources.Search;
             this.SearchB.Location = new System.Drawing.Point(47, 131);
             this.SearchB.Name = "SearchB";
             this.SearchB.Size = new System.Drawing.Size(150, 60);
@@ -746,6 +746,7 @@
             this.Text = "ادارة الصيدليه";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Manager_FormClosing);
             this.Load += new System.EventHandler(this.Manager_Load);
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.Manager_HelpRequested);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

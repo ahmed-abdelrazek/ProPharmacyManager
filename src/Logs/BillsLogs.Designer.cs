@@ -1,4 +1,4 @@
-﻿namespace PharmacyProManager.Logs
+﻿namespace ProPharmacyManager.Logs
 {
     partial class BillsLogs
     {
@@ -46,17 +46,17 @@
             this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.textBox1.Size = new System.Drawing.Size(389, 374);
             this.textBox1.TabIndex = 0;
-            this.textBox1.Text = "ستظهر الفاتور هنا";
+            this.textBox1.Text = "ستظهر الفاتور هنا بعد اختيارها عن طريق الرقم من الجانب الايمن.";
             // 
             // listBox1
             // 
             this.listBox1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.listBox1.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
             this.listBox1.FormattingEnabled = true;
             this.listBox1.Location = new System.Drawing.Point(0, 0);
             this.listBox1.Name = "listBox1";
             this.listBox1.ScrollAlwaysVisible = true;
             this.listBox1.Size = new System.Drawing.Size(186, 374);
-            this.listBox1.Sorted = true;
             this.listBox1.TabIndex = 1;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 

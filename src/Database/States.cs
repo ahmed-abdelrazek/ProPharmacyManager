@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace PharmacyProManager.Database
+namespace ProPharmacyManager.Database
 {
     class States
     {

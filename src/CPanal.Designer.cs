@@ -1,4 +1,4 @@
-﻿namespace PharmacyProManager
+﻿namespace ProPharmacyManager
 {
     partial class CPanal
     {
@@ -91,7 +91,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = global::PharmacyProManager.Properties.Resources.BG;
+            this.pictureBox1.Image = global::ProPharmacyManager.Properties.Resources.BG;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(712, 597);
@@ -141,7 +141,7 @@
             // 
             this.SearchB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SearchB.ForeColor = System.Drawing.Color.DarkTurquoise;
-            this.SearchB.Image = global::PharmacyProManager.Properties.Resources.Search;
+            this.SearchB.Image = global::ProPharmacyManager.Properties.Resources.Search;
             this.SearchB.Location = new System.Drawing.Point(47, 131);
             this.SearchB.Name = "SearchB";
             this.SearchB.Size = new System.Drawing.Size(150, 60);
@@ -180,7 +180,7 @@
             this.UPdateB.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
             this.UPdateB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.UPdateB.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.UPdateB.Image = global::PharmacyProManager.Properties.Resources.Update;
+            this.UPdateB.Image = global::ProPharmacyManager.Properties.Resources.Update;
             this.UPdateB.Location = new System.Drawing.Point(264, 9);
             this.UPdateB.Name = "UPdateB";
             this.UPdateB.Size = new System.Drawing.Size(150, 60);
@@ -195,7 +195,7 @@
             this.LogOutB.FlatAppearance.BorderSize = 0;
             this.LogOutB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.LogOutB.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.LogOutB.Image = global::PharmacyProManager.Properties.Resources.Power___Log_Off;
+            this.LogOutB.Image = global::ProPharmacyManager.Properties.Resources.Power___Log_Off;
             this.LogOutB.Location = new System.Drawing.Point(462, 7);
             this.LogOutB.Name = "LogOutB";
             this.LogOutB.Size = new System.Drawing.Size(150, 60);
@@ -212,7 +212,7 @@
             this.SellB.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
             this.SellB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SellB.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.SellB.Image = global::PharmacyProManager.Properties.Resources.Windows_Marketplace;
+            this.SellB.Image = global::ProPharmacyManager.Properties.Resources.Windows_Marketplace;
             this.SellB.Location = new System.Drawing.Point(68, 7);
             this.SellB.Name = "SellB";
             this.SellB.Size = new System.Drawing.Size(150, 60);
@@ -280,7 +280,6 @@
             this.BillNO.Size = new System.Drawing.Size(272, 32);
             this.BillNO.TabIndex = 18;
             this.BillNO.TabStop = false;
-            this.BillNO.TextChanged += new System.EventHandler(this.BillNO_TextChanged);
             // 
             // label9
             // 
@@ -509,7 +508,7 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.tabPage1.BackgroundImage = global::PharmacyProManager.Properties.Resources.cpwapp;
+            this.tabPage1.BackgroundImage = global::ProPharmacyManager.Properties.Resources.cpwapp;
             this.tabPage1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.tabPage1.Controls.Add(this.bu);
             this.tabPage1.Controls.Add(this.label12);
@@ -536,7 +535,7 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.MediumBlue;
-            this.tabPage2.BackgroundImage = global::PharmacyProManager.Properties.Resources.cpwapp;
+            this.tabPage2.BackgroundImage = global::ProPharmacyManager.Properties.Resources.cpwapp;
             this.tabPage2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.tabPage2.Controls.Add(this.totalprice);
             this.tabPage2.Controls.Add(this.dataGridView1);
@@ -612,7 +611,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.BackgroundImage = global::PharmacyProManager.Properties.Resources.cpwapp;
+            this.BackgroundImage = global::ProPharmacyManager.Properties.Resources.cpwapp;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(712, 597);
             this.Controls.Add(this.panel1);

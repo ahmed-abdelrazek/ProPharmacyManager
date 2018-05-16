@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Text;
 
-namespace PharmacyProManager.Database
+namespace ProPharmacyManager.Database
 {
     public class MySqlCommand
     {
@@ -318,6 +318,14 @@ namespace PharmacyProManager.Database
         public MySqlCommand Order(string column)
         {
             _command = _command.Append("ORDER BY " + column + "");
+            return this;
+        }
+        public MySqlCommand Order(string column, bool Desc)
+        {
+            if (Desc)
+                _command = _command.Append("ORDER BY " + column + " DESC");
+            else
+                _command = _command.Append("ORDER BY " + column + "");
             return this;
         }
         #endregion

@@ -1,5 +1,5 @@
 ﻿
-namespace PharmacyProManager.Database
+namespace ProPharmacyManager.Database
 {
     public static class DataHolder
     {

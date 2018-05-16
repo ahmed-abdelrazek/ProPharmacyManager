@@ -1,4 +1,4 @@
-﻿namespace PharmacyProManager.Logs
+﻿namespace ProPharmacyManager.Logs
 {
     partial class InvLog
     {
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InvLog));
             this.DGV = new System.Windows.Forms.DataGridView();
             this.medicn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -107,6 +108,7 @@
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.DGV);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "InvLog";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;

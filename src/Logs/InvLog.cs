@@ -1,9 +1,9 @@
-﻿using PharmacyProManager.Database;
+﻿using ProPharmacyManager.Database;
 using System;
 using System.Threading;
 using System.Windows.Forms;
 
-namespace PharmacyProManager.Logs
+namespace ProPharmacyManager.Logs
 {
     public partial class InvLog : Form
     {

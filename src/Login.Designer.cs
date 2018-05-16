@@ -1,4 +1,4 @@
-﻿namespace PharmacyProManager
+﻿namespace ProPharmacyManager
 {
     partial class Login
     {
@@ -43,7 +43,7 @@
             // 
             this.ExitB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ExitB.ForeColor = System.Drawing.Color.ForestGreen;
-            this.ExitB.Image = global::PharmacyProManager.Properties.Resources.Power___Shut_Down;
+            this.ExitB.Image = global::ProPharmacyManager.Properties.Resources.Power___Shut_Down;
             this.ExitB.Location = new System.Drawing.Point(12, 245);
             this.ExitB.Name = "ExitB";
             this.ExitB.Size = new System.Drawing.Size(150, 60);
@@ -55,7 +55,7 @@
             // 
             this.LoginB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.LoginB.ForeColor = System.Drawing.Color.ForestGreen;
-            this.LoginB.Image = global::PharmacyProManager.Properties.Resources.login;
+            this.LoginB.Image = global::ProPharmacyManager.Properties.Resources.login;
             this.LoginB.Location = new System.Drawing.Point(226, 245);
             this.LoginB.Name = "LoginB";
             this.LoginB.Size = new System.Drawing.Size(150, 60);
@@ -165,12 +165,12 @@
 
         private System.Windows.Forms.Button ExitB;
         private System.Windows.Forms.Button LoginB;
-        private System.Windows.Forms.Label UNPW;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         public System.Windows.Forms.TextBox UP;
         public System.Windows.Forms.TextBox UN;
+        public System.Windows.Forms.Label UNPW;
     }
 }
 

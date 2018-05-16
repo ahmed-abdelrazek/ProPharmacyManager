@@ -1,4 +1,4 @@
-﻿namespace PharmacyProManager
+﻿namespace ProPharmacyManager
 {
     partial class AddMed
     {
@@ -235,7 +235,7 @@
             this.UPdateB.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
             this.UPdateB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.UPdateB.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.UPdateB.Image = global::PharmacyProManager.Properties.Resources.Save;
+            this.UPdateB.Image = global::ProPharmacyManager.Properties.Resources.Save;
             this.UPdateB.Location = new System.Drawing.Point(301, 357);
             this.UPdateB.Name = "UPdateB";
             this.UPdateB.Size = new System.Drawing.Size(150, 60);

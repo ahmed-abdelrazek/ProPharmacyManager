@@ -1,4 +1,4 @@
-﻿namespace PharmacyProManager.Logs
+﻿namespace ProPharmacyManager.Logs
 {
     partial class SoldLog
     {

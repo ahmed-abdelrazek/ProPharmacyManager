@@ -1,4 +1,4 @@
-﻿namespace PharmacyProManager.Kernel
+﻿namespace ProPharmacyManager.Kernel
 {
     partial class Setup
     {

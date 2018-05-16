@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Data;
 using MySql.Data.MySqlClient;
-using PharmacyProManager;
+using ProPharmacyManager;
 using System.Windows.Forms;
 
-namespace PharmacyProManager.Database
+namespace ProPharmacyManager.Database
 {
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1001:TypesThatOwnDisposableFieldsShouldBeDisposable")]
     public class MySqlReader

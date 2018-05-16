@@ -3,7 +3,7 @@ using System.IO;
 using System.Security.Cryptography;
 using System.Windows.Forms;
 
-namespace PharmacyProManager.Kernel
+namespace ProPharmacyManager.Kernel
 {
     public partial class Setup : Form
     {

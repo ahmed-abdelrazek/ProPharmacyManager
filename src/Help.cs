@@ -2,7 +2,7 @@
 using System.Diagnostics;
 using System.Windows.Forms;
 
-namespace PharmacyProManager
+namespace ProPharmacyManager
 {
     public partial class Help : Form
     {

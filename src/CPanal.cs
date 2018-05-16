@@ -1,18 +1,17 @@
-﻿using PharmacyProManager.Database;
+﻿using ProPharmacyManager.Database;
 using System;
 using System.Drawing;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 
-namespace PharmacyProManager
+namespace ProPharmacyManager
 {
     public partial class CPanal : Form
     {
-        public CPanal(string UserName)
+        public CPanal()
         {
             InitializeComponent();
-            label11.Text = UserName;
         }
 
         decimal ff = 0;
@@ -21,60 +20,6 @@ namespace PharmacyProManager
         decimal tt1 = 0;
         byte Ptype = 0;
 
-        private void newbill()
-        {
-            try
-            {
-                ulong nb = 0;
-                nb = Convert.ToUInt64(BillNO.Text);
-                nb = ++nb;
-                BillNO.Text = nb.ToString();
-                StringBuilder Command = new StringBuilder();
-                Command.Append(PName.Text + "~");
-                Command.Append(PCost.Text + "#");
-                MySqlCommand Cmd = new MySqlCommand(MySqlCommandType.INSERT);
-                Cmd.Insert("bills").Insert("ID", BillNO.Text).Insert("Name", Client.Text).Insert("User", label11.Text).Insert("Medic", Command.ToString()).Insert("BillDate", DateTime.Now.ToString()).Execute();
-            }
-            catch (Exception ee)
-            {
-                Program.SaveException(ee);
-            }
-        }
-        private void LoadBill()
-        {
-            try
-            {
-                MySqlCommand cmd = new MySqlCommand(MySqlCommandType.SELECT).Select("bills").Where("Name", Client.Text).And("ID", BillNO.Text);
-                MySqlReader r = new MySqlReader(cmd);
-                if (r.Read())
-                {
-                    bu.Text = r.ReadString("Medic");
-                }
-                r.Close();
-            }
-            catch (Exception ee)
-            {
-                Program.SaveException(ee);
-            }
-        }
-        private void updatebill()
-        {
-            LoadBill();
-            try
-            {
-                StringBuilder Command = new StringBuilder();
-                Command.Append(PName.Text + "~");
-                Command.Append(PCost.Text + "#");
-                bu.Text += Command;
-                MySqlCommand Cmd = new MySqlCommand(MySqlCommandType.UPDATE);
-                Cmd.Update("bills").Set("Medic", bu.Text).Where("ID", BillNO.Text).And("Name", Client.Text);
-                Cmd.Execute();
-            }
-            catch (Exception ee)
-            {
-                Program.SaveException(ee);
-            }
-        }
         private void SellMedic()
         {
             uint tottal = 0;
@@ -273,16 +218,19 @@ namespace PharmacyProManager
 
         private void SellB_Click(object sender, EventArgs e)
         {
-
+            BillsTable.Client = Client.Text;
+            BillsTable.MName = PName.Text;
+            BillsTable.MCost = Convert.ToDecimal(PCost.Text);
             if (PName.Text != "" && Client.Text != "" && NewBill.Checked)
             {
                 SellMedic();
-                newbill();
+                BillsTable.newbill();
+                BillNO.Text = BillsTable.BillNO.ToString();
             }
             else if (PName.Text != "" && Client.Text != "" && !NewBill.Checked)
             {
                 SellMedic();
-                updatebill();
+                BillsTable.updatebill();
             }
             else if (Client.Text == "")
             {
@@ -301,14 +249,8 @@ namespace PharmacyProManager
 
         private void CPanal_Load(object sender, EventArgs e)
         {
-            MySqlCommand cmd = new MySqlCommand(MySqlCommandType.SELECT);
-            cmd.Select("configuration");
-            MySqlReader r = new MySqlReader(cmd);
-            if (r.Read())
-            {
-                BillNO.Text = r.ReadUInt32("ID").ToString();
-            }
-            r.Close();
+            label11.Text = AccountsTable.UserName;
+            BillNO.Text = BillsTable.BillNO.ToString();
             CheckForIllegalCrossThreadCalls = false;
             Thread th = new Thread(() =>
             {
@@ -319,16 +261,7 @@ namespace PharmacyProManager
 
         private void BillNO_TextChanged(object sender, EventArgs e)
         {
-            try
-            {
-                MySqlCommand cmd = new MySqlCommand(MySqlCommandType.UPDATE);
-                cmd.Update("configuration")
-                    .Set("ID", BillNO.Text).Execute();
-            }
-            catch (Exception el)
-            {
-                Program.SaveException(el);
-            }
+            BillNO.Text = BillsTable.BillNO.ToString();
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace PharmacyProManager
+﻿namespace ProPharmacyManager
 {
     partial class Help
     {
@@ -41,7 +41,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::PharmacyProManager.Properties.Resources.Facebook_alt_1;
+            this.pictureBox1.Image = global::ProPharmacyManager.Properties.Resources.Facebook_alt_1;
             this.pictureBox1.Location = new System.Drawing.Point(331, 60);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(50, 50);
@@ -51,7 +51,7 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::PharmacyProManager.Properties.Resources.Twitter_alt_4;
+            this.pictureBox2.Image = global::ProPharmacyManager.Properties.Resources.Twitter_alt_4;
             this.pictureBox2.Location = new System.Drawing.Point(235, 60);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(50, 50);
@@ -61,7 +61,7 @@
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Image = global::PharmacyProManager.Properties.Resources.Yahoo__alt_2;
+            this.pictureBox3.Image = global::ProPharmacyManager.Properties.Resources.Yahoo__alt_2;
             this.pictureBox3.Location = new System.Drawing.Point(42, 60);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(50, 50);
@@ -71,7 +71,7 @@
             // 
             // pictureBox4
             // 
-            this.pictureBox4.Image = global::PharmacyProManager.Properties.Resources.Google_Blogger;
+            this.pictureBox4.Image = global::ProPharmacyManager.Properties.Resources.Google_Blogger;
             this.pictureBox4.Location = new System.Drawing.Point(140, 60);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(50, 50);

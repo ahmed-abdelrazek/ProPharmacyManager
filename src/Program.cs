@@ -1,5 +1,5 @@
-﻿using PharmacyProManager.Database;
-using PharmacyProManager.Kernel;
+﻿using ProPharmacyManager.Database;
+using ProPharmacyManager.Kernel;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -7,7 +7,7 @@ using System.IO;
 using System.Threading;
 using System.Windows.Forms;
 
-namespace PharmacyProManager
+namespace ProPharmacyManager
 {
     static class Program
     {
@@ -18,7 +18,7 @@ namespace PharmacyProManager
         static void Main()
         {
             bool createdNew = true;
-            using (new Mutex(true, "PharmacyProManager", out createdNew))
+            using (new Mutex(true, "ProPharmacyManager", out createdNew))
             {
                 if (createdNew)
                 {
@@ -56,6 +56,7 @@ namespace PharmacyProManager
                 }
                 DataHolder.CreateConnection(file.ReadString("MySql", "Username"), file.ReadString("MySql", "Password"), file.ReadString("MySql", "Database"), file.ReadString("MySql", "Host"));
                 GC.Collect();
+                BillsTable.LBN();
             }
             catch (Exception exception)
             {
