@@ -1,5 +1,4 @@
-﻿using PharmacyProManager;
-using System;
+﻿using System;
 using System.Windows.Forms;
 
 namespace PharmacyProManager.Database

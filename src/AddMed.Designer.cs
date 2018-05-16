@@ -121,9 +121,12 @@
             // Pnote
             // 
             this.Pnote.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Bold);
+            this.Pnote.ForeColor = System.Drawing.Color.Red;
             this.Pnote.Location = new System.Drawing.Point(6, 248);
+            this.Pnote.MaxLength = 500;
             this.Pnote.Multiline = true;
             this.Pnote.Name = "Pnote";
+            this.Pnote.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.Pnote.Size = new System.Drawing.Size(272, 85);
             this.Pnote.TabIndex = 7;
             // 

@@ -1,5 +1,6 @@
 ﻿using PharmacyProManager.Database;
 using System;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace PharmacyProManager.Logs
@@ -44,10 +45,15 @@ namespace PharmacyProManager.Logs
         }
         private void SoldLog_Load(object sender, EventArgs e)
         {
+            CheckForIllegalCrossThreadCalls = false;
+            Thread th = new Thread(() =>
+            {
             SL1();
             SL2();
             tottal1.Text += "الاجمالى :" + ff1;
             tottal2.Text += "الاجمالى :" + ss1;
+            });
+            th.Start();
         }
     }
 }

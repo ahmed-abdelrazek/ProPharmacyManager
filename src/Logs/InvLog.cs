@@ -1,5 +1,6 @@
 ﻿using PharmacyProManager.Database;
 using System;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace PharmacyProManager.Logs
@@ -14,7 +15,7 @@ namespace PharmacyProManager.Logs
         decimal ff1 = 0;
         decimal tt = 0;
         decimal tt1 = 0;
-        private void InvLog_Load(object sender, EventArgs e)
+        private void IL()
         {
             try
             {
@@ -36,11 +37,20 @@ namespace PharmacyProManager.Logs
 
 
                 }
-                            }
+            }
             catch (Exception ee)
             {
                 Program.SaveException(ee);
             }
+        }
+        private void InvLog_Load(object sender, EventArgs e)
+        {
+            CheckForIllegalCrossThreadCalls = false;
+            Thread th = new Thread(() =>
+            {
+            IL();
+            });
+            th.Start();
         }
     }
 }

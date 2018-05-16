@@ -135,7 +135,6 @@ namespace PharmacyProManager
             }
             catch (Exception ef)
             {
-                MessageBox.Show(ef.ToString());
                 Program.SaveException(ef);
             }
         }
@@ -178,7 +177,6 @@ namespace PharmacyProManager
             }
             catch (Exception el)
             {
-                MessageBox.Show(el.ToString());
                 Program.SaveException(el);
             }
         }
@@ -227,7 +225,7 @@ namespace PharmacyProManager
         private void تغييركلمهالمرورToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ChangePass cp = new ChangePass();
-            cp.Show();
+            cp.ShowDialog();
         }
 
         private void DelMed_Click(object sender, EventArgs e)
@@ -246,7 +244,7 @@ namespace PharmacyProManager
         private void فتحToolStripMenuItem_Click(object sender, EventArgs e)
         {
             log log = new log();
-            log.Show();
+            log.ShowDialog();
         }
 
         private void حذفToolStripMenuItem_Click(object sender, EventArgs e)
@@ -265,13 +263,13 @@ namespace PharmacyProManager
         private void غيرمتوفرToolStripMenuItem_Click(object sender, EventArgs e)
         {
             countLog dl = new countLog();
-            dl.Show();
+            dl.ShowDialog();
         }
 
         private void منتهىالصلاحيهToolStripMenuItem_Click(object sender, EventArgs e)
         {
             EXPEnd ee = new EXPEnd();
-            ee.Show();
+            ee.ShowDialog();
         }
 
         private void PTottal_KeyPress(object sender, KeyPressEventArgs e)
@@ -303,7 +301,7 @@ namespace PharmacyProManager
         private void فتحToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             Logs.SoldLog sl = new Logs.SoldLog();
-            sl.Show();
+            sl.ShowDialog();
         }
 
         private void حذفToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -321,7 +319,7 @@ namespace PharmacyProManager
         private void الدواءالمتوفرToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Logs.InvLog il = new Logs.InvLog();
-            il.Show();
+            il.ShowDialog();
         }
     }
 }

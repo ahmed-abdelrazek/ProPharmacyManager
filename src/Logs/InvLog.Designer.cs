@@ -39,6 +39,7 @@
             this.text1.Location = new System.Drawing.Point(0, 0);
             this.text1.Multiline = true;
             this.text1.Name = "text1";
+            this.text1.ReadOnly = true;
             this.text1.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.text1.Size = new System.Drawing.Size(581, 370);
             this.text1.TabIndex = 0;
@@ -47,6 +48,7 @@
             // 
             this.ttext1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.ttext1.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.ttext1.ForeColor = System.Drawing.Color.Red;
             this.ttext1.Location = new System.Drawing.Point(0, 346);
             this.ttext1.MaxLength = 0;
             this.ttext1.Name = "ttext1";

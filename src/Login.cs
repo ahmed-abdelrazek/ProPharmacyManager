@@ -18,7 +18,7 @@ namespace PharmacyProManager
             {
                 MySqlCommand cmd = new MySqlCommand(MySqlCommandType.INSERT);
                 cmd.Insert("logs")
-                    .Insert("Account", UN.Text).Insert("LoginDate", DateTime.Now.Ticks.ToString()).Execute();
+                    .Insert("Account", UN.Text).Insert("LoginDate", DateTime.Now.ToString()).Execute();
             }
             catch (Exception e)
             {

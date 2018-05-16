@@ -54,6 +54,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.NewBill = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -66,7 +67,7 @@
             this.pictureBox1.Image = global::PharmacyProManager.Properties.Resources.cpwapp;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(681, 438);
+            this.pictureBox1.Size = new System.Drawing.Size(681, 483);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -138,7 +139,7 @@
             this.panel1.Controls.Add(this.SellB);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel1.Location = new System.Drawing.Point(0, 358);
+            this.panel1.Location = new System.Drawing.Point(0, 403);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(681, 80);
             this.panel1.TabIndex = 2;
@@ -155,7 +156,7 @@
             this.UPdateB.Location = new System.Drawing.Point(264, 9);
             this.UPdateB.Name = "UPdateB";
             this.UPdateB.Size = new System.Drawing.Size(150, 60);
-            this.UPdateB.TabIndex = 5;
+            this.UPdateB.TabIndex = 6;
             this.UPdateB.UseVisualStyleBackColor = true;
             this.UPdateB.Click += new System.EventHandler(this.UPdateB_Click);
             // 
@@ -169,7 +170,7 @@
             this.LogOutB.Location = new System.Drawing.Point(462, 7);
             this.LogOutB.Name = "LogOutB";
             this.LogOutB.Size = new System.Drawing.Size(150, 60);
-            this.LogOutB.TabIndex = 6;
+            this.LogOutB.TabIndex = 7;
             this.LogOutB.UseVisualStyleBackColor = true;
             this.LogOutB.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -185,13 +186,14 @@
             this.SellB.Location = new System.Drawing.Point(68, 7);
             this.SellB.Name = "SellB";
             this.SellB.Size = new System.Drawing.Size(150, 60);
-            this.SellB.TabIndex = 4;
+            this.SellB.TabIndex = 5;
             this.SellB.UseVisualStyleBackColor = true;
             this.SellB.Click += new System.EventHandler(this.SellB_Click);
             // 
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.DodgerBlue;
+            this.groupBox2.Controls.Add(this.NewBill);
             this.groupBox2.Controls.Add(this.PSubS);
             this.groupBox2.Controls.Add(this.PName);
             this.groupBox2.Controls.Add(this.PEXP);
@@ -211,7 +213,7 @@
             this.groupBox2.ForeColor = System.Drawing.Color.Snow;
             this.groupBox2.Location = new System.Drawing.Point(253, 13);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(416, 339);
+            this.groupBox2.Size = new System.Drawing.Size(416, 384);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "النتيجه";
@@ -259,9 +261,12 @@
             // Pnote
             // 
             this.Pnote.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Bold);
+            this.Pnote.ForeColor = System.Drawing.Color.Red;
             this.Pnote.Location = new System.Drawing.Point(6, 248);
+            this.Pnote.MaxLength = 500;
             this.Pnote.Multiline = true;
             this.Pnote.Name = "Pnote";
+            this.Pnote.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.Pnote.Size = new System.Drawing.Size(272, 85);
             this.Pnote.TabIndex = 3;
             // 
@@ -355,13 +360,23 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "اسم الدواء:";
             // 
+            // NewBill
+            // 
+            this.NewBill.AutoSize = true;
+            this.NewBill.Location = new System.Drawing.Point(167, 348);
+            this.NewBill.Name = "NewBill";
+            this.NewBill.Size = new System.Drawing.Size(111, 21);
+            this.NewBill.TabIndex = 4;
+            this.NewBill.Text = "فاتورة جديدة";
+            this.NewBill.UseVisualStyleBackColor = true;
+            // 
             // CPanal
             // 
             this.AcceptButton = this.SearchB;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.ClientSize = new System.Drawing.Size(681, 438);
+            this.ClientSize = new System.Drawing.Size(681, 483);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox1);
@@ -414,5 +429,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button UPdateB;
         private System.Windows.Forms.Label FP;
+        private System.Windows.Forms.CheckBox NewBill;
     }
 }

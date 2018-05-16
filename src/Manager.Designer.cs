@@ -44,6 +44,7 @@
             this.فتحToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.حذفToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.منتهىالصلاحيهToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.الدواءالمتوفرToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.الاعداداتToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.قاعدهالبياناتToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.مساعدهToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -74,7 +75,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.SearchB = new System.Windows.Forms.Button();
             this.SearchT = new System.Windows.Forms.TextBox();
-            this.الدواءالمتوفرToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -206,6 +206,13 @@
             this.منتهىالصلاحيهToolStripMenuItem.Text = "منتهى الصلاحيه";
             this.منتهىالصلاحيهToolStripMenuItem.Click += new System.EventHandler(this.منتهىالصلاحيهToolStripMenuItem_Click);
             // 
+            // الدواءالمتوفرToolStripMenuItem
+            // 
+            this.الدواءالمتوفرToolStripMenuItem.Name = "الدواءالمتوفرToolStripMenuItem";
+            this.الدواءالمتوفرToolStripMenuItem.Size = new System.Drawing.Size(168, 24);
+            this.الدواءالمتوفرToolStripMenuItem.Text = "الدواء المتوفر";
+            this.الدواءالمتوفرToolStripMenuItem.Click += new System.EventHandler(this.الدواءالمتوفرToolStripMenuItem_Click);
+            // 
             // الاعداداتToolStripMenuItem
             // 
             this.الاعداداتToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -316,9 +323,12 @@
             // Pnote
             // 
             this.Pnote.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Bold);
+            this.Pnote.ForeColor = System.Drawing.Color.Red;
             this.Pnote.Location = new System.Drawing.Point(6, 248);
+            this.Pnote.MaxLength = 500;
             this.Pnote.Multiline = true;
             this.Pnote.Name = "Pnote";
+            this.Pnote.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.Pnote.Size = new System.Drawing.Size(272, 85);
             this.Pnote.TabIndex = 9;
             // 
@@ -544,13 +554,6 @@
             this.SearchT.Name = "SearchT";
             this.SearchT.Size = new System.Drawing.Size(219, 32);
             this.SearchT.TabIndex = 1;
-            // 
-            // الدواءالمتوفرToolStripMenuItem
-            // 
-            this.الدواءالمتوفرToolStripMenuItem.Name = "الدواءالمتوفرToolStripMenuItem";
-            this.الدواءالمتوفرToolStripMenuItem.Size = new System.Drawing.Size(168, 24);
-            this.الدواءالمتوفرToolStripMenuItem.Text = "الدواء المتوفر";
-            this.الدواءالمتوفرToolStripMenuItem.Click += new System.EventHandler(this.الدواءالمتوفرToolStripMenuItem_Click);
             // 
             // Manager
             // 

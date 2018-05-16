@@ -69,6 +69,7 @@
             // 
             this.tottal1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.tottal1.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.tottal1.ForeColor = System.Drawing.Color.Red;
             this.tottal1.Location = new System.Drawing.Point(3, 321);
             this.tottal1.Name = "tottal1";
             this.tottal1.ReadOnly = true;
@@ -82,6 +83,7 @@
             this.Sold1.Location = new System.Drawing.Point(3, 3);
             this.Sold1.Multiline = true;
             this.Sold1.Name = "Sold1";
+            this.Sold1.ReadOnly = true;
             this.Sold1.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.Sold1.Size = new System.Drawing.Size(567, 342);
             this.Sold1.TabIndex = 0;
@@ -102,6 +104,7 @@
             // 
             this.tottal2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.tottal2.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.tottal2.ForeColor = System.Drawing.Color.Blue;
             this.tottal2.Location = new System.Drawing.Point(3, 321);
             this.tottal2.Name = "tottal2";
             this.tottal2.ReadOnly = true;
@@ -115,6 +118,7 @@
             this.Sold2.Location = new System.Drawing.Point(3, 3);
             this.Sold2.Multiline = true;
             this.Sold2.Name = "Sold2";
+            this.Sold2.ReadOnly = true;
             this.Sold2.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.Sold2.Size = new System.Drawing.Size(567, 342);
             this.Sold2.TabIndex = 0;

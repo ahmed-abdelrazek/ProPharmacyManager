@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Security.Cryptography;
 using System.Windows.Forms;
 
 namespace PharmacyProManager.Kernel
@@ -13,6 +14,7 @@ namespace PharmacyProManager.Kernel
         string str = "configuration.ini";
         private void Setup_Load(object sender, EventArgs e)
         {
+            MD5.Create(serial.Text);
             if (this.Text == "تنصيب البرنامج")
             {
                 Install.Text = "اعداد";
@@ -58,11 +60,11 @@ namespace PharmacyProManager.Kernel
             try
             {
                 IniFile file = new IniFile(str);
-                if (serial.Text == "")
+                if (serial.Text == "" && this.Text == "تنصيب البرنامج")
                 {
                     MessageBox.Show("انت لم تقوم بادخال الحروف المتسلسله");
                 }
-                else if (serial.Text == "9499-8790-0047-1128")
+                else if (serial.Text == "9499-8790-0047-1128" && this.Text == "تنصيب البرنامج")
                 {
                     if (!File.Exists(str))
                     {
@@ -72,7 +74,7 @@ namespace PharmacyProManager.Kernel
                         this.Close();
                     }
                 }
-                else if (serial.Text != "9499-8790-0047-1128")
+                else if (serial.Text != "9499-8790-0047-1128" && this.Text == "تنصيب البرنامج")
                 {
                     MessageBox.Show("السريل خاطئ");
                 }
