@@ -2,6 +2,8 @@
 using System.Data;
 using MySql.Data.MySqlClient;
 using System.Windows.Forms;
+using System.IO;
+using ProPharmacyManager.Kernel;
 
 namespace ProPharmacyManager.Database
 {
@@ -70,24 +72,34 @@ namespace ProPharmacyManager.Database
             }
             using (MySql.Data.MySqlClient.MySqlConnection conn = SelectConnection())
             {
-                conn.Open();
-                DataAdapter = new MySqlDataAdapter(command.Command, connection);
-                _dataset = new DataSet();
                 try
                 {
-                    DataAdapter.Fill(_dataset, Table);
+                    conn.Open();
+                    DataAdapter = new MySqlDataAdapter(command.Command, connection);
+                    _dataset = new DataSet();
+                    try
+                    {
+                        DataAdapter.Fill(_dataset, Table);
+                    }
+                    catch (MySql.Data.MySqlClient.MySqlException e)
+                    {
+                        _lasterror = e.ToString().ToLower();
+                        _dataset = null;
+                    }
+                    catch (Exception e)
+                    {
+                        MessageBox.Show(e.ToString());
+                    }
+                    _row = 0;
+                    conn.Close();
                 }
-                catch (MySql.Data.MySqlClient.MySqlException e)
+                catch
                 {
-                    _lasterror = e.ToString().ToLower();
-                    _dataset = null;
+
+                    MessageBox.Show("هناك مشكله فى اتصالك بقاعده البيانات اعد تشغيل البرنامج لتتمكن من تعديل الاعدادات");
+                    File.Delete(Constants.SetupConfigPath);
+                    Environment.Exit(0);
                 }
-                catch (Exception e)
-                {
-                    MessageBox.Show(e.ToString());
-                }
-                _row = 0;
-                conn.Close();
             }
         }
         public bool Read()

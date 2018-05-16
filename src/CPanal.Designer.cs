@@ -50,11 +50,11 @@ namespace ProPharmacyManager
             this.SearchT = new System.Windows.Forms.ComboBox();
             this.FP = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.SearchB = new System.Windows.Forms.Button();
+            this.SearchB = new ProPharmacyManager.ImageButton();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.UPdateB = new System.Windows.Forms.Button();
-            this.LogOutB = new System.Windows.Forms.Button();
-            this.SellB = new System.Windows.Forms.Button();
+            this.UPdateB = new ProPharmacyManager.ImageButton();
+            this.LogOutB = new ProPharmacyManager.ImageButton();
+            this.SellB = new ProPharmacyManager.ImageButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.Client = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -170,9 +170,11 @@ namespace ProPharmacyManager
             // 
             // SearchB
             // 
+            this.SearchB.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.SearchB.ButtonImage = global::ProPharmacyManager.Properties.Resources.Search;
+            this.SearchB.ButtonImageOffset = new System.Drawing.Point(0, 0);
             this.SearchB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SearchB.ForeColor = System.Drawing.Color.DarkTurquoise;
-            this.SearchB.Image = global::ProPharmacyManager.Properties.Resources.Search;
             this.SearchB.Location = new System.Drawing.Point(47, 131);
             this.SearchB.Name = "SearchB";
             this.SearchB.Size = new System.Drawing.Size(150, 60);
@@ -196,13 +198,15 @@ namespace ProPharmacyManager
             // 
             // UPdateB
             // 
+            this.UPdateB.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.UPdateB.ButtonImage = global::ProPharmacyManager.Properties.Resources.Update;
+            this.UPdateB.ButtonImageOffset = new System.Drawing.Point(0, 0);
             this.UPdateB.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
             this.UPdateB.FlatAppearance.BorderSize = 0;
             this.UPdateB.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
             this.UPdateB.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
             this.UPdateB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.UPdateB.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.UPdateB.Image = global::ProPharmacyManager.Properties.Resources.Update;
             this.UPdateB.Location = new System.Drawing.Point(264, 9);
             this.UPdateB.Name = "UPdateB";
             this.UPdateB.Size = new System.Drawing.Size(150, 60);
@@ -213,11 +217,13 @@ namespace ProPharmacyManager
             // 
             // LogOutB
             // 
+            this.LogOutB.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.LogOutB.ButtonImage = global::ProPharmacyManager.Properties.Resources.Power___Log_Off;
+            this.LogOutB.ButtonImageOffset = new System.Drawing.Point(0, 0);
             this.LogOutB.FlatAppearance.BorderColor = System.Drawing.Color.DarkCyan;
             this.LogOutB.FlatAppearance.BorderSize = 0;
             this.LogOutB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.LogOutB.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.LogOutB.Image = global::ProPharmacyManager.Properties.Resources.Power___Log_Off;
             this.LogOutB.Location = new System.Drawing.Point(462, 7);
             this.LogOutB.Name = "LogOutB";
             this.LogOutB.Size = new System.Drawing.Size(150, 60);
@@ -228,13 +234,15 @@ namespace ProPharmacyManager
             // 
             // SellB
             // 
+            this.SellB.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.SellB.ButtonImage = global::ProPharmacyManager.Properties.Resources.Windows_Marketplace;
+            this.SellB.ButtonImageOffset = new System.Drawing.Point(0, 0);
             this.SellB.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
             this.SellB.FlatAppearance.BorderSize = 0;
             this.SellB.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
             this.SellB.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
             this.SellB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SellB.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.SellB.Image = global::ProPharmacyManager.Properties.Resources.Windows_Marketplace;
             this.SellB.Location = new System.Drawing.Point(68, 7);
             this.SellB.Name = "SellB";
             this.SellB.Size = new System.Drawing.Size(150, 60);
@@ -675,12 +683,12 @@ namespace ProPharmacyManager
 
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button SearchB;
+        private ImageButton SearchB;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button LogOutB;
-        private System.Windows.Forms.Button SellB;
+        private ImageButton LogOutB;
+        private ImageButton SellB;
         private System.Windows.Forms.TextBox PSubS;
         private System.Windows.Forms.TextBox PName;
         private System.Windows.Forms.TextBox PEXP;
@@ -695,7 +703,7 @@ namespace ProPharmacyManager
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button UPdateB;
+        private ImageButton UPdateB;
         private System.Windows.Forms.Label FP;
         private System.Windows.Forms.CheckBox NewBill;
         private System.Windows.Forms.ToolTip Note1;
@@ -719,10 +727,6 @@ namespace ProPharmacyManager
         private System.Windows.Forms.DataGridViewTextBoxColumn noteem;
         private System.Windows.Forms.TextBox bu;
         private System.Windows.Forms.ComboBox SearchT;
-        private decimal ff = 0;
-        private decimal ff1 = 0;
-        private decimal tt = 0;
-        private decimal tt1 = 0;
         private byte Ptype = 0;
 
         private void ptype()

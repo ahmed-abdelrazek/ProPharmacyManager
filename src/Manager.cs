@@ -20,6 +20,7 @@ using System.Windows.Forms;
 using ProPharmacyManager.Database;
 using ProPharmacyManager.Kernel;
 using ProPharmacyManager.Logs;
+using System.Diagnostics;
 
 namespace ProPharmacyManager
 {
@@ -280,6 +281,7 @@ namespace ProPharmacyManager
             try
             {
                 new MySqlCommand(MySqlCommandType.DELETE).Delete("medics", "Name", PName.Text).Execute();
+                clear();
                 MessageBox.Show("تم حذف الدواء");
             }
             catch (Exception ad)
@@ -407,7 +409,7 @@ namespace ProPharmacyManager
         private void نسخاحتياطىToolStripMenuItem_Click(object sender, EventArgs e)
         {
             BAR backrest = new BAR();
-            backrest.Show();
+            backrest.ShowDialog();
         }
 
         private void comboBox2_TextChanged(object sender, EventArgs e)
@@ -437,15 +439,20 @@ namespace ProPharmacyManager
                 this.Focus();
             }
         }
+        
+        private void Minim_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
 
-        private void Close_Click(object sender, EventArgs e)
+        private void OUT_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void Minim_Click(object sender, EventArgs e)
+        private void ماالجديدToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Minimized;
+            Process.Start("New.txt");
         }
         
     }

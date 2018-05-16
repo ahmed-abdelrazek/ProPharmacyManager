@@ -24,6 +24,8 @@ using System.Threading;
 using System.Windows.Forms;
 using ProPharmacyManager.Database;
 using ProPharmacyManager.Kernel;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace ProPharmacyManager
 {
@@ -39,8 +41,7 @@ namespace ProPharmacyManager
             WindowsPrincipal principal = identity != null ? new WindowsPrincipal(identity) : null;
             if (principal == null || !principal.IsInRole(WindowsBuiltInRole.Administrator))
             {
-                MessageBox.Show(
-                    "يجب تشغيل البرنامج كمدير, من فضلك اعد التشغيل كمدير\nThis application requires Administrator privileges.");
+                MessageBox.Show("يجب تشغيل البرنامج كمدير, من فضلك اعد التشغيل كمدير\nThis application requires Administrator privileges.");
                 return;
             }
             bool createdNew;
@@ -81,6 +82,7 @@ namespace ProPharmacyManager
             catch (Exception exception)
             {
                 MessageBox.Show(exception.ToString());
+                File.Delete(Constants.SetupConfigPath);
             }
         }
 
@@ -114,6 +116,17 @@ namespace ProPharmacyManager
                     e.StackTrace,
                     "----End of stack trace----\r\n"
                 }.ToArray());
+        }
+        public static string GetSHAHashData(string data)
+        {
+            SHA512 sha1 = SHA512.Create();
+            byte[] hashData = sha1.ComputeHash(Encoding.UTF8.GetBytes(data));
+            StringBuilder returnValue = new StringBuilder();
+            for (int i = 0; i < hashData.Length; i++)
+            {
+                returnValue.Append(hashData[i].ToString());
+            }
+            return returnValue.ToString();
         }
     }
 }

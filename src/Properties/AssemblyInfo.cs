@@ -6,7 +6,7 @@ using System.Resources;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("ProPharmacyManager")]
-[assembly: AssemblyDescription("مدير الصيدليه الاحترافى هو برنامج مفتوح المصدر تحت رخصه جينو العموميه مخصص للصيدليات الصغيرة و المتوسطه لتساعد الموظف فى الصيدليه على معرفه الادويه المتوفرة و سعرها و مكانها بسهوله و ايضا الادويه التى نفذت او انتهت صلاحياتها.\r\nللمساعده : ShababCo.blogspot.com\r\n\r\nالاسم و الشعار (اللوجو و الايقونه) علامات تجاريه غير مسجله لمدونه شباب كونكر.\r\nThe Name, Logo and Icon is unregistered trademark for .ShababConquer blog")]
+[assembly: AssemblyDescription("مدير الصيدليه الاحترافى هو برنامج مفتوح المصدر تحت رخصه جينو العموميه مخصص للصيدليات الصغيرة و المتوسطه لتساعد الموظف فى الصيدليه على معرفه الادويه المتوفرة و سعرها و مكانها بسهوله و ايضا الادويه التى نفذت او انتهت صلاحياتها.\r\nللمساعده : ShababCo.blogspot.com\r\n\r\nالاسم و الشعار (اللوجو و الايقونه) علامات تجاريه غير مسجله لمدونه شباب كونكر.\r\nThe Name, Logo and Icon is unregistered trademarks for .ShababConquer blog")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("ShababCo™")]
 [assembly: AssemblyProduct("ProPharmacyManager")]
@@ -32,6 +32,6 @@ using System.Resources;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("4.2.0.0")]
-[assembly: AssemblyFileVersion("4.2.0.0")]
+[assembly: AssemblyVersion("5.0.0.0")]
+[assembly: AssemblyFileVersion("5.0.0.0")]
 [assembly: NeutralResourcesLanguageAttribute("ar-EG")]

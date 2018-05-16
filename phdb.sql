@@ -21,7 +21,7 @@ SET FOREIGN_KEY_CHECKS=0;
 DROP TABLE IF EXISTS `accounts`;
 CREATE TABLE `accounts` (
   `Username` varchar(16) NOT NULL,
-  `Password` varchar(16) NOT NULL,
+  `Password` text NOT NULL,
   `State` tinyint(5) unsigned NOT NULL,
   `Phone` varchar(100) DEFAULT NULL,
   `LastCheck` bigint(255) unsigned DEFAULT NULL,

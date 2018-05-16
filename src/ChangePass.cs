@@ -31,7 +31,7 @@ namespace ProPharmacyManager
             try
             {
                 MySqlCommand cmd = new MySqlCommand(MySqlCommandType.UPDATE);
-                cmd.Update("accounts").Set("Password", NUP.Text).Where("Username", UN.SelectedItem.ToString()).Execute();
+                cmd.Update("accounts").Set("Password",Program.GetSHAHashData(NUP.Text)).Where("Username", UN.SelectedItem.ToString()).Execute();
                 label3.Text = "تم تغيير كلمه المرور بنجاح.";
                 label3.ForeColor = Color.Green;
                 label3.Visible = true;

@@ -91,7 +91,7 @@ namespace ProPharmacyManager
             PSubS.Clear();
             Pnote.Clear();
         }
-
+        private decimal pp = 0;
         private void IL()
         {
             try
@@ -101,15 +101,15 @@ namespace ProPharmacyManager
                 MySqlReader r = new MySqlReader(cmd);
                 while (r.Read())
                 {
+                    decimal tt, ff = 0;
                     ff = Convert.ToDecimal(r.ReadString("Price"));
                     tt = Convert.ToDecimal(r.ReadString("Count"));
-                    ff1 += ff;
-                    tt1 += tt;
-                    totalprice.Text = "اجمالى سعر الموجود :" + Convert.ToDecimal(ff1)*Convert.ToDecimal(tt1) + "جنيه";
                     dataGridView1.Rows.Add(r.ReadString("Name"), r.ReadString("Price"), r.ReadString("Expiry"),
                         r.ReadString("Count"), r.ReadString("Substance"), r.ReadString("Note"));
+                    pp += ff * tt;
                 }
                 r.Close();
+                totalprice.Text = "اجمالى سعر الموجود :" + Convert.ToDecimal(pp) + " جنيه";
             }
             catch (Exception ee)
             {

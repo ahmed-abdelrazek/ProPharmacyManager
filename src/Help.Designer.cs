@@ -44,39 +44,25 @@ namespace ProPharmacyManager
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Help));
-            this.Face = new ProPharmacyManager.ImageButton();
-            this.Twitter = new ProPharmacyManager.ImageButton();
-            this.Yahoo = new ProPharmacyManager.ImageButton();
             this.Blogger = new ProPharmacyManager.ImageButton();
+            this.Yahoo = new ProPharmacyManager.ImageButton();
+            this.Twitter = new ProPharmacyManager.ImageButton();
+            this.Face = new ProPharmacyManager.ImageButton();
             this.SuspendLayout();
             // 
-            // Face
+            // Blogger
             // 
-            this.Face.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.Face.ButtonImage = global::ProPharmacyManager.Properties.Resources.Facebook_alt_1;
-            this.Face.ButtonImageOffset = new System.Drawing.Point(0, 0);
-            this.Face.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Face.Location = new System.Drawing.Point(332, 58);
-            this.Face.Name = "Face";
-            this.Face.Size = new System.Drawing.Size(50, 50);
-            this.Face.TabIndex = 0;
-            this.Face.Text = "imageButton1";
-            this.Face.UseVisualStyleBackColor = false;
-            this.Face.Click += new System.EventHandler(this.Face_Click);
-            // 
-            // Twitter
-            // 
-            this.Twitter.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.Twitter.ButtonImage = global::ProPharmacyManager.Properties.Resources.Twitter_alt_4;
-            this.Twitter.ButtonImageOffset = new System.Drawing.Point(0, 0);
-            this.Twitter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Twitter.Location = new System.Drawing.Point(237, 58);
-            this.Twitter.Name = "Twitter";
-            this.Twitter.Size = new System.Drawing.Size(50, 50);
-            this.Twitter.TabIndex = 1;
-            this.Twitter.Text = "imageButton2";
-            this.Twitter.UseVisualStyleBackColor = false;
-            this.Twitter.Click += new System.EventHandler(this.Twitter_Click);
+            this.Blogger.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.Blogger.ButtonImage = global::ProPharmacyManager.Properties.Resources.Google_Blogger;
+            this.Blogger.ButtonImageOffset = new System.Drawing.Point(0, 0);
+            this.Blogger.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Blogger.Location = new System.Drawing.Point(45, 58);
+            this.Blogger.Name = "Blogger";
+            this.Blogger.Size = new System.Drawing.Size(50, 50);
+            this.Blogger.TabIndex = 3;
+            this.Blogger.Text = "imageButton4";
+            this.Blogger.UseVisualStyleBackColor = false;
+            this.Blogger.Click += new System.EventHandler(this.Blogger_Click);
             // 
             // Yahoo
             // 
@@ -92,19 +78,33 @@ namespace ProPharmacyManager
             this.Yahoo.UseVisualStyleBackColor = false;
             this.Yahoo.Click += new System.EventHandler(this.Yahoo_Click);
             // 
-            // Blogger
+            // Twitter
             // 
-            this.Blogger.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.Blogger.ButtonImage = global::ProPharmacyManager.Properties.Resources.Google_Blogger;
-            this.Blogger.ButtonImageOffset = new System.Drawing.Point(0, 0);
-            this.Blogger.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Blogger.Location = new System.Drawing.Point(45, 58);
-            this.Blogger.Name = "Blogger";
-            this.Blogger.Size = new System.Drawing.Size(50, 50);
-            this.Blogger.TabIndex = 3;
-            this.Blogger.Text = "imageButton4";
-            this.Blogger.UseVisualStyleBackColor = false;
-            this.Blogger.Click += new System.EventHandler(this.Blogger_Click);
+            this.Twitter.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.Twitter.ButtonImage = global::ProPharmacyManager.Properties.Resources.Twitter_alt_4;
+            this.Twitter.ButtonImageOffset = new System.Drawing.Point(0, 0);
+            this.Twitter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Twitter.Location = new System.Drawing.Point(237, 58);
+            this.Twitter.Name = "Twitter";
+            this.Twitter.Size = new System.Drawing.Size(50, 50);
+            this.Twitter.TabIndex = 1;
+            this.Twitter.Text = "imageButton2";
+            this.Twitter.UseVisualStyleBackColor = false;
+            this.Twitter.Click += new System.EventHandler(this.Twitter_Click);
+            // 
+            // Face
+            // 
+            this.Face.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.Face.ButtonImage = global::ProPharmacyManager.Properties.Resources.Facebook_alt_1;
+            this.Face.ButtonImageOffset = new System.Drawing.Point(0, 0);
+            this.Face.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Face.Location = new System.Drawing.Point(332, 58);
+            this.Face.Name = "Face";
+            this.Face.Size = new System.Drawing.Size(50, 50);
+            this.Face.TabIndex = 0;
+            this.Face.Text = "imageButton1";
+            this.Face.UseVisualStyleBackColor = false;
+            this.Face.Click += new System.EventHandler(this.Face_Click);
             // 
             // Help
             // 

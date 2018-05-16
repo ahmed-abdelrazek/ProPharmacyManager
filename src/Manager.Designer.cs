@@ -107,7 +107,8 @@ namespace ProPharmacyManager
             this.label11 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.Minim = new ProPharmacyManager.ImageButton();
-            this.Close = new ProPharmacyManager.ImageButton();
+            this.OUT = new ProPharmacyManager.ImageButton();
+            this.ماالجديدToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -129,7 +130,7 @@ namespace ProPharmacyManager
             this.مساعدهToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(2, 8);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(299, 27);
+            this.menuStrip1.Size = new System.Drawing.Size(391, 27);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -299,6 +300,7 @@ namespace ProPharmacyManager
             // مساعدهToolStripMenuItem
             // 
             this.مساعدهToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ماالجديدToolStripMenuItem,
             this.عنالبرنامجToolStripMenuItem,
             this.المساعدهToolStripMenuItem});
             this.مساعدهToolStripMenuItem.Name = "مساعدهToolStripMenuItem";
@@ -778,18 +780,24 @@ namespace ProPharmacyManager
             this.Minim.UseVisualStyleBackColor = false;
             this.Minim.Click += new System.EventHandler(this.Minim_Click);
             // 
-            // Close
+            // OUT
             // 
-            this.Close.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.Close.ButtonImage = global::ProPharmacyManager.Properties.Resources.CloseI;
-            this.Close.ButtonImageOffset = new System.Drawing.Point(0, 0);
-            this.Close.Location = new System.Drawing.Point(748, 0);
-            this.Close.Name = "Close";
-            this.Close.Size = new System.Drawing.Size(52, 40);
-            this.Close.TabIndex = 25;
-            this.Close.Text = "imageButton1";
-            this.Close.UseVisualStyleBackColor = false;
-            this.Close.Click += new System.EventHandler(this.Close_Click);
+            this.OUT.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.OUT.ButtonImage = global::ProPharmacyManager.Properties.Resources.CloseI;
+            this.OUT.ButtonImageOffset = new System.Drawing.Point(0, 0);
+            this.OUT.Location = new System.Drawing.Point(748, 0);
+            this.OUT.Name = "OUT";
+            this.OUT.Size = new System.Drawing.Size(52, 40);
+            this.OUT.TabIndex = 25;
+            this.OUT.UseVisualStyleBackColor = false;
+            this.OUT.Click += new System.EventHandler(this.OUT_Click);
+            // 
+            // ماالجديدToolStripMenuItem
+            // 
+            this.ماالجديدToolStripMenuItem.Name = "ماالجديدToolStripMenuItem";
+            this.ماالجديدToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
+            this.ماالجديدToolStripMenuItem.Text = "ما الجديد؟";
+            this.ماالجديدToolStripMenuItem.Click += new System.EventHandler(this.ماالجديدToolStripMenuItem_Click);
             // 
             // Manager
             // 
@@ -799,7 +807,7 @@ namespace ProPharmacyManager
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 600);
             this.Controls.Add(this.Minim);
-            this.Controls.Add(this.Close);
+            this.Controls.Add(this.OUT);
             this.Controls.Add(this.bu);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.flowLayoutPanel1);
@@ -898,6 +906,8 @@ namespace ProPharmacyManager
         private System.Windows.Forms.ToolStripMenuItem المساعدهToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem نسخاحتياطىToolStripMenuItem;
         private System.Windows.Forms.ComboBox SearchT;
+        private ImageButton OUT;
+        private ImageButton Minim;
         private byte Ptype = 0;
 
         private void ptype()
@@ -925,7 +935,6 @@ namespace ProPharmacyManager
             }
         }
 
-        private ImageButton Close;
-        private ImageButton Minim;
+        private System.Windows.Forms.ToolStripMenuItem ماالجديدToolStripMenuItem;
     }
 }

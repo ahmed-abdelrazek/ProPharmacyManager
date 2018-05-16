@@ -83,30 +83,30 @@ namespace ProPharmacyManager.Kernel
         }
         private void BackUpB_Click(object sender, EventArgs e)
         {
-            //if (EncryptionKey.Text != "")
-            //{
+            if (EncryptionKey.Text != "")
+            {
                 CheckForIllegalCrossThreadCalls = false;
                 Thread th2 = new Thread(() => BackUp.Backup(EncryptionKey.Text));
                 th2.Start();
-            //}
-            //else
-            //{
-               // MessageBox.Show("اختر مفتاح تشفير بالانجلزيه و احفظه جيدا لانك ستحتاجه فى كل مرة تحفظ او تسترجع نسخة احتياطيه");
-            //}
+            }
+            else
+            {
+                MessageBox.Show("اختر مفتاح تشفير بالانجلزيه و احفظه جيدا لانك ستحتاجه فى كل مرة تحفظ او تسترجع نسخة احتياطيه");
+            }
             Reload();
         }
         private void RestoreB_Click(object sender, EventArgs e)
         {
-            //if (EncryptionKey.Text != "")
-            //{
+            if (EncryptionKey.Text != "")
+            {
                 CheckForIllegalCrossThreadCalls = false;
                 Thread th2 = new Thread(() => BackUp.Restore(BPath.Text + BackUpList.SelectedItem, EncryptionKey.Text));
                 th2.Start();
-            //}
-            //else
-            //{
-                //MessageBox.Show("اختر مفتاح تشفير بالانجلزيه و احفظه جيدا لانك ستحتاجه فى كل مرة تحفظ او تسترجع نسخة احتياطيه");
-            //}
+            }
+            else
+            {
+                MessageBox.Show("اختر مفتاح تشفير بالانجلزيه و احفظه جيدا لانك ستحتاجه فى كل مرة تحفظ او تسترجع نسخة احتياطيه");
+            }
         }
 
     }

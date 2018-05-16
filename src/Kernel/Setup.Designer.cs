@@ -57,8 +57,6 @@ namespace ProPharmacyManager.Kernel
             this.Exit = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.serial = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // DBUser
@@ -166,13 +164,13 @@ namespace ProPharmacyManager.Kernel
             this.Install.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Install.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
             this.Install.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Install.Location = new System.Drawing.Point(317, 384);
+            this.Install.Location = new System.Drawing.Point(317, 319);
             this.Install.Name = "Install";
             this.Install.Size = new System.Drawing.Size(150, 60);
             this.Install.TabIndex = 5;
             this.Install.Text = "حفظ";
             this.Install.UseVisualStyleBackColor = false;
-            this.Install.Click += new System.EventHandler(this.button1_Click);
+            this.Install.Click += new System.EventHandler(this.Install_Click);
             // 
             // Exit
             // 
@@ -180,13 +178,13 @@ namespace ProPharmacyManager.Kernel
             this.Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Exit.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
             this.Exit.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Exit.Location = new System.Drawing.Point(41, 384);
+            this.Exit.Location = new System.Drawing.Point(41, 319);
             this.Exit.Name = "Exit";
             this.Exit.Size = new System.Drawing.Size(150, 60);
             this.Exit.TabIndex = 6;
             this.Exit.Text = "خروج";
             this.Exit.UseVisualStyleBackColor = false;
-            this.Exit.Click += new System.EventHandler(this.button2_Click);
+            this.Exit.Click += new System.EventHandler(this.Exit_Click);
             // 
             // label6
             // 
@@ -210,36 +208,13 @@ namespace ProPharmacyManager.Kernel
             this.label7.TabIndex = 12;
             this.label7.Text = "سوف تتسبب فى توقف البرنامج";
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
-            this.label8.ForeColor = System.Drawing.Color.Red;
-            this.label8.Location = new System.Drawing.Point(37, 327);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(62, 19);
-            this.label8.TabIndex = 14;
-            this.label8.Text = "السريل";
-            // 
-            // serial
-            // 
-            this.serial.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
-            this.serial.Location = new System.Drawing.Point(105, 324);
-            this.serial.Multiline = true;
-            this.serial.Name = "serial";
-            this.serial.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.serial.Size = new System.Drawing.Size(362, 41);
-            this.serial.TabIndex = 13;
-            // 
             // Setup
             // 
             this.AcceptButton = this.Install;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DodgerBlue;
-            this.ClientSize = new System.Drawing.Size(479, 456);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.serial);
+            this.ClientSize = new System.Drawing.Size(479, 388);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.Exit);
@@ -255,6 +230,7 @@ namespace ProPharmacyManager.Kernel
             this.Controls.Add(this.DBUser);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Setup";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
@@ -281,7 +257,5 @@ namespace ProPharmacyManager.Kernel
         private System.Windows.Forms.Button Exit;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox serial;
     }
 }

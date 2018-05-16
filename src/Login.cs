@@ -26,8 +26,6 @@ namespace ProPharmacyManager
         {
             InitializeComponent();
         }
-
-
         private void Login_FormClosing(object sender, FormClosingEventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show("هل انت متاكد؟", "الخروج", MessageBoxButtons.YesNo);
@@ -61,7 +59,7 @@ namespace ProPharmacyManager
             else
             {
                 AccountsTable.UserName = UN.Text;
-                AccountsTable.UserPassword = UP.Text;
+                AccountsTable.UserPassword = Program.GetSHAHashData(UP.Text);
                 if (AccountsTable.UserLogin())
                 {
                     this.Hide();

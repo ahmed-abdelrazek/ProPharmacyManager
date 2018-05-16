@@ -46,6 +46,10 @@ namespace ProPharmacyManager.Kernel
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BAR));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Exit = new ProPharmacyManager.ImageButton();
+            this.DeleteBackUpB = new ProPharmacyManager.ImageButton();
+            this.RestoreB = new ProPharmacyManager.ImageButton();
+            this.BackUpB = new ProPharmacyManager.ImageButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.EncryptionKey = new System.Windows.Forms.TextBox();
@@ -54,10 +58,6 @@ namespace ProPharmacyManager.Kernel
             this.BPath = new System.Windows.Forms.TextBox();
             this.BackUpList = new System.Windows.Forms.ListBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.Exit = new ProPharmacyManager.ImageButton();
-            this.DeleteBackUpB = new ProPharmacyManager.ImageButton();
-            this.RestoreB = new ProPharmacyManager.ImageButton();
-            this.BackUpB = new ProPharmacyManager.ImageButton();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -74,92 +74,6 @@ namespace ProPharmacyManager.Kernel
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(774, 78);
             this.panel1.TabIndex = 0;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.EncryptionKey);
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.BBrowser);
-            this.panel2.Controls.Add(this.BPath);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(774, 106);
-            this.panel2.TabIndex = 1;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
-            this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(559, 66);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(107, 17);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "مفتاح التشفير*";
-            this.toolTip1.SetToolTip(this.label2, "كلمه سر لتشفير النسخ الاحتياطيه لعدم تمكين الغير من العبث بها");
-            this.label2.Visible = false;
-            // 
-            // EncryptionKey
-            // 
-            this.EncryptionKey.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
-            this.EncryptionKey.Location = new System.Drawing.Point(208, 60);
-            this.EncryptionKey.Name = "EncryptionKey";
-            this.EncryptionKey.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.EncryptionKey.Size = new System.Drawing.Size(346, 27);
-            this.EncryptionKey.TabIndex = 3;
-            this.EncryptionKey.Tag = "";
-            this.toolTip1.SetToolTip(this.EncryptionKey, "احرف انكليزيه فقط");
-            this.EncryptionKey.Visible = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(669, 27);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(85, 17);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "مكان النسخ";
-            // 
-            // BBrowser
-            // 
-            this.BBrowser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BBrowser.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
-            this.BBrowser.ForeColor = System.Drawing.Color.White;
-            this.BBrowser.Location = new System.Drawing.Point(12, 22);
-            this.BBrowser.Name = "BBrowser";
-            this.BBrowser.Size = new System.Drawing.Size(79, 27);
-            this.BBrowser.TabIndex = 1;
-            this.BBrowser.Text = "استعرض";
-            this.toolTip1.SetToolTip(this.BBrowser, "لاستعراض النسخ الاحتياطيه فى المجلد حتى يمكنك تعدلها نقلها ..الخ");
-            this.BBrowser.UseVisualStyleBackColor = true;
-            this.BBrowser.Click += new System.EventHandler(this.BBrowser_Click);
-            // 
-            // BPath
-            // 
-            this.BPath.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
-            this.BPath.Location = new System.Drawing.Point(97, 22);
-            this.BPath.Name = "BPath";
-            this.BPath.ReadOnly = true;
-            this.BPath.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.BPath.Size = new System.Drawing.Size(566, 27);
-            this.BPath.TabIndex = 0;
-            this.toolTip1.SetToolTip(this.BPath, "مكان النسخ الاحتياطيه");
-            // 
-            // BackUpList
-            // 
-            this.BackUpList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BackUpList.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
-            this.BackUpList.FormattingEnabled = true;
-            this.BackUpList.ItemHeight = 19;
-            this.BackUpList.Location = new System.Drawing.Point(0, 106);
-            this.BackUpList.Name = "BackUpList";
-            this.BackUpList.Size = new System.Drawing.Size(774, 267);
-            this.BackUpList.TabIndex = 2;
             // 
             // Exit
             // 
@@ -220,6 +134,90 @@ namespace ProPharmacyManager.Kernel
             this.toolTip1.SetToolTip(this.BackUpB, "لاخذ نسخة احتياطيه من قاعدة البيانات");
             this.BackUpB.UseVisualStyleBackColor = true;
             this.BackUpB.Click += new System.EventHandler(this.BackUpB_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.EncryptionKey);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.BBrowser);
+            this.panel2.Controls.Add(this.BPath);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(774, 106);
+            this.panel2.TabIndex = 1;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.label2.ForeColor = System.Drawing.Color.Red;
+            this.label2.Location = new System.Drawing.Point(559, 66);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(107, 17);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "مفتاح التشفير*";
+            this.toolTip1.SetToolTip(this.label2, "كلمه سر لتشفير النسخ الاحتياطيه لعدم تمكين الغير من العبث بها");
+            // 
+            // EncryptionKey
+            // 
+            this.EncryptionKey.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
+            this.EncryptionKey.Location = new System.Drawing.Point(208, 60);
+            this.EncryptionKey.Name = "EncryptionKey";
+            this.EncryptionKey.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.EncryptionKey.Size = new System.Drawing.Size(346, 27);
+            this.EncryptionKey.TabIndex = 3;
+            this.EncryptionKey.Tag = "";
+            this.toolTip1.SetToolTip(this.EncryptionKey, "احرف انكليزيه فقط");
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(669, 27);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(85, 17);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "مكان النسخ";
+            // 
+            // BBrowser
+            // 
+            this.BBrowser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BBrowser.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.BBrowser.ForeColor = System.Drawing.Color.White;
+            this.BBrowser.Location = new System.Drawing.Point(12, 22);
+            this.BBrowser.Name = "BBrowser";
+            this.BBrowser.Size = new System.Drawing.Size(79, 27);
+            this.BBrowser.TabIndex = 1;
+            this.BBrowser.Text = "استعرض";
+            this.toolTip1.SetToolTip(this.BBrowser, "لاستعراض النسخ الاحتياطيه فى المجلد حتى يمكنك تعدلها نقلها ..الخ");
+            this.BBrowser.UseVisualStyleBackColor = true;
+            this.BBrowser.Click += new System.EventHandler(this.BBrowser_Click);
+            // 
+            // BPath
+            // 
+            this.BPath.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
+            this.BPath.Location = new System.Drawing.Point(97, 22);
+            this.BPath.Name = "BPath";
+            this.BPath.ReadOnly = true;
+            this.BPath.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.BPath.Size = new System.Drawing.Size(566, 27);
+            this.BPath.TabIndex = 0;
+            this.toolTip1.SetToolTip(this.BPath, "مكان النسخ الاحتياطيه");
+            // 
+            // BackUpList
+            // 
+            this.BackUpList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BackUpList.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
+            this.BackUpList.FormattingEnabled = true;
+            this.BackUpList.ItemHeight = 19;
+            this.BackUpList.Location = new System.Drawing.Point(0, 106);
+            this.BackUpList.Name = "BackUpList";
+            this.BackUpList.Size = new System.Drawing.Size(774, 267);
+            this.BackUpList.TabIndex = 2;
             // 
             // BAR
             // 

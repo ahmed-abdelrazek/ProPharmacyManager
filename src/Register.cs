@@ -66,7 +66,9 @@ namespace ProPharmacyManager
             try
             {
                 MySqlCommand cmd = new MySqlCommand(MySqlCommandType.INSERT);
-                cmd.Insert("accounts").Insert("Username", textBox10.Text).Insert("Password", textBox9.Text).Insert("Phone", textBox1.Text).Insert("State", state).Execute();
+                cmd.Insert("accounts").Insert("Username", textBox10.Text).Insert("Password", Program.GetSHAHashData(textBox9.Text)).Insert("Phone", textBox1.Text).Insert("State", state).Execute();
+                label16.ForeColor = Color.Green;
+                label16.Text = ".تم اضافه المستخدم بنجاح";
                 label16.Visible = true;
             }
             catch

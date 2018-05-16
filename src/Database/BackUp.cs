@@ -42,8 +42,8 @@ namespace ProPharmacyManager.Database
                         }
                         cmd.Connection = conn;
                         conn.Open();
-                        //mb.ExportInfo.EnableEncryption = true;
-                        //mb.ExportInfo.EncryptionPassword = EnK;
+                        mb.ExportInfo.EnableEncryption = true;
+                        mb.ExportInfo.EncryptionPassword = EnK;
                         mb.ExportToFile(file);
                         conn.Close();
                     }
@@ -77,8 +77,8 @@ namespace ProPharmacyManager.Database
                         }
                         cmd.Connection = conn;
                         conn.Open();
-                        //mb.ImportInfo.EnableEncryption = true;
-                        //mb.ImportInfo.EncryptionPassword = Dek;
+                        mb.ImportInfo.EnableEncryption = true;
+                        mb.ImportInfo.EncryptionPassword = Dek;
                         mb.ImportFromFile(RBU);
                         conn.Close();
                     }
@@ -87,7 +87,7 @@ namespace ProPharmacyManager.Database
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show("مفتاح التشفير خطأ\n"+ex.ToString());
             }
         }
         public static void NewDbBackup()
@@ -113,6 +113,8 @@ namespace ProPharmacyManager.Database
                         }
                         cmd.Connection = conn;
                         conn.Open();
+                        mb.ExportInfo.EnableEncryption = true;
+                        mb.ExportInfo.EncryptionPassword = "PROFelixSHCO";
                         mb.ExportToFile(file);
                         conn.Close();
                     }
@@ -146,6 +148,8 @@ namespace ProPharmacyManager.Database
                         {
                             cmd.Connection = conn;
                             conn.Open();
+                            mb.ImportInfo.EnableEncryption = true;
+                            mb.ImportInfo.EncryptionPassword = "PROFelixSHCO";
                             mb.ImportFromFile(file);
                             conn.Close();
                         }
