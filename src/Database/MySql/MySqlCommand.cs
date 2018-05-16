@@ -1,0 +1,436 @@
+﻿using System.Collections.Generic;
+using System.Text;
+
+namespace PharmacyPRO.Database
+{
+    public class MySqlCommand
+    {
+        private MySqlCommandType _type;
+
+        public MySqlCommandType Type
+        {
+            get { return _type; }
+            set { _type = value; }
+        }
+        protected StringBuilder _command;
+
+        public string Command
+        {
+            get { return _command.ToString(); }
+            set { _command = new StringBuilder(value); }
+        }
+
+        private bool firstPart = true;
+
+        private Dictionary<byte, string> Fields;
+        private Dictionary<byte, long> longValues;
+        private Dictionary<byte, ulong> ulongValues;
+        private Dictionary<byte, bool> boolValues;
+        private Dictionary<byte, string> stringValues;
+
+        private byte lastpair;
+        public MySqlCommand(MySqlCommandType Type)
+        {
+            this.Type = Type;
+            switch (Type)
+            {
+                case MySqlCommandType.SELECT:
+                    {
+                        _command = new StringBuilder("SELECT * FROM <R>");
+                        break;
+                    }
+                case MySqlCommandType.UPDATE:
+                    {
+                        _command = new StringBuilder("UPDATE <R> SET ");
+                        break;
+                    }
+                case MySqlCommandType.INSERT:
+                    {
+                        Fields = new Dictionary<byte, string>(20);
+                        longValues = new Dictionary<byte, long>(20);
+                        ulongValues = new Dictionary<byte, ulong>(20);
+                        boolValues = new Dictionary<byte, bool>(20);
+                        stringValues = new Dictionary<byte, string>(20);
+                        lastpair = 0;
+                        _command = new StringBuilder("INSERT INTO <R> (<F>) VALUES (<V>)");
+                        break;
+                    }
+                case MySqlCommandType.DELETE:
+                    {
+                        _command = new StringBuilder("DELETE FROM <R> WHERE <C> = <V>");
+                        break;
+                    }
+                case MySqlCommandType.COUNT:
+                    {
+                        _command = new StringBuilder("SELECT count(<V>) FROM <R>");
+                        break;
+                    }
+            }
+        }
+        #region Select
+        public MySqlCommand Select(string table)
+        {
+            _command = _command.Replace("<R>", "`" + table + "`");
+            return this;
+        }
+        public MySqlCommand Clear(string table)
+        {
+            _command = new StringBuilder("DELETE FROM <R>");
+            return this;
+        }
+        #endregion
+
+        #region Count
+        public MySqlCommand Count(string table)
+        {
+            _command = _command.Replace("<R>", "`" + table + "`");
+            return this;
+        }
+        #endregion
+
+        #region Delete
+        public MySqlCommand Delete(string table, string column, string value)
+        {
+            _command = _command.Replace("<R>", "`" + table + "`");
+            _command = _command.Replace("<C>", "`" + column + "`");
+            _command = _command.Replace("<V>", "'" + value + "'");
+            return this;
+        }
+        public MySqlCommand Delete(string table, string column, long value)
+        {
+            _command = _command.Replace("<R>", "`" + table + "`");
+            _command = _command.Replace("<C>", "`" + column + "`");
+            _command = _command.Replace("<V>", value.ToString());
+            return this;
+        }
+        public MySqlCommand Delete(string table, string column, ulong value)
+        {
+            _command = _command.Replace("<R>", "`" + table + "`");
+            _command = _command.Replace("<C>", "`" + column + "`");
+            _command = _command.Replace("<V>", value.ToString());
+            return this;
+        }
+        public MySqlCommand Delete(string table, string column, bool value)
+        {
+            _command = _command.Replace("<R>", "`" + table + "`");
+            _command = _command.Replace("<C>", "`" + column + "`");
+            _command = _command.Replace("<V>", (value ? "1" : "0"));
+            return this;
+        }
+        public MySqlCommand Delete(string table, string column)
+        {
+            _command = _command.Replace("<R>", "`" + table + "`");
+            _command = _command.Replace("<C>", "`" + column + "`");
+            return this;
+        }
+
+        #endregion
+
+        private bool Comma()
+        {
+            if (firstPart)
+            {
+                firstPart = false;
+                return false;
+            }
+            string command = _command.ToString();
+            if (command[command.Length - 1] == ',' || command[command.Length - 2] == ',' || command[command.Length - 3] == ',')
+                return false;
+            return true;
+        }
+
+        #region Update
+        public MySqlCommand Update(string table)
+        {
+            _command = _command.Replace("<R>", "`" + table + "`");
+            return this;
+        }
+        public MySqlCommand Set(string column, long value)
+        {
+            if (Type == MySqlCommandType.UPDATE)
+            {
+                if (Comma())
+                    _command = _command.Append(",`" + column + "` = " + value.ToString() + " ");
+                else
+                    _command = _command.Append("`" + column + "` = " + value.ToString() + " ");
+            }
+            return this;
+        }
+        public MySqlCommand Set(string column, ulong value)
+        {
+            if (Type == MySqlCommandType.UPDATE)
+            {
+                bool comma = false;
+                comma = (_command[_command.Length - 1] == ',' || _command[_command.Length - 2] == ',' || _command[_command.Length - 3] == ',') ? false : true;
+                if (Comma())
+                    _command = _command.Append(",`" + column + "` = " + value.ToString() + " ");
+                else
+                    _command = _command.Append("`" + column + "` = " + value.ToString() + " ");
+            }
+            return this;
+        }
+        public MySqlCommand Set(string column, string value)
+        {
+            if (Type == MySqlCommandType.UPDATE)
+            {
+                if (Comma())
+                    _command = _command.Append(",`" + column + "` = '" + value + "' ");
+                else
+                    _command = _command.Append("`" + column + "` = '" + value + "' ");
+            }
+            return this;
+        }
+        public MySqlCommand Set(string column, bool value)
+        {
+            if (Type == MySqlCommandType.UPDATE)
+            {
+                if (Comma())
+                    _command = _command.Append(",`" + column + "` = " + (value ? "1" : "0") + " ");
+                else
+                    _command = _command.Append("`" + column + "` = " + (value ? "1" : "0") + " ");
+            }
+            return this;
+        }
+        #endregion
+
+        #region Insert
+        public MySqlCommand Insert(string table)
+        {
+            _command = _command.Replace("<R>", "`" + table + "`");
+            return this;
+        }
+        public MySqlCommand Insert(string field, long value)
+        {
+            Fields.Add(lastpair, field);
+            longValues.Add(lastpair, value);
+            lastpair++;
+            return this;
+        }
+        public MySqlCommand Insert(string field, ulong value)
+        {
+            Fields.Add(lastpair, field);
+            ulongValues.Add(lastpair, value);
+            lastpair++;
+            return this;
+        }
+        public MySqlCommand Insert(string field, bool value)
+        {
+            Fields.Add(lastpair, field);
+            boolValues.Add(lastpair, value);
+            lastpair++;
+            return this;
+        }
+        public MySqlCommand Insert(string field, string value)
+        {
+            Fields.Add(lastpair, field);
+            stringValues.Add(lastpair, value);
+            lastpair++;
+            return this;
+        }
+        #endregion
+
+        #region Where
+        public MySqlCommand Where(string column, long value)
+        {
+            _command = _command.Append("WHERE `" + column + "` = " + value);
+            return this;
+        }
+        public MySqlCommand Where(string column, long value, bool greater)
+        {
+            if (greater)
+                _command = _command.Append("WHERE `" + column + "` > " + value);
+            else
+                _command = _command.Append("WHERE `" + column + "` < " + value);
+            return this;
+        }
+        public MySqlCommand Where(string column, ulong value)
+        {
+            _command = _command.Append("WHERE `" + column + "` = " + value);
+            return this;
+        }
+        public MySqlCommand Where(string column, string value)
+        {
+            _command = _command.Append("WHERE `" + column + "` = '" + value + "'");
+            return this;
+        }
+        public MySqlCommand Where(string column, bool value)
+        {
+            _command = _command.Append("WHERE `" + column + "` = " + (value ? "1" : "0"));
+            return this;
+        }
+        #endregion
+
+        #region And
+        public MySqlCommand And(string column, long value)
+        {
+            _command = _command.Append(" AND `" + column + "` = " + value);
+            return this;
+        }
+        public MySqlCommand And(string column, ulong value)
+        {
+            _command = _command.Append(" AND `" + column + "` = " + value);
+            return this;
+        }
+        public MySqlCommand And(string column, string value)
+        {
+            _command = _command.Append(" AND `" + column + "` = '" + value + "'");
+            return this;
+        }
+        public MySqlCommand And(string column, bool value)
+        {
+            _command = _command.Append(" AND `" + column + "` = " + (value ? "1" : "0"));
+            return this;
+        }
+        #endregion
+
+        #region Or
+        public MySqlCommand Or(string column, long value)
+        {
+            _command = _command.Append(" Or `" + column + "` = " + value);
+            return this;
+        }
+        public MySqlCommand Or(string column, ulong value)
+        {
+            _command = _command.Append(" Or `" + column + "` = " + value);
+            return this;
+        }
+        public MySqlCommand Or(string column, string value)
+        {
+            _command = _command.Append(" Or `" + column + "` = '" + value + "'");
+            return this;
+        }
+        public MySqlCommand Or(string column, bool value)
+        {
+            _command = _command.Append(" Or `" + column + "` = " + (value ? "1" : "0"));
+            return this;
+        }
+        #endregion
+
+        #region Order
+        public MySqlCommand Order(string column)
+        {
+            _command = _command.Append("ORDER BY " + column + "");
+            return this;
+        }
+        #endregion
+
+        public int Execute()
+        {
+            if (Type == MySqlCommandType.INSERT)
+            {
+                string fields = "";
+                string values = "";
+                byte x;
+                for (x = 0; x < lastpair; x++)
+                {
+                    bool comma = (x + 1) == lastpair ? false : true;
+                    #region Fields
+                    if (comma)
+                        fields += Fields[x] + ",";
+                    else
+                        fields += Fields[x];
+                    #endregion
+                    #region Values
+                    if (longValues.ContainsKey(x))
+                    {
+                        if (comma)
+                            values += longValues[x].ToString() + ",";
+                        else
+                            values += longValues[x].ToString();
+                    }
+                    else if (ulongValues.ContainsKey(x))
+                    {
+                        if (comma)
+                            values += ulongValues[x].ToString()[x] + ",";
+                        else
+                            values += ulongValues[x].ToString();
+                    }
+                    else if (boolValues.ContainsKey(x))
+                    {
+                        if (comma)
+                            values += (boolValues[x] ? "1" : "0") + ",";
+                        else
+                            values += (boolValues[x] ? "1" : "0");
+                    }
+                    else if (stringValues.ContainsKey(x))
+                    {
+                        if (comma)
+                            values += "'" + stringValues[x] + "'" + ",";
+                        else
+                            values += "'" + stringValues[x] + "'";
+                    }
+                    #endregion
+                }
+                _command = _command.Replace("<F>", fields);
+                _command = _command.Replace("<V>", values);
+            }
+            int res = 0;
+            using (var conn = Database.DataHolder.MySqlConnection)
+            {
+                conn.Open();
+                MySql.Data.MySqlClient.MySqlCommand cmd = new MySql.Data.MySqlClient.MySqlCommand(Command, conn);
+                res = cmd.ExecuteNonQuery();
+                conn.Close();
+            }
+            return res;
+        }
+        public int Execute(MySql.Data.MySqlClient.MySqlConnection conn)
+        {
+            if (Type == MySqlCommandType.INSERT)
+            {
+                string fields = "";
+                string values = "";
+                byte x;
+                for (x = 0; x < lastpair; x++)
+                {
+                    bool comma = (x + 1) == lastpair ? false : true;
+                    #region Fields
+                    if (comma)
+                        fields += Fields[x] + ",";
+                    else
+                        fields += Fields[x];
+                    #endregion
+                    #region Values
+                    if (longValues.ContainsKey(x))
+                    {
+                        if (comma)
+                            values += longValues[x].ToString() + ",";
+                        else
+                            values += longValues[x].ToString();
+                    }
+                    else if (ulongValues.ContainsKey(x))
+                    {
+                        if (comma)
+                            values += ulongValues[x].ToString()[x] + ",";
+                        else
+                            values += ulongValues[x].ToString();
+                    }
+                    else if (boolValues.ContainsKey(x))
+                    {
+                        if (comma)
+                            values += (boolValues[x] ? "1" : "0") + ",";
+                        else
+                            values += (boolValues[x] ? "1" : "0");
+                    }
+                    else if (stringValues.ContainsKey(x))
+                    {
+                        if (comma)
+                            values += "'" + stringValues[x] + "'" + ",";
+                        else
+                            values += "'" + stringValues[x] + "'";
+                    }
+                    #endregion
+                }
+                _command = _command.Replace("<F>", fields);
+                _command = _command.Replace("<V>", values);
+            }
+            MySql.Data.MySqlClient.MySqlCommand cmd = new MySql.Data.MySqlClient.MySqlCommand(Command, conn);
+            return cmd.ExecuteNonQuery();
+        }
+    }
+    public enum MySqlCommandType
+    {
+        DELETE, INSERT, SELECT, UPDATE, COUNT, CLEAR
+    }
+
+}
