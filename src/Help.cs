@@ -38,7 +38,7 @@ namespace ProPharmacyManager
 
         private void Yahoo_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("ahmed_master23@yahoo.com");
+            MessageBox.Show("ahmed_master23@hotmail.com");
         }
 
         private void Blogger_Click(object sender, EventArgs e)

@@ -8,10 +8,10 @@ using System.Resources;
 [assembly: AssemblyTitle("ProPharmacyManager")]
 [assembly: AssemblyDescription("مدير الصيدليه الاحترافى هو برنامج مفتوح المصدر تحت رخصه جينو العموميه مخصص للصيدليات الصغيرة و المتوسطه لتساعد الموظف فى الصيدليه على معرفه الادويه المتوفرة و سعرها و مكانها بسهوله و ايضا الادويه التى نفذت او انتهت صلاحياتها.\r\nللمساعده : ShababCo.blogspot.com\r\n\r\nالاسم و الشعار (اللوجو و الايقونه) علامات تجاريه غير مسجله لمدونه شباب كونكر.\r\nThe Name, Logo and Icon is unregistered trademarks for .ShababConquer blog")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("ShababCo™")]
+[assembly: AssemblyCompany("ShababConquer")]
 [assembly: AssemblyProduct("ProPharmacyManager")]
-[assembly: AssemblyCopyright("Copyright ©  2013")]
-[assembly: AssemblyTrademark("ProPharmacyManager™")]
+[assembly: AssemblyCopyright("GPL V2")]
+[assembly: AssemblyTrademark("ProPharmacyManager")]
 [assembly: AssemblyCulture("")]
 
 // Setting ComVisible to false makes the types in this assembly not visible 
