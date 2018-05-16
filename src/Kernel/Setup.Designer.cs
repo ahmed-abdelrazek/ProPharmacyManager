@@ -38,8 +38,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.Install = new System.Windows.Forms.Button();
+            this.Exit = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -52,7 +52,7 @@
             this.DBUser.Name = "DBUser";
             this.DBUser.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.DBUser.Size = new System.Drawing.Size(190, 45);
-            this.DBUser.TabIndex = 0;
+            this.DBUser.TabIndex = 3;
             this.DBUser.Text = "root";
             // 
             // DBPass
@@ -63,7 +63,7 @@
             this.DBPass.Name = "DBPass";
             this.DBPass.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.DBPass.Size = new System.Drawing.Size(190, 44);
-            this.DBPass.TabIndex = 1;
+            this.DBPass.TabIndex = 4;
             this.DBPass.Text = "1234";
             // 
             // DBName
@@ -85,7 +85,7 @@
             this.DBHost.Name = "DBHost";
             this.DBHost.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.DBHost.Size = new System.Drawing.Size(190, 37);
-            this.DBHost.TabIndex = 3;
+            this.DBHost.TabIndex = 1;
             this.DBHost.Text = "localhost";
             // 
             // label1
@@ -143,33 +143,33 @@
             this.label5.TabIndex = 8;
             this.label5.Text = "لا تقوم بتغيير اى من الاعدادات";
             // 
-            // button1
+            // Install
             // 
-            this.button1.BackColor = System.Drawing.Color.ForestGreen;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(277, 315);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(150, 60);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "حفظ";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.Install.BackColor = System.Drawing.Color.ForestGreen;
+            this.Install.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Install.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
+            this.Install.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Install.Location = new System.Drawing.Point(277, 315);
+            this.Install.Name = "Install";
+            this.Install.Size = new System.Drawing.Size(150, 60);
+            this.Install.TabIndex = 5;
+            this.Install.Text = "حفظ";
+            this.Install.UseVisualStyleBackColor = false;
+            this.Install.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // Exit
             // 
-            this.button2.BackColor = System.Drawing.Color.DarkOrange;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
-            this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button2.Location = new System.Drawing.Point(41, 315);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(150, 60);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "خروج";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.Exit.BackColor = System.Drawing.Color.DarkOrange;
+            this.Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Exit.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
+            this.Exit.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Exit.Location = new System.Drawing.Point(41, 315);
+            this.Exit.Name = "Exit";
+            this.Exit.Size = new System.Drawing.Size(150, 60);
+            this.Exit.TabIndex = 6;
+            this.Exit.Text = "خروج";
+            this.Exit.UseVisualStyleBackColor = false;
+            this.Exit.Click += new System.EventHandler(this.button2_Click);
             // 
             // label6
             // 
@@ -195,14 +195,15 @@
             // 
             // Setup
             // 
+            this.AcceptButton = this.Install;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DodgerBlue;
             this.ClientSize = new System.Drawing.Size(479, 398);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.Exit);
+            this.Controls.Add(this.Install);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -236,8 +237,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button Install;
+        private System.Windows.Forms.Button Exit;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
     }

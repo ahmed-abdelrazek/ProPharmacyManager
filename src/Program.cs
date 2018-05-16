@@ -50,7 +50,8 @@ namespace PharmacyProManager
                 IniFile file = new IniFile(str);
                 if (!File.Exists(str))
                 {
-                    Kernel.Setup set = new Kernel.Setup();
+                    Setup set = new Setup();
+                    set.Text = "تنصيب البرنامج";
                     set.ShowDialog();
                 }
                 DataHolder.CreateConnection(file.ReadString("MySql", "Username"), file.ReadString("MySql", "Password"), file.ReadString("MySql", "Database"), file.ReadString("MySql", "Host"));

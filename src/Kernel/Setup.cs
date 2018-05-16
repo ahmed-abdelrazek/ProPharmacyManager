@@ -13,6 +13,10 @@ namespace PharmacyProManager.Kernel
         string str = "configuration.ini";
         private void Setup_Load(object sender, EventArgs e)
         {
+            if (this.Text == "تنصيب البرنامج")
+            {
+                Install.Text = "اعداد";
+            }
             try
             {
                 IniFile file = new IniFile(str);
@@ -32,9 +36,15 @@ namespace PharmacyProManager.Kernel
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Close();
+            if (this.Text == "تنصيب البرنامج")
+            {
+                Environment.Exit(0);
+            }
+            else
+            {
+                this.Close();
+            }
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
             try
