@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ProPharmacyManager</RootNamespace>
     <AssemblyName>ProPharmacyManager</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <TargetFrameworkProfile />
@@ -31,16 +31,12 @@
     <SuiteName>Ahmed Mohamed Abd El-Razeq</SuiteName>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
     <AutorunEnabled>true</AutorunEnabled>
-    <TrustUrlParameters>true</TrustUrlParameters>
     <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>5.1.0.0</ApplicationVersion>
-    <UseApplicationTrust>true</UseApplicationTrust>
+    <ApplicationVersion>4.0.0.0</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
-    <ExcludeDeploymentUrl>true</ExcludeDeploymentUrl>
     <PublishWizardCompleted>true</PublishWizardCompleted>
-    <BootstrapperEnabled>false</BootstrapperEnabled>
-    <ProductVersion>12.0.0</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -48,13 +44,11 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <RunCodeAnalysis>false</RunCodeAnalysis>
     <CodeAnalysisRuleSet>GlobalizationRules.ruleset</CodeAnalysisRuleSet>
-    <DocumentationFile>
-    </DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -69,13 +63,17 @@
     <ApplicationIcon>PPHM Ico.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
     <ManifestCertificateThumbprint>425798E5935B893EC055B5E1DA5B7C2C0E45A853</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestKeyFile>PharmacyProManager_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <GenerateManifests>false</GenerateManifests>
+    <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
     <SignManifests>false</SignManifests>
@@ -84,24 +82,24 @@
   <PropertyGroup>
     <TargetZone>LocalIntranet</TargetZone>
   </PropertyGroup>
-  <PropertyGroup />
-  <PropertyGroup />
   <PropertyGroup>
-    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+    <SignAssembly>false</SignAssembly>
   </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup />
   <ItemGroup>
-    <Reference Include="MySql.Data, Version=6.9.11.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <HintPath>..\packages\MySql.Data.6.9.11\lib\net40\MySql.Data.dll</HintPath>
-    </Reference>
-    <Reference Include="MySqlBackup, Version=2.0.12.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\MySqlBackup.NET.2.0.12\lib\net40\MySqlBackup.dll</HintPath>
+    <Reference Include="MySql.Data, Version=6.3.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\MySql.Data.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml" />
+    <Reference Include="System.XML" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="About.cs">
@@ -129,9 +127,7 @@
       <DependentUpon>CPanal.cs</DependentUpon>
     </Compile>
     <Compile Include="Database\AccountsTable.cs" />
-    <Compile Include="Database\BackUp.cs" />
     <Compile Include="Database\BillsTable.cs" />
-    <Compile Include="Database\CreateDB.cs" />
     <Compile Include="Database\States.cs" />
     <Compile Include="Database\DataHolder.cs" />
     <Compile Include="Database\MySql\MySqlCommand.cs" />
@@ -141,18 +137,6 @@
     </Compile>
     <Compile Include="Help.Designer.cs">
       <DependentUpon>Help.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ImageButton.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="ImageButton.Designer.cs">
-      <DependentUpon>ImageButton.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Kernel\BAR.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Kernel\BAR.Designer.cs">
-      <DependentUpon>BAR.cs</DependentUpon>
     </Compile>
     <Compile Include="Kernel\Setup.cs">
       <SubType>Form</SubType>
@@ -233,12 +217,6 @@
     <EmbeddedResource Include="Help.resx">
       <DependentUpon>Help.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ImageButton.resx">
-      <DependentUpon>ImageButton.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Kernel\BAR.resx">
-      <DependentUpon>BAR.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Kernel\Setup.resx">
       <DependentUpon>Setup.cs</DependentUpon>
     </EmbeddedResource>
@@ -280,10 +258,7 @@
       <DependentUpon>Register.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
-    <None Include="packages.config" />
-    <None Include="Properties\app.manifest">
-      <SubType>Designer</SubType>
-    </None>
+    <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -293,6 +268,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cpwapp.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\login.png" />
@@ -361,15 +339,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="PPHM Ico.ico" />
-    <None Include="Resources\LL_02.png" />
-    <None Include="Resources\LL_01.png" />
-    <None Include="Resources\PHBack.bmp" />
-    <None Include="Resources\MinI.png" />
-    <None Include="Resources\CloseI.png" />
-    <None Include="Resources\Restore.png" />
-    <None Include="Resources\DBackup.png" />
-    <None Include="Resources\Backup.png" />
-    <None Include="Resources\cpwapp.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

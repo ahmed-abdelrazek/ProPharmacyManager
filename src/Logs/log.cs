@@ -1,9 +1,9 @@
-﻿using PharmacyProManager.Database;
+﻿using ProPharmacyManager.Database;
 using System;
 using System.Windows.Forms;
 using System.Threading;
 
-namespace PharmacyProManager
+namespace ProPharmacyManager
 {
     public partial class log : Form
     {
