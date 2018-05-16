@@ -1,20 +1,20 @@
 ﻿using System;
-using System.Diagnostics;
 using System.Reflection;
 using System.Windows.Forms;
 
 namespace PharmacyProManager
 {
-    public partial class About : Form
+    partial class About : Form
     {
         public About()
         {
             InitializeComponent();
-            //this.Text = String.Format("About {0}", AssemblyTitle);
-            labelProductName.Text = AssemblyProduct;
-            labelVersion.Text = String.Format("الاصدار : {0}", AssemblyVersion);
-            //this.labelCopyright.Text = AssemblyCopyright;
-            //this.labelCompanyName.Text = AssemblyCompany;
+            this.Text = String.Format("About {0}", AssemblyTitle);
+            this.labelProductName.Text = AssemblyProduct;
+            this.labelVersion.Text = String.Format("Version {0}", AssemblyVersion);
+            this.labelCopyright.Text = AssemblyCopyright;
+            this.labelCompanyName.Text = AssemblyCompany;
+            this.textBoxDescription.Text = AssemblyDescription;
         }
 
         #region Assembly Attribute Accessors
@@ -96,9 +96,10 @@ namespace PharmacyProManager
             }
         }
         #endregion
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+
+        private void okButton_Click(object sender, EventArgs e)
         {
-            Process.Start("http://shababco.blogspot.com");
+            Close();
         }
     }
 }

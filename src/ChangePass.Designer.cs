@@ -57,29 +57,37 @@
             // 
             // Change
             // 
+            this.Change.BackColor = System.Drawing.Color.Blue;
+            this.Change.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Change.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
+            this.Change.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.Change.Location = new System.Drawing.Point(251, 126);
             this.Change.Name = "Change";
             this.Change.Size = new System.Drawing.Size(75, 23);
             this.Change.TabIndex = 3;
             this.Change.Text = "تغيير";
-            this.Change.UseVisualStyleBackColor = true;
+            this.Change.UseVisualStyleBackColor = false;
             this.Change.Click += new System.EventHandler(this.Change_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(12, 30);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(85, 13);
+            this.label1.Size = new System.Drawing.Size(90, 13);
             this.label1.TabIndex = 3;
             this.label1.Text = "اسم المستخدم:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
+            this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(12, 67);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(99, 13);
+            this.label2.Size = new System.Drawing.Size(110, 13);
             this.label2.TabIndex = 4;
             this.label2.Text = "كلمه المرور الجديده:";
             // 
@@ -95,12 +103,16 @@
             // 
             // Delete
             // 
+            this.Delete.BackColor = System.Drawing.Color.Red;
+            this.Delete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Delete.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
+            this.Delete.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.Delete.Location = new System.Drawing.Point(124, 126);
             this.Delete.Name = "Delete";
             this.Delete.Size = new System.Drawing.Size(75, 23);
             this.Delete.TabIndex = 4;
             this.Delete.Text = "حذف";
-            this.Delete.UseVisualStyleBackColor = true;
+            this.Delete.UseVisualStyleBackColor = false;
             this.Delete.Click += new System.EventHandler(this.Delete_Click);
             // 
             // label4
@@ -117,6 +129,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Orchid;
             this.ClientSize = new System.Drawing.Size(338, 173);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.Delete);

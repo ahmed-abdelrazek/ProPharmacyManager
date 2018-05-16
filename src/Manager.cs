@@ -1,17 +1,75 @@
 ﻿using PharmacyProManager.Database;
 using System;
 using System.Drawing;
+using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace PharmacyProManager
 {
     public partial class Manager : Form
     {
-        public Manager()
+        public Manager(string UserName)
         {
             InitializeComponent();
+            label11.Text = UserName;
         }
         byte Ptype = 0;
+
+        private void newbill()
+        {
+            try
+            {
+                ulong nb = 0;
+                nb = Convert.ToUInt64(BillNO.Text);
+                nb = ++nb;
+                BillNO.Text = nb.ToString();
+                StringBuilder Command = new StringBuilder();
+                Command.Append(PName.Text + "~");
+                Command.Append(PCost.Text + "#");
+                MySqlCommand Cmd = new MySqlCommand(MySqlCommandType.INSERT);
+                Cmd.Insert("bills").Insert("ID", BillNO.Text).Insert("Name", Client.Text).Insert("User", label11.Text).Insert("Medic", Command.ToString()).Insert("BillDate", DateTime.Now.ToString()).Execute();
+            }
+            catch (Exception ee)
+            {
+                Program.SaveException(ee);
+            }
+        }
+        private void LoadBill()
+        {
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand(MySqlCommandType.SELECT).Select("bills").Where("Name", Client.Text).And("ID", BillNO.Text);
+                MySqlReader r = new MySqlReader(cmd);
+                if (r.Read())
+                {
+                    bu.Text = r.ReadString("Medic");
+                }
+                r.Close();
+            }
+            catch (Exception ee)
+            {
+                Program.SaveException(ee);
+            }
+        }
+        private void updatebill()
+        {
+            LoadBill();
+            try
+            {
+                StringBuilder Command = new StringBuilder();
+                Command.Append(PName.Text + "~");
+                Command.Append(PCost.Text + "#");
+                bu.Text += Command;
+                MySqlCommand Cmd = new MySqlCommand(MySqlCommandType.UPDATE);
+                Cmd.Update("bills").Set("Medic", bu.Text).Where("ID", BillNO.Text).And("Name", Client.Text);
+                Cmd.Execute();
+            }
+            catch (Exception ee)
+            {
+                Program.SaveException(ee);
+            }
+        }
         private void clear()
         {
             PName.Clear();
@@ -48,7 +106,40 @@ namespace PharmacyProManager
                 comboBox1.Text = "غير معروف";
             }
         }
-
+        private void SellMedic()
+        {
+            uint tottal = 0;
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand(MySqlCommandType.SELECT);
+                cmd.Select("medics").Where("Name", PName.Text).Execute();
+                MySqlReader r = new MySqlReader(cmd);
+                if (r.Read())
+                {
+                    tottal = r.ReadUInt32("Count");
+                }
+                if (tottal > 0)
+                {
+                    tottal = --tottal;
+                    PTottal.Clear();
+                    PTottal.Text = tottal.ToString();
+                    MySqlCommand CMD = new MySqlCommand(MySqlCommandType.UPDATE);
+                    CMD.Update("medics")
+                        .Set("Count", tottal);
+                    CMD.Where("Name", PName.Text).Execute();
+                    MessageBox.Show("تم بيع واحد");
+                    SaveSold();
+                }
+                else
+                {
+                    MessageBox.Show("الدواء غير متوفر");
+                }
+            }
+            catch (Exception ep)
+            {
+                MessageBox.Show(ep.ToString());
+            }
+        }
         private void SaveSold()
         {
             try
@@ -62,6 +153,7 @@ namespace PharmacyProManager
                 Program.SaveException(e);
             }
         }
+
         private void اضافهموظفجديدToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Register reg = new Register();
@@ -183,36 +275,27 @@ namespace PharmacyProManager
 
         private void SellB_Click(object sender, EventArgs e)
         {
-            uint tottal = 0;
-            try
+            if (PName.Text != "" && Client.Text != "" && NewBill.Checked)
             {
-                MySqlCommand cmd = new MySqlCommand(MySqlCommandType.SELECT);
-                cmd.Select("medics").Where("Name", PName.Text).Execute();
-                MySqlReader r = new MySqlReader(cmd);
-                if (r.Read())
-                {
-                    tottal = r.ReadUInt32("Count");
-                }
-                if (tottal > 0)
-                {
-                    tottal = --tottal;
-                    PTottal.Clear();
-                    PTottal.Text = tottal.ToString();
-                    MySqlCommand CMD = new MySqlCommand(MySqlCommandType.UPDATE);
-                    CMD.Update("medics")
-                        .Set("Count", tottal);
-                    CMD.Where("Name", PName.Text).Execute();
-                    MessageBox.Show("تم بيع واحد");
-                    SaveSold();
-                }
-                else
-                {
-                    MessageBox.Show("الدواء غير متوفر");
-                }
+                SellMedic();
+                newbill();
             }
-            catch (Exception ep)
+            else if (PName.Text != "" && Client.Text != "" && !NewBill.Checked)
             {
-                MessageBox.Show(ep.ToString());
+                SellMedic();
+                updatebill();
+            }
+            else if (PName.Text == "" || PCost.Text == "")
+            {
+                MessageBox.Show("لا يوجد دواء");
+            }
+            else if (Client.Text == "")
+            {
+                MessageBox.Show("ادخل اسم المشترى");
+            }
+            else
+            {
+                MessageBox.Show("الدواء غير متوفر");
             }
         }
         
@@ -332,6 +415,50 @@ namespace PharmacyProManager
         {
             new MySqlCommand(MySqlCommandType.CLEAR).Clear("bills").Execute();
             MessageBox.Show("تم حذف الفواتير");
+        }
+
+        private void BillNO_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand(MySqlCommandType.UPDATE);
+                cmd.Update("configuration")
+                    .Set("ID", BillNO.Text).Execute();
+            }
+            catch (Exception el)
+            {
+                Program.SaveException(el);
+            }
+        }
+
+        private void Manager_Load(object sender, EventArgs e)
+        {
+            CheckForIllegalCrossThreadCalls = false;
+            Thread th = new Thread(() =>
+            {
+                try
+                {
+                    MySqlCommand cmd = new MySqlCommand(MySqlCommandType.SELECT);
+                    cmd.Select("configuration");
+                    MySqlReader r = new MySqlReader(cmd);
+                    if (r.Read())
+                    {
+                        BillNO.Text = r.ReadUInt32("ID").ToString();
+                    }
+                    r.Close();
+                }
+                catch (Exception ee)
+                {
+                    Program.SaveException(ee);
+                }
+            });
+            th.Start();
+        }
+
+        private void المساعدهToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Help help = new Help();
+            help.ShowDialog();
         }
     }
 }

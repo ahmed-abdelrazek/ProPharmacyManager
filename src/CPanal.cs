@@ -20,7 +20,7 @@ namespace PharmacyProManager
         decimal tt = 0;
         decimal tt1 = 0;
         byte Ptype = 0;
-        //string bmedic;
+
         private void newbill()
         {
             try
@@ -50,6 +50,7 @@ namespace PharmacyProManager
                 {
                     bu.Text = r.ReadString("Medic");
                 }
+                r.Close();
             }
             catch (Exception ee)
             {
@@ -94,7 +95,9 @@ namespace PharmacyProManager
                     MySqlCommand CMD = new MySqlCommand(MySqlCommandType.UPDATE);
                     CMD.Update("medics")
                         .Set("Count", tottal);
-                    CMD.Where("Name", PName.Text).Execute();
+                    CMD.Where("Name", PName.Text).Execute();                   
+                MessageBox.Show("تم بيع واحد");
+                SaveSold();
                 }
                 else
                 {
@@ -105,6 +108,19 @@ namespace PharmacyProManager
             catch (Exception ep)
             {
                 MessageBox.Show(ep.ToString());
+            }
+        }
+        private void SaveSold()
+        {
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand(MySqlCommandType.INSERT);
+                cmd.Insert("medlog")
+                    .Insert("Name", PName.Text)/*.Insert("Total", "1")*/.Insert("Cost", PCost.Text).Insert("SellDate", DateTime.Now.ToString()).Execute();
+            }
+            catch (Exception e)
+            {
+                Program.SaveException(e);
             }
         }
         private void clear()
@@ -132,8 +148,8 @@ namespace PharmacyProManager
                     tt1 += tt;
                     totalprice.Text = "اجمالى سعر الموجود :" + Convert.ToDecimal(ff1) * Convert.ToDecimal(tt1) + "جنيه";
                     dataGridView1.Rows.Add(r.ReadString("Name"), r.ReadString("Price"), r.ReadString("Expiry"), r.ReadString("Count"), r.ReadString("Substance"), r.ReadString("Note"));
-
                 }
+                r.Close();
             }
             catch (Exception ee)
             {
@@ -172,6 +188,7 @@ namespace PharmacyProManager
                 PType.Text = "غير معروف";
             }
         }
+
         private void CPanal_FormClosing(object sender, FormClosingEventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show("هل انت متاكد؟", "تسجيل الخروج", MessageBoxButtons.YesNo);
@@ -261,13 +278,11 @@ namespace PharmacyProManager
             {
                 SellMedic();
                 newbill();
-                MessageBox.Show("تم بيع واحد");
             }
             else if (PName.Text != "" && Client.Text != "" && !NewBill.Checked)
             {
                 SellMedic();
                 updatebill();
-                MessageBox.Show("تم بيع واحد");
             }
             else if (Client.Text == "")
             {
@@ -293,6 +308,7 @@ namespace PharmacyProManager
             {
                 BillNO.Text = r.ReadUInt32("ID").ToString();
             }
+            r.Close();
             CheckForIllegalCrossThreadCalls = false;
             Thread th = new Thread(() =>
             {

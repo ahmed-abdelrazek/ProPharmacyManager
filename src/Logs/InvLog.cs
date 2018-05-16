@@ -32,6 +32,7 @@ namespace PharmacyProManager.Logs
                     DGV.Rows.Add(r.ReadString("Name"), r.ReadString("Price"), r.ReadString("Count"), r.ReadString("Expiry"));
 
                 }
+                r.Close();
             }
             catch (Exception ee)
             {

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddMed));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -46,6 +47,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.UPdateB = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -91,6 +93,7 @@
             this.comboBox1.Size = new System.Drawing.Size(272, 32);
             this.comboBox1.TabIndex = 3;
             this.comboBox1.Text = "شرب";
+            this.toolTip1.SetToolTip(this.comboBox1, "كيف يتم اخذ الدواء");
             // 
             // PEX
             // 
@@ -101,6 +104,7 @@
             this.PEX.RightToLeftLayout = true;
             this.PEX.Size = new System.Drawing.Size(272, 32);
             this.PEX.TabIndex = 2;
+            this.toolTip1.SetToolTip(this.PEX, "اختار تاريخ انتهاء الصلاحيه");
             // 
             // PSubS
             // 
@@ -109,6 +113,7 @@
             this.PSubS.Name = "PSubS";
             this.PSubS.Size = new System.Drawing.Size(272, 32);
             this.PSubS.TabIndex = 6;
+            this.toolTip1.SetToolTip(this.PSubS, "ليس من الضرورى كتابتها");
             // 
             // PName
             // 
@@ -117,6 +122,7 @@
             this.PName.Name = "PName";
             this.PName.Size = new System.Drawing.Size(272, 32);
             this.PName.TabIndex = 1;
+            this.toolTip1.SetToolTip(this.PName, "اسم الدواء عربى او انجليزى");
             // 
             // Pnote
             // 
@@ -129,6 +135,7 @@
             this.Pnote.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.Pnote.Size = new System.Drawing.Size(272, 85);
             this.Pnote.TabIndex = 7;
+            this.toolTip1.SetToolTip(this.Pnote, "اى شئ لا يزيد عن 500 حرف كمكان الدواء مثلا او اذا تم بيع شئ منه بالتجزئه");
             // 
             // PTottal
             // 
@@ -137,6 +144,7 @@
             this.PTottal.Name = "PTottal";
             this.PTottal.Size = new System.Drawing.Size(272, 32);
             this.PTottal.TabIndex = 4;
+            this.toolTip1.SetToolTip(this.PTottal, "ارقام فقط");
             this.PTottal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PTottal_KeyPress);
             // 
             // PCost
@@ -146,6 +154,7 @@
             this.PCost.Name = "PCost";
             this.PCost.Size = new System.Drawing.Size(272, 32);
             this.PCost.TabIndex = 5;
+            this.toolTip1.SetToolTip(this.PCost, "ارقام و علامه عشريه فقط");
             this.PCost.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PCost_KeyPress);
             // 
             // label8
@@ -231,6 +240,7 @@
             this.UPdateB.Name = "UPdateB";
             this.UPdateB.Size = new System.Drawing.Size(150, 60);
             this.UPdateB.TabIndex = 8;
+            this.toolTip1.SetToolTip(this.UPdateB, "لاضافه الدواء لقاعدة البيانات");
             this.UPdateB.UseVisualStyleBackColor = true;
             this.UPdateB.Click += new System.EventHandler(this.UPdateB_Click);
             // 
@@ -250,6 +260,7 @@
             // 
             // AddMed
             // 
+            this.AcceptButton = this.UPdateB;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
@@ -291,5 +302,6 @@
         private System.Windows.Forms.Button UPdateB;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

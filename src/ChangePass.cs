@@ -1,11 +1,6 @@
 ﻿using PharmacyProManager.Database;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace PharmacyProManager
@@ -28,7 +23,6 @@ namespace PharmacyProManager
             }
             catch (Exception ll)
             {
-
                 label3.Text = "ليس هناك حساب بهذا الاسم.";
                 label3.ForeColor = Color.Red;
                 label3.Visible = true;

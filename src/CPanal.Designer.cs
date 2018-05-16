@@ -529,7 +529,7 @@
             this.bu.Multiline = true;
             this.bu.Name = "bu";
             this.bu.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.bu.Size = new System.Drawing.Size(225, 105);
+            this.bu.Size = new System.Drawing.Size(225, 50);
             this.bu.TabIndex = 6;
             this.bu.Visible = false;
             // 

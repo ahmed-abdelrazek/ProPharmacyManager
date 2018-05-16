@@ -28,18 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Manager));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.حساباتToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.اضافهموظفجديدToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.تغييركلمهالمرورToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.سجلالدخولToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.فتحToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.حذفToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.فواتيرToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.فتحToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.حذفToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.سجلالدخولToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.فتحToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.حذفToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.المخزنToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.اضافهدواءجديدToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.غيرمتوفرToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -52,14 +53,20 @@
             this.قاعدهالبياناتToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.مساعدهToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.عنالبرنامجToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.المساعدهToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.PSubS = new System.Windows.Forms.TextBox();
             this.PName = new System.Windows.Forms.TextBox();
+            this.Client = new System.Windows.Forms.TextBox();
+            this.BillNO = new System.Windows.Forms.TextBox();
             this.PEXP = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.Pnote = new System.Windows.Forms.TextBox();
             this.PTottal = new System.Windows.Forms.TextBox();
+            this.NewBill = new System.Windows.Forms.CheckBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.PCost = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -78,11 +85,17 @@
             this.label1 = new System.Windows.Forms.Label();
             this.SearchB = new System.Windows.Forms.Button();
             this.SearchT = new System.Windows.Forms.TextBox();
+            this.bu = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label11 = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -131,6 +144,29 @@
             this.تغييركلمهالمرورToolStripMenuItem.Text = "تغيير كلمه المرور";
             this.تغييركلمهالمرورToolStripMenuItem.Click += new System.EventHandler(this.تغييركلمهالمرورToolStripMenuItem_Click);
             // 
+            // فواتيرToolStripMenuItem
+            // 
+            this.فواتيرToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.فتحToolStripMenuItem2,
+            this.حذفToolStripMenuItem2});
+            this.فواتيرToolStripMenuItem.Name = "فواتيرToolStripMenuItem";
+            this.فواتيرToolStripMenuItem.Size = new System.Drawing.Size(181, 24);
+            this.فواتيرToolStripMenuItem.Text = "فواتير";
+            // 
+            // فتحToolStripMenuItem2
+            // 
+            this.فتحToolStripMenuItem2.Name = "فتحToolStripMenuItem2";
+            this.فتحToolStripMenuItem2.Size = new System.Drawing.Size(106, 24);
+            this.فتحToolStripMenuItem2.Text = "فتح";
+            this.فتحToolStripMenuItem2.Click += new System.EventHandler(this.فتحToolStripMenuItem2_Click);
+            // 
+            // حذفToolStripMenuItem2
+            // 
+            this.حذفToolStripMenuItem2.Name = "حذفToolStripMenuItem2";
+            this.حذفToolStripMenuItem2.Size = new System.Drawing.Size(106, 24);
+            this.حذفToolStripMenuItem2.Text = "حذف";
+            this.حذفToolStripMenuItem2.Click += new System.EventHandler(this.حذفToolStripMenuItem2_Click);
+            // 
             // سجلالدخولToolStripMenuItem
             // 
             this.سجلالدخولToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -153,29 +189,6 @@
             this.حذفToolStripMenuItem.Size = new System.Drawing.Size(106, 24);
             this.حذفToolStripMenuItem.Text = "حذف";
             this.حذفToolStripMenuItem.Click += new System.EventHandler(this.حذفToolStripMenuItem_Click);
-            // 
-            // فواتيرToolStripMenuItem
-            // 
-            this.فواتيرToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.فتحToolStripMenuItem2,
-            this.حذفToolStripMenuItem2});
-            this.فواتيرToolStripMenuItem.Name = "فواتيرToolStripMenuItem";
-            this.فواتيرToolStripMenuItem.Size = new System.Drawing.Size(181, 24);
-            this.فواتيرToolStripMenuItem.Text = "فواتير";
-            // 
-            // فتحToolStripMenuItem2
-            // 
-            this.فتحToolStripMenuItem2.Name = "فتحToolStripMenuItem2";
-            this.فتحToolStripMenuItem2.Size = new System.Drawing.Size(152, 24);
-            this.فتحToolStripMenuItem2.Text = "فتح";
-            this.فتحToolStripMenuItem2.Click += new System.EventHandler(this.فتحToolStripMenuItem2_Click);
-            // 
-            // حذفToolStripMenuItem2
-            // 
-            this.حذفToolStripMenuItem2.Name = "حذفToolStripMenuItem2";
-            this.حذفToolStripMenuItem2.Size = new System.Drawing.Size(152, 24);
-            this.حذفToolStripMenuItem2.Text = "حذف";
-            this.حذفToolStripMenuItem2.Click += new System.EventHandler(this.حذفToolStripMenuItem2_Click);
             // 
             // المخزنToolStripMenuItem
             // 
@@ -258,7 +271,8 @@
             // مساعدهToolStripMenuItem
             // 
             this.مساعدهToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.عنالبرنامجToolStripMenuItem});
+            this.عنالبرنامجToolStripMenuItem,
+            this.المساعدهToolStripMenuItem});
             this.مساعدهToolStripMenuItem.Name = "مساعدهToolStripMenuItem";
             this.مساعدهToolStripMenuItem.Size = new System.Drawing.Size(62, 23);
             this.مساعدهToolStripMenuItem.Text = "مساعده";
@@ -266,9 +280,16 @@
             // عنالبرنامجToolStripMenuItem
             // 
             this.عنالبرنامجToolStripMenuItem.Name = "عنالبرنامجToolStripMenuItem";
-            this.عنالبرنامجToolStripMenuItem.Size = new System.Drawing.Size(144, 24);
+            this.عنالبرنامجToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
             this.عنالبرنامجToolStripMenuItem.Text = "عن البرنامج";
             this.عنالبرنامجToolStripMenuItem.Click += new System.EventHandler(this.عنالبرنامجToolStripMenuItem_Click);
+            // 
+            // المساعدهToolStripMenuItem
+            // 
+            this.المساعدهToolStripMenuItem.Name = "المساعدهToolStripMenuItem";
+            this.المساعدهToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
+            this.المساعدهToolStripMenuItem.Text = "المساعده";
+            this.المساعدهToolStripMenuItem.Click += new System.EventHandler(this.المساعدهToolStripMenuItem_Click);
             // 
             // pictureBox1
             // 
@@ -276,7 +297,7 @@
             this.pictureBox1.Image = global::PharmacyProManager.Properties.Resources.cpwapp;
             this.pictureBox1.Location = new System.Drawing.Point(0, 27);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(681, 476);
+            this.pictureBox1.Size = new System.Drawing.Size(681, 555);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
@@ -286,9 +307,14 @@
             this.groupBox2.Controls.Add(this.comboBox1);
             this.groupBox2.Controls.Add(this.PSubS);
             this.groupBox2.Controls.Add(this.PName);
+            this.groupBox2.Controls.Add(this.Client);
+            this.groupBox2.Controls.Add(this.BillNO);
             this.groupBox2.Controls.Add(this.PEXP);
+            this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.Pnote);
             this.groupBox2.Controls.Add(this.PTottal);
+            this.groupBox2.Controls.Add(this.NewBill);
+            this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.PCost);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.label7);
@@ -300,9 +326,9 @@
             this.groupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox2.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
             this.groupBox2.ForeColor = System.Drawing.Color.Snow;
-            this.groupBox2.Location = new System.Drawing.Point(253, 59);
+            this.groupBox2.Location = new System.Drawing.Point(253, 30);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(416, 339);
+            this.groupBox2.Size = new System.Drawing.Size(416, 466);
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "النتيجه";
@@ -322,6 +348,7 @@
             this.comboBox1.Size = new System.Drawing.Size(272, 32);
             this.comboBox1.TabIndex = 5;
             this.comboBox1.Text = "شرب";
+            this.toolTip1.SetToolTip(this.comboBox1, "طريقة تعاطى الدواء");
             // 
             // PSubS
             // 
@@ -330,6 +357,7 @@
             this.PSubS.Name = "PSubS";
             this.PSubS.Size = new System.Drawing.Size(272, 32);
             this.PSubS.TabIndex = 8;
+            this.toolTip1.SetToolTip(this.PSubS, "المادة الفعاله فى الدواء ليس من الضرورى كتابتها");
             // 
             // PName
             // 
@@ -338,6 +366,29 @@
             this.PName.Name = "PName";
             this.PName.Size = new System.Drawing.Size(272, 32);
             this.PName.TabIndex = 3;
+            this.toolTip1.SetToolTip(this.PName, "اسم الدواء بالانجليزيه و العربيه");
+            // 
+            // Client
+            // 
+            this.Client.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Bold);
+            this.Client.Location = new System.Drawing.Point(6, 411);
+            this.Client.Name = "Client";
+            this.Client.Size = new System.Drawing.Size(272, 32);
+            this.Client.TabIndex = 28;
+            this.Client.TabStop = false;
+            this.toolTip1.SetToolTip(this.Client, "اسم العميل و الذى سوف يظهر فى الفاتورة");
+            // 
+            // BillNO
+            // 
+            this.BillNO.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Bold);
+            this.BillNO.Location = new System.Drawing.Point(6, 374);
+            this.BillNO.Name = "BillNO";
+            this.BillNO.ReadOnly = true;
+            this.BillNO.Size = new System.Drawing.Size(272, 32);
+            this.BillNO.TabIndex = 26;
+            this.BillNO.TabStop = false;
+            this.toolTip1.SetToolTip(this.BillNO, "رقم الفاتورة الحاليه");
+            this.BillNO.TextChanged += new System.EventHandler(this.BillNO_TextChanged);
             // 
             // PEXP
             // 
@@ -346,6 +397,17 @@
             this.PEXP.Name = "PEXP";
             this.PEXP.Size = new System.Drawing.Size(272, 32);
             this.PEXP.TabIndex = 4;
+            this.toolTip1.SetToolTip(this.PEXP, "عدل تاريخ انتهاء الصلاحيه بنفس الشكل المطبوع اذا كان حاجة لذلك يوم/شهر/سنه");
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(292, 421);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(106, 17);
+            this.label10.TabIndex = 27;
+            this.label10.Text = "اسم المشترى:";
             // 
             // Pnote
             // 
@@ -358,6 +420,7 @@
             this.Pnote.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.Pnote.Size = new System.Drawing.Size(272, 85);
             this.Pnote.TabIndex = 9;
+            this.toolTip1.SetToolTip(this.Pnote, "اكتب اى ملاحظات تخص الدواء  او مكانه بما لا يزيد عن 500 حرف");
             // 
             // PTottal
             // 
@@ -366,7 +429,29 @@
             this.PTottal.Name = "PTottal";
             this.PTottal.Size = new System.Drawing.Size(272, 32);
             this.PTottal.TabIndex = 6;
+            this.toolTip1.SetToolTip(this.PTottal, "ارقام فقط");
             this.PTottal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PTottal_KeyPress);
+            // 
+            // NewBill
+            // 
+            this.NewBill.AutoSize = true;
+            this.NewBill.Location = new System.Drawing.Point(167, 347);
+            this.NewBill.Name = "NewBill";
+            this.NewBill.Size = new System.Drawing.Size(111, 21);
+            this.NewBill.TabIndex = 22;
+            this.NewBill.Text = "فاتورة جديدة";
+            this.toolTip1.SetToolTip(this.NewBill, "لأنشاء فتورة جديدة للعميل");
+            this.NewBill.UseVisualStyleBackColor = true;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(308, 384);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(90, 17);
+            this.label9.TabIndex = 25;
+            this.label9.Text = "رقم الفاتورة:";
             // 
             // PCost
             // 
@@ -375,6 +460,7 @@
             this.PCost.Name = "PCost";
             this.PCost.Size = new System.Drawing.Size(272, 32);
             this.PCost.TabIndex = 7;
+            this.toolTip1.SetToolTip(this.PCost, "ارقم و علامه عشريه فقط");
             this.PCost.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PCost_KeyPress);
             // 
             // label8
@@ -457,7 +543,7 @@
             this.panel1.Controls.Add(this.SellB);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel1.Location = new System.Drawing.Point(0, 423);
+            this.panel1.Location = new System.Drawing.Point(0, 502);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(681, 80);
             this.panel1.TabIndex = 5;
@@ -475,6 +561,7 @@
             this.DelMed.Name = "DelMed";
             this.DelMed.Size = new System.Drawing.Size(150, 60);
             this.DelMed.TabIndex = 12;
+            this.toolTip1.SetToolTip(this.DelMed, "لحذف الدواء من قاعدة البيانات");
             this.DelMed.UseVisualStyleBackColor = true;
             this.DelMed.Click += new System.EventHandler(this.DelMed_Click);
             // 
@@ -491,6 +578,7 @@
             this.UPdateB.Name = "UPdateB";
             this.UPdateB.Size = new System.Drawing.Size(150, 60);
             this.UPdateB.TabIndex = 11;
+            this.toolTip1.SetToolTip(this.UPdateB, "لتحديث البيانات الخاصه بدواء معين بعدما تقوم بتغييرها");
             this.UPdateB.UseVisualStyleBackColor = true;
             this.UPdateB.Click += new System.EventHandler(this.UPdateB_Click);
             // 
@@ -505,6 +593,7 @@
             this.LogOutB.Name = "LogOutB";
             this.LogOutB.Size = new System.Drawing.Size(150, 60);
             this.LogOutB.TabIndex = 13;
+            this.toolTip1.SetToolTip(this.LogOutB, "لتسجيل خروجك من الحساب الحالى");
             this.LogOutB.UseVisualStyleBackColor = true;
             this.LogOutB.Click += new System.EventHandler(this.LogOutB_Click);
             // 
@@ -521,6 +610,7 @@
             this.SellB.Name = "SellB";
             this.SellB.Size = new System.Drawing.Size(150, 60);
             this.SellB.TabIndex = 10;
+            this.toolTip1.SetToolTip(this.SellB, "لبيع واحد من الدواء");
             this.SellB.UseVisualStyleBackColor = true;
             this.SellB.Click += new System.EventHandler(this.SellB_Click);
             // 
@@ -534,7 +624,7 @@
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox1.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
             this.groupBox1.ForeColor = System.Drawing.Color.OrangeRed;
-            this.groupBox1.Location = new System.Drawing.Point(12, 126);
+            this.groupBox1.Location = new System.Drawing.Point(12, 193);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(235, 196);
             this.groupBox1.TabIndex = 4;
@@ -571,6 +661,7 @@
             this.SearchB.Name = "SearchB";
             this.SearchB.Size = new System.Drawing.Size(150, 60);
             this.SearchB.TabIndex = 2;
+            this.toolTip1.SetToolTip(this.SearchB, "للبحث عن دواء معين بالاسم");
             this.SearchB.UseVisualStyleBackColor = true;
             this.SearchB.Click += new System.EventHandler(this.SearchB_Click);
             // 
@@ -581,6 +672,53 @@
             this.SearchT.Name = "SearchT";
             this.SearchT.Size = new System.Drawing.Size(219, 32);
             this.SearchT.TabIndex = 1;
+            this.toolTip1.SetToolTip(this.SearchT, "ادخل اسم الدواء المراد البحث عنه ثم اضغط انتر او زر البحث");
+            // 
+            // bu
+            // 
+            this.bu.Location = new System.Drawing.Point(23, 404);
+            this.bu.Multiline = true;
+            this.bu.Name = "bu";
+            this.bu.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.bu.Size = new System.Drawing.Size(225, 58);
+            this.bu.TabIndex = 24;
+            this.bu.Visible = false;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(98)))), ((int)(((byte)(138)))));
+            this.label12.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.label12.ForeColor = System.Drawing.Color.Honeydew;
+            this.label12.Location = new System.Drawing.Point(13, 88);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(69, 17);
+            this.label12.TabIndex = 23;
+            this.label12.Text = "اهلا بك يا";
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.AutoSize = true;
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(98)))), ((int)(((byte)(138)))));
+            this.flowLayoutPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.flowLayoutPanel1.Controls.Add(this.label11);
+            this.flowLayoutPanel1.ForeColor = System.Drawing.Color.Honeydew;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(16, 111);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(232, 43);
+            this.flowLayoutPanel1.TabIndex = 21;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label11.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.label11.Location = new System.Drawing.Point(121, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(108, 17);
+            this.label11.TabIndex = 0;
+            this.label11.Text = "اسم المستخدم";
             // 
             // Manager
             // 
@@ -588,7 +726,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.ClientSize = new System.Drawing.Size(681, 503);
+            this.ClientSize = new System.Drawing.Size(681, 582);
+            this.Controls.Add(this.bu);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox1);
@@ -604,6 +745,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ادارة الصيدليه";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Manager_FormClosing);
+            this.Load += new System.EventHandler(this.Manager_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -612,6 +754,8 @@
             this.panel1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -668,5 +812,16 @@
         private System.Windows.Forms.ToolStripMenuItem فواتيرToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem فتحToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem حذفToolStripMenuItem2;
+        private System.Windows.Forms.TextBox Client;
+        private System.Windows.Forms.TextBox BillNO;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.CheckBox NewBill;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox bu;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.ToolStripMenuItem المساعدهToolStripMenuItem;
     }
 }

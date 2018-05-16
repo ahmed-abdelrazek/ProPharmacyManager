@@ -23,6 +23,7 @@ namespace PharmacyProManager
                     MedLog.Text += r.ReadString("Name") + "\r\n";
                     MedLog.Text += "----------------------------------------\r\n";
                 }
+                r.Close();
             }
             catch (Exception eee)
             {

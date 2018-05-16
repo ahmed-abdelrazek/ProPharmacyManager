@@ -93,6 +93,26 @@ namespace PharmacyProManager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Facebook_alt_1 {
+            get {
+                object obj = ResourceManager.GetObject("Facebook_alt_1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Google_Blogger {
+            get {
+                object obj = ResourceManager.GetObject("Google_Blogger", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap login {
             get {
                 object obj = ResourceManager.GetObject("login", resourceCulture);
@@ -183,6 +203,16 @@ namespace PharmacyProManager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Twitter_alt_4 {
+            get {
+                object obj = ResourceManager.GetObject("Twitter_alt_4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Update {
             get {
                 object obj = ResourceManager.GetObject("Update", resourceCulture);
@@ -196,6 +226,16 @@ namespace PharmacyProManager.Properties {
         internal static System.Drawing.Bitmap Windows_Marketplace {
             get {
                 object obj = ResourceManager.GetObject("Windows_Marketplace", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Yahoo__alt_2 {
+            get {
+                object obj = ResourceManager.GetObject("Yahoo__alt_2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

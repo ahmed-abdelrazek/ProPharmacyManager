@@ -36,6 +36,7 @@
             this.UP = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.SuspendLayout();
             // 
             // ExitB
@@ -48,7 +49,7 @@
             this.ExitB.Size = new System.Drawing.Size(150, 60);
             this.ExitB.TabIndex = 4;
             this.ExitB.UseVisualStyleBackColor = true;
-            this.ExitB.Click += new System.EventHandler(this.LoginB_Click);
+            this.ExitB.Click += new System.EventHandler(this.ExitB_Click);
             // 
             // LoginB
             // 
@@ -60,7 +61,7 @@
             this.LoginB.Size = new System.Drawing.Size(150, 60);
             this.LoginB.TabIndex = 3;
             this.LoginB.UseVisualStyleBackColor = true;
-            this.LoginB.Click += new System.EventHandler(this.ExitB_Click);
+            this.LoginB.Click += new System.EventHandler(this.LoginB_Click_1);
             // 
             // UNPW
             // 
@@ -82,7 +83,6 @@
             this.UN.Name = "UN";
             this.UN.Size = new System.Drawing.Size(364, 40);
             this.UN.TabIndex = 1;
-            this.UN.TextChanged += new System.EventHandler(this.UN_TextChanged);
             // 
             // UP
             // 
@@ -116,6 +116,21 @@
             this.label2.TabIndex = 9;
             this.label2.Text = "أسم المستخدم:";
             // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 4;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45.79832F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 54.20168F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 78F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(388, 317);
+            this.tableLayoutPanel1.TabIndex = 10;
+            // 
             // Login
             // 
             this.AcceptButton = this.LoginB;
@@ -130,6 +145,7 @@
             this.Controls.Add(this.UNPW);
             this.Controls.Add(this.LoginB);
             this.Controls.Add(this.ExitB);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -150,10 +166,11 @@
         private System.Windows.Forms.Button ExitB;
         private System.Windows.Forms.Button LoginB;
         private System.Windows.Forms.Label UNPW;
-        private System.Windows.Forms.TextBox UP;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox UN;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        public System.Windows.Forms.TextBox UP;
+        public System.Windows.Forms.TextBox UN;
     }
 }
 

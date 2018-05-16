@@ -13,8 +13,6 @@ namespace PharmacyProManager.Logs
         }
         decimal ff = 0;
         decimal ff1 = 0;
-        decimal ss = 0;
-        decimal ss1 = 0;
         private void SL1()
         {
             MySqlCommand cmd = new MySqlCommand(MySqlCommandType.SELECT);
@@ -26,6 +24,7 @@ namespace PharmacyProManager.Logs
                 ff = Convert.ToDecimal(r.ReadString("Cost"));
                 ff1 += ff;
             }
+            r.Close();
         }
         private void SoldLog_Load(object sender, EventArgs e)
         {

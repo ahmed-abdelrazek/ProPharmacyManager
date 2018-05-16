@@ -52,7 +52,7 @@
             this.DGV.Location = new System.Drawing.Point(0, 0);
             this.DGV.Name = "DGV";
             this.DGV.ReadOnly = true;
-            this.DGV.Size = new System.Drawing.Size(442, 370);
+            this.DGV.Size = new System.Drawing.Size(581, 374);
             this.DGV.TabIndex = 1;
             // 
             // medicn
@@ -75,6 +75,7 @@
             // 
             // exp
             // 
+            this.exp.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.exp.HeaderText = "مده انتهاء الصلاحيه";
             this.exp.Name = "exp";
             this.exp.ReadOnly = true;
@@ -83,9 +84,9 @@
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.totalprice});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 344);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 348);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(442, 26);
+            this.statusStrip1.Size = new System.Drawing.Size(581, 26);
             this.statusStrip1.TabIndex = 2;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -94,7 +95,7 @@
             this.totalprice.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.totalprice.Name = "totalprice";
             this.totalprice.RightToLeftAutoMirrorImage = true;
-            this.totalprice.Size = new System.Drawing.Size(396, 21);
+            this.totalprice.Size = new System.Drawing.Size(566, 21);
             this.totalprice.Spring = true;
             this.totalprice.Text = "toolStripStatusLabel1";
             // 
@@ -102,7 +103,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(442, 370);
+            this.ClientSize = new System.Drawing.Size(581, 374);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.DGV);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
@@ -123,12 +124,12 @@
         #endregion
 
         private System.Windows.Forms.DataGridView DGV;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel totalprice;
         private System.Windows.Forms.DataGridViewTextBoxColumn medicn;
         private System.Windows.Forms.DataGridViewTextBoxColumn price;
         private System.Windows.Forms.DataGridViewTextBoxColumn count;
         private System.Windows.Forms.DataGridViewTextBoxColumn exp;
-        private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.ToolStripStatusLabel totalprice;
 
 
     }

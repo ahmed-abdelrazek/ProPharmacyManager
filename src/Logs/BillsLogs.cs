@@ -36,6 +36,7 @@ namespace PharmacyProManager.Logs
                     }
                     textBox1.Text += "-----------------------------------------\r\n";
                 }
+                r.Close();
             }
             catch (Exception ee)
             {
@@ -52,6 +53,7 @@ namespace PharmacyProManager.Logs
                 {
                     listBox1.Items.Add(r.ReadString("ID")/* + " || " + r.ReadString("Name")*/);
                 }
+                r.Close();
             }
             catch (Exception ee)
             {
@@ -82,16 +84,19 @@ namespace PharmacyProManager.Logs
                 textBox1.Text += "الموظف : " + r.ReadString("User") + "\r\n";
                 textBox1.Text += "المشترى : " + r.ReadString("Name") + "\r\n";
                 textBox1.Text += "وقت البيع : " + r.ReadString("BillDate") + "\r\n";
+                textBox1.Text += "----الادويه---------------------------------\r\n";
                 string[] skills = AllSkills.Split('#');
                 foreach (string skill in skills)
                 {
                     if (skill.Length < 2)
                         break;
                     string[] skillInfo = skill.Split('~');
-                    textBox1.Text += "الاسم : " + Convert.ToString(skillInfo[0]) + " ";
+                    textBox1.Text += "الاسم : " + Convert.ToString(skillInfo[0]) + "  ";
                     textBox1.Text += "السعر : " + Convert.ToDecimal(skillInfo[1]) + "\r\n";
                 }
+                textBox1.Text += "--------------------------------------------\r\n";
             }
+            r.Close();
         }
     }
 }

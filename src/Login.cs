@@ -31,12 +31,12 @@ namespace PharmacyProManager
                 MySqlCommand cmd = new MySqlCommand(MySqlCommandType.SELECT);
                 cmd.Select("accounts").Where("Username", UN.Text).And("Password", UP.Text);
                 MySqlReader r = new MySqlReader(cmd);
-                while (r.Read())
+                if (r.Read())
                 {
                     this.State = (States.AccountState)r.ReadByte("State");
                     if (State == States.AccountState.Manager)
                     {
-                        Manager ma = new Manager();
+                        Manager ma = new Manager(UN.Text);
                         ma.Show();
                         this.Hide();
                         SaveLogin();
@@ -53,25 +53,15 @@ namespace PharmacyProManager
                         MessageBox.Show("من انت؟ هل تعمل فى هذه الصيدليه؟");
                     }
                 }
-                UNPW.Visible = true;
-
+                else
+                {
+                    UNPW.Visible = true;
+                }
+                r.Close();
             }
             catch (Exception ll)
             {
-                MessageBox.Show(ll.ToString());
-            }
-        }
-
-        private void LoginB_Click(object sender, EventArgs e)
-        {
-            DialogResult dialogResult = MessageBox.Show("هل انت متاكد؟", "الخروج", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
-            {
-                Environment.Exit(0);
-            }
-            else if (dialogResult == DialogResult.No)
-            {
-
+                Program.SaveException(ll);
             }
         }
 
@@ -88,7 +78,13 @@ namespace PharmacyProManager
             }
         }
 
-        private void ExitB_Click(object sender, EventArgs e)
+        private void Login_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            About ab = new About();
+            ab.ShowDialog();
+        }
+
+        private void LoginB_Click_1(object sender, EventArgs e)
         {
             if (UN.Text == "")
             {
@@ -104,15 +100,13 @@ namespace PharmacyProManager
             }
         }
 
-        private void Login_HelpRequested(object sender, HelpEventArgs hlpevent)
+        private void ExitB_Click(object sender, EventArgs e)
         {
-            About ab = new About();
-            ab.ShowDialog();
-        }
-
-        private void UN_TextChanged(object sender, EventArgs e)
-        {
-
+            DialogResult dialogResult = MessageBox.Show("هل انت متاكد؟", "الخروج", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                Environment.Exit(0);
+            }
         }
     }
 }

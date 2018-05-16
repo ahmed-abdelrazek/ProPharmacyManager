@@ -1,11 +1,6 @@
 ﻿using PharmacyProManager.Database;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace PharmacyProManager
@@ -63,6 +58,15 @@ namespace PharmacyProManager
             else if (PTottal.Text != "")
             {
                 PTottal.BackColor = System.Drawing.Color.White;
+            }
+            if (PCost.Text == "")
+            {
+                PCost.BackColor = System.Drawing.Color.Red;
+                return;
+            }
+            else if (PCost.Text != "")
+            {
+                PCost.BackColor = System.Drawing.Color.White;
             }
             try
             {

@@ -30,11 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SoldLog));
             this.dd1 = new System.Windows.Forms.DataGridView();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.tottal1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.mn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.tottal1 = new System.Windows.Forms.ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dd1)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -42,6 +42,7 @@
             // dd1
             // 
             this.dd1.AllowUserToDeleteRows = false;
+            this.dd1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dd1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dd1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.mn,
@@ -53,24 +54,6 @@
             this.dd1.ReadOnly = true;
             this.dd1.Size = new System.Drawing.Size(581, 374);
             this.dd1.TabIndex = 0;
-            // 
-            // statusStrip1
-            // 
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tottal1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 348);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(581, 26);
-            this.statusStrip1.TabIndex = 1;
-            this.statusStrip1.Text = "statusStrip1";
-            // 
-            // tottal1
-            // 
-            this.tottal1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.tottal1.ForeColor = System.Drawing.Color.OrangeRed;
-            this.tottal1.Name = "tottal1";
-            this.tottal1.Size = new System.Drawing.Size(174, 21);
-            this.tottal1.Text = "toolStripStatusLabel1";
             // 
             // mn
             // 
@@ -93,6 +76,24 @@
             this.mp.HeaderText = "السعر";
             this.mp.Name = "mp";
             this.mp.ReadOnly = true;
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tottal1});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 348);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(581, 26);
+            this.statusStrip1.TabIndex = 1;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // tottal1
+            // 
+            this.tottal1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.tottal1.ForeColor = System.Drawing.Color.OrangeRed;
+            this.tottal1.Name = "tottal1";
+            this.tottal1.Size = new System.Drawing.Size(174, 21);
+            this.tottal1.Text = "toolStripStatusLabel1";
             // 
             // SoldLog
             // 
