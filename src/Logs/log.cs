@@ -1,7 +1,22 @@
-﻿using ProPharmacyManager.Database;
+﻿// <copyright>
+//     Copyright (C) 2013 ShababConquer Blog.
+//     This program is free software; you can redistribute it and/or modify 
+//     it under the terms of the GNU General Public License version 2 as 
+//     published by the Free Software Foundation.
+// 
+//     This program is distributed in the hope that it will be useful, but 
+//     WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY 
+//     or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License 
+//     for more details.
+// 
+//     You should have received a copy of the GNU General Public License along 
+//     with this program; if not, write to the Free Software Foundation, Inc., 
+//     51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+// </copyright>
 using System;
-using System.Windows.Forms;
 using System.Threading;
+using System.Windows.Forms;
+using ProPharmacyManager.Database;
 
 namespace ProPharmacyManager
 {
@@ -11,6 +26,7 @@ namespace ProPharmacyManager
         {
             InitializeComponent();
         }
+
         private void loginlog()
         {
             try
@@ -48,13 +64,11 @@ namespace ProPharmacyManager
                 MessageBox.Show(ee.ToString());
             }
         }
+
         private void log_Load(object sender, EventArgs e)
         {
             CheckForIllegalCrossThreadCalls = false;
-            Thread th = new Thread(() =>
-            {
-                loginlog();
-            });
+            Thread th = new Thread(loginlog);
             th.Start();
         }
     }

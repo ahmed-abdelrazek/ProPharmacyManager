@@ -1,4 +1,20 @@
-﻿using System;
+﻿// <copyright>
+//     Copyright (C) 2013 ShababConquer Blog.
+//     This program is free software; you can redistribute it and/or modify 
+//     it under the terms of the GNU General Public License version 2 as 
+//     published by the Free Software Foundation.
+// 
+//     This program is distributed in the hope that it will be useful, but 
+//     WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY 
+//     or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License 
+//     for more details.
+// 
+//     You should have received a copy of the GNU General Public License along 
+//     with this program; if not, write to the Free Software Foundation, Inc., 
+//     51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+// </copyright>
+using ProPharmacyManager.Database;
+using System;
 using System.IO;
 using System.Security.Cryptography;
 using System.Windows.Forms;
@@ -11,7 +27,7 @@ namespace ProPharmacyManager.Kernel
         {
             InitializeComponent();
         }
-        string str = "configuration.ini";
+        
         private void Setup_Load(object sender, EventArgs e)
         {
             MD5.Create(serial.Text);
@@ -29,8 +45,8 @@ namespace ProPharmacyManager.Kernel
             }
             try
             {
-                IniFile file = new IniFile(str);
-                if (File.Exists(str))
+                IniFile file = new IniFile(Constants.SetupConfigPath);
+                if (File.Exists(Constants.SetupConfigPath))
                 {
                     DBHost.Text = file.ReadString("MySql", "Host");
                     DBName.Text = file.ReadString("MySql", "Database");
@@ -59,30 +75,44 @@ namespace ProPharmacyManager.Kernel
         {
             try
             {
-                IniFile file = new IniFile(str);
+                IniFile file = new IniFile(Constants.SetupConfigPath);
                 if (serial.Text == "" && this.Text == "تنصيب البرنامج")
                 {
                     MessageBox.Show("انت لم تقوم بادخال الحروف المتسلسله");
-                }
-                else if (serial.Text == "9499-8790-0047-1128" && this.Text == "تنصيب البرنامج")
-                {
-                    if (!File.Exists(str))
-                    {
-                        string[] lines = { "[MySql]", "Host=" + DBHost.Text, "Username=" + DBUser.Text, "Password=" + DBPass.Text, "Database=" + DBName.Text };
-                        File.WriteAllLines(str, lines);
-                        MessageBox.Show("تم تنصيب الاعدادات");
-                        this.Close();
-                    }
                 }
                 else if (serial.Text != "9499-8790-0047-1128" && this.Text == "تنصيب البرنامج")
                 {
                     MessageBox.Show("السريل خاطئ");
                 }
-                else if (File.Exists(str))
+                else if (serial.Text == "9499-8790-0047-1128" && this.Text == "تنصيب البرنامج")
                 {
-                    File.Delete(str);
+                    if (!File.Exists(Constants.SetupConfigPath))
+                    {
+                        string[] lines = { "[MySql]", "Host=" + DBHost.Text, "Username=" + DBUser.Text, "Password=" + DBPass.Text, "Database=" + DBName.Text };
+                        File.WriteAllLines(Constants.SetupConfigPath, lines);
+                        if (!Directory.Exists(Application.StartupPath + @"BackUp\"))
+                        {
+                            Directory.CreateDirectory(Application.StartupPath + @"\BackUp\");
+                        }
+                        DataHolder.CreateConnection(file.ReadString("MySql", "Username"), file.ReadString("MySql", "Password"), file.ReadString("MySql", "Host"));
+                        CreateDB.Createdb(DBName.Text, DBName.Text);
+                        DataHolder.CreateConnection(file.ReadString("MySql", "Username"), file.ReadString("MySql", "Password"), file.ReadString("MySql", "Database"), file.ReadString("MySql", "Host"));
+                        CreateDB.CreateTables();
+                        MessageBox.Show("تم تنصيب الاعدادات");
+                        this.Close();
+                    }
+                }
+                else if (File.Exists(Constants.SetupConfigPath))
+                {
+                    BackUp.NewDbBackup();
+                    DataHolder.CreateConnection(file.ReadString("MySql", "Username"), file.ReadString("MySql", "Password"), file.ReadString("MySql", "Host"));
+                    CreateDB.Createdb(file.ReadString("MySql", "Database"), DBName.Text);
+                    File.Delete(Constants.SetupConfigPath);
                     string[] lines = { "[MySql]", "Host=" + DBHost.Text, "Username=" + DBUser.Text, "Password=" + DBPass.Text, "Database=" + DBName.Text };
-                    File.WriteAllLines(str, lines);
+                    File.WriteAllLines(Constants.SetupConfigPath, lines);
+                    DataHolder.CreateConnection(file.ReadString("MySql", "Username"), file.ReadString("MySql", "Password"), file.ReadString("MySql", "Database"), file.ReadString("MySql", "Host"));
+                    BackUp.NewDbRestore();
+                    BillsTable.LBN();
                     MessageBox.Show("تم تغيير الاعدادات");
                 }
             }

@@ -1,6 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿// <copyright>
+//     Copyright (C) 2013 ShababConquer Blog.
+//     This program is free software; you can redistribute it and/or modify 
+//     it under the terms of the GNU General Public License version 2 as 
+//     published by the Free Software Foundation.
+// 
+//     This program is distributed in the hope that it will be useful, but 
+//     WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY 
+//     or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License 
+//     for more details.
+// 
+//     You should have received a copy of the GNU General Public License along 
+//     with this program; if not, write to the Free Software Foundation, Inc., 
+//     51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+// </copyright>
+using System;
 using System.Text;
 
 namespace ProPharmacyManager.Database
@@ -18,16 +31,8 @@ namespace ProPharmacyManager.Database
             try
             {
                 MySqlCommand cmd = new MySqlCommand(MySqlCommandType.SELECT).Select("bills").Order("ID", true);
-                //cmd.Select("configuration");
                 MySqlReader r = new MySqlReader(cmd);
-                if (r.Read())
-                {
-                    BillNO = r.ReadUInt32("ID");
-                }
-                else
-                {
-                    BillNO = 0;
-                }
+                BillNO = r.Read() ? r.ReadUInt32("ID") : 0;
                 r.Close();
             }
             catch (Exception ee)
@@ -35,11 +40,13 @@ namespace ProPharmacyManager.Database
                 Program.SaveException(ee);
             }
         }
+
         private static void LoadBill()
         {
             try
             {
-                MySqlCommand cmd = new MySqlCommand(MySqlCommandType.SELECT).Select("bills").Where("Name", Client).And("ID", BillNO);
+                MySqlCommand cmd =
+                    new MySqlCommand(MySqlCommandType.SELECT).Select("bills").Where("Name", Client).And("ID", BillNO);
                 MySqlReader r = new MySqlReader(cmd);
                 if (r.Read())
                 {
@@ -52,6 +59,7 @@ namespace ProPharmacyManager.Database
                 Program.SaveException(ee);
             }
         }
+
         public static void newbill()
         {
             try
@@ -74,6 +82,7 @@ namespace ProPharmacyManager.Database
                 Program.SaveException(ee);
             }
         }
+
         public static void updatebill()
         {
             LoadBill();

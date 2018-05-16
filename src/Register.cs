@@ -1,4 +1,19 @@
-﻿using ProPharmacyManager.Database;
+﻿// <copyright>
+//     Copyright (C) 2013 ShababConquer Blog.
+//     This program is free software; you can redistribute it and/or modify 
+//     it under the terms of the GNU General Public License version 2 as 
+//     published by the Free Software Foundation.
+// 
+//     This program is distributed in the hope that it will be useful, but 
+//     WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY 
+//     or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License 
+//     for more details.
+// 
+//     You should have received a copy of the GNU General Public License along 
+//     with this program; if not, write to the Free Software Foundation, Inc., 
+//     51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+// </copyright>
+using ProPharmacyManager.Database;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -14,46 +29,44 @@ namespace ProPharmacyManager
         private void button5_Click(object sender, EventArgs e)
         {
 
-            byte state = 0;
-            if (comboBox1.Text == "مدير")
+            byte state;
+            switch (comboBox1.Text)
             {
-                state = 2;
-            }
-            else if (comboBox1.Text == "موظف")
-            {
-                state = 1;
-            }
-            else if (comboBox1.Text == "مجهول")
-            {
-                state = 0;
-            }
-            else
-            {
-                MessageBox.Show("اختار صلاحيات المستخدم");
-                return;
+                case "مدير":
+                    state = 2;
+                    break;
+                case "موظف":
+                    state = 1;
+                    break;
+                case "مجهول":
+                    state = 0;
+                    break;
+                default:
+                    MessageBox.Show("اختار صلاحيات المستخدم");
+                    return;
             }
             if (textBox10.Text == "")
             {
-                textBox10.BackColor = System.Drawing.Color.Red;
+                textBox10.BackColor = Color.Red;
                 return;
             }
             if (textBox10.Text != "")
             {
-                textBox10.BackColor = System.Drawing.Color.White;
+                textBox10.BackColor = Color.White;
             }
             if (textBox9.Text == "")
             {
-                textBox9.BackColor = System.Drawing.Color.Red;
+                textBox9.BackColor = Color.Red;
                 return;
             }
             if (textBox9.Text != "")
             {
-                textBox9.BackColor = System.Drawing.Color.White;
+                textBox9.BackColor = Color.White;
             }
             try
             {
                 MySqlCommand cmd = new MySqlCommand(MySqlCommandType.INSERT);
-                cmd.Insert("accounts").Insert("Username", textBox10.Text).Insert("Password", textBox9.Text).Insert("Phone", textBox1.Text).Insert("State", (byte)state).Execute();
+                cmd.Insert("accounts").Insert("Username", textBox10.Text).Insert("Password", textBox9.Text).Insert("Phone", textBox1.Text).Insert("State", state).Execute();
                 label16.Visible = true;
             }
             catch

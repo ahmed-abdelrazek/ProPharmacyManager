@@ -1,7 +1,21 @@
-﻿using ProPharmacyManager.Database;
+﻿// <copyright>
+//     Copyright (C) 2013 ShababConquer Blog.
+//     This program is free software; you can redistribute it and/or modify 
+//     it under the terms of the GNU General Public License version 2 as 
+//     published by the Free Software Foundation.
+// 
+//     This program is distributed in the hope that it will be useful, but 
+//     WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY 
+//     or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License 
+//     for more details.
+// 
+//     You should have received a copy of the GNU General Public License along 
+//     with this program; if not, write to the Free Software Foundation, Inc., 
+//     51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+// </copyright>
+using ProPharmacyManager.Database;
 using System;
 using System.Drawing;
-using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -13,12 +27,6 @@ namespace ProPharmacyManager
         {
             InitializeComponent();
         }
-
-        decimal ff = 0;
-        decimal ff1 = 0;
-        decimal tt = 0;
-        decimal tt1 = 0;
-        byte Ptype = 0;
 
         private void SellMedic()
         {
@@ -32,7 +40,7 @@ namespace ProPharmacyManager
                 {
                     tottal = r.ReadUInt32("Count");
                 }
-                if (tottal > 0 )
+                if (tottal > 0)
                 {
                     tottal = --tottal;
                     PTottal.Clear();
@@ -40,9 +48,9 @@ namespace ProPharmacyManager
                     MySqlCommand CMD = new MySqlCommand(MySqlCommandType.UPDATE);
                     CMD.Update("medics")
                         .Set("Count", tottal);
-                    CMD.Where("Name", PName.Text).Execute();                   
-                MessageBox.Show("تم بيع واحد");
-                SaveSold();
+                    CMD.Where("Name", PName.Text).Execute();
+                    MessageBox.Show("تم بيع واحد");
+                    SaveSold();
                 }
                 else
                 {
@@ -55,19 +63,24 @@ namespace ProPharmacyManager
                 MessageBox.Show(ep.ToString());
             }
         }
+
         private void SaveSold()
         {
             try
             {
                 MySqlCommand cmd = new MySqlCommand(MySqlCommandType.INSERT);
                 cmd.Insert("medlog")
-                    .Insert("Name", PName.Text)/*.Insert("Total", "1")*/.Insert("Cost", PCost.Text).Insert("SellDate", DateTime.Now.ToString()).Execute();
+                    .Insert("Name", PName.Text) /*.Insert("Total", "1")*/
+                    .Insert("Cost", PCost.Text)
+                    .Insert("SellDate", DateTime.Now.ToString())
+                    .Execute();
             }
             catch (Exception e)
             {
                 Program.SaveException(e);
             }
         }
+
         private void clear()
         {
             PName.Clear();
@@ -78,6 +91,7 @@ namespace ProPharmacyManager
             PSubS.Clear();
             Pnote.Clear();
         }
+
         private void IL()
         {
             try
@@ -91,8 +105,9 @@ namespace ProPharmacyManager
                     tt = Convert.ToDecimal(r.ReadString("Count"));
                     ff1 += ff;
                     tt1 += tt;
-                    totalprice.Text = "اجمالى سعر الموجود :" + Convert.ToDecimal(ff1) * Convert.ToDecimal(tt1) + "جنيه";
-                    dataGridView1.Rows.Add(r.ReadString("Name"), r.ReadString("Price"), r.ReadString("Expiry"), r.ReadString("Count"), r.ReadString("Substance"), r.ReadString("Note"));
+                    totalprice.Text = "اجمالى سعر الموجود :" + Convert.ToDecimal(ff1)*Convert.ToDecimal(tt1) + "جنيه";
+                    dataGridView1.Rows.Add(r.ReadString("Name"), r.ReadString("Price"), r.ReadString("Expiry"),
+                        r.ReadString("Count"), r.ReadString("Substance"), r.ReadString("Note"));
                 }
                 r.Close();
             }
@@ -101,51 +116,22 @@ namespace ProPharmacyManager
                 Program.SaveException(ee);
             }
         }
-        private void ptype()
-        {
-            if (Ptype == 1)
-            {
-
-                PType.Text = "شرب";
-            }
-            else if (Ptype == 3)
-            {
-                
-                PType.Text = "حقن";
-            }
-            else if (Ptype == 2)
-            {
-                
-                PType.Text = "اقراص";
-            }
-            else if (Ptype == 4)
-            {
-                
-                PType.Text = "كريم/مرهم";
-            }
-            else if (Ptype == 0)
-            {
-
-                PType.Text = "اخرى";
-            }
-            else
-            {
-                PType.Text = "غير معروف";
-            }
-        }
 
         private void CPanal_FormClosing(object sender, FormClosingEventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show("هل انت متاكد؟", "تسجيل الخروج", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
+            switch (dialogResult)
             {
-                Login lg = new Login();
-                lg.Show();
-                this.Hide();
-            }
-            else if (dialogResult == DialogResult.No)
-            {
-                e.Cancel = true;
+                case DialogResult.Yes:
+                {
+                    Login lg = new Login();
+                    lg.Show();
+                    this.Hide();
+                }
+                    break;
+                case DialogResult.No:
+                    e.Cancel = true;
+                    break;
             }
         }
 
@@ -241,6 +227,7 @@ namespace ProPharmacyManager
                 MessageBox.Show("الدواء غير متوفر");
             }
         }
+
         private void CPanal_HelpRequested(object sender, HelpEventArgs hlpevent)
         {
             About ab = new About();
@@ -252,16 +239,42 @@ namespace ProPharmacyManager
             label11.Text = AccountsTable.UserName;
             BillNO.Text = BillsTable.BillNO.ToString();
             CheckForIllegalCrossThreadCalls = false;
-            Thread th = new Thread(() =>
-            {
-                IL();
-            });
+            Thread th = new Thread(IL);
             th.Start();
         }
 
         private void BillNO_TextChanged(object sender, EventArgs e)
         {
             BillNO.Text = BillsTable.BillNO.ToString();
+        }
+
+        private void SearchT_TextChanged(object sender, EventArgs e)
+        {
+            if (SearchT.DroppedDown == false && SearchT.Text != "")
+            {
+                SearchT.DroppedDown = true;
+
+                try
+                {
+                    MySqlCommand cmd = new MySqlCommand(MySqlCommandType.SELECT)
+                    {
+                        Command = "select * from medics WHERE Name LIKE '%" + SearchT.Text + "%'"
+                    };
+                    MySqlReader r = new MySqlReader(cmd);
+                    while (r.Read())
+                    {
+                        SearchT.Items.Add(r.ReadString("Name"));
+                    }
+                }
+                catch (Exception ef)
+                {
+                    Program.SaveException(ef);
+                }
+            }
+            else
+            {
+                SearchT.DroppedDown = false;
+            }
         }
     }
 }

@@ -1,4 +1,19 @@
-﻿namespace ProPharmacyManager
+﻿// <copyright>
+//     Copyright (C) 2013 ShababConquer Blog.
+//     This program is free software; you can redistribute it and/or modify 
+//     it under the terms of the GNU General Public License version 2 as 
+//     published by the Free Software Foundation.
+// 
+//     This program is distributed in the hope that it will be useful, but 
+//     WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY 
+//     or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License 
+//     for more details.
+// 
+//     You should have received a copy of the GNU General Public License along 
+//     with this program; if not, write to the Free Software Foundation, Inc., 
+//     51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+// </copyright>
+namespace ProPharmacyManager
 {
     partial class CPanal
     {
@@ -32,10 +47,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CPanal));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.SearchT = new System.Windows.Forms.ComboBox();
             this.FP = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.SearchB = new System.Windows.Forms.Button();
-            this.SearchT = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.UPdateB = new System.Windows.Forms.Button();
             this.LogOutB = new System.Windows.Forms.Button();
@@ -102,10 +117,10 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.groupBox1.Controls.Add(this.SearchT);
             this.groupBox1.Controls.Add(this.FP);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.SearchB);
-            this.groupBox1.Controls.Add(this.SearchT);
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox1.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
             this.groupBox1.ForeColor = System.Drawing.Color.OrangeRed;
@@ -115,6 +130,22 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "البحث";
+            // 
+            // SearchT
+            // 
+            this.SearchT.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.SearchT.DropDownHeight = 100;
+            this.SearchT.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.SearchT.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Bold);
+            this.SearchT.FormattingEnabled = true;
+            this.SearchT.IntegralHeight = false;
+            this.SearchT.ItemHeight = 24;
+            this.SearchT.Location = new System.Drawing.Point(11, 49);
+            this.SearchT.MaxDropDownItems = 5;
+            this.SearchT.Name = "SearchT";
+            this.SearchT.Size = new System.Drawing.Size(218, 32);
+            this.SearchT.TabIndex = 4;
+            this.SearchT.TextChanged += new System.EventHandler(this.SearchT_TextChanged);
             // 
             // FP
             // 
@@ -148,15 +179,6 @@
             this.SearchB.TabIndex = 2;
             this.SearchB.UseVisualStyleBackColor = true;
             this.SearchB.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // SearchT
-            // 
-            this.SearchT.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Bold);
-            this.SearchT.Location = new System.Drawing.Point(6, 49);
-            this.SearchT.Name = "SearchT";
-            this.SearchT.Size = new System.Drawing.Size(219, 32);
-            this.SearchT.TabIndex = 1;
-            this.Note1.SetToolTip(this.SearchT, "اكتب اسم الدواء المراد البحث عنه");
             // 
             // panel1
             // 
@@ -508,7 +530,7 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.tabPage1.BackgroundImage = global::ProPharmacyManager.Properties.Resources.cpwapp;
+            this.tabPage1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tabPage1.BackgroundImage")));
             this.tabPage1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.tabPage1.Controls.Add(this.bu);
             this.tabPage1.Controls.Add(this.label12);
@@ -535,7 +557,7 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.MediumBlue;
-            this.tabPage2.BackgroundImage = global::ProPharmacyManager.Properties.Resources.cpwapp;
+            this.tabPage2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tabPage2.BackgroundImage")));
             this.tabPage2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.tabPage2.Controls.Add(this.totalprice);
             this.tabPage2.Controls.Add(this.dataGridView1);
@@ -611,7 +633,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.BackgroundImage = global::ProPharmacyManager.Properties.Resources.cpwapp;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(712, 597);
             this.Controls.Add(this.panel1);
@@ -653,7 +675,6 @@
 
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox SearchT;
         private System.Windows.Forms.Button SearchB;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.GroupBox groupBox2;
@@ -697,5 +718,36 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn subme;
         private System.Windows.Forms.DataGridViewTextBoxColumn noteem;
         private System.Windows.Forms.TextBox bu;
+        private System.Windows.Forms.ComboBox SearchT;
+        private decimal ff = 0;
+        private decimal ff1 = 0;
+        private decimal tt = 0;
+        private decimal tt1 = 0;
+        private byte Ptype = 0;
+
+        private void ptype()
+        {
+            switch (Ptype)
+            {
+                case 1:
+                    PType.Text = "شرب";
+                    break;
+                case 3:
+                    PType.Text = "حقن";
+                    break;
+                case 2:
+                    PType.Text = "اقراص";
+                    break;
+                case 4:
+                    PType.Text = "كريم/مرهم";
+                    break;
+                case 0:
+                    PType.Text = "اخرى";
+                    break;
+                default:
+                    PType.Text = "غير معروف";
+                    break;
+            }
+        }
     }
 }

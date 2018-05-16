@@ -1,15 +1,30 @@
-﻿using System;
+﻿// <copyright>
+//     Copyright (C) 2013 ShababConquer Blog.
+//     This program is free software; you can redistribute it and/or modify 
+//     it under the terms of the GNU General Public License version 2 as 
+//     published by the Free Software Foundation.
+// 
+//     This program is distributed in the hope that it will be useful, but 
+//     WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY 
+//     or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License 
+//     for more details.
+// 
+//     You should have received a copy of the GNU General Public License along 
+//     with this program; if not, write to the Free Software Foundation, Inc., 
+//     51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+// </copyright>
+using System;
 using System.Windows.Forms;
 
 namespace ProPharmacyManager.Database
 {
     public class AccountsTable
     {
-
         public static string UserName;
         public static string UserPassword;
 
         private static States.AccountState State;
+
         private static void SaveLogin()
         {
             try
@@ -23,6 +38,7 @@ namespace ProPharmacyManager.Database
                 MessageBox.Show(e.ToString());
             }
         }
+
         public static bool UserLogin()
         {
             try
@@ -32,25 +48,26 @@ namespace ProPharmacyManager.Database
                 MySqlReader r = new MySqlReader(cmd);
                 if (r.Read())
                 {
-                    State = (States.AccountState)r.ReadByte("State");
-                    if (State == States.AccountState.Manager)
+                    State = (States.AccountState) r.ReadByte("State");
+                    switch (State)
                     {
-                        Manager ma = new Manager();
-                        ma.Show();
-                        SaveLogin();
-                        return true;
-                    }
-                    else if (State == States.AccountState.Employee)
-                    {
-                        CPanal gui = new CPanal();
-                        gui.Show();
-                        SaveLogin();
-                        return true;
-                    }
-                    else
-                    {
-                        MessageBox.Show("من انت؟ هل تعمل فى هذه الصيدليه؟");
-                        return false;
+                        case States.AccountState.Manager:
+                        {
+                            Manager ma = new Manager();
+                            ma.Show();
+                            SaveLogin();
+                            return true;
+                        }
+                        case States.AccountState.Employee:
+                        {
+                            CPanal gui = new CPanal();
+                            gui.Show();
+                            SaveLogin();
+                            return true;
+                        }
+                        default:
+                            MessageBox.Show("من انت؟ هل تعمل فى هذه الصيدليه؟");
+                            return false;
                     }
                 }
                 else
@@ -58,7 +75,6 @@ namespace ProPharmacyManager.Database
                     MessageBox.Show("أسم المستخدم و/او كلمه المرور خطأ");
                     return false;
                 }
-                r.Close();
             }
             catch (Exception ll)
             {

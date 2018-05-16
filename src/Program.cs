@@ -1,28 +1,53 @@
-﻿using ProPharmacyManager.Database;
-using ProPharmacyManager.Kernel;
+﻿// <copyright name="ProPharmacyManager" description="you can run, manage, watch your pharmacy easily">
+//     Copyright (C) 2013 ShababConquer Blog.
+//     This program is free software; you can redistribute it and/or modify 
+//     it under the terms of the GNU General Public License version 2 as 
+//     published by the Free Software Foundation.
+// 
+//     This program is distributed in the hope that it will be useful, but 
+//     WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY 
+//     or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License 
+//     for more details.
+// 
+//     You should have received a copy of the GNU General Public License along 
+//     with this program; if not, write to the Free Software Foundation, Inc., 
+//     51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+// </copyright>
+
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
+using System.Security.Principal;
 using System.Threading;
 using System.Windows.Forms;
+using ProPharmacyManager.Database;
+using ProPharmacyManager.Kernel;
 
 namespace ProPharmacyManager
 {
-    static class Program
+    internal static class Program
     {
         /// <summary>
-        /// The main entry point for the application.
+        ///     The main entry point for the application.
         /// </summary>
         [STAThread]
-        static void Main()
+        private static void Main()
         {
-            bool createdNew = true;
+            WindowsIdentity identity = WindowsIdentity.GetCurrent();
+            WindowsPrincipal principal = identity != null ? new WindowsPrincipal(identity) : null;
+            if (principal == null || !principal.IsInRole(WindowsBuiltInRole.Administrator))
+            {
+                MessageBox.Show(
+                    "يجب تشغيل البرنامج كمدير, من فضلك اعد التشغيل كمدير\nThis application requires Administrator privileges.");
+                return;
+            }
+            bool createdNew;
             using (new Mutex(true, "ProPharmacyManager", out createdNew))
             {
                 if (createdNew)
                 {
-
                     Application.SetCompatibleTextRenderingDefault(false);
                     EngineThread_Execute();
                     Application.EnableVisualStyles();
@@ -31,30 +56,25 @@ namespace ProPharmacyManager
                 else
                 {
                     Process currentProcess = Process.GetCurrentProcess();
-                    foreach (Process process2 in Process.GetProcessesByName(currentProcess.ProcessName))
-                    {
-                        if (process2.Id != currentProcess.Id)
-                        {
-                            MessageBox.Show("البرنامج يعمل بالفعل!");
-                            return;
-                        }
-                    }
+                    if (Process.GetProcessesByName(currentProcess.ProcessName)
+                        .All(process2 => process2.Id == currentProcess.Id)) return;
+                    MessageBox.Show("البرنامج يعمل بالفعل");
                 }
             }
         }
+
         private static void EngineThread_Execute()
         {
             try
             {
-                string str = "configuration.ini";
-                IniFile file = new IniFile(str);
-                if (!File.Exists(str))
+                IniFile file = new IniFile(Constants.SetupConfigPath);
+                if (!File.Exists(Constants.SetupConfigPath))
                 {
-                    Kernel.Setup set = new Kernel.Setup();
-                    set.Text = "تنصيب البرنامج";
+                    Setup set = new Setup {Text = "تنصيب البرنامج"};
                     set.ShowDialog();
                 }
-                DataHolder.CreateConnection(file.ReadString("MySql", "Username"), file.ReadString("MySql", "Password"), file.ReadString("MySql", "Database"), file.ReadString("MySql", "Host"));
+                DataHolder.CreateConnection(file.ReadString("MySql", "Username"), file.ReadString("MySql", "Password"),
+                    file.ReadString("MySql", "Database"), file.ReadString("MySql", "Host"));
                 GC.Collect();
                 BillsTable.LBN();
             }
@@ -63,31 +83,37 @@ namespace ProPharmacyManager
                 MessageBox.Show(exception.ToString());
             }
         }
+
         public static void SaveException(Exception e)
         {
-            if (e.TargetSite.Name != "ThrowInvalidOperationException")
+            if (e.TargetSite.Name == "ThrowInvalidOperationException") return;
+            MessageBox.Show(e.ToString());
+            DateTime now = DateTime.Now;
+            string str = string.Concat(new object[] {now.Month, "-", now.Day, "//"});
+            if (!Directory.Exists(Application.StartupPath + @"exceptions\"))
             {
-                MessageBox.Show(e.ToString());
-                DateTime now = DateTime.Now;
-                string str = string.Concat(new object[] { now.Month, "-", now.Day, "//" });
-                if (!Directory.Exists(Application.StartupPath + @"exceptions\"))
-                {
-                    Directory.CreateDirectory(Application.StartupPath + @"\exceptions\");
-                }
-                if (!Directory.Exists(Application.StartupPath + @"\exceptions\" + str))
-                {
-                    Directory.CreateDirectory(Application.StartupPath + @"\exceptions\" + str);
-                }
-                if (!Directory.Exists(Application.StartupPath + @"\exceptions\" + str + e.TargetSite.Name))
-                {
-                    Directory.CreateDirectory(Application.StartupPath + @"\exceptions\" + str + e.TargetSite.Name);
-                }
-                File.WriteAllLines((Application.StartupPath + @"\exceptions\" + str + e.TargetSite.Name + @"\") + string.Concat(new object[] { now.Hour, "-", now.Minute, "-", now.Ticks & 10L }) + ".txt", new List<string> { "----Exception message----", e.Message, "----End of exception message----\r\n", "----Stack trace----", e.StackTrace, "----End of stack trace----\r\n" }.ToArray());
+                Directory.CreateDirectory(Application.StartupPath + @"\exceptions\");
             }
-        }
-        private static void Application_ThreadException(object sender, ThreadExceptionEventArgs e)
-        {
-            SaveException(e.Exception);
+            if (!Directory.Exists(Application.StartupPath + @"\exceptions\" + str))
+            {
+                Directory.CreateDirectory(Application.StartupPath + @"\exceptions\" + str);
+            }
+            if (!Directory.Exists(Application.StartupPath + @"\exceptions\" + str + e.TargetSite.Name))
+            {
+                Directory.CreateDirectory(Application.StartupPath + @"\exceptions\" + str + e.TargetSite.Name);
+            }
+            File.WriteAllLines(
+                (Application.StartupPath + @"\exceptions\" + str + e.TargetSite.Name + @"\") +
+                string.Concat(new object[] {now.Hour, "-", now.Minute, "-", now.Ticks & 10L}) + ".txt",
+                new List<string>
+                {
+                    "----Exception message----",
+                    e.Message,
+                    "----End of exception message----\r\n",
+                    "----Stack trace----",
+                    e.StackTrace,
+                    "----End of stack trace----\r\n"
+                }.ToArray());
         }
     }
 }

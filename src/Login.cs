@@ -1,8 +1,22 @@
-﻿using ProPharmacyManager.Database;
+﻿// <copyright>
+//     Copyright (C) 2013 ShababConquer Blog.
+//     This program is free software; you can redistribute it and/or modify 
+//     it under the terms of the GNU General Public License version 2 as 
+//     published by the Free Software Foundation.
+// 
+//     This program is distributed in the hope that it will be useful, but 
+//     WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY 
+//     or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License 
+//     for more details.
+// 
+//     You should have received a copy of the GNU General Public License along 
+//     with this program; if not, write to the Free Software Foundation, Inc., 
+//     51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+// </copyright>
+
 using System;
 using System.Windows.Forms;
-using System.Globalization;
-using System.Resources;
+using ProPharmacyManager.Database;
 
 namespace ProPharmacyManager
 {
@@ -13,17 +27,18 @@ namespace ProPharmacyManager
             InitializeComponent();
         }
 
-        
+
         private void Login_FormClosing(object sender, FormClosingEventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show("هل انت متاكد؟", "الخروج", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
+            switch (dialogResult)
             {
-                Environment.Exit(0);
-            }
-            else if (dialogResult == DialogResult.No)
-            {
-                e.Cancel = true;
+                case DialogResult.Yes:
+                    Environment.Exit(0);
+                    break;
+                case DialogResult.No:
+                    e.Cancel = true;
+                    break;
             }
         }
 
@@ -47,7 +62,7 @@ namespace ProPharmacyManager
             {
                 AccountsTable.UserName = UN.Text;
                 AccountsTable.UserPassword = UP.Text;
-                if (AccountsTable.UserLogin() == true)
+                if (AccountsTable.UserLogin())
                 {
                     this.Hide();
                 }
@@ -62,6 +77,5 @@ namespace ProPharmacyManager
                 Environment.Exit(0);
             }
         }
-
     }
 }

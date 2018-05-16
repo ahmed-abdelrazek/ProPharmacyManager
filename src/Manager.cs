@@ -1,9 +1,25 @@
-﻿using ProPharmacyManager.Database;
+﻿// <copyright>
+//     Copyright (C) 2013 ShababConquer Blog.
+//     This program is free software; you can redistribute it and/or modify 
+//     it under the terms of the GNU General Public License version 2 as 
+//     published by the Free Software Foundation.
+// 
+//     This program is distributed in the hope that it will be useful, but 
+//     WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY 
+//     or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License 
+//     for more details.
+// 
+//     You should have received a copy of the GNU General Public License along 
+//     with this program; if not, write to the Free Software Foundation, Inc., 
+//     51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+// </copyright>
+
 using System;
 using System.Drawing;
-using System.Text;
-using System.Threading;
 using System.Windows.Forms;
+using ProPharmacyManager.Database;
+using ProPharmacyManager.Kernel;
+using ProPharmacyManager.Logs;
 
 namespace ProPharmacyManager
 {
@@ -13,7 +29,7 @@ namespace ProPharmacyManager
         {
             InitializeComponent();
         }
-        byte Ptype = 0;       
+
         private void clear()
         {
             PName.Clear();
@@ -23,33 +39,8 @@ namespace ProPharmacyManager
             PSubS.Clear();
             Pnote.Clear();
         }
-        private void ptype()
-        {
-            if (Ptype == 1)
-            {
-                comboBox1.Text = "شرب";
-            }
-            else if (Ptype == 3)
-            {
-                comboBox1.Text = "حقن";
-            }
-            else if (Ptype == 2)
-            {
-                comboBox1.Text = "اقراص";
-            }
-            else if (Ptype == 4)
-            {
-                comboBox1.Text = "كريم/مرهم";
-            }
-            else if (Ptype == 0)
-            {
-                comboBox1.Text = "اخرى";
-            }
-            else
-            {
-                comboBox1.Text = "غير معروف";
-            }
-        }
+
+        private bool SellCom = false;
         private void SellMedic()
         {
             uint tottal = 0;
@@ -73,6 +64,7 @@ namespace ProPharmacyManager
                     CMD.Where("Name", PName.Text).Execute();
                     MessageBox.Show("تم بيع واحد");
                     SaveSold();
+                    SellCom = true;
                 }
                 else
                 {
@@ -84,13 +76,17 @@ namespace ProPharmacyManager
                 MessageBox.Show(ep.ToString());
             }
         }
+
         private void SaveSold()
         {
             try
             {
                 MySqlCommand cmd = new MySqlCommand(MySqlCommandType.INSERT);
                 cmd.Insert("medlog")
-                    .Insert("Name", PName.Text)/*.Insert("Total", "1")*/.Insert("Cost", PCost.Text).Insert("SellDate", DateTime.Now.ToString()).Execute();
+                    .Insert("Name", PName.Text) /*.Insert("Total", "1")*/
+                    .Insert("Cost", PCost.Text)
+                    .Insert("SellDate", DateTime.Now.ToString())
+                    .Execute();
             }
             catch (Exception e)
             {
@@ -107,15 +103,18 @@ namespace ProPharmacyManager
         private void Manager_FormClosing(object sender, FormClosingEventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show("هل انت متاكد؟", "تسجيل الخروج", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
+            switch (dialogResult)
             {
-                Login lg = new Login();
-                lg.Show();
-                this.Hide();
-            }
-            else if (dialogResult == DialogResult.No)
-            {
-                e.Cancel = true;
+                case DialogResult.Yes:
+                {
+                    Login lg = new Login();
+                    lg.Show();
+                    Hide();
+                }
+                    break;
+                case DialogResult.No:
+                    e.Cancel = true;
+                    break;
             }
         }
 
@@ -128,15 +127,17 @@ namespace ProPharmacyManager
         private void LogOutB_Click(object sender, EventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show("هل انت متاكد؟", "تسجيل الخروج", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
+            switch (dialogResult)
             {
-                Login lg = new Login();
-                lg.Show();
-                this.Hide();
-            }
-            else if (dialogResult == DialogResult.No)
-            {
-
+                case DialogResult.Yes:
+                {
+                    Login lg = new Login();
+                    lg.Show();
+                    Hide();
+                }
+                    break;
+                case DialogResult.No:
+                    break;
             }
         }
 
@@ -179,34 +180,32 @@ namespace ProPharmacyManager
         {
             try
             {
-                if (comboBox1.Text == "شرب")
+                switch (comboBox1.Text)
                 {
-                    Ptype = 1;
-                }
-                else if (comboBox1.Text == "اقراص")
-                {
-                    Ptype = 2;
-                }
-                else if (comboBox1.Text == "حقن")
-                {
-                    Ptype = 3;
-                }
-                else if (comboBox1.Text == "كريم/مرهم")
-                {
-                    Ptype = 4;
-                }
-                else if (comboBox1.Text == "اخرى")
-                {
-                    Ptype = 0;
+                    case "شرب":
+                        Ptype = 1;
+                        break;
+                    case "اقراص":
+                        Ptype = 2;
+                        break;
+                    case "حقن":
+                        Ptype = 3;
+                        break;
+                    case "كريم/مرهم":
+                        Ptype = 4;
+                        break;
+                    case "اخرى":
+                        Ptype = 0;
+                        break;
                 }
                 MySqlCommand cmd = new MySqlCommand(MySqlCommandType.UPDATE);
                 cmd.Update("medics")
                     .Set("Name", PName.Text)
-                .Set("Substance", PSubS.Text)
-                .Set("Expiry", PEXP.Text)
-                .Set("Type", Ptype)
-                .Set("Count", PTottal.Text)
-                .Set("Price", PCost.Text)
+                    .Set("Substance", PSubS.Text)
+                    .Set("Expiry", PEXP.Text)
+                    .Set("Type", Ptype)
+                    .Set("Count", PTottal.Text)
+                    .Set("Price", PCost.Text)
                     .Set("Note", Pnote.Text);
                 cmd.Where("Name", PName.Text).Execute();
                 MessageBox.Show("تم التحديث");
@@ -225,6 +224,7 @@ namespace ProPharmacyManager
             if (PName.Text != "" && Client.Text != "" && NewBill.Checked)
             {
                 SellMedic();
+                if (SellCom != true) return;
                 BillsTable.newbill();
                 try
                 {
@@ -235,6 +235,7 @@ namespace ProPharmacyManager
                         BillNO.Text = r.ReadString("ID");
                     }
                     r.Close();
+                    SellCom = false;
                 }
                 catch (Exception el)
                 {
@@ -244,7 +245,9 @@ namespace ProPharmacyManager
             else if (PName.Text != "" && Client.Text != "" && !NewBill.Checked)
             {
                 SellMedic();
+                if (SellCom == false) return;
                 BillsTable.updatebill();
+                SellCom = false;
             }
             else if (PName.Text == "" || PCost.Text == "")
             {
@@ -259,7 +262,7 @@ namespace ProPharmacyManager
                 MessageBox.Show("الدواء غير متوفر");
             }
         }
-        
+
         private void اضافهدواءجديدToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AddMed amd = new AddMed();
@@ -344,7 +347,7 @@ namespace ProPharmacyManager
 
         private void فتحToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            Logs.SoldLog sl = new Logs.SoldLog();
+            SoldLog sl = new SoldLog();
             sl.ShowDialog();
         }
 
@@ -356,19 +359,19 @@ namespace ProPharmacyManager
 
         private void قاعدهالبياناتToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Kernel.Setup set = new Kernel.Setup();
+            Setup set = new Setup();
             set.ShowDialog();
         }
 
         private void الدواءالمتوفرToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Logs.InvLog il = new Logs.InvLog();
+            InvLog il = new InvLog();
             il.ShowDialog();
         }
 
         private void فتحToolStripMenuItem2_Click(object sender, EventArgs e)
         {
-            Logs.BillsLogs bl = new Logs.BillsLogs();
+            BillsLogs bl = new BillsLogs();
             bl.ShowDialog();
         }
 
@@ -382,6 +385,7 @@ namespace ProPharmacyManager
         {
             BillNO.Text = BillsTable.BillNO.ToString();
         }
+
         private void Manager_Load(object sender, EventArgs e)
         {
             label11.Text = AccountsTable.UserName;
@@ -398,6 +402,41 @@ namespace ProPharmacyManager
         {
             About ab = new About();
             ab.ShowDialog();
+        }
+
+        private void نسخاحتياطىToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BAR backrest = new BAR();
+            backrest.Show();
+        }
+
+        private void comboBox2_TextChanged(object sender, EventArgs e)
+        {
+            if (SearchT.DroppedDown == false && SearchT.Text != "")
+            {
+                SearchT.DroppedDown = true;
+
+                try
+                {
+                    MySqlCommand cmd = new MySqlCommand(MySqlCommandType.SELECT)
+                    {
+                        Command = "select * from medics WHERE Name LIKE '%" + SearchT.Text + "%'"
+                    };
+                    MySqlReader r = new MySqlReader(cmd);
+                    while (r.Read())
+                    {
+                        SearchT.Items.Add(r.ReadString("Name"));
+                    }
+                }
+                catch (Exception ef)
+                {
+                    Program.SaveException(ef);
+                }
+            }
+            else
+            {
+                SearchT.DroppedDown = false;
+            }
         }
     }
 }

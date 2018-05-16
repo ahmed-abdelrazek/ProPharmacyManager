@@ -1,4 +1,19 @@
-﻿namespace ProPharmacyManager.Kernel
+﻿// <copyright>
+//     Copyright (C) 2013 ShababConquer Blog.
+//     This program is free software; you can redistribute it and/or modify 
+//     it under the terms of the GNU General Public License version 2 as 
+//     published by the Free Software Foundation.
+// 
+//     This program is distributed in the hope that it will be useful, but 
+//     WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY 
+//     or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License 
+//     for more details.
+// 
+//     You should have received a copy of the GNU General Public License along 
+//     with this program; if not, write to the Free Software Foundation, Inc., 
+//     51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+// </copyright>
+namespace ProPharmacyManager.Kernel
 {
     partial class Setup
     {
@@ -151,7 +166,7 @@
             this.Install.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Install.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
             this.Install.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Install.Location = new System.Drawing.Point(277, 384);
+            this.Install.Location = new System.Drawing.Point(317, 384);
             this.Install.Name = "Install";
             this.Install.Size = new System.Drawing.Size(150, 60);
             this.Install.TabIndex = 5;
@@ -200,7 +215,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
             this.label8.ForeColor = System.Drawing.Color.Red;
-            this.label8.Location = new System.Drawing.Point(37, 321);
+            this.label8.Location = new System.Drawing.Point(37, 327);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(62, 19);
             this.label8.TabIndex = 14;
@@ -209,11 +224,11 @@
             // serial
             // 
             this.serial.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
-            this.serial.Location = new System.Drawing.Point(105, 318);
+            this.serial.Location = new System.Drawing.Point(105, 324);
             this.serial.Multiline = true;
             this.serial.Name = "serial";
             this.serial.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.serial.Size = new System.Drawing.Size(362, 44);
+            this.serial.Size = new System.Drawing.Size(362, 41);
             this.serial.TabIndex = 13;
             // 
             // Setup

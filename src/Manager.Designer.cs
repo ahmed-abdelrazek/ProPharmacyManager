@@ -1,4 +1,19 @@
-﻿namespace ProPharmacyManager
+﻿// <copyright>
+//     Copyright (C) 2013 ShababConquer Blog.
+//     This program is free software; you can redistribute it and/or modify 
+//     it under the terms of the GNU General Public License version 2 as 
+//     published by the Free Software Foundation.
+// 
+//     This program is distributed in the hope that it will be useful, but 
+//     WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY 
+//     or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License 
+//     for more details.
+// 
+//     You should have received a copy of the GNU General Public License along 
+//     with this program; if not, write to the Free Software Foundation, Inc., 
+//     51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+// </copyright>
+namespace ProPharmacyManager
 {
     partial class Manager
     {
@@ -51,6 +66,7 @@
             this.الدواءالمتوفرToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.الاعداداتToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.قاعدهالبياناتToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.نسخاحتياطىToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.مساعدهToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.عنالبرنامجToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.المساعدهToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -81,10 +97,10 @@
             this.LogOutB = new System.Windows.Forms.Button();
             this.SellB = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.SearchT = new System.Windows.Forms.ComboBox();
             this.FP = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.SearchB = new System.Windows.Forms.Button();
-            this.SearchT = new System.Windows.Forms.TextBox();
             this.bu = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -256,7 +272,8 @@
             // الاعداداتToolStripMenuItem
             // 
             this.الاعداداتToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.قاعدهالبياناتToolStripMenuItem});
+            this.قاعدهالبياناتToolStripMenuItem,
+            this.نسخاحتياطىToolStripMenuItem});
             this.الاعداداتToolStripMenuItem.Name = "الاعداداتToolStripMenuItem";
             this.الاعداداتToolStripMenuItem.Size = new System.Drawing.Size(77, 23);
             this.الاعداداتToolStripMenuItem.Text = "الاعدادات";
@@ -267,6 +284,13 @@
             this.قاعدهالبياناتToolStripMenuItem.Size = new System.Drawing.Size(160, 24);
             this.قاعدهالبياناتToolStripMenuItem.Text = "قاعده البيانات";
             this.قاعدهالبياناتToolStripMenuItem.Click += new System.EventHandler(this.قاعدهالبياناتToolStripMenuItem_Click);
+            // 
+            // نسخاحتياطىToolStripMenuItem
+            // 
+            this.نسخاحتياطىToolStripMenuItem.Name = "نسخاحتياطىToolStripMenuItem";
+            this.نسخاحتياطىToolStripMenuItem.Size = new System.Drawing.Size(160, 24);
+            this.نسخاحتياطىToolStripMenuItem.Text = "نسخ احتياطى";
+            this.نسخاحتياطىToolStripMenuItem.Click += new System.EventHandler(this.نسخاحتياطىToolStripMenuItem_Click);
             // 
             // مساعدهToolStripMenuItem
             // 
@@ -294,7 +318,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = global::ProPharmacyManager.Properties.Resources.cpwapp;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(0, 27);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(681, 555);
@@ -420,7 +444,7 @@
             this.Pnote.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.Pnote.Size = new System.Drawing.Size(272, 85);
             this.Pnote.TabIndex = 9;
-            this.toolTip1.SetToolTip(this.Pnote, "اكتب اى ملاحظات تخص الدواء  او مكانه بما لا يزيد عن 500 حرف");
+            this.toolTip1.SetToolTip(this.Pnote, "اكتب اى ملاحظات تخص الدواء كمكانه بما لا يزيد عن 500 حرف");
             // 
             // PTottal
             // 
@@ -617,10 +641,10 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.groupBox1.Controls.Add(this.SearchT);
             this.groupBox1.Controls.Add(this.FP);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.SearchB);
-            this.groupBox1.Controls.Add(this.SearchT);
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox1.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
             this.groupBox1.ForeColor = System.Drawing.Color.OrangeRed;
@@ -630,6 +654,23 @@
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "البحث";
+            // 
+            // SearchT
+            // 
+            this.SearchT.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.SearchT.DropDownHeight = 100;
+            this.SearchT.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.SearchT.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Bold);
+            this.SearchT.FormattingEnabled = true;
+            this.SearchT.IntegralHeight = false;
+            this.SearchT.ItemHeight = 24;
+            this.SearchT.Location = new System.Drawing.Point(6, 49);
+            this.SearchT.MaxDropDownItems = 5;
+            this.SearchT.Name = "SearchT";
+            this.SearchT.Size = new System.Drawing.Size(218, 32);
+            this.SearchT.TabIndex = 1;
+            this.toolTip1.SetToolTip(this.SearchT, "ادخل اسم الدواء المراد البحث عنه ثم اضغط انتر او زر البحث");
+            this.SearchT.TextChanged += new System.EventHandler(this.comboBox2_TextChanged);
             // 
             // FP
             // 
@@ -665,15 +706,6 @@
             this.SearchB.UseVisualStyleBackColor = true;
             this.SearchB.Click += new System.EventHandler(this.SearchB_Click);
             // 
-            // SearchT
-            // 
-            this.SearchT.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Bold);
-            this.SearchT.Location = new System.Drawing.Point(6, 49);
-            this.SearchT.Name = "SearchT";
-            this.SearchT.Size = new System.Drawing.Size(219, 32);
-            this.SearchT.TabIndex = 1;
-            this.toolTip1.SetToolTip(this.SearchT, "ادخل اسم الدواء المراد البحث عنه ثم اضغط انتر او زر البحث");
-            // 
             // bu
             // 
             this.bu.Location = new System.Drawing.Point(23, 404);
@@ -689,7 +721,7 @@
             this.label12.AutoSize = true;
             this.label12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(98)))), ((int)(((byte)(138)))));
             this.label12.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
-            this.label12.ForeColor = System.Drawing.Color.Honeydew;
+            this.label12.ForeColor = System.Drawing.Color.Transparent;
             this.label12.Location = new System.Drawing.Point(13, 88);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(69, 17);
@@ -702,7 +734,7 @@
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(98)))), ((int)(((byte)(138)))));
             this.flowLayoutPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.flowLayoutPanel1.Controls.Add(this.label11);
-            this.flowLayoutPanel1.ForeColor = System.Drawing.Color.Honeydew;
+            this.flowLayoutPanel1.ForeColor = System.Drawing.Color.Transparent;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(16, 111);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(232, 43);
@@ -795,7 +827,6 @@
         private System.Windows.Forms.Label FP;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button SearchB;
-        private System.Windows.Forms.TextBox SearchT;
         private System.Windows.Forms.ToolStripMenuItem سجلالدخولToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem غيرمتوفرToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem سجلالمبيعاتToolStripMenuItem;
@@ -824,5 +855,33 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.ToolStripMenuItem المساعدهToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem نسخاحتياطىToolStripMenuItem;
+        private System.Windows.Forms.ComboBox SearchT;
+        private byte Ptype = 0;
+
+        private void ptype()
+        {
+            switch (Ptype)
+            {
+                case 1:
+                    comboBox1.Text = "شرب";
+                    break;
+                case 3:
+                    comboBox1.Text = "حقن";
+                    break;
+                case 2:
+                    comboBox1.Text = "اقراص";
+                    break;
+                case 4:
+                    comboBox1.Text = "كريم/مرهم";
+                    break;
+                case 0:
+                    comboBox1.Text = "اخرى";
+                    break;
+                default:
+                    comboBox1.Text = "غير معروف";
+                    break;
+            }
+        }
     }
 }

@@ -1,7 +1,22 @@
-﻿using ProPharmacyManager.Database;
+﻿// <copyright>
+//     Copyright (C) 2013 ShababConquer Blog.
+//     This program is free software; you can redistribute it and/or modify 
+//     it under the terms of the GNU General Public License version 2 as 
+//     published by the Free Software Foundation.
+// 
+//     This program is distributed in the hope that it will be useful, but 
+//     WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY 
+//     or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License 
+//     for more details.
+// 
+//     You should have received a copy of the GNU General Public License along 
+//     with this program; if not, write to the Free Software Foundation, Inc., 
+//     51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+// </copyright>
 using System;
 using System.Drawing;
 using System.Windows.Forms;
+using ProPharmacyManager.Database;
 
 namespace ProPharmacyManager
 {
@@ -14,59 +29,54 @@ namespace ProPharmacyManager
 
         private void UPdateB_Click(object sender, EventArgs e)
         {
-
-            byte PType = 0;
-            if (comboBox1.Text == "شرب")
+            byte PType;
+            switch (comboBox1.Text)
             {
-                PType = 1;
-            }
-            else if (comboBox1.Text == "حقن")
-            {
-                PType = 3;
-            }
-            else if (comboBox1.Text == "اقراص")
-            {
-                PType = 2;
-            }
-            else if (comboBox1.Text == "كريم/مرهم")
-            {
-                PType = 4;
-            }
-            else if (comboBox1.Text == "اخرى")
-            {
-                PType = 0;
-            }
-            else
-            {
-                MessageBox.Show("اختار صلاحيات المستخدم");
-                return;
+                case "شرب":
+                    PType = 1;
+                    break;
+                case "حقن":
+                    PType = 3;
+                    break;
+                case "اقراص":
+                    PType = 2;
+                    break;
+                case "كريم/مرهم":
+                    PType = 4;
+                    break;
+                case "اخرى":
+                    PType = 0;
+                    break;
+                default:
+                    MessageBox.Show("اختار صلاحيات المستخدم");
+                    return;
             }
             if (PName.Text == "")
             {
-                PName.BackColor = System.Drawing.Color.Red;
+                PName.BackColor = Color.Red;
                 return;
             }
             else if (PName.Text != "")
             {
-                PName.BackColor = System.Drawing.Color.White;
+                PName.BackColor = Color.White;
             }
             if (PTottal.Text == "")
             {
-                PTottal.BackColor = System.Drawing.Color.Red;
+                PTottal.BackColor = Color.Red;
                 return;
             }
             else if (PTottal.Text != "")
             {
-                PTottal.BackColor = System.Drawing.Color.White;
+                PTottal.BackColor = Color.White;
             }
             if (PCost.Text == "")
             {
-                PCost.BackColor = System.Drawing.Color.Red;
+                PCost.BackColor = Color.Red;
                 return;
             }
             else if (PCost.Text != "")
             {
-                PCost.BackColor = System.Drawing.Color.White;
+                PCost.BackColor = Color.White;
             }
             try
             {
@@ -78,7 +88,7 @@ namespace ProPharmacyManager
                     .Insert("Expiry", PEX.Text)
                     .Insert("Note", Pnote.Text)
                     .Insert("Price", PCost.Text)
-                    .Insert("Type", (byte)PType).Execute();
+                    .Insert("Type", PType).Execute();
                 label16.ForeColor = Color.Green;
                 label16.Text = "تم اضافه الدواء بنجاح.";
                 label16.Visible = true;
