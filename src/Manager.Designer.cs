@@ -46,6 +46,7 @@
             this.منتهىالصلاحيهToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.مساعدهToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.عنالبرنامجToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.الاعداداتToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -72,6 +73,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.SearchB = new System.Windows.Forms.Button();
             this.SearchT = new System.Windows.Forms.TextBox();
+            this.قاعدهالبياناتToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -87,6 +89,7 @@
             this.toolStripMenuItem1,
             this.حساباتToolStripMenuItem,
             this.المخزنToolStripMenuItem,
+            this.الاعداداتToolStripMenuItem,
             this.مساعدهToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -183,14 +186,14 @@
             // فتحToolStripMenuItem1
             // 
             this.فتحToolStripMenuItem1.Name = "فتحToolStripMenuItem1";
-            this.فتحToolStripMenuItem1.Size = new System.Drawing.Size(152, 24);
+            this.فتحToolStripMenuItem1.Size = new System.Drawing.Size(106, 24);
             this.فتحToolStripMenuItem1.Text = "فتح";
             this.فتحToolStripMenuItem1.Click += new System.EventHandler(this.فتحToolStripMenuItem1_Click);
             // 
             // حذفToolStripMenuItem1
             // 
             this.حذفToolStripMenuItem1.Name = "حذفToolStripMenuItem1";
-            this.حذفToolStripMenuItem1.Size = new System.Drawing.Size(152, 24);
+            this.حذفToolStripMenuItem1.Size = new System.Drawing.Size(106, 24);
             this.حذفToolStripMenuItem1.Text = "حذف";
             this.حذفToolStripMenuItem1.Click += new System.EventHandler(this.حذفToolStripMenuItem1_Click);
             // 
@@ -215,6 +218,14 @@
             this.عنالبرنامجToolStripMenuItem.Size = new System.Drawing.Size(144, 24);
             this.عنالبرنامجToolStripMenuItem.Text = "عن البرنامج";
             this.عنالبرنامجToolStripMenuItem.Click += new System.EventHandler(this.عنالبرنامجToolStripMenuItem_Click);
+            // 
+            // الاعداداتToolStripMenuItem
+            // 
+            this.الاعداداتToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.قاعدهالبياناتToolStripMenuItem});
+            this.الاعداداتToolStripMenuItem.Name = "الاعداداتToolStripMenuItem";
+            this.الاعداداتToolStripMenuItem.Size = new System.Drawing.Size(75, 23);
+            this.الاعداداتToolStripMenuItem.Text = "الاعدادات";
             // 
             // pictureBox1
             // 
@@ -525,6 +536,13 @@
             this.SearchT.Size = new System.Drawing.Size(219, 32);
             this.SearchT.TabIndex = 1;
             // 
+            // قاعدهالبياناتToolStripMenuItem
+            // 
+            this.قاعدهالبياناتToolStripMenuItem.Name = "قاعدهالبياناتToolStripMenuItem";
+            this.قاعدهالبياناتToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
+            this.قاعدهالبياناتToolStripMenuItem.Text = "قاعده البيانات";
+            this.قاعدهالبياناتToolStripMenuItem.Click += new System.EventHandler(this.قاعدهالبياناتToolStripMenuItem_Click);
+            // 
             // Manager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -603,5 +621,7 @@
         private System.Windows.Forms.ToolStripMenuItem فتحToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem حذفToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem منتهىالصلاحيهToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem الاعداداتToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem قاعدهالبياناتToolStripMenuItem;
     }
 }

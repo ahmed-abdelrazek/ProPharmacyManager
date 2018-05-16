@@ -311,5 +311,11 @@ namespace PharmacyProManager
             new MySqlCommand(MySqlCommandType.CLEAR).Clear("medlog").Execute();
             MessageBox.Show("تم حذف سجل المبيعات");
         }
+
+        private void قاعدهالبياناتToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Kernel.Setup set = new Kernel.Setup();
+            set.ShowDialog();
+        }
     }
 }

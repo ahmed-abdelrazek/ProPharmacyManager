@@ -22,9 +22,10 @@ namespace PharmacyProManager
             {
                 if (createdNew)
                 {
+
+                    Application.SetCompatibleTextRenderingDefault(false);
                     EngineThread_Execute();
                     Application.EnableVisualStyles();
-                    Application.SetCompatibleTextRenderingDefault(false);
                     Application.Run(new Login());
                 }
                 else
@@ -49,8 +50,8 @@ namespace PharmacyProManager
                 IniFile file = new IniFile(str);
                 if (!File.Exists(str))
                 {
-                    string[] lines = { "[MySql]", "Host=localhost", "Username=root", "Password=1234", "Database=phdb" };
-                    File.WriteAllLines(str, lines);
+                    Kernel.Setup set = new Kernel.Setup();
+                    set.ShowDialog();
                 }
                 DataHolder.CreateConnection(file.ReadString("MySql", "Username"), file.ReadString("MySql", "Password"), file.ReadString("MySql", "Database"), file.ReadString("MySql", "Host"));
                 GC.Collect();
