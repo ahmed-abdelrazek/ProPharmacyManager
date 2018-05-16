@@ -37,6 +37,9 @@
             this.سجلالدخولToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.فتحToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.حذفToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.فواتيرToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.فتحToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.حذفToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.المخزنToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.اضافهدواءجديدToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.غيرمتوفرToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -108,6 +111,7 @@
             this.حساباتToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.اضافهموظفجديدToolStripMenuItem,
             this.تغييركلمهالمرورToolStripMenuItem,
+            this.فواتيرToolStripMenuItem,
             this.سجلالدخولToolStripMenuItem});
             this.حساباتToolStripMenuItem.Name = "حساباتToolStripMenuItem";
             this.حساباتToolStripMenuItem.Size = new System.Drawing.Size(64, 23);
@@ -149,6 +153,29 @@
             this.حذفToolStripMenuItem.Size = new System.Drawing.Size(106, 24);
             this.حذفToolStripMenuItem.Text = "حذف";
             this.حذفToolStripMenuItem.Click += new System.EventHandler(this.حذفToolStripMenuItem_Click);
+            // 
+            // فواتيرToolStripMenuItem
+            // 
+            this.فواتيرToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.فتحToolStripMenuItem2,
+            this.حذفToolStripMenuItem2});
+            this.فواتيرToolStripMenuItem.Name = "فواتيرToolStripMenuItem";
+            this.فواتيرToolStripMenuItem.Size = new System.Drawing.Size(181, 24);
+            this.فواتيرToolStripMenuItem.Text = "فواتير";
+            // 
+            // فتحToolStripMenuItem2
+            // 
+            this.فتحToolStripMenuItem2.Name = "فتحToolStripMenuItem2";
+            this.فتحToolStripMenuItem2.Size = new System.Drawing.Size(152, 24);
+            this.فتحToolStripMenuItem2.Text = "فتح";
+            this.فتحToolStripMenuItem2.Click += new System.EventHandler(this.فتحToolStripMenuItem2_Click);
+            // 
+            // حذفToolStripMenuItem2
+            // 
+            this.حذفToolStripMenuItem2.Name = "حذفToolStripMenuItem2";
+            this.حذفToolStripMenuItem2.Size = new System.Drawing.Size(152, 24);
+            this.حذفToolStripMenuItem2.Text = "حذف";
+            this.حذفToolStripMenuItem2.Click += new System.EventHandler(this.حذفToolStripMenuItem2_Click);
             // 
             // المخزنToolStripMenuItem
             // 
@@ -638,5 +665,8 @@
         private System.Windows.Forms.ToolStripMenuItem الاعداداتToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem قاعدهالبياناتToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem الدواءالمتوفرToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem فواتيرToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem فتحToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem حذفToolStripMenuItem2;
     }
 }

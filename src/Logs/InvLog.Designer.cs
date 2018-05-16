@@ -28,41 +28,83 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.text1 = new System.Windows.Forms.TextBox();
-            this.ttext1 = new System.Windows.Forms.TextBox();
+            this.DGV = new System.Windows.Forms.DataGridView();
+            this.medicn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.count = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.exp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.totalprice = new System.Windows.Forms.ToolStripStatusLabel();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV)).BeginInit();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // text1
+            // DGV
             // 
-            this.text1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.text1.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
-            this.text1.Location = new System.Drawing.Point(0, 0);
-            this.text1.Multiline = true;
-            this.text1.Name = "text1";
-            this.text1.ReadOnly = true;
-            this.text1.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.text1.Size = new System.Drawing.Size(581, 370);
-            this.text1.TabIndex = 0;
+            this.DGV.AllowUserToDeleteRows = false;
+            this.DGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.medicn,
+            this.price,
+            this.count,
+            this.exp});
+            this.DGV.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DGV.Location = new System.Drawing.Point(0, 0);
+            this.DGV.Name = "DGV";
+            this.DGV.ReadOnly = true;
+            this.DGV.Size = new System.Drawing.Size(442, 370);
+            this.DGV.TabIndex = 1;
             // 
-            // ttext1
+            // medicn
             // 
-            this.ttext1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.ttext1.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
-            this.ttext1.ForeColor = System.Drawing.Color.Red;
-            this.ttext1.Location = new System.Drawing.Point(0, 346);
-            this.ttext1.MaxLength = 0;
-            this.ttext1.Name = "ttext1";
-            this.ttext1.ReadOnly = true;
-            this.ttext1.Size = new System.Drawing.Size(581, 24);
-            this.ttext1.TabIndex = 1;
+            this.medicn.HeaderText = "الاسم";
+            this.medicn.Name = "medicn";
+            this.medicn.ReadOnly = true;
+            // 
+            // price
+            // 
+            this.price.HeaderText = "السعر";
+            this.price.Name = "price";
+            this.price.ReadOnly = true;
+            // 
+            // count
+            // 
+            this.count.HeaderText = "الكميه";
+            this.count.Name = "count";
+            this.count.ReadOnly = true;
+            // 
+            // exp
+            // 
+            this.exp.HeaderText = "مده انتهاء الصلاحيه";
+            this.exp.Name = "exp";
+            this.exp.ReadOnly = true;
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.totalprice});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 344);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(442, 26);
+            this.statusStrip1.TabIndex = 2;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // totalprice
+            // 
+            this.totalprice.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.totalprice.Name = "totalprice";
+            this.totalprice.RightToLeftAutoMirrorImage = true;
+            this.totalprice.Size = new System.Drawing.Size(396, 21);
+            this.totalprice.Spring = true;
+            this.totalprice.Text = "toolStripStatusLabel1";
             // 
             // InvLog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(581, 370);
-            this.Controls.Add(this.ttext1);
-            this.Controls.Add(this.text1);
+            this.ClientSize = new System.Drawing.Size(442, 370);
+            this.Controls.Add(this.statusStrip1);
+            this.Controls.Add(this.DGV);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "InvLog";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -70,6 +112,9 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "سجل الادويه";
             this.Load += new System.EventHandler(this.InvLog_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.DGV)).EndInit();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -77,7 +122,14 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox text1;
-        private System.Windows.Forms.TextBox ttext1;
+        private System.Windows.Forms.DataGridView DGV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn medicn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn price;
+        private System.Windows.Forms.DataGridViewTextBoxColumn count;
+        private System.Windows.Forms.DataGridViewTextBoxColumn exp;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel totalprice;
+
+
     }
 }

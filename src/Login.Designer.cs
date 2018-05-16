@@ -82,6 +82,7 @@
             this.UN.Name = "UN";
             this.UN.Size = new System.Drawing.Size(364, 40);
             this.UN.TabIndex = 1;
+            this.UN.TextChanged += new System.EventHandler(this.UN_TextChanged);
             // 
             // UP
             // 
@@ -131,6 +132,7 @@
             this.Controls.Add(this.ExitB);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Login";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
@@ -148,10 +150,10 @@
         private System.Windows.Forms.Button ExitB;
         private System.Windows.Forms.Button LoginB;
         private System.Windows.Forms.Label UNPW;
-        private System.Windows.Forms.TextBox UN;
         private System.Windows.Forms.TextBox UP;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox UN;
     }
 }
 

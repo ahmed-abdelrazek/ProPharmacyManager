@@ -118,8 +118,8 @@ namespace PharmacyProManager
                     PSubS.Text = r.ReadString("Substance");
                     Ptype = r.ReadByte("Type");
                     PTottal.Text = r.ReadUInt32("Count").ToString();
-                    PCost.Text = r.ReadUInt32("Price").ToString();
-                    PEXP.Text = r.ReadString("Expiry").ToString();
+                    PCost.Text = r.ReadString("Price");
+                    PEXP.Text = r.ReadString("Expiry");
                     Pnote.Text = r.ReadString("Note");
                     ptype();
                     FP.ForeColor = Color.Green;
@@ -320,6 +320,18 @@ namespace PharmacyProManager
         {
             Logs.InvLog il = new Logs.InvLog();
             il.ShowDialog();
+        }
+
+        private void فتحToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            Logs.BillsLogs bl = new Logs.BillsLogs();
+            bl.ShowDialog();
+        }
+
+        private void حذفToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            new MySqlCommand(MySqlCommandType.CLEAR).Clear("bills").Execute();
+            MessageBox.Show("تم حذف الفواتير");
         }
     }
 }

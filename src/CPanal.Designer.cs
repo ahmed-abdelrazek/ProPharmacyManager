@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CPanal));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -40,6 +41,11 @@
             this.LogOutB = new System.Windows.Forms.Button();
             this.SellB = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.Client = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.BillNO = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.NewBill = new System.Windows.Forms.CheckBox();
             this.PSubS = new System.Windows.Forms.TextBox();
             this.PName = new System.Windows.Forms.TextBox();
             this.PEXP = new System.Windows.Forms.TextBox();
@@ -54,20 +60,41 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.NewBill = new System.Windows.Forms.CheckBox();
+            this.Note1 = new System.Windows.Forms.ToolTip(this.components);
+            this.totalprice = new System.Windows.Forms.TextBox();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.bu = new System.Windows.Forms.TextBox();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.medic = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pricem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.expme = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totalcm = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.subme = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.noteem = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = global::PharmacyProManager.Properties.Resources.cpwapp;
+            this.pictureBox1.Image = global::PharmacyProManager.Properties.Resources.BG;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(681, 483);
+            this.pictureBox1.Size = new System.Drawing.Size(712, 597);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -82,7 +109,7 @@
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox1.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
             this.groupBox1.ForeColor = System.Drawing.Color.OrangeRed;
-            this.groupBox1.Location = new System.Drawing.Point(12, 80);
+            this.groupBox1.Location = new System.Drawing.Point(455, 155);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(235, 196);
             this.groupBox1.TabIndex = 1;
@@ -129,6 +156,7 @@
             this.SearchT.Name = "SearchT";
             this.SearchT.Size = new System.Drawing.Size(219, 32);
             this.SearchT.TabIndex = 1;
+            this.Note1.SetToolTip(this.SearchT, "اكتب اسم الدواء المراد البحث عنه");
             // 
             // panel1
             // 
@@ -139,9 +167,9 @@
             this.panel1.Controls.Add(this.SellB);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel1.Location = new System.Drawing.Point(0, 403);
+            this.panel1.Location = new System.Drawing.Point(0, 517);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(681, 80);
+            this.panel1.Size = new System.Drawing.Size(712, 80);
             this.panel1.TabIndex = 2;
             // 
             // UPdateB
@@ -157,6 +185,7 @@
             this.UPdateB.Name = "UPdateB";
             this.UPdateB.Size = new System.Drawing.Size(150, 60);
             this.UPdateB.TabIndex = 6;
+            this.Note1.SetToolTip(this.UPdateB, "يقوم بحفظ ما قمت بكتابته او تعديله فى الملاحظات");
             this.UPdateB.UseVisualStyleBackColor = true;
             this.UPdateB.Click += new System.EventHandler(this.UPdateB_Click);
             // 
@@ -171,6 +200,7 @@
             this.LogOutB.Name = "LogOutB";
             this.LogOutB.Size = new System.Drawing.Size(150, 60);
             this.LogOutB.TabIndex = 7;
+            this.Note1.SetToolTip(this.LogOutB, "لتسجيل الخروج من الحساب الخاص بك");
             this.LogOutB.UseVisualStyleBackColor = true;
             this.LogOutB.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -193,6 +223,10 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.DodgerBlue;
+            this.groupBox2.Controls.Add(this.Client);
+            this.groupBox2.Controls.Add(this.label10);
+            this.groupBox2.Controls.Add(this.BillNO);
+            this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.NewBill);
             this.groupBox2.Controls.Add(this.PSubS);
             this.groupBox2.Controls.Add(this.PName);
@@ -211,12 +245,64 @@
             this.groupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox2.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
             this.groupBox2.ForeColor = System.Drawing.Color.Snow;
-            this.groupBox2.Location = new System.Drawing.Point(253, 13);
+            this.groupBox2.Location = new System.Drawing.Point(6, 21);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(416, 384);
+            this.groupBox2.Size = new System.Drawing.Size(416, 457);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "النتيجه";
+            // 
+            // Client
+            // 
+            this.Client.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Bold);
+            this.Client.Location = new System.Drawing.Point(6, 412);
+            this.Client.Name = "Client";
+            this.Client.Size = new System.Drawing.Size(272, 32);
+            this.Client.TabIndex = 20;
+            this.Client.TabStop = false;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(292, 422);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(106, 17);
+            this.label10.TabIndex = 19;
+            this.label10.Text = "اسم المشترى:";
+            // 
+            // BillNO
+            // 
+            this.BillNO.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Bold);
+            this.BillNO.Location = new System.Drawing.Point(6, 375);
+            this.BillNO.Name = "BillNO";
+            this.BillNO.ReadOnly = true;
+            this.BillNO.Size = new System.Drawing.Size(272, 32);
+            this.BillNO.TabIndex = 18;
+            this.BillNO.TabStop = false;
+            this.BillNO.TextChanged += new System.EventHandler(this.BillNO_TextChanged);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(308, 385);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(90, 17);
+            this.label9.TabIndex = 17;
+            this.label9.Text = "رقم الفاتورة:";
+            // 
+            // NewBill
+            // 
+            this.NewBill.AutoSize = true;
+            this.NewBill.Location = new System.Drawing.Point(167, 348);
+            this.NewBill.Name = "NewBill";
+            this.NewBill.Size = new System.Drawing.Size(111, 21);
+            this.NewBill.TabIndex = 4;
+            this.NewBill.Text = "فاتورة جديدة";
+            this.Note1.SetToolTip(this.NewBill, "علم عليها لانشاء فاتورة جديدة او اتركها كما هى لاضافه الدواء الى الفاتورة الحاليه" +
+        "");
+            this.NewBill.UseVisualStyleBackColor = true;
             // 
             // PSubS
             // 
@@ -269,6 +355,7 @@
             this.Pnote.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.Pnote.Size = new System.Drawing.Size(272, 85);
             this.Pnote.TabIndex = 3;
+            this.Note1.SetToolTip(this.Pnote, "اكتب اى شئ لا يزيد عن 500 حرف");
             // 
             // PTottal
             // 
@@ -360,15 +447,164 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "اسم الدواء:";
             // 
-            // NewBill
+            // totalprice
             // 
-            this.NewBill.AutoSize = true;
-            this.NewBill.Location = new System.Drawing.Point(167, 348);
-            this.NewBill.Name = "NewBill";
-            this.NewBill.Size = new System.Drawing.Size(111, 21);
-            this.NewBill.TabIndex = 4;
-            this.NewBill.Text = "فاتورة جديدة";
-            this.NewBill.UseVisualStyleBackColor = true;
+            this.totalprice.Font = new System.Drawing.Font("Tahoma", 20F, System.Drawing.FontStyle.Bold);
+            this.totalprice.Location = new System.Drawing.Point(0, 457);
+            this.totalprice.Name = "totalprice";
+            this.totalprice.ReadOnly = true;
+            this.totalprice.Size = new System.Drawing.Size(704, 40);
+            this.totalprice.TabIndex = 1;
+            this.Note1.SetToolTip(this.totalprice, "سعر اجمالى الادويه فى الصيدليه");
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.AutoSize = true;
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.flowLayoutPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.flowLayoutPanel1.Controls.Add(this.label11);
+            this.flowLayoutPanel1.ForeColor = System.Drawing.Color.Honeydew;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(440, 79);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(250, 43);
+            this.flowLayoutPanel1.TabIndex = 4;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label11.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.label11.Location = new System.Drawing.Point(139, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(108, 17);
+            this.label11.TabIndex = 0;
+            this.label11.Text = "اسم المستخدم";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.Transparent;
+            this.label12.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.label12.ForeColor = System.Drawing.Color.Honeydew;
+            this.label12.Location = new System.Drawing.Point(624, 56);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(69, 17);
+            this.label12.TabIndex = 5;
+            this.label12.Text = "اهلا بك يا";
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.RightToLeftLayout = true;
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(712, 597);
+            this.tabControl1.TabIndex = 6;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.tabPage1.BackgroundImage = global::PharmacyProManager.Properties.Resources.cpwapp;
+            this.tabPage1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabPage1.Controls.Add(this.bu);
+            this.tabPage1.Controls.Add(this.label12);
+            this.tabPage1.Controls.Add(this.flowLayoutPanel1);
+            this.tabPage1.Controls.Add(this.groupBox2);
+            this.tabPage1.Controls.Add(this.groupBox1);
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(704, 568);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "بحث";
+            // 
+            // bu
+            // 
+            this.bu.Location = new System.Drawing.Point(440, 373);
+            this.bu.Multiline = true;
+            this.bu.Name = "bu";
+            this.bu.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.bu.Size = new System.Drawing.Size(225, 105);
+            this.bu.TabIndex = 6;
+            this.bu.Visible = false;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.BackColor = System.Drawing.Color.MediumBlue;
+            this.tabPage2.BackgroundImage = global::PharmacyProManager.Properties.Resources.cpwapp;
+            this.tabPage2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabPage2.Controls.Add(this.totalprice);
+            this.tabPage2.Controls.Add(this.dataGridView1);
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(704, 568);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "الادوية";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.SteelBlue;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.medic,
+            this.pricem,
+            this.expme,
+            this.totalcm,
+            this.subme,
+            this.noteem});
+            this.dataGridView1.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.dataGridView1.Location = new System.Drawing.Point(-4, 0);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(712, 460);
+            this.dataGridView1.TabIndex = 0;
+            // 
+            // medic
+            // 
+            this.medic.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.medic.HeaderText = "الاسم";
+            this.medic.Name = "medic";
+            this.medic.ReadOnly = true;
+            // 
+            // pricem
+            // 
+            this.pricem.HeaderText = "السعر";
+            this.pricem.Name = "pricem";
+            this.pricem.ReadOnly = true;
+            this.pricem.Width = 60;
+            // 
+            // expme
+            // 
+            this.expme.HeaderText = "تاريخ انتهاء الصلاحيه";
+            this.expme.Name = "expme";
+            this.expme.ReadOnly = true;
+            // 
+            // totalcm
+            // 
+            this.totalcm.HeaderText = "الموجود";
+            this.totalcm.Name = "totalcm";
+            this.totalcm.ReadOnly = true;
+            this.totalcm.Width = 70;
+            // 
+            // subme
+            // 
+            this.subme.HeaderText = "المادة الفعاله";
+            this.subme.Name = "subme";
+            this.subme.ReadOnly = true;
+            // 
+            // noteem
+            // 
+            this.noteem.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.noteem.HeaderText = "ملاحظات";
+            this.noteem.Name = "noteem";
+            this.noteem.ReadOnly = true;
             // 
             // CPanal
             // 
@@ -376,11 +612,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.ClientSize = new System.Drawing.Size(681, 483);
-            this.Controls.Add(this.groupBox2);
+            this.BackgroundImage = global::PharmacyProManager.Properties.Resources.cpwapp;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(712, 597);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.pictureBox1);
+            this.ForeColor = System.Drawing.Color.SeaGreen;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -389,7 +627,9 @@
             this.RightToLeftLayout = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "مدير الصيدليه";
+            this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CPanal_FormClosing);
+            this.Load += new System.EventHandler(this.CPanal_Load);
             this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.CPanal_HelpRequested);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
@@ -397,6 +637,14 @@
             this.panel1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel1.PerformLayout();
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -430,5 +678,25 @@
         private System.Windows.Forms.Button UPdateB;
         private System.Windows.Forms.Label FP;
         private System.Windows.Forms.CheckBox NewBill;
+        private System.Windows.Forms.ToolTip Note1;
+        private System.Windows.Forms.TextBox Client;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox BillNO;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TextBox totalprice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn medic;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pricem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn expme;
+        private System.Windows.Forms.DataGridViewTextBoxColumn totalcm;
+        private System.Windows.Forms.DataGridViewTextBoxColumn subme;
+        private System.Windows.Forms.DataGridViewTextBoxColumn noteem;
+        private System.Windows.Forms.TextBox bu;
     }
 }

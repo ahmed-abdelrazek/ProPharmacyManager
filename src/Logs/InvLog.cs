@@ -24,17 +24,12 @@ namespace PharmacyProManager.Logs
                 MySqlReader r = new MySqlReader(cmd);
                 while (r.Read())
                 {
-                    text1.Text += "اسم الدواء : " + r.ReadString("Name") + "\r\n";
-                    text1.Text += "السعر : " + r.ReadString("Price") + "\r\n";
-                    text1.Text += "الكميه : " + r.ReadString("Count") + "\r\n";
-                    text1.Text += "انتهاء الصلاحيه : " + r.ReadString("Expiry");
-                    text1.Text += "\r\n----------------------------------------------\r\n";
                     ff = Convert.ToDecimal(r.ReadString("Price"));
                     tt = Convert.ToDecimal(r.ReadString("Count"));
                     ff1 += ff;
                     tt1 += tt;
-                    ttext1.Text = "اجمالى سعر الموجود :" + Convert.ToDecimal(ff1) * Convert.ToDecimal(tt1) + "جنيه";
-
+                    totalprice.Text = "اجمالى سعر الموجود :" + Convert.ToDecimal(ff1) * Convert.ToDecimal(tt1) + "جنيه";
+                    DGV.Rows.Add(r.ReadString("Name"), r.ReadString("Price"), r.ReadString("Count"), r.ReadString("Expiry"));
 
                 }
             }

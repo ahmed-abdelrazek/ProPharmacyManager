@@ -31,7 +31,7 @@
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
     <AutorunEnabled>true</AutorunEnabled>
     <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>2.3.0.0</ApplicationVersion>
+    <ApplicationVersion>2.4.0.0</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -87,7 +87,7 @@
   <ItemGroup>
     <Reference Include="MySql.Data, Version=6.3.6.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>.\MySql.Data.dll</HintPath>
+      <HintPath>bin\Debug\MySql.Data.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -125,7 +125,7 @@
     <Compile Include="CPanal.Designer.cs">
       <DependentUpon>CPanal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Database\AccountTable.cs" />
+    <Compile Include="Database\States.cs" />
     <Compile Include="Database\DataHolder.cs" />
     <Compile Include="Database\MySql\MySqlCommand.cs" />
     <Compile Include="Database\MySql\MySqlReader.cs" />
@@ -134,6 +134,12 @@
     </Compile>
     <Compile Include="Kernel\Setup.Designer.cs">
       <DependentUpon>Setup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logs\BillsLogs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logs\BillsLogs.Designer.cs">
+      <DependentUpon>BillsLogs.cs</DependentUpon>
     </Compile>
     <Compile Include="Logs\countLog.cs">
       <SubType>Form</SubType>
@@ -201,6 +207,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Kernel\Setup.resx">
       <DependentUpon>Setup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logs\BillsLogs.resx">
+      <DependentUpon>BillsLogs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Logs\countLog.resx">
       <DependentUpon>countLog.cs</DependentUpon>
@@ -303,9 +312,14 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\panal.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\PH PM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BG.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -10,8 +10,7 @@ namespace PharmacyProManager
         {
             InitializeComponent();
         }
-        private AccountTable.AccountState State;
-
+        private States.AccountState State;
         public void SaveLogin()
         {
             try
@@ -34,17 +33,17 @@ namespace PharmacyProManager
                 MySqlReader r = new MySqlReader(cmd);
                 while (r.Read())
                 {
-                    this.State = (AccountTable.AccountState)r.ReadByte("State");
-                    if (State == AccountTable.AccountState.Manager)
+                    this.State = (States.AccountState)r.ReadByte("State");
+                    if (State == States.AccountState.Manager)
                     {
                         Manager ma = new Manager();
                         ma.Show();
                         this.Hide();
                         SaveLogin();
                     }
-                    else if (State == AccountTable.AccountState.Employee)
+                    else if (State == States.AccountState.Employee)
                     {
-                        CPanal gui = new CPanal();
+                        CPanal gui = new CPanal(UN.Text);
                         gui.Show();
                         this.Hide();
                         SaveLogin();
@@ -109,6 +108,11 @@ namespace PharmacyProManager
         {
             About ab = new About();
             ab.ShowDialog();
+        }
+
+        private void UN_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
