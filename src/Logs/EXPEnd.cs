@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace PharmacyProManager
@@ -39,7 +40,12 @@ namespace PharmacyProManager
 
         private void EXPEnd_Load(object sender, EventArgs e)
         {
+            CheckForIllegalCrossThreadCalls = false;
+            Thread th = new Thread(() =>
+            {
             endexp();
+            });
+            th.Start();
         }
     }
 }

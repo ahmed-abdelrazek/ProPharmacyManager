@@ -1,5 +1,6 @@
 ﻿using PharmacyProManager.Database;
 using System;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace PharmacyProManager
@@ -31,7 +32,12 @@ namespace PharmacyProManager
 
         private void DateLog_Load(object sender, EventArgs e)
         {
+            CheckForIllegalCrossThreadCalls = false;
+            Thread th = new Thread(() =>
+            {
             end();
+            });
+            th.Start();
         }
     }
 }
