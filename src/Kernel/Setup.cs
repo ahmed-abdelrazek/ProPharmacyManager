@@ -27,22 +27,22 @@ namespace ProPharmacyManager.Kernel
         {
             InitializeComponent();
         }
-
         private void Setup_Load(object sender, EventArgs e)
         {
+            IniFile file = new IniFile(Constants.SetupConfigPath);
             if (this.Text == "تنصيب البرنامج")
             {
                 Install.Text = "اعداد";
+                Upgrade.Visible = true;
             }
             try
             {
-                IniFile file = new IniFile(Constants.SetupConfigPath);
                 if (File.Exists(Constants.SetupConfigPath))
                 {
-                    DBHost.Text = file.ReadString("MySql", "Host");
-                    DBName.Text = file.ReadString("MySql", "Database");
-                    DBUser.Text = file.ReadString("MySql", "Username");
-                    DBPass.Text = file.ReadString("MySql", "Password");
+                    DBHost.Text = Program.INIDecrypt(file.ReadString("MySql", "Host"));
+                    DBName.Text = Program.INIDecrypt(file.ReadString("MySql", "Database"));
+                    DBUser.Text = Program.INIDecrypt(file.ReadString("MySql", "Username"));
+                    DBPass.Text = Program.INIDecrypt(file.ReadString("MySql", "Password"));
                 }
             }
             catch (Exception exception)
@@ -72,15 +72,18 @@ namespace ProPharmacyManager.Kernel
                 {
                     if (!File.Exists(Constants.SetupConfigPath))
                     {
-                        string[] lines = { "[MySql]", "Host=" + DBHost.Text, "Username=" + DBUser.Text, "Password=" + DBPass.Text, "Database=" + DBName.Text };
-                        File.WriteAllLines(Constants.SetupConfigPath, lines);
+                        file.Write("MySql", "Host", DBHost.Text);
+                        file.Write("MySql", "Username", DBUser.Text);
+                        file.Write("MySql", "Password", DBPass.Text);
+                        file.Write("MySql", "Database", DBName.Text);
+                        file.Write("Upgrade", "Version", System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString().Replace(".", ""));
                         if (!Directory.Exists(Application.StartupPath + @"BackUp\"))
                         {
                             Directory.CreateDirectory(Application.StartupPath + @"\BackUp\");
                         }
-                        DataHolder.CreateConnection(file.ReadString("MySql", "Username"), file.ReadString("MySql", "Password"), file.ReadString("MySql", "Host"));
+                        DataHolder.CreateConnection(Program.INIDecrypt(file.ReadString("MySql", "Username")), Program.INIDecrypt(file.ReadString("MySql", "Password")), Program.INIDecrypt(file.ReadString("MySql", "Host")));
                         CreateDB.Createdb(DBName.Text);
-                        DataHolder.CreateConnection(file.ReadString("MySql", "Username"), file.ReadString("MySql", "Password"), file.ReadString("MySql", "Database"), file.ReadString("MySql", "Host"));
+                        DataHolder.CreateConnection(Program.INIDecrypt(file.ReadString("MySql", "Username")), Program.INIDecrypt(file.ReadString("MySql", "Password")), Program.INIDecrypt(file.ReadString("MySql", "Database")), Program.INIDecrypt(file.ReadString("MySql", "Host")));
                         CreateDB.CreateTables();
                         MessageBox.Show("تم تنصيب الاعدادات\nمن فضلك انشاء حساب جديد لتتمكن من الدخول");
                         Register reg = new Register();
@@ -93,12 +96,13 @@ namespace ProPharmacyManager.Kernel
                     if (File.Exists(Constants.SetupConfigPath))
                     {
                         BackUp.NewDbBackup();
-                        DataHolder.CreateConnection(file.ReadString("MySql", "Username"), file.ReadString("MySql", "Password"), file.ReadString("MySql", "Host"));
+                        DataHolder.CreateConnection(Program.INIDecrypt(file.ReadString("MySql", "Username")), Program.INIDecrypt(file.ReadString("MySql", "Password")), Program.INIDecrypt(file.ReadString("MySql", "Host")));
                         CreateDB.Createdb(file.ReadString("MySql", "Database"), DBName.Text);
-                        File.Delete(Constants.SetupConfigPath);
-                        string[] lines = { "[MySql]", "Host=" + DBHost.Text, "Username=" + DBUser.Text, "Password=" + DBPass.Text, "Database=" + DBName.Text };
-                        File.WriteAllLines(Constants.SetupConfigPath, lines);
-                        DataHolder.CreateConnection(file.ReadString("MySql", "Username"), file.ReadString("MySql", "Password"), file.ReadString("MySql", "Database"), file.ReadString("MySql", "Host"));
+                        file.Write("MySql", "Host", DBHost.Text);
+                        file.Write("MySql", "Username", DBUser.Text);
+                        file.Write("MySql", "Password", DBPass.Text);
+                        file.Write("MySql", "Database", DBName.Text);
+                        DataHolder.CreateConnection(Program.INIDecrypt(file.ReadString("MySql", "Username")), Program.INIDecrypt(file.ReadString("MySql", "Password")), Program.INIDecrypt(file.ReadString("MySql", "Database")), Program.INIDecrypt(file.ReadString("MySql", "Host")));
                         BackUp.NewDbRestore();
                         BillsTable.LBN();
                         MessageBox.Show("تم تغيير الاعدادات");
@@ -109,6 +113,12 @@ namespace ProPharmacyManager.Kernel
             {
                 Program.SaveException(ee);
             }
+        }
+
+        private void Upgrade_Click(object sender, EventArgs e)
+        {
+            CreateDB.UpgradeTables();
+            this.Close();
         }
 
     }

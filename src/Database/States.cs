@@ -17,6 +17,9 @@ namespace ProPharmacyManager.Database
 {
     internal class States
     {
+        /// <summary> 
+        /// account status
+        /// </summary>
         public enum AccountState : byte
         {
             Employee = 1,

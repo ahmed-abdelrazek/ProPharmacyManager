@@ -51,7 +51,8 @@ namespace ProPharmacyManager
             this.UP = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.CloseB = new ProPharmacyManager.ImageButton();
+            this.MinB = new ProPharmacyManager.ImageButton();
             this.SuspendLayout();
             // 
             // ExitB
@@ -99,6 +100,7 @@ namespace ProPharmacyManager
             this.UN.Font = new System.Drawing.Font("Tahoma", 20F, System.Drawing.FontStyle.Bold);
             this.UN.ForeColor = System.Drawing.Color.MediumBlue;
             this.UN.Location = new System.Drawing.Point(12, 55);
+            this.UN.MaxLength = 16;
             this.UN.Name = "UN";
             this.UN.Size = new System.Drawing.Size(364, 40);
             this.UN.TabIndex = 1;
@@ -135,20 +137,31 @@ namespace ProPharmacyManager
             this.label2.TabIndex = 9;
             this.label2.Text = "أسم المستخدم:";
             // 
-            // tableLayoutPanel1
+            // CloseB
             // 
-            this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 4;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45.79832F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 54.20168F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 78F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(388, 317);
-            this.tableLayoutPanel1.TabIndex = 10;
+            this.CloseB.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.CloseB.ButtonImage = global::ProPharmacyManager.Properties.Resources.LL_01;
+            this.CloseB.ButtonImageOffset = new System.Drawing.Point(0, 0);
+            this.CloseB.Location = new System.Drawing.Point(342, 0);
+            this.CloseB.Name = "CloseB";
+            this.CloseB.Size = new System.Drawing.Size(45, 40);
+            this.CloseB.TabIndex = 10;
+            this.CloseB.TabStop = false;
+            this.CloseB.UseVisualStyleBackColor = false;
+            this.CloseB.Click += new System.EventHandler(this.CloseB_Click);
+            // 
+            // MinB
+            // 
+            this.MinB.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.MinB.ButtonImage = global::ProPharmacyManager.Properties.Resources.LL_02;
+            this.MinB.ButtonImageOffset = new System.Drawing.Point(0, 0);
+            this.MinB.Location = new System.Drawing.Point(295, 0);
+            this.MinB.Name = "MinB";
+            this.MinB.Size = new System.Drawing.Size(45, 40);
+            this.MinB.TabIndex = 11;
+            this.MinB.TabStop = false;
+            this.MinB.UseVisualStyleBackColor = false;
+            this.MinB.Click += new System.EventHandler(this.MinB_Click);
             // 
             // Login
             // 
@@ -157,6 +170,8 @@ namespace ProPharmacyManager
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.ForestGreen;
             this.ClientSize = new System.Drawing.Size(388, 317);
+            this.Controls.Add(this.MinB);
+            this.Controls.Add(this.CloseB);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.UP);
@@ -164,8 +179,7 @@ namespace ProPharmacyManager
             this.Controls.Add(this.UNPW);
             this.Controls.Add(this.LoginB);
             this.Controls.Add(this.ExitB);
-            this.Controls.Add(this.tableLayoutPanel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Login";
@@ -175,6 +189,7 @@ namespace ProPharmacyManager
             this.Text = "تسجيل الدخول";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Login_FormClosing);
             this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.Login_HelpRequested);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Login_MouseDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -186,10 +201,11 @@ namespace ProPharmacyManager
         private ImageButton LoginB;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         public System.Windows.Forms.TextBox UP;
         public System.Windows.Forms.TextBox UN;
         public System.Windows.Forms.Label UNPW;
+        private ImageButton CloseB;
+        private ImageButton MinB;
     }
 }
 

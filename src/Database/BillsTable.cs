@@ -25,7 +25,9 @@ namespace ProPharmacyManager.Database
         public static decimal MCost = 0;
         public static string Client;
         private static string MList;
-
+        /// <summary> 
+        /// get bill nubmer
+        /// </summary> 
         public static void LBN()
         {
             try
@@ -40,7 +42,9 @@ namespace ProPharmacyManager.Database
                 Program.SaveException(ee);
             }
         }
-
+        /// <summary> 
+        /// load a bell for user
+        /// </summary> 
         private static void LoadBill()
         {
             try
@@ -59,7 +63,9 @@ namespace ProPharmacyManager.Database
                 Program.SaveException(ee);
             }
         }
-
+        /// <summary> 
+        /// create a new bill
+        /// </summary> 
         public static void newbill()
         {
             try
@@ -82,7 +88,9 @@ namespace ProPharmacyManager.Database
                 Program.SaveException(ee);
             }
         }
-
+        /// <summary> 
+        /// update exist bill when client name and bill number equal to database
+        /// </summary> 
         public static void updatebill()
         {
             LoadBill();

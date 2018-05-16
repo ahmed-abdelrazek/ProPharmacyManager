@@ -33,7 +33,7 @@
     <AutorunEnabled>true</AutorunEnabled>
     <TrustUrlParameters>true</TrustUrlParameters>
     <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>5.0.0.0</ApplicationVersion>
+    <ApplicationVersion>5.1.0.0</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <ExcludeDeploymentUrl>true</ExcludeDeploymentUrl>
@@ -51,6 +51,8 @@
     <WarningLevel>4</WarningLevel>
     <RunCodeAnalysis>false</RunCodeAnalysis>
     <CodeAnalysisRuleSet>GlobalizationRules.ruleset</CodeAnalysisRuleSet>
+    <DocumentationFile>
+    </DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -93,13 +95,13 @@
     <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="MySql.Data, Version=6.8.3.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+    <Reference Include="MySql.Data, Version=6.3.6.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>.\MySql.Data.dll</HintPath>
+      <HintPath>I:\MySqlBackup.NET 2.0.1\Binaries\v4.0 net\MySql.Data.dll</HintPath>
     </Reference>
     <Reference Include="MySqlBackup, Version=2.0.2.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>.\MySqlBackup.dll</HintPath>
+      <HintPath>bin\Debug\MySqlBackup.dll</HintPath>
     </Reference>
     <Reference Include="System">
       <Private>False</Private>
@@ -377,6 +379,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="PPHM Ico.ico" />
+    <None Include="Resources\LL_02.png" />
+    <None Include="Resources\LL_01.png" />
     <None Include="Resources\PHBack.bmp" />
     <None Include="Resources\MinI.png" />
     <None Include="Resources\CloseI.png" />

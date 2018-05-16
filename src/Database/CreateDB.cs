@@ -19,6 +19,10 @@ namespace ProPharmacyManager.Database
 {
     public class CreateDB
     {
+        /// <summary> 
+        /// The database name that app create at first run
+        /// </summary> 
+        /// <param name="dbname">Database name</param> 
         public static void Createdb(string dbname)
         {
             string db1 = "CREATE DATABASE IF NOT EXISTS `" + dbname + "`;";
@@ -37,6 +41,11 @@ namespace ProPharmacyManager.Database
                 }
             }
         }
+        /// <summary> 
+        /// when user change the database name from setting
+        /// </summary> 
+        /// <param name="odbname">old Database name</param> 
+        /// <param name="ndbname">new Database name</param> 
         public static void Createdb(string odbname, string ndbname)
         {
             string db1 = "DROP DATABASE IF EXISTS `" + odbname + "`;CREATE DATABASE IF NOT EXISTS `" + ndbname + "`;";
@@ -55,7 +64,9 @@ namespace ProPharmacyManager.Database
                 }
             }
         }
-
+        /// <summary> 
+        /// create tables if their don't exist at first run
+        /// </summary> 
         public static void CreateTables()
         {
             const string accountst =
@@ -79,6 +90,22 @@ namespace ProPharmacyManager.Database
                 }
             }
         }
-        
+        /// <summary> 
+        /// upgrade tables after makes changes at them
+        /// </summary> 
+        public static void UpgradeTables()
+        {
+            //const string accountst = "ALTER TABLE accounts ALTER COLUMN Password text;";
+            //using (var conn = DataHolder.MySqlConnection)
+            //{
+            //    using (MySql.Data.MySqlClient.MySqlCommand cmd = new MySql.Data.MySqlClient.MySqlCommand())
+            //    {
+            //        cmd.Connection = conn;
+            //        conn.Open();
+            //        QueryExpress.ExecuteScalarStr(cmd, accountst);
+            //        conn.Close();
+            //    }
+            //}
+        }
     }
 }

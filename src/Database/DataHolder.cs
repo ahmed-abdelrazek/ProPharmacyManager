@@ -19,6 +19,13 @@ namespace ProPharmacyManager.Database
     {
         private static string MySqlUsername, MySqlPassword, MySqlDatabase, MySqlHost;
         private static string ConnectionString;
+        /// <summary> 
+        /// get connection information to connect a database
+        /// </summary> 
+        /// <param name="user">database user</param>
+        /// <param name="password">database password</param>
+        /// <param name="database">database name</param>
+        /// <param name="host">host (localhost)</param>
         public static void CreateConnection(string user, string password, string database, string host)
         {
             MySqlUsername = user;
@@ -27,6 +34,12 @@ namespace ProPharmacyManager.Database
             MySqlDatabase = database;
             ConnectionString = "Server=" + MySqlHost + ";Database='" + MySqlDatabase + "';Username='" + MySqlUsername + "';Password='" + MySqlPassword + "';Pooling=true; Max Pool Size = 160000; Min Pool Size = 0;CHARSET=utf8";
         }
+        /// <summary> 
+        /// get connection information to create one
+        /// </summary> 
+        /// <param name="user">database user</param>
+        /// <param name="password">database password</param>
+        /// <param name="host">host (localhost)</param>
         public static void CreateConnection(string user, string password, string host)
         {
             MySqlUsername = user;

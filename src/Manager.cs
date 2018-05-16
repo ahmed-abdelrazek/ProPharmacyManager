@@ -21,6 +21,8 @@ using ProPharmacyManager.Database;
 using ProPharmacyManager.Kernel;
 using ProPharmacyManager.Logs;
 using System.Diagnostics;
+using System.Runtime.InteropServices;
+
 
 namespace ProPharmacyManager
 {
@@ -30,7 +32,33 @@ namespace ProPharmacyManager
         {
             InitializeComponent();
         }
+        #region movable form
+        [DllImportAttribute("user32.dll")]
+        /// <summary>
+        ///     catch the mouse clicks
+        /// </summary>
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int LPAR);
+        [DllImportAttribute("user32.dll")]
+        /// <summary>
+        ///     make form move
+        /// </summary>
+        public static extern bool ReleaseCapture();
+        const int WM_NCLBUTTONDOWN = 0xA1;
+        const int HT_CAPTION = 0x2;  //this indicates that the action takes place on the title bar
 
+        private void move_window(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(this.Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+            }
+        }
+        private void Manager_MouseDown(object sender, MouseEventArgs e)
+        {
+            this.MouseDown += new MouseEventHandler(move_window);
+        }
+        #endregion
         private void clear()
         {
             PName.Clear();
@@ -107,11 +135,11 @@ namespace ProPharmacyManager
             switch (dialogResult)
             {
                 case DialogResult.Yes:
-                {
-                    Login lg = new Login();
-                    lg.Show();
-                    Hide();
-                }
+                    {
+                        Login lg = new Login();
+                        lg.Show();
+                        Hide();
+                    }
                     break;
                 case DialogResult.No:
                     e.Cancel = true;
@@ -131,11 +159,11 @@ namespace ProPharmacyManager
             switch (dialogResult)
             {
                 case DialogResult.Yes:
-                {
-                    Login lg = new Login();
-                    lg.Show();
-                    Hide();
-                }
+                    {
+                        Login lg = new Login();
+                        lg.Show();
+                        Hide();
+                    }
                     break;
                 case DialogResult.No:
                     break;
@@ -362,6 +390,7 @@ namespace ProPharmacyManager
         private void قاعدهالبياناتToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Setup set = new Setup();
+            Program.IsUpgrading = false;
             set.ShowDialog();
         }
 
@@ -390,7 +419,6 @@ namespace ProPharmacyManager
 
         private void Manager_Load(object sender, EventArgs e)
         {
-            label11.Text = AccountsTable.UserName;
             BillNO.Text = BillsTable.BillNO.ToString();
         }
 
@@ -439,7 +467,7 @@ namespace ProPharmacyManager
                 this.Focus();
             }
         }
-        
+
         private void Minim_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
@@ -454,6 +482,31 @@ namespace ProPharmacyManager
         {
             Process.Start("New.txt");
         }
-        
+
+        /// <summary>
+        ///     make background image show with right to left layout
+        /// </summary>
+        protected override void OnPaintBackground(PaintEventArgs e)
+        {
+            Rectangle rc = new Rectangle(Point.Empty, this.ClientSize);
+            e.Graphics.DrawImage(ProPharmacyManager.Properties.Resources.PHBack, rc);
+        }
+        /// <summary>
+        ///     type welcome massage
+        /// </summary>
+        protected override void OnPaint(PaintEventArgs e)
+        {
+            SolidBrush penco = new SolidBrush(Color.Honeydew);
+            Font font = new Font("Arial", 15);
+            Graphics g = e.Graphics;
+            string welcome = ("أهلا بك يا");
+            PointF point1 = new PointF(710, 88);
+            g.DrawString(welcome, font, penco, point1);
+            string welcomeuser = AccountsTable.UserName;
+            PointF point2 = new PointF(710, 110);
+            g.DrawString(welcomeuser, font, penco, point2);
+
+        }
+
     }
 }

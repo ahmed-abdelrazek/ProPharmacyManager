@@ -1,16 +1,16 @@
-تحتاج اولا لسيرفر محلى او خدمه 
+تحتاج اولا لسيرفر محلى او خدمه
 MySQL 
 على جهازك
 لتثبيت سيرفر محلى يفضل استخدام برنامج 
-Xampp
+Xampp (https://www.apachefriends.org/download.html)
 يمكنك ايضا استخدام برامج اخرى ك
 AppServ or WAMP
 فى حاله ال
-AppServ
+AppServ (http://www.appservnetwork.com/)
 يجب ان تتاكد من تفعيل ال
-InnoDB
+InnoDB (http://i.imgur.com/J2nKz8X.jpg)
 
-قم بفتح البرنامج ليظهر لك نافذه الاعدادات
+قم بفتح البرنامج لتظهر لك نافذه الاعدادات
 قم بادخال البيانات المطلوبه و التى قمت بادخالها سابقا اثناء تنصيب السيرفر
 لمن ليس لديه خبرة مع السى شارب يمكنك فتح البرنامج من المسار التالى
 ProPharmacyManager\bin\Debug\ProPharmacyManager.exe

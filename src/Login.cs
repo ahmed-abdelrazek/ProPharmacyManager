@@ -17,6 +17,7 @@
 using System;
 using System.Windows.Forms;
 using ProPharmacyManager.Database;
+using System.Runtime.InteropServices;
 
 namespace ProPharmacyManager
 {
@@ -26,6 +27,33 @@ namespace ProPharmacyManager
         {
             InitializeComponent();
         }
+        #region movable form
+        [DllImportAttribute("user32.dll")]
+        /// <summary>
+        ///     catch the mouse clicks
+        /// </summary>
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int LPAR);
+        [DllImportAttribute("user32.dll")]
+        /// <summary>
+        ///     make form move
+        /// </summary>
+        public static extern bool ReleaseCapture();
+        const int WM_NCLBUTTONDOWN = 0xA1;
+        const int HT_CAPTION = 0x2;  //this indicates that the action takes place on the title bar
+
+        private void move_window(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(this.Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+            }
+        }
+        private void Login_MouseDown(object sender, MouseEventArgs e)
+        {
+            this.MouseDown += new MouseEventHandler(move_window);
+        }
+        #endregion
         private void Login_FormClosing(object sender, FormClosingEventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show("هل انت متاكد؟", "الخروج", MessageBoxButtons.YesNo);
@@ -64,6 +92,10 @@ namespace ProPharmacyManager
                 {
                     this.Hide();
                 }
+                else
+                {
+                    UP.Focus();
+                }
             }
         }
 
@@ -75,5 +107,16 @@ namespace ProPharmacyManager
                 Environment.Exit(0);
             }
         }
+
+        private void CloseB_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
+        }
+
+        private void MinB_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
     }
 }

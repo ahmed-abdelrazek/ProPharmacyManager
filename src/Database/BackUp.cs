@@ -22,6 +22,10 @@ namespace ProPharmacyManager.Database
 {
     public class BackUp
     {
+        /// <summary> 
+        /// backup database the name will be dd-nn-yyyy hh.mm.ss.ms.sql
+        /// </summary> 
+        /// <param name="EnK">Encryption key</param>
         public static void Backup(string EnK)
         {
             try
@@ -54,7 +58,12 @@ namespace ProPharmacyManager.Database
             {
                 MessageBox.Show(ex.ToString());
             }
-        }       
+        }
+        /// <summary> 
+        /// restore a backup to database
+        /// </summary> 
+        /// <param name="RBU">backup file path</param>
+        /// <param name="Dek">Encryption key</param>
         public static void Restore(string RBU, string Dek)
         {
             try
@@ -90,6 +99,9 @@ namespace ProPharmacyManager.Database
                 MessageBox.Show("مفتاح التشفير خطأ\n"+ex.ToString());
             }
         }
+        /// <summary> 
+        /// backup tables content when user change the database name from setting
+        /// </summary> 
         public static void NewDbBackup()
         {
             try
@@ -125,6 +137,9 @@ namespace ProPharmacyManager.Database
                 MessageBox.Show(ex.ToString());
             }
         }
+        /// <summary> 
+        /// restore tables content when user change the database name from setting
+        /// </summary> 
         public static void NewDbRestore()
         {
             try

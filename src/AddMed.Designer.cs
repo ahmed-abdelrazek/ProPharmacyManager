@@ -134,6 +134,7 @@ namespace ProPharmacyManager
             // 
             this.PName.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Bold);
             this.PName.Location = new System.Drawing.Point(6, 20);
+            this.PName.MaxLength = 100;
             this.PName.Name = "PName";
             this.PName.Size = new System.Drawing.Size(272, 32);
             this.PName.TabIndex = 1;

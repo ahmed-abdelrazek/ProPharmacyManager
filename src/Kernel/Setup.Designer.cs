@@ -43,6 +43,7 @@ namespace ProPharmacyManager.Kernel
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Setup));
             this.DBUser = new System.Windows.Forms.TextBox();
             this.DBPass = new System.Windows.Forms.TextBox();
@@ -57,6 +58,8 @@ namespace ProPharmacyManager.Kernel
             this.Exit = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.Upgrade = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // DBUser
@@ -69,6 +72,7 @@ namespace ProPharmacyManager.Kernel
             this.DBUser.Size = new System.Drawing.Size(190, 45);
             this.DBUser.TabIndex = 3;
             this.DBUser.Text = "root";
+            this.toolTip1.SetToolTip(this.DBUser, "اسم المستخدم لبرنامج السيرفر اذا لم يسالك عنه اتركه كما هو");
             // 
             // DBPass
             // 
@@ -80,6 +84,7 @@ namespace ProPharmacyManager.Kernel
             this.DBPass.Size = new System.Drawing.Size(190, 44);
             this.DBPass.TabIndex = 4;
             this.DBPass.Text = "1234";
+            this.toolTip1.SetToolTip(this.DBPass, "كلمه مرور برنامج السيرفر اذا لم يسالك عنه اجعله فارغ");
             // 
             // DBName
             // 
@@ -91,6 +96,7 @@ namespace ProPharmacyManager.Kernel
             this.DBName.Size = new System.Drawing.Size(190, 40);
             this.DBName.TabIndex = 2;
             this.DBName.Text = "phdb";
+            this.toolTip1.SetToolTip(this.DBName, "اسم قاعده البيانات التى ستسجل كل شئ");
             // 
             // DBHost
             // 
@@ -102,6 +108,7 @@ namespace ProPharmacyManager.Kernel
             this.DBHost.Size = new System.Drawing.Size(190, 37);
             this.DBHost.TabIndex = 1;
             this.DBHost.Text = "localhost";
+            this.toolTip1.SetToolTip(this.DBHost, "اتركها كما هى او استخدم الاستاتك ايبى الخاص بشبكتك");
             // 
             // label1
             // 
@@ -178,7 +185,7 @@ namespace ProPharmacyManager.Kernel
             this.Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Exit.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
             this.Exit.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Exit.Location = new System.Drawing.Point(41, 319);
+            this.Exit.Location = new System.Drawing.Point(5, 319);
             this.Exit.Name = "Exit";
             this.Exit.Size = new System.Drawing.Size(150, 60);
             this.Exit.TabIndex = 6;
@@ -208,6 +215,22 @@ namespace ProPharmacyManager.Kernel
             this.label7.TabIndex = 12;
             this.label7.Text = "سوف تتسبب فى توقف البرنامج";
             // 
+            // Upgrade
+            // 
+            this.Upgrade.BackColor = System.Drawing.Color.MediumBlue;
+            this.Upgrade.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Upgrade.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
+            this.Upgrade.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Upgrade.Location = new System.Drawing.Point(161, 319);
+            this.Upgrade.Name = "Upgrade";
+            this.Upgrade.Size = new System.Drawing.Size(150, 60);
+            this.Upgrade.TabIndex = 13;
+            this.Upgrade.Text = "ترقيه";
+            this.toolTip1.SetToolTip(this.Upgrade, "اذا كنت تستخدم البرنامج من قبل استخدم الترقيه");
+            this.Upgrade.UseVisualStyleBackColor = false;
+            this.Upgrade.Visible = false;
+            this.Upgrade.Click += new System.EventHandler(this.Upgrade_Click);
+            // 
             // Setup
             // 
             this.AcceptButton = this.Install;
@@ -215,6 +238,7 @@ namespace ProPharmacyManager.Kernel
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DodgerBlue;
             this.ClientSize = new System.Drawing.Size(479, 388);
+            this.Controls.Add(this.Upgrade);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.Exit);
@@ -257,5 +281,7 @@ namespace ProPharmacyManager.Kernel
         private System.Windows.Forms.Button Exit;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Button Upgrade;
     }
 }

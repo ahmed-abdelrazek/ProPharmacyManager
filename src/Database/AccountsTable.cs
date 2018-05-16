@@ -24,7 +24,9 @@ namespace ProPharmacyManager.Database
         public static string UserPassword;
 
         private static States.AccountState State;
-
+        /// <summary> 
+        /// save who and when login
+        /// </summary> 
         private static void SaveLogin()
         {
             try
@@ -38,7 +40,9 @@ namespace ProPharmacyManager.Database
                 MessageBox.Show(e.ToString());
             }
         }
-
+        /// <summary> 
+        /// login check code
+        /// </summary> 
         public static bool UserLogin()
         {
             try

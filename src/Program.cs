@@ -37,6 +37,13 @@ namespace ProPharmacyManager
         [STAThread]
         private static void Main()
         {
+//uncomment to debug the app without any checks         
+//#if DEBUG
+//            Application.SetCompatibleTextRenderingDefault(false);
+//            EngineThread_Execute();
+//            Application.EnableVisualStyles();
+//            Application.Run(new Login());
+//#endif
             WindowsIdentity identity = WindowsIdentity.GetCurrent();
             WindowsPrincipal principal = identity != null ? new WindowsPrincipal(identity) : null;
             if (principal == null || !principal.IsInRole(WindowsBuiltInRole.Administrator))
@@ -63,7 +70,10 @@ namespace ProPharmacyManager
                 }
             }
         }
-
+        public static bool IsUpgrading;
+        static readonly string PasswordHash = "SHC@HAM&ABRZ";
+        static readonly string SaltKey = "P@FAMK!TRP";
+        static readonly string VIKey = "@Gjg9!b8tf&T6jl4k1b";
         private static void EngineThread_Execute()
         {
             try
@@ -71,11 +81,11 @@ namespace ProPharmacyManager
                 IniFile file = new IniFile(Constants.SetupConfigPath);
                 if (!File.Exists(Constants.SetupConfigPath))
                 {
-                    Setup set = new Setup {Text = "تنصيب البرنامج"};
+                    Setup set = new Setup { Text = "تنصيب البرنامج" };
                     set.ShowDialog();
                 }
-                DataHolder.CreateConnection(file.ReadString("MySql", "Username"), file.ReadString("MySql", "Password"),
-                    file.ReadString("MySql", "Database"), file.ReadString("MySql", "Host"));
+                DataHolder.CreateConnection(INIDecrypt(file.ReadString("MySql", "Username")), INIDecrypt(file.ReadString("MySql", "Password")),
+                    INIDecrypt(file.ReadString("MySql", "Database")), INIDecrypt(file.ReadString("MySql", "Host")));
                 GC.Collect();
                 BillsTable.LBN();
             }
@@ -85,7 +95,10 @@ namespace ProPharmacyManager
                 File.Delete(Constants.SetupConfigPath);
             }
         }
-
+        /// <summary> 
+        /// save Exception to exceptions folder with the app
+        /// </summary> 
+        /// <param name="e">exception string</param>
         public static void SaveException(Exception e)
         {
             if (e.TargetSite.Name == "ThrowInvalidOperationException") return;
@@ -117,6 +130,11 @@ namespace ProPharmacyManager
                     "----End of stack trace----\r\n"
                 }.ToArray());
         }
+        /// <summary> 
+        /// passwords hash
+        /// </summary> 
+        /// <param name="data">string password before hassing</param>
+        /// <returns>string password after hashing</returns>
         public static string GetSHAHashData(string data)
         {
             SHA512 sha1 = SHA512.Create();
@@ -128,5 +146,50 @@ namespace ProPharmacyManager
             }
             return returnValue.ToString();
         }
+        /// <summary> 
+        /// ini info encryptor
+        /// </summary> 
+        /// <param name="plainText">string to encrypt</param>
+        /// <returns>encrypted string</returns>
+        public static string INIEncrypt(string plainText)
+        {
+            byte[] plainTextBytes = Encoding.UTF8.GetBytes(plainText);
+            byte[] keyBytes = new Rfc2898DeriveBytes(PasswordHash, Encoding.ASCII.GetBytes(SaltKey)).GetBytes(256 / 8);
+            var symmetricKey = new RijndaelManaged() { Mode = CipherMode.CBC, Padding = PaddingMode.Zeros };
+            var encryptor = symmetricKey.CreateEncryptor(keyBytes, Encoding.ASCII.GetBytes(VIKey));
+            byte[] cipherTextBytes;
+            using (var memoryStream = new MemoryStream())
+            {
+                using (var cryptoStream = new CryptoStream(memoryStream, encryptor, CryptoStreamMode.Write))
+                {
+                    cryptoStream.Write(plainTextBytes, 0, plainTextBytes.Length);
+                    cryptoStream.FlushFinalBlock();
+                    cipherTextBytes = memoryStream.ToArray();
+                    cryptoStream.Close();
+                }
+                memoryStream.Close();
+            }
+            return Convert.ToBase64String(cipherTextBytes);
+        }
+        /// <summary> 
+        /// ini info decryptor
+        /// </summary> 
+        /// <param name="encryptedText">encryptstring to decrypt </param>
+        /// <returns>decrypted string</returns>
+        public static string INIDecrypt(string encryptedText)
+        {
+            byte[] cipherTextBytes = Convert.FromBase64String(encryptedText);
+            byte[] keyBytes = new Rfc2898DeriveBytes(PasswordHash, Encoding.ASCII.GetBytes(SaltKey)).GetBytes(256 / 8);
+            var symmetricKey = new RijndaelManaged() { Mode = CipherMode.CBC, Padding = PaddingMode.None };
+            var decryptor = symmetricKey.CreateDecryptor(keyBytes, Encoding.ASCII.GetBytes(VIKey));
+            var memoryStream = new MemoryStream(cipherTextBytes);
+            var cryptoStream = new CryptoStream(memoryStream, decryptor, CryptoStreamMode.Read);
+            byte[] plainTextBytes = new byte[cipherTextBytes.Length];
+            int decryptedByteCount = cryptoStream.Read(plainTextBytes, 0, plainTextBytes.Length);
+            memoryStream.Close();
+            cryptoStream.Close();
+            return Encoding.UTF8.GetString(plainTextBytes, 0, decryptedByteCount).TrimEnd("\0".ToCharArray());
+        }
+
     }
 }

@@ -137,6 +137,7 @@ namespace ProPharmacyManager
             // 
             this.textBox10.ForeColor = System.Drawing.SystemColors.WindowText;
             this.textBox10.Location = new System.Drawing.Point(102, 7);
+            this.textBox10.MaxLength = 16;
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(143, 20);
             this.textBox10.TabIndex = 1;

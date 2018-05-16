@@ -1,5 +1,13 @@
 بسم الله الرحمن الرحيم
 
+الاصدار 5.1
+اضافه وسوم تعليقات اكس ام ال لتسهيل فهم البرنامج للمطورين
+تحسين وجهه شاشه تسجيل الدخول
+تشفير محتويات ملف الكونفجرشن
+اصلاح مشكلات اخرى متعلقه بالتصميم و بطول الكلمات
+اضافه زر الترقيه فى نافذه الاعدادات عند فتح البرنامج لاول مرة
+--------------------------------------------------------------------
+
 الاصدار 5
 تشغيل التشفير (مفتاح تشفير خاص لكل ملف) عند اخذ نسخه احتياطيه لقاعدة البيانات
 تشفير كلمات المرور للمستخدمين
@@ -40,9 +48,9 @@
 ProPharmacyManager (P.PH.M)
 --------------------------------------------------------------------
 
-برنامج ادارة الصيدليه الاحترافى
+برنامج ادارة الصيداليه الاحترافى
 PharmacyProManager (PH.P.M)
-هو برنامج مفتوح المصدر (تحت رخصه جينو العموميه الاصدار الثانى) للمساعدة 
+هو برنامج مفتوح المصدر (تحت رخصه جينو الاصدار الثانى) للمساعدة 
 فى ادارة الصيدليات الصغيرة و المتوسطه بشكل سهل و بسيط و ايضا احترافى
 يمكنك من ادارة الموظفين و تنظيم عمليه البيع و الشراء و فواتير العملاء
 ايضا الادويه التى نفذت او انتهت صلاحيتها
@@ -50,16 +58,16 @@ PharmacyProManager (PH.P.M)
 تصميم البرنامج ماخوذ من وجهه مترو فى وندز 8 المتميزة بالتصميم المسطح العائم و الاشكال و الخطوط الكبيرة الواضحه
 تمت عمليه البرمجة بلغه السى شارب باستخدام النت فرام ورك 3.5 و قواعد بيانات ماى سكل
 شكرا ل Thanks for
-Impluse open source Conquer Server for his MySQL commands system.
-Resharper plugin for Visual Studio 2013.
+Impluse open source Conquer Server for his MySQL commands system.(http://www.elitepvpers.com/forum/co2-pserver-guides-releases/556950-release-my-source.html)
+Resharper plugin for Visual Studio 2013.(http://www.jetbrains.com/resharper/)
 MySqlBackup.NET open source project for the backup,
-encryption and create DataBases system.
+encryption and create DataBases system. (https://github.com/MySqlBackupNET/MySqlBackup.Net)
 CodeProject.com members for their helpful articles.
-مجموعة عبد الله عيد على الفيس بوك
+مجموعة عبد الله عيد على الفيس بوك (https://www.facebook.com/groups/abdullaheid/)
 --------------------------------------------------------------------
 للتواصل مع المبرمج 
-ahmed_master23@hotmail.com
 ahmed_master23@yahoo.com
 ahmedflix25@gmail.com
 ShababCo.blogspot.com
+FB.com/ShababConquer
 --------------------------------------------------------------------

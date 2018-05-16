@@ -7,7 +7,10 @@ namespace ProPharmacyManager.Kernel
     public class IniFile
     {
         public string FileName;
-
+        /// <summary> 
+        /// .ini files reader writer
+        /// </summary> 
+        /// <param name="_FileName">file name</param>
         public IniFile(string _FileName)
         {
             this.FileName = Environment.CurrentDirectory + "\\" + _FileName;
@@ -17,7 +20,11 @@ namespace ProPharmacyManager.Kernel
         private static extern int GetPrivateProfileStringA(string Section, string Key, string _Default, StringBuilder Buffer, int BufferSize, string FileName);
         [DllImport("kernel32.dll", CharSet = CharSet.Ansi, SetLastError = true, ExactSpelling = true)]
         private static extern int WritePrivateProfileStringA(string Section, string Key, string Arg, string FileName);
-
+        /// <summary> 
+        /// read byte from file
+        /// </summary> 
+        /// <param name="Section">read section string value </param>
+        /// <param name="Key">read key value </param>
         public byte ReadByte(string Section, string Key, byte _Default)
         {
             byte buf = _Default;
@@ -79,7 +86,7 @@ namespace ProPharmacyManager.Kernel
 
         public void Write(string Section, string Key, string Value)
         {
-            WritePrivateProfileStringA(Section, Key, Value, this.FileName);
+            WritePrivateProfileStringA(Section, Key,Program.INIEncrypt(Value), this.FileName);
         }
     }
 }

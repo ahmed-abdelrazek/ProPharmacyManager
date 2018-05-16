@@ -73,6 +73,10 @@ namespace ProPharmacyManager.Database
             }
         }
         #region Select
+        /// <summary> 
+        /// select table
+        /// </summary> 
+        /// <param name="table">table name</param>
         public MySqlCommand Select(string table)
         {
             _command = _command.Replace("<R>", "`" + table + "`");
@@ -80,6 +84,10 @@ namespace ProPharmacyManager.Database
         }
         #endregion
         #region Clear
+        /// <summary> 
+        /// clear table content
+        /// </summary> 
+        /// <param name="table">table name</param>
         public MySqlCommand Clear(string table)
         {
             _command = _command.Replace("<R>", "`" + table + "`");
@@ -87,6 +95,7 @@ namespace ProPharmacyManager.Database
         }
         #endregion
         #region Count
+        /// <param name="table">table name</param>
         public MySqlCommand Count(string table)
         {
             _command = _command.Replace("<R>", "`" + table + "`");
@@ -94,6 +103,12 @@ namespace ProPharmacyManager.Database
         }
         #endregion
         #region Delete
+        /// <summary> 
+        /// delete string
+        /// </summary> 
+        /// <param name="table">table name</param>
+        /// <param name="column">column name</param>
+        /// <param name="value">string value</param>
         public MySqlCommand Delete(string table, string column, string value)
         {
             _command = _command.Replace("<R>", "`" + table + "`");
@@ -101,6 +116,12 @@ namespace ProPharmacyManager.Database
             _command = _command.Replace("<V>", "'" + value + "'");
             return this;
         }
+        /// <summary> 
+        /// delete long
+        /// </summary> 
+        /// <param name="table">table name</param>
+        /// <param name="column">column name</param>
+        /// <param name="value">long value</param>
         public MySqlCommand Delete(string table, string column, long value)
         {
             _command = _command.Replace("<R>", "`" + table + "`");
@@ -108,6 +129,12 @@ namespace ProPharmacyManager.Database
             _command = _command.Replace("<V>", value.ToString());
             return this;
         }
+        /// <summary> 
+        /// delete ulong
+        /// </summary> 
+        /// <param name="table">table name</param>
+        /// <param name="column">column name</param>
+        /// <param name="value">ulong value</param>
         public MySqlCommand Delete(string table, string column, ulong value)
         {
             _command = _command.Replace("<R>", "`" + table + "`");
@@ -115,6 +142,12 @@ namespace ProPharmacyManager.Database
             _command = _command.Replace("<V>", value.ToString());
             return this;
         }
+        /// <summary> 
+        /// delete bool
+        /// </summary> 
+        /// <param name="table">table name</param>
+        /// <param name="column">column name</param>
+        /// <param name="value">bool value</param>
         public MySqlCommand Delete(string table, string column, bool value)
         {
             _command = _command.Replace("<R>", "`" + table + "`");
@@ -138,6 +171,10 @@ namespace ProPharmacyManager.Database
         }
 
         #region Update
+        /// <summary> 
+        /// update table
+        /// </summary> 
+        /// <param name="table">table name</param>
         public MySqlCommand Update(string table)
         {
             _command = _command.Replace("<R>", "`" + table + "`");
@@ -192,11 +229,20 @@ namespace ProPharmacyManager.Database
         #endregion
 
         #region Insert
+        /// <summary> 
+        /// add information to tables
+        /// </summary> 
+        /// <param name="table">table name</param>
         public MySqlCommand Insert(string table)
         {
             _command = _command.Replace("<R>", "`" + table + "`");
             return this;
         }
+        /// <summary> 
+        /// add long value to a column
+        /// </summary> 
+        /// <param name="field">column name</param>
+        /// <param name="value">long value</param>
         public MySqlCommand Insert(string field, long value)
         {
             Fields.Add(lastpair, field);
@@ -204,6 +250,11 @@ namespace ProPharmacyManager.Database
             lastpair++;
             return this;
         }
+        /// <summary> 
+        /// add ulong value to a column
+        /// </summary> 
+        /// <param name="field">column name</param>
+        /// <param name="value">ulong value</param>
         public MySqlCommand Insert(string field, ulong value)
         {
             Fields.Add(lastpair, field);
@@ -211,6 +262,11 @@ namespace ProPharmacyManager.Database
             lastpair++;
             return this;
         }
+        /// <summary> 
+        /// add bool value to a column
+        /// </summary> 
+        /// <param name="field">column name</param>
+        /// <param name="value">bool value</param>
         public MySqlCommand Insert(string field, bool value)
         {
             Fields.Add(lastpair, field);
@@ -218,6 +274,11 @@ namespace ProPharmacyManager.Database
             lastpair++;
             return this;
         }
+        /// <summary> 
+        /// add string value to a column
+        /// </summary> 
+        /// <param name="field">column name</param>
+        /// <param name="value">string value</param>
         public MySqlCommand Insert(string field, string value)
         {
             Fields.Add(lastpair, field);
@@ -228,11 +289,21 @@ namespace ProPharmacyManager.Database
         #endregion
 
         #region Where
+        /// <summary> 
+        /// compare long between two values column value = new value
+        /// </summary> 
+        /// <param name="column">column name</param>
+        /// <param name="value">long value</param>
         public MySqlCommand Where(string column, long value)
         {
             _command = _command.Append("WHERE `" + column + "` = " + value);
             return this;
         }
+        /// <summary> 
+        /// compare long between two values column value > new value true else false
+        /// </summary> 
+        /// <param name="column">column name</param>
+        /// <param name="value">long value</param>
         public MySqlCommand Where(string column, long value, bool greater)
         {
             if (greater)
@@ -241,16 +312,31 @@ namespace ProPharmacyManager.Database
                 _command = _command.Append("WHERE `" + column + "` < " + value);
             return this;
         }
+        /// <summary> 
+        /// compare ulong between two values column value = new value
+        /// </summary> 
+        /// <param name="column">column name</param>
+        /// <param name="value">ulong value</param>
         public MySqlCommand Where(string column, ulong value)
         {
             _command = _command.Append("WHERE `" + column + "` = " + value);
             return this;
         }
+        /// <summary> 
+        /// compare string between two values column value = new value
+        /// </summary> 
+        /// <param name="column">column name</param>
+        /// <param name="value">string value</param>
         public MySqlCommand Where(string column, string value)
         {
             _command = _command.Append("WHERE `" + column + "` = '" + value + "'");
             return this;
         }
+        /// <summary> 
+        /// compare bool between two values column value = new value
+        /// </summary> 
+        /// <param name="column">column name</param>
+        /// <param name="value">bool value</param>
         public MySqlCommand Where(string column, bool value)
         {
             _command = _command.Append("WHERE `" + column + "` = " + (value ? "1" : "0"));

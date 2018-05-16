@@ -28,7 +28,9 @@ namespace ProPharmacyManager.Kernel
         {
             InitializeComponent();
         }
-
+        /// <summary> 
+        /// refresh backup list
+        /// </summary> 
         private void Reload()
         {
             BackUpList.Items.Clear();
